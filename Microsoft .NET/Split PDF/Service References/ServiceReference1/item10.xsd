@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://types.muhimbi.com/2013/01/14" elementFormDefault="qualified" targetNamespace="http://types.muhimbi.com/2013/01/14" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" />
+  <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" />
+  <xs:complexType name="OutputFormatSpecificSettings">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="OutputFormatSpecificSettings" nillable="true" type="tns:OutputFormatSpecificSettings" />
+  <xs:complexType name="OutputFormatSpecificSettings_PDF">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutputFormatSpecificSettings">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FastWebView" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EmbedAllFonts" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SubsetFonts" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ViewerPreferences" nillable="true" type="tns:PDFViewerPreferences" />
+          <xs:element minOccurs="0" name="PostProcessFile" type="xs:boolean" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="NamedDestinationProcessingMode" type="q1:NamedDestinationProcessingMode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OutputFormatSpecificSettings_PDF" nillable="true" type="tns:OutputFormatSpecificSettings_PDF" />
+  <xs:complexType name="PDFViewerPreferences">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CenterWindow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DisplayTitle" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FitWindow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HideMenubar" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HideToolbar" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HideWindowUI" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="PageLayout" type="q2:PDFPageLayout" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="NavigationPane" type="q3:PDFNavigationPane" />
+      <xs:element minOccurs="0" name="HideEmptyNavigationPane" type="xs:boolean" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="PageScalingMode" type="q4:PDFPageScalingMode" />
+      <xs:element minOccurs="0" name="FullScreen" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PDFViewerPreferences" nillable="true" type="tns:PDFViewerPreferences" />
+  <xs:complexType name="TOCSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Template" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Properties" nillable="true" type="tns:ArrayOfNameValuePair" />
+      <xs:element minOccurs="0" name="Bookmark" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="Location" type="q5:TOCLocation" />
+      <xs:element minOccurs="0" name="PaperSize" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="PageOrientation" type="q6:PageOrientation" />
+      <xs:element minOccurs="0" name="PageMargins" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MinimumEntries" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="DocumentStartPage" type="q7:DocumentStartPage" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="HtmlRenderingEngine" type="q8:HTMLRenderingEngine" />
+      <xs:element minOccurs="0" name="WebKitViewPortSize" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TOCSettings" nillable="true" type="tns:TOCSettings" />
+  <xs:complexType name="ArrayOfNameValuePair">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NameValuePair" nillable="true" type="tns:NameValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNameValuePair" nillable="true" type="tns:ArrayOfNameValuePair" />
+  <xs:complexType name="NameValuePair">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NameValuePair" nillable="true" type="tns:NameValuePair" />
+</xs:schema>

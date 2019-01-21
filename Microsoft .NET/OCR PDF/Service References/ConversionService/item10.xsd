@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://types.muhimbi.com/2013/08/01" elementFormDefault="qualified" targetNamespace="http://types.muhimbi.com/2013/08/01" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" />
+  <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" />
+  <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd8" namespace="http://types.muhimbi.com/2010/11/22" />
+  <xs:complexType name="EnumsProxy">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://types.muhimbi.com/2010/11/22" base="q1:ConverterSpecificSettings">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="OCRLanguageProxy" type="q2:OCRLanguage" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="PrimeOCR_AccuracyLevelProxy" type="q3:PrimeOCR_AccuracyLevel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnumsProxy" nillable="true" type="tns:EnumsProxy" />
+  <xs:complexType name="OCRSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="Performance" type="q4:OCRPerformance" />
+      <xs:element minOccurs="0" name="WhiteList" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BlackList" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Paginate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Regions" nillable="true" type="tns:ArrayOfOCRRegion" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="OutputType" type="q5:OCROutputType" />
+      <xs:element minOccurs="0" name="OCREngine" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://types.muhimbi.com/2010/11/22" minOccurs="0" name="OCREngineSpecificSettings" nillable="true" type="q6:OCREngineSpecificSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OCRSettings" nillable="true" type="tns:OCRSettings" />
+  <xs:complexType name="ArrayOfOCRRegion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OCRRegion" nillable="true" type="tns:OCRRegion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOCRRegion" nillable="true" type="tns:ArrayOfOCRRegion" />
+  <xs:complexType name="OCRRegion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="X" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Y" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartPage" type="xs:int" />
+      <xs:element minOccurs="0" name="EndPage" type="xs:int" />
+      <xs:element minOccurs="0" name="PageInterval" type="xs:int" />
+      <xs:element minOccurs="0" name="PageRange" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OCRRegion" nillable="true" type="tns:OCRRegion" />
+  <xs:complexType name="OCRResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionTexts" nillable="true" type="tns:ArrayOfRegionText" />
+      <xs:element minOccurs="0" name="PageCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OCRResult" nillable="true" type="tns:OCRResult" />
+  <xs:complexType name="ArrayOfRegionText">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RegionText" nillable="true" type="tns:RegionText" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegionText" nillable="true" type="tns:ArrayOfRegionText" />
+  <xs:complexType name="RegionText">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RegionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegionText" nillable="true" type="tns:RegionText" />
+</xs:schema>

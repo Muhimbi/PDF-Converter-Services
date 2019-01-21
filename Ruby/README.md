@@ -1,0 +1,2 @@
+# Ruby Sample Code
+Details about using the *Muhimbi PDF Converter Services* from Ruby (on Rails) can be found in the following [blog post](http://blog.muhimbi.com/2013/03/use-ruby-on-rails-to-convert-merge-and.html).

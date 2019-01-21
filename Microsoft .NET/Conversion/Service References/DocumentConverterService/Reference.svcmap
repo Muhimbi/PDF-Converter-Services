@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dd57c78d-1a88-4890-9ff2-bdeea193c00e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:41734/Muhimbi.DocumentConverter.WebService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="80274cad-bbe2-43d4-ac5f-271c138b332e" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="c4ef1749-1546-4be8-9e43-9d962d1e94ad" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd2" />
+    <MetadataFile FileName="DocumentConverterService.wsdl" MetadataType="Wsdl" ID="52f65eb2-c11f-4b6c-8a9a-192d9d2145c9" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?wsdl" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="3b1107a7-028f-4aff-968d-7547397bccea" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?disco" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="c63223e3-d5c4-44c0-af03-ef2d63c79139" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd8" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="b8d189a8-074a-42db-be08-13378037b153" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd9" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="2fd9722c-7a3e-471a-9ab7-a8631f382c96" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd10" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="c244f368-4405-423c-b3c7-ee9c3f9c827d" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd14" />
+    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="823b9227-7c06-4f41-ac14-8b02f7cdc342" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?wsdl=wsdl0" />
+    <MetadataFile FileName="item6.xsd" MetadataType="Schema" ID="22adcb7a-4d6e-4827-a0f6-fdef6fa52688" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd0" />
+    <MetadataFile FileName="item7.xsd" MetadataType="Schema" ID="cf0eaebe-501b-4659-b27b-d7b5187a43f9" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd11" />
+    <MetadataFile FileName="item8.xsd" MetadataType="Schema" ID="78880964-d906-4a4b-9510-a3ce8b318d77" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd13" />
+    <MetadataFile FileName="item9.xsd" MetadataType="Schema" ID="88e10fe1-95e7-42dc-8851-3e73f37e4e2a" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd12" />
+    <MetadataFile FileName="item10.xsd" MetadataType="Schema" ID="a10ef494-8faf-41ca-9e21-1f5258e70a49" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd4" />
+    <MetadataFile FileName="item11.xsd" MetadataType="Schema" ID="5ccba1b6-9946-49bf-ad3f-25624d39bf22" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd5" />
+    <MetadataFile FileName="item12.xsd" MetadataType="Schema" ID="9a384430-2098-4cbd-aecd-33269ed0dcd9" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd6" />
+    <MetadataFile FileName="item13.xsd" MetadataType="Schema" ID="bb5c6e84-f4d6-4f98-a70b-06fcd08c7a23" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd7" />
+    <MetadataFile FileName="item14.xsd" MetadataType="Schema" ID="4f80e99f-ded2-4594-8419-508a2ab52ea0" SourceId="1" SourceUrl="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

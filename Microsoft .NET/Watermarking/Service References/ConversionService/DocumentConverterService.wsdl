@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:i0="http://services.muhimbi.com/2009/10/06" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="DocumentConverterService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://services.muhimbi.com/2009/10/06" location="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_DocumentConverterService" type="i0:DocumentConverterService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Convert">
+      <soap:operation soapAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/Convert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WebServiceFaultExceptionFault">
+        <soap:fault use="literal" name="WebServiceFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyWatermark">
+      <soap:operation soapAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ApplyWatermark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WebServiceFaultExceptionFault">
+        <soap:fault use="literal" name="WebServiceFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ApplySecurity">
+      <soap:operation soapAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ApplySecurity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WebServiceFaultExceptionFault">
+        <soap:fault use="literal" name="WebServiceFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessChanges">
+      <soap:operation soapAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessChanges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WebServiceFaultExceptionFault">
+        <soap:fault use="literal" name="WebServiceFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessBatch">
+      <soap:operation soapAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WebServiceFaultExceptionFault">
+        <soap:fault use="literal" name="WebServiceFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <soap:operation soapAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WebServiceFaultExceptionFault">
+        <soap:fault use="literal" name="WebServiceFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiagnostics">
+      <soap:operation soapAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDiagnostics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WebServiceFaultExceptionFault">
+        <soap:fault use="literal" name="WebServiceFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <soap:operation soapAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WebServiceFaultExceptionFault">
+        <soap:fault use="literal" name="WebServiceFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DocumentConverterService">
+    <wsdl:port name="BasicHttpBinding_DocumentConverterService" binding="tns:BasicHttpBinding_DocumentConverterService">
+      <soap:address location="http://localhost:41734/Muhimbi.DocumentConverter.WebService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

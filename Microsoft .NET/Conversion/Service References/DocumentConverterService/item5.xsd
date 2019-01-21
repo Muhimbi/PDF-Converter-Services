@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://types.muhimbi.com/2018/01/11" elementFormDefault="qualified" targetNamespace="http://types.muhimbi.com/2018/01/11" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" />
+  <xs:complexType name="ArrayOfOperationTypeConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationTypeConfiguration" nillable="true" type="tns:OperationTypeConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperationTypeConfiguration" nillable="true" type="tns:ArrayOfOperationTypeConfiguration" />
+  <xs:complexType name="OperationTypeConfiguration">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="OperationType" type="q1:OperationType" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaximumInstances" type="xs:int" />
+      <xs:element minOccurs="0" name="MaximumRunDuration" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationTypeConfiguration" nillable="true" type="tns:OperationTypeConfiguration" />
+  <xs:complexType name="StatusRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StatusRequestItems" nillable="true" type="tns:ArrayOfStatusRequestItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusRequest" nillable="true" type="tns:StatusRequest" />
+  <xs:complexType name="ArrayOfStatusRequestItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatusRequestItem" nillable="true" type="tns:StatusRequestItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatusRequestItem" nillable="true" type="tns:ArrayOfStatusRequestItem" />
+  <xs:complexType name="StatusRequestItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RequestID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="OperationType" type="q2:OperationType" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusRequestItem" nillable="true" type="tns:StatusRequestItem" />
+  <xs:complexType name="Status">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfStatusResultItem" />
+      <xs:element minOccurs="0" name="MaximumInstances" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentInstances" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="ArrayOfStatusResultItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatusResultItem" nillable="true" type="tns:StatusResultItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatusResultItem" nillable="true" type="tns:ArrayOfStatusResultItem" />
+  <xs:complexType name="StatusResultItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RequestID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaximumInstances" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentInstances" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="OperationStatus" type="q3:OperationStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusResultItem" nillable="true" type="tns:StatusResultItem" />
+</xs:schema>
