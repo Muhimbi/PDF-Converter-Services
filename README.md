@@ -1,6 +1,8 @@
-# PDF-Converter-Services
+# Muhimbi PDF Converter Services
 ## About
-The *Muhimbi PDF Converter Services* is a web service that makes it easy to add *document conversion, merging, watermarking, securing and optical character recognition (OCR)* to most programming languages, operating systems and development platforms.
+The [*Muhimbi PDF Converter Services*](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx) is an on-premise web service that makes it easy to add *document conversion, merging, watermarking, securing and optical character recognition (OCR)* to most programming languages, operating systems and development platforms.
+
+This product is also available as an Online Service, for details see [this separate GitHub repository](https://github.com/Muhimbi/PDF-Converter-Services-Online). A separate [SharePoint (2007-2019) version](http://www.muhimbi.com/Products/PDF-Converter-for-SharePoint/summary.aspx) is available as well. 
 
 <br/>
 
@@ -20,11 +22,15 @@ Key features:
 
 ## Getting started
 
-It couldn't be easier to get going. Please follow the instructions for the language of your choice.
+It couldn't be easier to get going. [Download the software](http://www.muhimbi.com/Products/PDF-Converter-Services/Free-Trial.aspx), install it as per Chapter 2 of the [Administration Guide](http://www.muhimbi.com/support/documentation/PDF-Converter-Services/Administration-Guide.aspx), and follow the instructions for the language of your choice:
 
-- [C# Libraries and sample code](Microsoft+.NET/)
+- [C# Libraries and sample code](Microsoft%20.NET/)
 - [Java Libraries and sample code](Java/)
 - [PHP Libraries and sample code](PHP/)
 - [Ruby (on Rails) Libraries and sample code](Ruby/)
+
+A separate Developer Guide [is available here](http://www.muhimbi.com/support/documentation/PDF-Converter-Services/User---Developer-Guide.aspx). Answers to some of the most common questions can be found [in the Knowledge Base](https://support.muhimbi.com/hc/en-us/sections/206267927-PDF-Converter-Web-Service-Interface).
+
+Any further questions? [Drop us a line](http://www.muhimbi.com/contact.aspx), we love to help.
 
 <br/>
