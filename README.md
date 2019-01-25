@@ -2,7 +2,7 @@
 ## About
 The [*Muhimbi PDF Converter Services*](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx) is an on-premise web service that makes it easy to add *document conversion, merging, watermarking, securing and optical character recognition (OCR)* to most programming languages, operating systems and development platforms.
 
-This product is also available as an Online Service, for details see [this separate GitHub repository](https://github.com/Muhimbi/PDF-Converter-Services-Online). A separate [SharePoint (2007-2019) version](http://www.muhimbi.com/Products/PDF-Converter-for-SharePoint/summary.aspx) is available as well. 
+This product is also available as an Online Service (SaaS), for details see [this separate GitHub repository](https://github.com/Muhimbi/PDF-Converter-Services-Online). A  [SharePoint (2007-2019) version](http://www.muhimbi.com/Products/PDF-Converter-for-SharePoint/summary.aspx) is available as well. 
 
 <br/>
 
@@ -28,6 +28,8 @@ It couldn't be easier to get going. [Download the software](http://www.muhimbi.c
 - [Java Libraries and sample code](Java/)
 - [PHP Libraries and sample code](PHP/)
 - [Ruby (on Rails) Libraries and sample code](Ruby/)
+
+All sample code is also installed alongside the software, and accessible from the Windows Start Menu.
 
 A separate Developer Guide [is available here](http://www.muhimbi.com/support/documentation/PDF-Converter-Services/User---Developer-Guide.aspx). Answers to some of the most common questions can be found [in the Knowledge Base](https://support.muhimbi.com/hc/en-us/sections/206267927-PDF-Converter-Web-Service-Interface).
 
