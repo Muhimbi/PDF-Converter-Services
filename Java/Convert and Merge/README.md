@@ -17,7 +17,7 @@ Although compiled binaries are supplied with the sample code, once you decide to
 
 If the *Muhimbi PDF Converter Services* is installed on the same machine that is running this sample code, it can be executed straight away by running the `run.sh` (for Linux) or the `run.bat` script file.
 
-:bangbang:Dont forget to make the various .sh files executable using `chmod +x *.sh`:bangbang:
+:exclamation:Dont forget to make the various .sh files executable using `chmod +x *.sh`:exclamation:
 
 1. Edit the `GenerateJavaWSProxies.sh` (for Linux) or the `GenerateJavaWSProxies.bat` (for Windows) script and change `localhost` to the name or ip-address of the server running the Muhimbi Conversion Service.
 2. Execute the `GenerateJavaWSProxies.sh` (for Linux) or the `GenerateJavaWSProxies.bat` (for Windows) script to generate proxy classes for the web service.
