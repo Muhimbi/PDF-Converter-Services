@@ -19,6 +19,10 @@ Any questions? [Drop us a line](http://www.muhimbi.com/contact.aspx), we love to
 
 Using the PDF Converter in combination with Java requires JDK 7 or later. Exact deployment and configuration steps for the various platforms vary slightly.
 
+:bangbang:
+Please make sure that a copy of the Muhimbi PDF Converter Services ([Download](http://www.muhimbi.com/Products/PDF-Converter-Services/Free-Trial.aspx)) is installed on at least one Windows Server in your environment. (Don't worry, it can be invoked from non-Windows platforms including Linux).
+:bangbang:
+
 <br/>
 
 ### Linux
