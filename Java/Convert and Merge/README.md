@@ -20,7 +20,7 @@ If the *Muhimbi PDF Converter Services* is installed on the same machine that is
 :exclamation:Dont forget to make the various .sh files executable using `chmod +x *.sh`:exclamation:
 
 ```diff
-- These examples work unmodified for Java 6/7/8, but for Java 9 and later use compile_java9and10.sh and run_java9and10.sh
+- These examples work for Java 6/7/8, for Java 9 and later use compile_java9and10.sh and run_java9and10.sh
 ```
 
 1. Edit the `GenerateJavaWSProxies.sh` (for Linux) or the `GenerateJavaWSProxies.bat` (for Windows) script and change `localhost` to the name or ip-address of the server running the Muhimbi Conversion Service.
