@@ -17,11 +17,11 @@ For an overview of the prerequisites, including software to install as well as h
 
 ### Building and Running the Sample Code
 
-Open the solution file in Visual Studio
+Open the solution file in Visual Studio.
 
 If the sample code is executed on the same server that runs the Muhimbi Conversion Service, then no changes are required.
 
-If the conversion service is located on a different machine, then change the `SERVICE_URL` as defined in `program.cs`, and replace `localhost` to the name or address of the server running the conversion service.
+If the conversion service is located on a different machine, then change the `SERVICE_URL` as defined in `program.cs`, and change `localhost` to the name or address of the server running the conversion service.
 
 
 With the change made, press `CTRL+F5` to build and run the application. After a few seconds the processed file will be opened in your system's PDF reader.
