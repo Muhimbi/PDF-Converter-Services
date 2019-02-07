@@ -3,7 +3,7 @@
 sourceName=$1
 if [ -z "$1" ]
   then
-    sourceName="test.docx"
+    sourceName="Test.docx"
 fi
 
 echo $AXIS2_HOME
