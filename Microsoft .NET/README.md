@@ -14,7 +14,7 @@ Any questions? [Drop us a line](http://www.muhimbi.com/contact.aspx), we love to
 
 ## Prerequisites
 
-This sample code has been developed using Microsoft Visual Studio. Although it may way when using different IDEs, we recommend using Visual Studio.
+This sample code has been developed using Microsoft Visual Studio. Although it may work  when using different IDEs, we recommend using Visual Studio.
 
 All samples work with .net 3.0 and newer. If you are a Windows developer, the appropriate .NET framework version is most likely already installed on your system. In case it is not, install it [as described here](https://msdn.microsoft.com/en-us/library/5a4x27ek(v=vs.110).aspx).
 
@@ -45,10 +45,14 @@ A full overview of the examples can be found below.
 Sample								| Description
 ------------------------------------|---------------------------------------------------------
 [Conversion](Conversion/)						| WinForms application to demonstrate and test various aspects of the PDF Converter.
-[Convert PDF to PDF-A](Convert%20PDF%20to%20PDF-A)	| Convert a PDF document into PDF-A standard.
-[OCR PDF](OCR%20PDF/)								| Use OCR to extract text from a scan, fax or other image.
-[OCR PDF (PrimeOCR)](OCR%20PDF%20(PrimeOCR)/)	| Use PrimeOCR to extract text from a scan, fax or other image.
+[Convert PDF to PDF-A](Convert%20PDF%20to%20PDF-A)	| Convert a PDF document to PDF/A.
+[OCR PDF](OCR%20PDF/)								| Use Optical Character Recognition to convert a fax, scan or other image into a text PDF.
+[OCR PDF (PrimeOCR)](OCR%20PDF%20(PrimeOCR)/)	| Use Optical Character Recognition using the 3rd part PrimeOCR engine.
 [Split PDF](Split%20PDF/)							| Split a large PDF into smaller PDFs.
 [Watermarking](Watermarking/)					| Add watermarks to a PDF file.
+
+<br/>
+
+Any questions? [Drop our friendly support desk a line](http://www.muhimbi.com/contact.aspx), we love to help.
 
 <br/>
