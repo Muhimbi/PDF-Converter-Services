@@ -3,7 +3,7 @@
 :exclamation: **This sample code will only work if you are licensed for the 3rd party Prime OCR product. For an example that uses Muhimbi's built in OCR engine, see [this post](../OCR%20PDF).**  :exclamation:
 
 
-The C# sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to carry out Optical Character Recognition (OCR) on an image based source files (scan, fax, or other image).
+The C# sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to carry out Optical Character Recognition (OCR) on an image based source file (scan, fax, or other image).
 
 The generated PDF contains all recognised text, which can be selected, copied or searched. A separate text file is created containing all the recognised text.
  
