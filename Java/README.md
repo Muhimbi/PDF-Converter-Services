@@ -5,8 +5,6 @@ Any questions? [Drop us a line](http://www.muhimbi.com/contact.aspx), we love to
 
 <br/>
 
-<br/>
-
 ## Table of Contents
 - [Prerequisites](#Prerequisites)
   - [Linux](#Linux)
