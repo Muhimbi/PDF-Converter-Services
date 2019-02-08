@@ -1,5 +1,7 @@
 # PHP Sample Code
-Details about using the *Muhimbi PDF Converter Services* from PHP can be found below.
+Details about using the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* from PHP can be found below. Further information, including the object model, can be found [in the Developer Guide](http://www.muhimbi.com/support/documentation/PDF-Converter-Services/User---Developer-Guide.aspx) and in the [Muhimbi Knowledge Base](https://support.muhimbi.com/hc/en-us/sections/206267927-PDF-Converter-Web-Service-Interface).
+
+Any questions? [Drop us a line](http://www.muhimbi.com/contact.aspx), we love to help.
 
 <br/>
 
@@ -8,27 +10,27 @@ Details about using the *Muhimbi PDF Converter Services* from PHP can be found b
   - [Linux](#Linux)
   - [Windows](#Windows)
 - [Sample Code](#Sample-Code)
-  - [Running the Sample Code](#Running-the-Sample-Code)
 
 <br/>
 
 ## Prerequisites
 The prerequisites to access the PDF Converter from PHP are as follows:
 
-* PHP 5.4.0 and later
-* PHP Curl libraries (See platform specific steps below)
+* PHP 
+* PHP SOAP libraries (See platform specific steps below)
 
 Exact deployment and configuration steps for the various platforms vary slightly. The ones for Linux, tested with Ubuntu, and Windows are provided below.
 
 <br/>
 
 ### Linux
-Deployment of the prerequisites is straight-forward. Feel free to adjust the steps if you need to deploy a different PHP version, providing it is version 5.4.0 or later.
+Deployment of the prerequisites is straight-forward. Feel free to adjust the steps if you need to deploy a different PHP version.
 
 On Ubuntu 14.04
 
 ```
 sudo apt-get install php5
+sudo apt-get install php-soap
 ```
 
 On Ubuntu 16.04
@@ -44,7 +46,7 @@ sudo apt-get install php7.2-cli
 sudo apt-get install php7.2-soap
 ```
 
-Make sure that executing `phpinfo.php` shows the PHP informational page and in the SOAP section SOAP is enabled.
+Using the instructions listed above will setup everything. On systems with an existing PHP deployment, check out [this article](https://stackoverflow.com/questions/11391442/fatal-error-class-soapclient-not-found) if you run into any problems related to the SOAP libraries.
 
 <br/>
 
@@ -52,9 +54,24 @@ Make sure that executing `phpinfo.php` shows the PHP informational page and in t
 
 Please [download and install](http://windows.php.net/download) the appropriate PHP version. We recommend installing it in `c:\php`.
 
-Make sure that executing `phpinfo.php` shows the PHP informational page and in the SOAP section SOAP is enabled.
+The PHP Soap libraries are enabled in the Windows PHP distribution and don't need to be installed separately. To troubleshoot SOAP related issues see [this article](https://stackoverflow.com/questions/29934167/set-up-php-soap-extension-in-windows).
 
 <br/>
+
+### Configure PHP (same for all platforms)
+
+When dealing with document conversions and merge operations, the default values for `upload_max_filesize` and `post_max_size` may be too conservative and should be increased to a value that matches your requirements.
+
+This can be achieved by updating, or adding, the following values in your `php.ini` (these values are already set to 50MB in the php.ini files that ship with our sample code):
+
+```
+upload_max_filesize = 50M
+post_max_size = 50M
+```
+
+<br/>
+
+
 
 ## Sample Code
 
@@ -76,6 +93,12 @@ A full overview of the examples can be found below.
 
 Sample								| Description
 ------------------------------------|---------------------------------------------------------
-[Convert](Convert/)						| Convert a single file to PDF or other [supported output format](https://support.muhimbi.com/hc/en-us/articles/228089047-What-file-formats-types-are-supported-for-conversion-)
+[Convert](Convert/)						| Convert a single file to PDF or other [supported output format](https://support.muhimbi.com/hc/en-us/articles/228089047-What-file-formats-types-are-supported-for-conversion-). As part of this sample a watermark is applied to the PDF as well.
 
 <br/>
+
+
+Any questions? [Drop our friendly support desk a line](http://www.muhimbi.com/contact.aspx), we love to help.
+
+<br/>
+
