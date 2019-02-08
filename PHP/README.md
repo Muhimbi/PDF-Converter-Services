@@ -52,7 +52,7 @@ Using the instructions listed above will setup everything. On systems with an ex
 
 ### Windows
 
-Please [download and install](http://windows.php.net/download) the appropriate PHP version. We recommend installing it in `c:\php`.
+Please [download and install](http://windows.php.net/download) the appropriate PHP version. We recommend installing it in `c:\php`. ([Alternative PHP installation instructions by Microsoft](https://docs.microsoft.com/en-us/iis/application-frameworks/scenario-build-a-php-website-on-iis/configuring-step-1-install-iis-and-php))
 
 The PHP Soap libraries are enabled in the Windows PHP distribution and don't need to be installed separately. To troubleshoot SOAP related issues see [this article](https://stackoverflow.com/questions/29934167/set-up-php-soap-extension-in-windows).
 
@@ -60,9 +60,9 @@ The PHP Soap libraries are enabled in the Windows PHP distribution and don't nee
 
 ### Configure PHP (same for all platforms)
 
-When dealing with document conversions and merge operations, the default values for `upload_max_filesize` and `post_max_size` may be too conservative and should be increased to a value that matches your requirements.
+When dealing with document conversions and merge operations, the default `php.ini` values for `upload_max_filesize` and `post_max_size` may be too conservative and should be increased to a value that matches your requirements.
 
-This can be achieved by updating, or adding, the following values in your `php.ini` (these values are already set to 50MB in the php.ini files that ship with our sample code):
+This can be achieved by updating, or adding, the following values in your `php.ini` (these values are already set to 50MB in the `php.ini` files that ship with our sample code):
 
 ```
 upload_max_filesize = 50M
