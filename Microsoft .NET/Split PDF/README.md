@@ -24,7 +24,7 @@ If the sample code is executed on the same server that runs the Muhimbi Conversi
 If the conversion service is located on a different machine, then change the `SERVICE_URL` as defined in `program.cs`, and change `localhost` to the name or address of the server running the conversion service.
 
 
-With the change made, press `CTRL+F5` to build and run the application. After a few seconds a number of PDFs, each containing 5 pages from the source document, will be written to the Debug\Bin folder. Open them in your favourite PDF reader and have a look.
+With the change made, press `CTRL+F5` to build and run the application. After a few seconds a number of PDFs, each containing 5 pages from the source document, will be written to the `bin\Debug` folder. Open them in your favourite PDF reader and have a look.
 
 <br/>
 
