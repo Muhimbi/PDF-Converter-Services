@@ -24,6 +24,7 @@ Key features:
 
 It couldn't be easier to get going. [Download the software](http://www.muhimbi.com/Products/PDF-Converter-Services/Free-Trial.aspx), install it as per Chapter 2 of the [Administration Guide](http://www.muhimbi.com/support/documentation/PDF-Converter-Services/Administration-Guide.aspx), and follow the instructions for the language of your choice:
 
+- [C# .NET Core Libraries and sample code](.NET%20Core)
 - [C# Libraries and sample code](Microsoft%20.NET/)
 - [Java Libraries and sample code](Java/)
 - [PHP Libraries and sample code](PHP/)
