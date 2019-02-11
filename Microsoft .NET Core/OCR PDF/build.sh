@@ -1,3 +1,3 @@
 #!/bin/sh
 
-donet build
+dotnet build
