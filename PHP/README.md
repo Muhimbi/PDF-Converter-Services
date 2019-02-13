@@ -75,9 +75,18 @@ post_max_size = 50M
 
 <br/>
 
+If you expect to execute long running operations (e.g. long OCR operations or complex file merges) then you may want to read-up on dealing with PHP socket timeouts:
+
+* http://stackoverflow.com/questions/3500527/php-soapclient-timeout 
+
+* http://stackoverflow.com/questions/835184/handling-soap-timeouts-in-php 
 
 
-## Sample Code
+<br/>
+
+
+
+## Download Sample Code
 
 Sample code, and related files, for the various facilities provided by the service can be found below. It is recommended to copy all samples to your local system using one of the following options:
 

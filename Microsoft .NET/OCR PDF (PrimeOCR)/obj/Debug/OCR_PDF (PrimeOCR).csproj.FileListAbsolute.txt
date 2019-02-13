@@ -1,0 +1,7 @@
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\OCR PDF (PrimeOCR)\bin\Debug\Test.pdf
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\OCR PDF (PrimeOCR)\bin\Debug\OCR_PDF.exe
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\OCR PDF (PrimeOCR)\bin\Debug\OCR_PDF.pdb
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\OCR PDF (PrimeOCR)\obj\Debug\OCR_PDF (PrimeOCR).csprojAssemblyReference.cache
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\OCR PDF (PrimeOCR)\obj\Debug\OCR_PDF (PrimeOCR).csproj.CoreCompileInputs.cache
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\OCR PDF (PrimeOCR)\obj\Debug\OCR_PDF.exe
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\OCR PDF (PrimeOCR)\obj\Debug\OCR_PDF.pdb

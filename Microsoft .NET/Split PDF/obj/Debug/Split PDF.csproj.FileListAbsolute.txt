@@ -1,0 +1,7 @@
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Split PDF\bin\Debug\Test.pdf
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Split PDF\bin\Debug\Split_PDF.exe
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Split PDF\bin\Debug\Split_PDF.pdb
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Split PDF\obj\Debug\Split PDF.csprojAssemblyReference.cache
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Split PDF\obj\Debug\Split PDF.csproj.CoreCompileInputs.cache
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Split PDF\obj\Debug\Split_PDF.exe
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Split PDF\obj\Debug\Split_PDF.pdb

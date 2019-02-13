@@ -1,0 +1,7 @@
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Watermarking\bin\Debug\Test.docx
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Watermarking\bin\Debug\Watermarking.exe
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Watermarking\bin\Debug\Watermarking.pdb
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Watermarking\obj\Debug\Watermarking.csprojAssemblyReference.cache
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Watermarking\obj\Debug\Watermarking.csproj.CoreCompileInputs.cache
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Watermarking\obj\Debug\Watermarking.exe
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Watermarking\obj\Debug\Watermarking.pdb

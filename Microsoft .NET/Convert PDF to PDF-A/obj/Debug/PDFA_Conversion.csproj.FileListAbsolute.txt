@@ -1,0 +1,7 @@
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Convert PDF to PDF-A\bin\Debug\Test.pdf
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Convert PDF to PDF-A\bin\Debug\PDFA_Conversion.exe
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Convert PDF to PDF-A\bin\Debug\PDFA_Conversion.pdb
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Convert PDF to PDF-A\obj\Debug\PDFA_Conversion.csprojAssemblyReference.cache
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Convert PDF to PDF-A\obj\Debug\PDFA_Conversion.csproj.CoreCompileInputs.cache
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Convert PDF to PDF-A\obj\Debug\PDFA_Conversion.exe
+C:\Data\OneDrive\Muhimbi\Github\PDF-Converter-Services\Microsoft .NET\Convert PDF to PDF-A\obj\Debug\PDFA_Conversion.pdb

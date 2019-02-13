@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://services.muhimbi.com/2009/10/06" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://services.muhimbi.com/2009/10/06" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://services.muhimbi.com/2009/10/06/Imports">
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd0" namespace="http://services.muhimbi.com/2009/10/06" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd2" namespace="http://types.muhimbi.com/2009/10/06" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd4" namespace="http://types.muhimbi.com/2014/02/06" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd5" namespace="http://types.muhimbi.com/2015/04/13" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd6" namespace="http://types.muhimbi.com/2010/05/17" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd8" namespace="http://types.muhimbi.com/2010/11/22" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd9" namespace="http://types.muhimbi.com/2014/04/16" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd10" namespace="http://types.muhimbi.com/2013/08/01" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd12" namespace="http://types.muhimbi.com/2013/01/14" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd13" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd14" namespace="http://types.muhimbi.com/2018/01/11" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="DocumentConverterService_Convert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Convert" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_Convert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_Convert_WebServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://types.muhimbi.com/2009/10/06" name="detail" element="q1:WebServiceFaultException" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ApplyWatermark_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyWatermark" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ApplyWatermark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyWatermarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ApplyWatermark_WebServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://types.muhimbi.com/2009/10/06" name="detail" element="q2:WebServiceFaultException" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ApplySecurity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplySecurity" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ApplySecurity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplySecurityResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ApplySecurity_WebServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://types.muhimbi.com/2009/10/06" name="detail" element="q3:WebServiceFaultException" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ProcessChanges_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessChanges" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ProcessChanges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessChangesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ProcessChanges_WebServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://types.muhimbi.com/2009/10/06" name="detail" element="q4:WebServiceFaultException" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ProcessBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessBatch" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ProcessBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_ProcessBatch_WebServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://types.muhimbi.com/2009/10/06" name="detail" element="q5:WebServiceFaultException" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetConfiguration_WebServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://types.muhimbi.com/2009/10/06" name="detail" element="q6:WebServiceFaultException" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetDiagnostics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiagnostics" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetDiagnostics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiagnosticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetDiagnostics_WebServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://types.muhimbi.com/2009/10/06" name="detail" element="q7:WebServiceFaultException" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatus" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetStatus_WebServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://types.muhimbi.com/2009/10/06" name="detail" element="q8:WebServiceFaultException" />
+  </wsdl:message>
+  <wsdl:portType name="DocumentConverterService">
+    <wsdl:operation name="Convert">
+      <wsdl:input wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/Convert" message="tns:DocumentConverterService_Convert_InputMessage" />
+      <wsdl:output wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ConvertResponse" message="tns:DocumentConverterService_Convert_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ConvertWebServiceFaultExceptionFault" name="WebServiceFaultExceptionFault" message="tns:DocumentConverterService_Convert_WebServiceFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyWatermark">
+      <wsdl:input wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ApplyWatermark" message="tns:DocumentConverterService_ApplyWatermark_InputMessage" />
+      <wsdl:output wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ApplyWatermarkResponse" message="tns:DocumentConverterService_ApplyWatermark_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ApplyWatermarkWebServiceFaultExceptionFault" name="WebServiceFaultExceptionFault" message="tns:DocumentConverterService_ApplyWatermark_WebServiceFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplySecurity">
+      <wsdl:input wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ApplySecurity" message="tns:DocumentConverterService_ApplySecurity_InputMessage" />
+      <wsdl:output wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ApplySecurityResponse" message="tns:DocumentConverterService_ApplySecurity_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ApplySecurityWebServiceFaultExceptionFault" name="WebServiceFaultExceptionFault" message="tns:DocumentConverterService_ApplySecurity_WebServiceFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessChanges">
+      <wsdl:input wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessChanges" message="tns:DocumentConverterService_ProcessChanges_InputMessage" />
+      <wsdl:output wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessChangesResponse" message="tns:DocumentConverterService_ProcessChanges_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessChangesWebServiceFaultExceptionFault" name="WebServiceFaultExceptionFault" message="tns:DocumentConverterService_ProcessChanges_WebServiceFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessBatch">
+      <wsdl:input wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessBatch" message="tns:DocumentConverterService_ProcessBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessBatchResponse" message="tns:DocumentConverterService_ProcessBatch_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessBatchWebServiceFaultExceptionFault" name="WebServiceFaultExceptionFault" message="tns:DocumentConverterService_ProcessBatch_WebServiceFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <wsdl:input wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetConfiguration" message="tns:DocumentConverterService_GetConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetConfigurationResponse" message="tns:DocumentConverterService_GetConfiguration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetConfigurationWebServiceFaultExceptionFault" name="WebServiceFaultExceptionFault" message="tns:DocumentConverterService_GetConfiguration_WebServiceFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiagnostics">
+      <wsdl:input wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDiagnostics" message="tns:DocumentConverterService_GetDiagnostics_InputMessage" />
+      <wsdl:output wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDiagnosticsResponse" message="tns:DocumentConverterService_GetDiagnostics_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDiagnosticsWebServiceFaultExceptionFault" name="WebServiceFaultExceptionFault" message="tns:DocumentConverterService_GetDiagnostics_WebServiceFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus">
+      <wsdl:input wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetStatus" message="tns:DocumentConverterService_GetStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetStatusResponse" message="tns:DocumentConverterService_GetStatus_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetStatusWebServiceFaultExceptionFault" name="WebServiceFaultExceptionFault" message="tns:DocumentConverterService_GetStatus_WebServiceFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

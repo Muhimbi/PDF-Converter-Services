@@ -1,0 +1,18 @@
+muhimbi 
+Software License Agreement 
+7.5 No oral or written information or advice given by the Licensor or its dealers, distributors, employees or agents shall in any way extend, modify or add to the foregoing warranty. 
+7.6 The Licensor does not make any guarantee about its PDF conversion products maintaining 100% of all formatting when converting documents. 
+7.7 The Licensor does not officially support lnfoPath conversions in environments where the default settings for StripDotNETCode, StripDataObjects or ProcessRuIeSets have been 
+changed in the Product’s configuration ﬁle. 
+7.8 The warranty and remedy provided above are exclusive and in lieu of all other warranties, express or implied, including but not limited to the implied warranties of merchantability and fitness for a particular purpose. The Licensee assumes all risk as to the suitability, quality, and performance ofthe software. 
+7.9 In no event will the Licensor, or its directors, officers, employees or affiliates, be liable to the Licensee for any consequential, incidental, indirect, special or exemplary damages (including damages for loss of business profits, business interruption, loss of data or business information, and the like) arising out of the use of or inability to use the Product or accompanying written materials, even if the Licensor has been advised of the possibility of such damages. 
+7.10 The Licensor‘s entire liability to the Licensee for actual direct damages for any cause whatsoever, and regardless of the form of the action, will be limited to, and in no event shall exceed, the amount originally paid by the Licensee to the Licensor forthe Licence of the Product. 
+7.11 In case the Product is redistributed by the Licensee as part of an OEM License, the Licensee will take over all technical support. 
+8 Miscellaneous 
+8.1 Subject to any other agreement entered between the parties, in the event that any provision of this Licence is held by the court to be legally ineffective or unenforceable, such provision will be rewritten to reflect the original intent of the Licensor. The validity of the remaining provisions will not be affected. 
+8.2 Failure or neglect by either party to exercise any of its rights or remedies under this Licence will not be construed as a waiver of that party's rights nor in any way affect the validity of the whole or part of this Licence nor prejudice that party's right to take subsequent action. 
+8.3 In the event of a dispute arising out of or in connection with this Licence and which has not been resolved following discussions and negotiations with us then you undertake to attempt to settle the dispute by engaging, in a process of mediation with us in good faith, before commencing arbitration or litigation. 
+8.4 This Licence will be interpreted according to the Laws of England and the parties agree to 
+submit to the exclusive jurisdiction ofthe English courts. 
+If you have any questions about these terms and conditions of the License, please contact us at 
+licensinc@muhimbi.com 
