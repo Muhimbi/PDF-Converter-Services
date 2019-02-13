@@ -21,6 +21,10 @@ The prerequisites to access the PDF Converter from PHP are as follows:
 
 Exact deployment and configuration steps for the various platforms vary slightly. The ones for Linux, tested with Ubuntu, and Windows are provided below.
 
+:exclamation:
+Please make sure that a copy of the Muhimbi PDF Converter Services ([Download](http://www.muhimbi.com/Products/PDF-Converter-Services/Free-Trial.aspx)) is installed on at least one Windows Server in your environment. (Don't worry, it can be invoked from non-Windows platforms including Linux).
+:exclamation:
+
 <br/>
 
 ### Linux

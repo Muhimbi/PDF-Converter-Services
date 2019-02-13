@@ -13,51 +13,60 @@
 
   ******************************************************** -->
 <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+</head>
 <body>
-    <form action="convert.php" method="post" enctype="multipart/form-data">
-        <h1>Convert file using PHP</h1>
-        <label for="file">Document:</label>
-        <input type="file" name="file" id="file" />
-        <br /><br />
-        <label for="outputFormat">Output format:</label>
-        <select name="outputFormat" id="outputFormat">
-            <option value="PDF">PDF</option>
-            <option value="BMP">BMP</option>
-            <option value="CSV">CSV</option>
-            <option value="DOC">DOC</option>
-            <option value="DOCX">DOCX</option>
-            <option value="EPS">EPS</option>
-            <option value="GIF">GIF</option>
-            <option value="HTML">HTML</option>
-            <option value="JPG">JPG</option>
-            <option value="MHT">MHT</option>
-            <option value="ODP">ODP</option>
-            <option value="ODS">ODS</option>
-            <option value="ODT">ODT</option>
-            <option value="PCL">PCL</option>
-            <option value="PNG">PNG</option>
-            <option value="PPS">PPS</option>
-            <option value="PPSX">PPSX</option>
-            <option value="PPT">PPT</option>
-            <option value="PPTX">PPTX</option>
-            <option value="PS">PS</option>
-            <option value="RTF">RTF</option>
-            <option value="TIFF">TIFF</option>
-            <option value="TXT">TXT</option>
-            <option value="XLS">XLS</option>
-            <option value="XLSX">XLSX</option>
-            <option value="XML">XML</option>
-            <option value="XPS">XPS</option>
-        </select>
-        <br /><br />
-        <input type="submit" name="submit" value="Convert" />
-    </form>
-    <br /><br />
-    Please make sure the PHP Soap libraries are <a href="https://stackoverflow.com/questions/11391442/fatal-error-class-soapclient-not-found">installed and enabled</a>.
-    <br /><br />
-    <a href="phpinfo.php" style="color:#999999; font-size:8pt">PHP Info</a>
-    <br />
-
-
+<div class="container">
+	<br/>
+	<div class="alert alert-danger" role="alert">
+		Please make sure all pre-requisites including Soap libraries are <u><a href="https://github.com/Muhimbi/PDF-Converter-Services/tree/master/PHP" class="alert-link">installed and enabled</a></u>.
+	</div>
+	<div class="jumbotron">
+		<h1 class="display-4">Convert file using PHP</h1>
+		<hr class="my-4">
+		<form action="http://localhost:8080/convert.php" method="post" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="file">Document to convert</label>
+				<input type="file" class="form-control-file" id="file" name="file"/>
+			</div>
+			<div class="form-group">
+				<label for="outputFormat">Output format</label>
+				<select class="form-control" name="outputFormat" id="outputFormat">
+					<option value="PDF">PDF</option>
+					<option value="BMP">BMP</option>
+					<option value="CSV">CSV</option>
+					<option value="DOC">DOC</option>
+					<option value="DOCX">DOCX</option>
+					<option value="EPS">EPS</option>
+					<option value="GIF">GIF</option>
+					<option value="HTML">HTML</option>
+					<option value="JPG">JPG</option>
+					<option value="MHT">MHT</option>
+					<option value="ODP">ODP</option>
+					<option value="ODS">ODS</option>
+					<option value="ODT">ODT</option>
+					<option value="PCL">PCL</option>
+					<option value="PNG">PNG</option>
+					<option value="PPS">PPS</option>
+					<option value="PPSX">PPSX</option>
+					<option value="PPT">PPT</option>
+					<option value="PPTX">PPTX</option>
+					<option value="PS">PS</option>
+					<option value="RTF">RTF</option>
+					<option value="TIFF">TIFF</option>
+					<option value="TXT">TXT</option>
+					<option value="XLS">XLS</option>
+					<option value="XLSX">XLSX</option>
+					<option value="XML">XML</option>
+					<option value="XPS">XPS</option>
+				</select>
+			</div>
+			<input class="btn btn-primary" type="submit" name="submit" value="Convert">
+		</form>
+	</div>
+	<a href="http://localhost:8080/phpinfo.php" style="color:#999999; font-size:8pt">PHP Info</a>
+</div>
 </body>
 </html>
