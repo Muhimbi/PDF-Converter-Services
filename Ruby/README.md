@@ -6,6 +6,24 @@ A detailed blog post, including details about how to setup Ruby, including all p
 
 <br/>
 
+## Table of Contents
+- [Prerequisites](#Prerequisites)
+- [Sample Code](#Sample-Code)
+
+<br/>
+
+
+## Prerequisites
+
+:exclamation:
+Please make sure that a copy of the Muhimbi PDF Converter Services ([Download](http://www.muhimbi.com/Products/PDF-Converter-Services/Free-Trial.aspx)) is installed on at least one Windows Server in your environment. (Don't worry, it can be invoked from non-Windows platforms including Linux).
+:exclamation:
+
+Please make sure Ruby / Rail is installed on your system. Installation instructions for various Linux distributions, as well as Windows, [can be found here](https://gorails.com/setup). 
+<br/>
+
+
+
 ## Sample Code
 
 Sample code, and related files, for the various facilities provided by the service can be found below. It is recommended to copy all samples to your local system using one of the following options:
