@@ -19,7 +19,8 @@ A detailed blog post, including details about how to setup Ruby, including all p
 Please make sure that a copy of the Muhimbi PDF Converter Services ([Download](http://www.muhimbi.com/Products/PDF-Converter-Services/Free-Trial.aspx)) is installed on at least one Windows Server in your environment. (Don't worry, it can be invoked from non-Windows platforms including Linux).
 :exclamation:
 
-Please make sure Ruby / Rail is installed on your system. Installation instructions for various Linux distributions, as well as Windows, [can be found here](https://gorails.com/setup). 
+Please make sure Ruby / Rails is installed on your system. Installation instructions for various Linux distributions, as well as Windows, [can be found here](https://gorails.com/setup).
+ 
 <br/>
 
 
