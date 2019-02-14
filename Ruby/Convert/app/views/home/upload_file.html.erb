@@ -1,0 +1,44 @@
+<!-- *****************************************************
+              Muhimbi Document Converter Service
+
+                 Copyright 2013, Muhimbi Ltd
+                       www.muhimbi.com
+
+                     All rights reserved
+
+       Filename: upload_file.html.erb
+          To do: -
+   Known issues: -
+        History: 4 Mar 2013 - JR - Initial version
+
+  ******************************************************** -->
+<form method="post" enctype="multipart/form-data">
+	<br/>
+	<label for="file">Document:</label>
+	<input type="file" name="file" id="file" />
+	<br/>
+	<label for="outputFormat">Output format:</label>
+	<select name="outputFormat" id="outputFormat">
+		<option value="PDF">PDF</option>
+		<option value="XPS">XPS</option>
+		<option value="DOCX">DOCX</option>
+		<option value="DOC">DOC</option>
+		<option value="ODT">ODT</option>
+		<option value="RTF">RTF</option>
+		<option value="TXT">TXT</option>
+		<option value="MHT">MHT</option>
+		<option value="HTML">HTML</option>
+		<option value="XML">XML</option>
+		<option value="XLS">XLS</option>
+		<option value="XLSX">XLSX</option>
+		<option value="CSV">CSV</option>
+		<option value="ODS">ODS</option>
+		<option value="PPT">PPT</option>
+		<option value="PPTX">PPTX</option>
+		<option value="ODP">ODP</option>
+		<option value="PPS">PPS</option>
+		<option value="PPSX">PPSX</option>
+	</select>
+	<br/>
+	<input type="submit" name="submit" value="Convert" />
+</form>
