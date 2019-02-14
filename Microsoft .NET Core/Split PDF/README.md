@@ -21,12 +21,19 @@ If the *Muhimbi PDF Converter Services* is installed on the same machine that is
 
 :exclamation:Don't forget to make the various .sh files executable using `chmod +x *.sh`:exclamation:
 
+<br/>
+
+If the Conversion Service is installed on a remote machine then 
+
+1. Modify the `Program.cs` source file so the `SERVICE_URL` constant points to the *Muhimbi PDF Converter Services*
+2. Execute the `run.sh` (for Linux) or the `run.bat` (for Windows) script
+
+<br/>
+
+If you ever wish to regenerate the web service proxy classes, e.g. to change the namespace then:
+
 1. Edit the `GenerateWSProxies.sh` (for Linux) or the `GenerateWSProxies.bat` (for Windows) script and change `localhost` to the name or ip-address of the server running the Muhimbi Conversion Service.
 2. Execute the `GenerateWSProxies.sh` (for Linux) or the `GenerateWSProxies.bat` (for Windows) script to generate proxy classes for the web service.
-3. Modify the `Program.cs` source file so the `SERVICE_URL` constant points to the *Muhimbi PDF Converter Services*
-4. Execute the `run.sh` (for Linux) or the `run.bat` (for Windows) script
-
-If you wish to build the application without executing it start the `build.sh` (for Linux) or the `build.bat` (for Windows) script
 
 <br/>
 
