@@ -17,15 +17,15 @@ Although compiled binaries are supplied with the sample code, once you decide to
 
 If the *Muhimbi PDF Converter Services* is installed on the same machine that is running this sample code, it can be executed straight away by running the `run.sh` (for Linux) or the `run.bat` script file for Java versions 7 to 10.
 
-For Java 11 the Maven project has to be compiled first in order to pull dependencies which have been removed from Java 11. Go straight to point 3.
+:exclamation: For Java 11 the Maven project has to be compiled first in order to pull dependencies which have been removed from Java 11. Go straight to point 3. :exclamation:
 
-:exclamation:Dont forget to make the various .sh files executable using `chmod +x *.sh`:exclamation:
+:exclamation: Don't forget to make the various .sh files executable using `chmod +x *.sh` :exclamation:
 
 1. Edit the `GenerateJavaWSProxies.sh` (for Linux) or the `GenerateJavaWSProxies.bat` (for Windows) script and change `localhost` to the name or ip-address of the server running the Muhimbi Conversion Service.
 2. Execute the `GenerateJavaWSProxies.sh` (for Linux) or the `GenerateJavaWSProxies.bat` (for Windows) script to generate proxy classes for the web service.
 3. Modify the `src/com/muhimbi/app/WsClient.java` source file so the `DOCUMENTCONVERTERSERVICE_WSDL_LOCATION` constant points to the WSDL of the *Muhimbi PDF Converter Services*
-4. Execute the `compile.sh` (for Linux), `compile_maven.sh` (for Maven) or the `compile.bat` (for Windows) script
-5. Execute the `run.sh` (for Linux), `run_maven.sh` (for Maven) or the `run.bat` (for Windows) script
+4. Execute the `compile.sh` (for Linux), `compile_maven.sh` (for Maven / Java 11+) or the `compile.bat` (for Windows) script
+5. Execute the `run.sh` (for Linux), `run_maven.sh` (for Maven / Java 11+) or the `run.bat` (for Windows) script
 
 <br/>
 
