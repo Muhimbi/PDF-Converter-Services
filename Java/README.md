@@ -25,13 +25,15 @@ Please make sure that a copy of the Muhimbi PDF Converter Services ([Download](h
 
 ### Linux
 
-There are multiple options for compiling and executing Java code on Linux, the examples provided in this section have been tested with Ubuntu 18.0.4 and OpenJDK 1.8.0.191.
+There are multiple options for compiling and executing Java code on Linux, the examples provided in this section have been tested with Ubuntu 18.0.4 and Java versions 7 to 11 using both OpenJDK and Oracle Java. For example install the OpenJDK version of Java 8 as follows:
 
 ```
 sudo apt install openjdk-8-jdk-headless
 ```
 
-:exclamation:If you wish to use Java 11 then we recommend also using Maven for compiling. The Java EE Modules (including javax.xml.ws) have been removed from the standard Java SDK as of version 11. Scripts for compiling and running with Maven are supplied along the `pom.xml` file.:exclamation:
+<br/>
+
+:exclamation:If you wish to use Java 11 then we recommend using Maven to build the project. The Java EE Modules (including javax.xml.ws) have been removed from the standard Java SDK as of version 11. Scripts for compiling and running with Maven are supplied along the `pom.xml` file.:exclamation:
 
 ```
 sudo apt install maven

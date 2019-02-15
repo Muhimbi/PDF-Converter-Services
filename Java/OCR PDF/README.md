@@ -1,6 +1,9 @@
 # OCR a PDF Document
 The Java sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to convert (if needed) an image based file and apply Optical Character Recognition. The resulting PDF document will include all recognised text, which can be searched, or copied via the clipboard. Additional sample code to convert, merge, watermark, secure and OCR files [can be found here](../).
 
+For background details about carrying out Optical Character Recognition using Java, see [this Blog post](http://blog.muhimbi.com/2013/10/converting-scans-and-images-to_17.html).
+
+
 Any questions? [Drop us a line](http://www.muhimbi.com/contact.aspx), we love to help.
 
 

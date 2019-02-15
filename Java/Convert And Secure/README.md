@@ -1,6 +1,8 @@
 # Convert and Secure Documents
 The Java sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to convert (if needed) a file and apply PDF Security settings (Disable printing, disable content copying etc). Additional sample code to convert, merge, watermark, secure and OCR files [can be found here](../).
 
+For background details about applying PDF Security using Java, see [this Knowledge Base Article](https://support.muhimbi.com/hc/en-us/articles/228090107-How-to-secure-PDFs-using-Java-code).
+
 Any questions? [Drop us a line](http://www.muhimbi.com/contact.aspx), we love to help.
 
 
