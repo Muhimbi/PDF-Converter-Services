@@ -2,7 +2,8 @@
 The C# sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to apply a watermark (a.k.a Stamping) to a PDF file. (It converts the input file to PDF first if needed.)
 
 Specifically, a 'Confidential' watermark across the first page of the document, and page numbering on the remaining pages, using a differently aligned page number on odd and even pages. 
-For background details about applying watermarks to PDF Files using C#, see [this Blog post](http://blog.muhimbi.com/2011/09/converting-pdf-document-to-pdfa1b-using.html).
+
+For background details about applying watermarks to PDF Files using C#, see [this Blog post](http://blog.muhimbi.com/2010/06/using-awesome-new-watermarking-features.html).
 
 Additional sample code to convert, merge, watermark, secure and OCR files [can be found here](../).
 
