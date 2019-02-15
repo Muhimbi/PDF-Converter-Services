@@ -6,6 +6,8 @@
 The C# sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to carry out Optical Character Recognition (OCR) on an image based source file (scan, fax, or other image).
 
 The generated PDF contains all recognised text, which can be selected, copied or searched. A separate text file is created containing all the recognised text.
+
+For background details about using 3rd party OCR engines in combination with the Muhimbi PDF Converter, see [this Blog post](http://blog.muhimbi.com/2017/07/utilise-3rd-party-ocr-engines-in.html).
  
 Additional sample code to convert, merge, watermark, secure and OCR files [can be found here](../).
 

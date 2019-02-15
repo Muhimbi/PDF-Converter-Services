@@ -1,6 +1,8 @@
 # Split a PDF into smaller files using C#
 The C# sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to split up a single PDF file into multiple smaller PDF files (In this example containing 5 pages each).
 
+For background details about Splitting PDF Files using C#, see [this Blog post](http://blog.muhimbi.com/2011/09/converting-pdf-document-to-pdfa1b-using.html).
+
 Additional sample code to convert, merge, watermark, secure and OCR files [can be found here](../).
 
 Any questions? [Drop us a line](http://www.muhimbi.com/contact.aspx), we love to help.

@@ -4,6 +4,8 @@ The C# sample provided in this section uses the *[Muhimbi PDF Converter Services
 
 The generated PDF contains all recognised text, which can be selected, copied or searched. 
  
+For background details about applying Optical Character Recognition using C#, see [this Blog post](http://blog.muhimbi.com/2011/09/converting-pdf-document-to-pdfa1b-using.html).
+
 Additional sample code to convert, merge, watermark, secure and OCR files [can be found here](../).
 
 Any questions? [Drop us a line](http://www.muhimbi.com/contact.aspx), we love to help.

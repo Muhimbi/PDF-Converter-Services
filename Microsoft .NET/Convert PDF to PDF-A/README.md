@@ -1,6 +1,8 @@
 # Convert a PDF to PDF/A using C#
 The C# sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to convert a PDF file to a PDF/A2b compliant file. 
 
+For background details about converting a file to PDF/A using C#, see [this Blog post](http://blog.muhimbi.com/2011/09/converting-pdf-document-to-pdfa1b-using.html).
+
 Additional sample code to convert, merge, watermark, secure and OCR files [can be found here](../).
 
 Any questions? [Drop us a line](http://www.muhimbi.com/contact.aspx), we love to help.
