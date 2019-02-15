@@ -1,6 +1,8 @@
 # Convert a document to PDF using C#
 The C# sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to convert a file to PDF. Additional sample code to convert, merge, watermark, secure and OCR files [can be found here](../).
 
+For background details about converting files to PDF using C#, see [this Blog post](http://blog.muhimbi.com/2009/12/converting-office-files-to-pdf-format.html).
+
 Any questions? [Drop us a line](http://www.muhimbi.com/contact.aspx), we love to help.
 
 
