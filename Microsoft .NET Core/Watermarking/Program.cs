@@ -195,6 +195,34 @@ namespace Watermarking
             // ** And add the watermark to the list of watermarks
             watermarks.Add(evenPages);
 
+            // **************** Watermark for all pages except first ***************
+
+            Watermark contentPages = new Watermark();
+            contentPages.Defaults = wmDefaults;
+            contentPages.StartPage = 2;
+            contentPages.Width = "200";
+            contentPages.Height = "85";
+            contentPages.HPosition = HPosition.Center;
+            contentPages.VPosition = VPosition.Bottom;
+
+            // ** Add a barcode
+            LinearBarcode barcode = new LinearBarcode();
+            barcode.Text = "012345678";
+            barcode.BarcodeType = BarcodeType.Code39;
+            // ** Change fill color to white because wmDefaults defines it as black
+            barcode.FillColor = "#ffffff";
+            barcode.LineColor = "#000000";
+            barcode.Width = "200";
+            barcode.Height = "50";
+            barcode.HPosition = HPosition.Center;
+            barcode.VPosition = VPosition.Top;
+
+            // ** And add it to the list of watermark elements
+            contentPages.Elements = new Element[] { barcode };
+
+            // ** And add the watermark to the list of watermarks
+            watermarks.Add(contentPages);
+
             return watermarks.ToArray();
         }
 

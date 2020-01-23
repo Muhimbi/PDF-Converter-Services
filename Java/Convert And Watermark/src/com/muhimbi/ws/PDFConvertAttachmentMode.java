@@ -14,6 +14,7 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;simpleType name="PDFConvertAttachmentMode">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     &lt;enumeration value="Default"/>
  *     &lt;enumeration value="RemoveAll"/>
  *     &lt;enumeration value="RemoveSupported"/>
  *   &lt;/restriction>
@@ -25,6 +26,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlEnum
 public enum PDFConvertAttachmentMode {
 
+    @XmlEnumValue("Default")
+    DEFAULT("Default"),
     @XmlEnumValue("RemoveAll")
     REMOVE_ALL("RemoveAll"),
     @XmlEnumValue("RemoveSupported")

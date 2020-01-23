@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="EndPage" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="PageInterval" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="PageRange" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="PrintOnly" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -38,7 +39,8 @@ import javax.xml.bind.annotation.XmlType;
     "startPage",
     "endPage",
     "pageInterval",
-    "pageRange"
+    "pageRange",
+    "printOnly"
 })
 public class Watermark
     extends Container
@@ -54,6 +56,8 @@ public class Watermark
     protected Integer pageInterval;
     @XmlElementRef(name = "PageRange", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
     protected JAXBElement<String> pageRange;
+    @XmlElement(name = "PrintOnly")
+    protected Boolean printOnly;
 
     /**
      * Gets the value of the pageOrientation property.
@@ -173,6 +177,30 @@ public class Watermark
      */
     public void setPageRange(JAXBElement<String> value) {
         this.pageRange = ((JAXBElement<String> ) value);
+    }
+
+    /**
+     * Gets the value of the printOnly property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isPrintOnly() {
+        return printOnly;
+    }
+
+    /**
+     * Sets the value of the printOnly property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setPrintOnly(Boolean value) {
+        this.printOnly = value;
     }
 
 }

@@ -16,6 +16,7 @@
           <xs:element minOccurs="0" name="EndPage" type="xs:int" />
           <xs:element minOccurs="0" name="PageInterval" type="xs:int" />
           <xs:element minOccurs="0" name="PageRange" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrintOnly" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -167,4 +168,25 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="QRCode" nillable="true" type="tns:QRCode" />
+  <xs:complexType name="LinearBarcode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Element">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="BarcodeType" type="q19:BarcodeType" />
+          <xs:element minOccurs="0" name="OmitStartStopSymbols" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DisableCheckDigit" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ShowCheckDigit" type="xs:boolean" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="TextLocation" type="q20:BarcodeTextLocation" />
+          <xs:element minOccurs="0" name="BarcodeToTextGapHeight" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FontFamilyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FontSize" nillable="true" type="xs:string" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="FontStyle" type="q21:FontStyle" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="TextAlignment" type="q22:HAlign" />
+          <xs:element minOccurs="0" name="Margin" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LinearBarcode" nillable="true" type="tns:LinearBarcode" />
 </xs:schema>

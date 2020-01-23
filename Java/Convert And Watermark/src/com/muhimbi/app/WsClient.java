@@ -124,6 +124,30 @@ public class WsClient {
 
     // ** And add the watermark to the list of watermarks
     watermarks.getWatermark().add(confidential);
+	
+	// ** Barcode watermark at the lower right corner
+	Watermark bcWatermark = new Watermark();
+	bcWatermark.setWidth(objectFactory.createElementWidth("200"));
+	bcWatermark.setHeight(objectFactory.createElementHeight("100"));
+	bcWatermark.setHPosition(HPosition.RIGHT);
+	bcWatermark.setVPosition(VPosition.BOTTOM);
+	
+	// ** Create barcode element that goes inside the watermark
+	LinearBarcode barcode = new LinearBarcode();
+	barcode.setText(objectFactory.createLinearBarcodeText("012345678"));
+	barcode.setBarcodeType(BarcodeType.CODE_39);
+	barcode.setWidth(objectFactory.createElementWidth("180"));
+	barcode.setHeight(objectFactory.createElementHeight("80"));
+	barcode.setHPosition(HPosition.LEFT);
+	barcode.setVPosition(VPosition.TOP);
+	
+	// ** And add it to the list of watermark elements.
+    ArrayOfElement bcElements = new ArrayOfElement();
+    bcElements.getElement().add(barcode);
+    bcWatermark.setElements(objectFactory.createContainerElements(bcElements));
+	
+	// ** And add the watermark to the list of watermarks
+    watermarks.getWatermark().add(bcWatermark);
 
 	  return objectFactory.createConversionSettingsWatermarks(watermarks);
 	}

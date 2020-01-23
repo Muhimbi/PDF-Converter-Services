@@ -31,6 +31,11 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="DefaultPageOrientation" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics}PageOrientation" minOccurs="0"/>
  *         &lt;element name="ForcePageOrientation" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics}PageOrientation" minOccurs="0"/>
  *         &lt;element name="XSNData" type="{http://www.w3.org/2001/XMLSchema}base64Binary" minOccurs="0"/>
+ *         &lt;element name="AttachmentMergeMode" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data}MergeMode" minOccurs="0"/>
+ *         &lt;element name="UnsupportedAttachmentBehaviour" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data}UnsupportedFileBehaviour" minOccurs="0"/>
+ *         &lt;element name="BreakMergeOnError" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="IncludeAttachmentTypes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="ExcludeAttachmentTypes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -52,7 +57,12 @@ import javax.xml.bind.annotation.XmlType;
     "forcePaperSize",
     "defaultPageOrientation",
     "forcePageOrientation",
-    "xsnData"
+    "xsnData",
+    "attachmentMergeMode",
+    "unsupportedAttachmentBehaviour",
+    "breakMergeOnError",
+    "includeAttachmentTypes",
+    "excludeAttachmentTypes"
 })
 public class ConverterSpecificSettingsInfoPath
     extends ConverterSpecificSettings
@@ -82,6 +92,16 @@ public class ConverterSpecificSettingsInfoPath
     protected PageOrientation forcePageOrientation;
     @XmlElementRef(name = "XSNData", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
     protected JAXBElement<byte[]> xsnData;
+    @XmlElement(name = "AttachmentMergeMode")
+    protected MergeMode attachmentMergeMode;
+    @XmlElement(name = "UnsupportedAttachmentBehaviour")
+    protected UnsupportedFileBehaviour unsupportedAttachmentBehaviour;
+    @XmlElement(name = "BreakMergeOnError")
+    protected Boolean breakMergeOnError;
+    @XmlElementRef(name = "IncludeAttachmentTypes", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    protected JAXBElement<String> includeAttachmentTypes;
+    @XmlElementRef(name = "ExcludeAttachmentTypes", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    protected JAXBElement<String> excludeAttachmentTypes;
 
     /**
      * Gets the value of the stripDotNETCode property.
@@ -369,6 +389,126 @@ public class ConverterSpecificSettingsInfoPath
      */
     public void setXSNData(JAXBElement<byte[]> value) {
         this.xsnData = ((JAXBElement<byte[]> ) value);
+    }
+
+    /**
+     * Gets the value of the attachmentMergeMode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link MergeMode }
+     *     
+     */
+    public MergeMode getAttachmentMergeMode() {
+        return attachmentMergeMode;
+    }
+
+    /**
+     * Sets the value of the attachmentMergeMode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link MergeMode }
+     *     
+     */
+    public void setAttachmentMergeMode(MergeMode value) {
+        this.attachmentMergeMode = value;
+    }
+
+    /**
+     * Gets the value of the unsupportedAttachmentBehaviour property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link UnsupportedFileBehaviour }
+     *     
+     */
+    public UnsupportedFileBehaviour getUnsupportedAttachmentBehaviour() {
+        return unsupportedAttachmentBehaviour;
+    }
+
+    /**
+     * Sets the value of the unsupportedAttachmentBehaviour property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link UnsupportedFileBehaviour }
+     *     
+     */
+    public void setUnsupportedAttachmentBehaviour(UnsupportedFileBehaviour value) {
+        this.unsupportedAttachmentBehaviour = value;
+    }
+
+    /**
+     * Gets the value of the breakMergeOnError property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isBreakMergeOnError() {
+        return breakMergeOnError;
+    }
+
+    /**
+     * Sets the value of the breakMergeOnError property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setBreakMergeOnError(Boolean value) {
+        this.breakMergeOnError = value;
+    }
+
+    /**
+     * Gets the value of the includeAttachmentTypes property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getIncludeAttachmentTypes() {
+        return includeAttachmentTypes;
+    }
+
+    /**
+     * Sets the value of the includeAttachmentTypes property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setIncludeAttachmentTypes(JAXBElement<String> value) {
+        this.includeAttachmentTypes = ((JAXBElement<String> ) value);
+    }
+
+    /**
+     * Gets the value of the excludeAttachmentTypes property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getExcludeAttachmentTypes() {
+        return excludeAttachmentTypes;
+    }
+
+    /**
+     * Sets the value of the excludeAttachmentTypes property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setExcludeAttachmentTypes(JAXBElement<String> value) {
+        this.excludeAttachmentTypes = ((JAXBElement<String> ) value);
     }
 
 }

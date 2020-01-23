@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="Default"/>
  *     &lt;enumeration value="Ascending"/>
  *     &lt;enumeration value="Descending"/>
+ *     &lt;enumeration value="TabOrder"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -31,7 +32,9 @@ public enum CadLayoutSortOrder {
     @XmlEnumValue("Ascending")
     ASCENDING("Ascending"),
     @XmlEnumValue("Descending")
-    DESCENDING("Descending");
+    DESCENDING("Descending"),
+    @XmlEnumValue("TabOrder")
+    TAB_ORDER("TabOrder");
     private final String value;
 
     CadLayoutSortOrder(String v) {

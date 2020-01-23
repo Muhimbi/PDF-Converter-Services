@@ -67,6 +67,7 @@ import javax.xml.bind.annotation.XmlType;
     Rtf.class,
     Image.class,
     Rectangle.class,
+    LinearBarcode.class,
     Pdf.class,
     Ellipse.class,
     Line.class,

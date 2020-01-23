@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="Default"/>
  *     &lt;enumeration value="IE"/>
  *     &lt;enumeration value="WebKit"/>
+ *     &lt;enumeration value="Chromium"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -30,7 +31,9 @@ public enum HTMLRenderingEngine {
     DEFAULT("Default"),
     IE("IE"),
     @XmlEnumValue("WebKit")
-    WEB_KIT("WebKit");
+    WEB_KIT("WebKit"),
+    @XmlEnumValue("Chromium")
+    CHROMIUM("Chromium");
     private final String value;
 
     HTMLRenderingEngine(String v) {

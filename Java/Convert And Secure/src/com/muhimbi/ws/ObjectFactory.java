@@ -30,10 +30,11 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _AnyURI_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "anyURI");
-    private final static QName _ArrayOfDiagnosticResultItem_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ArrayOfDiagnosticResultItem");
     private final static QName _ConversionRange_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "ConversionRange");
+    private final static QName _ArrayOfDiagnosticResultItem_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ArrayOfDiagnosticResultItem");
     private final static QName _BatchResult_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "BatchResult");
     private final static QName _ArrayOfBatchResult_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ArrayOfBatchResult");
+    private final static QName _UnsupportedFileBehaviour_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "UnsupportedFileBehaviour");
     private final static QName _MediaType_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "MediaType");
     private final static QName _SubscriptionSettings_QNAME = new QName("http://types.muhimbi.com/2015/04/13", "SubscriptionSettings");
     private final static QName _ArrayOfDiagnosticRequestItem_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ArrayOfDiagnosticRequestItem");
@@ -47,12 +48,14 @@ public class ObjectFactory {
     private final static QName _FileSplitOptions_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "FileSplitOptions");
     private final static QName _ConverterSpecificSettingsInfoPath_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ConverterSpecificSettings_InfoPath");
     private final static QName _WebServiceFaultException_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "WebServiceFaultException");
+    private final static QName _MergeMode_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "MergeMode");
     private final static QName _Base64Binary_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "base64Binary");
     private final static QName _ContentScale_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "ContentScale");
     private final static QName _Byte_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "byte");
     private final static QName _MSGEmailAddressDisplayMode_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "MSGEmailAddressDisplayMode");
     private final static QName _OutputFormatSpecificSettingsPDF_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "OutputFormatSpecificSettings_PDF");
     private final static QName _HAlign_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics", "HAlign");
+    private final static QName _BookmarkMapping_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "BookmarkMapping");
     private final static QName _Boolean_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "boolean");
     private final static QName _MergeSettings_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "MergeSettings");
     private final static QName _AnyType_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "anyType");
@@ -62,10 +65,12 @@ public class ObjectFactory {
     private final static QName _HTMLRenderingEngine_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "HTMLRenderingEngine");
     private final static QName _HPosition_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics", "HPosition");
     private final static QName _PDFViewerPreferences_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "PDFViewerPreferences");
+    private final static QName _BookmarkOptions_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "BookmarkOptions");
     private final static QName _ConverterSpecificSettingsWordProcessing_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ConverterSpecificSettings_WordProcessing");
     private final static QName _TOCSettings_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "TOCSettings");
     private final static QName _OCRLanguage_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "OCRLanguage");
     private final static QName _SourceFile_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "SourceFile");
+    private final static QName _ArrayOfBookmarkMapping_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ArrayOfBookmarkMapping");
     private final static QName _StatusRequest_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "StatusRequest");
     private final static QName _UnsignedShort_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "unsignedShort");
     private final static QName _MSGEmbeddedObjectDisplayMode_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "MSGEmbeddedObjectDisplayMode");
@@ -81,13 +86,15 @@ public class ObjectFactory {
     private final static QName _CadLayoutSortOrder_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "CadLayoutSortOrder");
     private final static QName _QRCodeVersion_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics", "QRCodeVersion");
     private final static QName _FileSplitType_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "FileSplitType");
+    private final static QName _BooleanEnum_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "BooleanEnum");
     private final static QName _ConverterSpecificSettingsHTML_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ConverterSpecificSettings_HTML");
     private final static QName _BatchResults_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "BatchResults");
     private final static QName _ArrayOfStatusResultItem_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "ArrayOfStatusResultItem");
     private final static QName _Container_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "Container");
-    private final static QName _CadEmptyLayoutDetectionMode_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "CadEmptyLayoutDetectionMode");
     private final static QName _ConverterSpecificSettingsImage_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ConverterSpecificSettings_Image");
+    private final static QName _CadEmptyLayoutDetectionMode_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "CadEmptyLayoutDetectionMode");
     private final static QName _ConverterSpecificSettings_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ConverterSpecificSettings");
+    private final static QName _LinearBarcode_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "LinearBarcode");
     private final static QName _ArrayOfInfoPathView_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ArrayOfInfoPathView");
     private final static QName _UnsignedInt_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "unsignedInt");
     private final static QName _PresentationsPrintOutputType_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "PresentationsPrintOutputType");
@@ -95,6 +102,7 @@ public class ObjectFactory {
     private final static QName _Diagnostics_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "Diagnostics");
     private final static QName _ArrayOfstring_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/Arrays", "ArrayOfstring");
     private final static QName _PrimeOCRImageProcessingOptions_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR", "PrimeOCR_ImageProcessingOptions");
+    private final static QName _BarcodeTextLocation_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics", "BarcodeTextLocation");
     private final static QName _FileMergeSettings_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "FileMergeSettings");
     private final static QName _MSGEmbeddedObjectIconDisplayMode_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "MSGEmbeddedObjectIconDisplayMode");
     private final static QName _OCRResult_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "OCRResult");
@@ -106,11 +114,11 @@ public class ObjectFactory {
     private final static QName _StatusRequestItem_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "StatusRequestItem");
     private final static QName _ConversionQuality_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "ConversionQuality");
     private final static QName _InfoPathView_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "InfoPathView");
-    private final static QName _OutputFormat_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "OutputFormat");
     private final static QName _ConverterSpecificSettingsCad_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ConverterSpecificSettings_Cad");
+    private final static QName _OutputFormat_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "OutputFormat");
     private final static QName _Pdf_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "Pdf");
-    private final static QName _ConverterConfiguration_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ConverterConfiguration");
     private final static QName _PDFConvertAttachmentMode_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "PDFConvertAttachmentMode");
+    private final static QName _ConverterConfiguration_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ConverterConfiguration");
     private final static QName _Char_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "char");
     private final static QName _ArrayOfSourceFile_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ArrayOfSourceFile");
     private final static QName _OCRSettings_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "OCRSettings");
@@ -118,12 +126,14 @@ public class ObjectFactory {
     private final static QName _ArrayOfWatermark_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "ArrayOfWatermark");
     private final static QName _TOCLocation_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "TOCLocation");
     private final static QName _Long_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "long");
+    private final static QName _ForceMessageHeaderEncoding_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "ForceMessageHeaderEncoding");
     private final static QName _Defaults_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "Defaults");
     private final static QName _FontStyle_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics", "FontStyle");
     private final static QName _DiagnosticResultItem_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "DiagnosticResultItem");
     private final static QName _PageOrientation_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics", "PageOrientation");
     private final static QName _MSGBestBodyMode_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "MSGBestBodyMode");
     private final static QName _RevisionsAndCommentsMarkupMode_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "RevisionsAndCommentsMarkupMode");
+    private final static QName _BookmarkOptionsWordProcessing_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "BookmarkOptions_WordProcessing");
     private final static QName _DocumentStartPage_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "DocumentStartPage");
     private final static QName _RegionText_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "RegionText");
     private final static QName _ConverterSpecificSettingsSpreadsheets_QNAME = new QName("http://types.muhimbi.com/2014/02/06", "ConverterSpecificSettings_Spreadsheets");
@@ -136,6 +146,7 @@ public class ObjectFactory {
     private final static QName _OperationStatus_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", "OperationStatus");
     private final static QName _EnumsProxy_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "EnumsProxy");
     private final static QName _StatusResultItem_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "StatusResultItem");
+    private final static QName _BarcodeType_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics", "BarcodeType");
     private final static QName _Double_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "double");
     private final static QName _ArrayOfOCRRegion_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "ArrayOfOCRRegion");
     private final static QName _SystemSettings_QNAME = new QName("http://types.muhimbi.com/2014/02/06", "SystemSettings");
@@ -184,35 +195,64 @@ public class ObjectFactory {
     private final static QName _QRCode_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "QRCode");
     private final static QName _PrimeOCRPageQuality_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR", "PrimeOCR_PageQuality");
     private final static QName _ErrorCorrectionLevel_QNAME = new QName("http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics", "ErrorCorrectionLevel");
-    private final static QName _ProcessChangesSourceFile_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "sourceFile");
-    private final static QName _ProcessChangesConversionSettings_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "conversionSettings");
-    private final static QName _ProcessChangesOpenOptions_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "openOptions");
+    private final static QName _ApplySecuritySourceFile_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "sourceFile");
+    private final static QName _ApplySecurityConversionSettings_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "conversionSettings");
+    private final static QName _ApplySecurityOpenOptions_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "openOptions");
+    private final static QName _StatusResultItemRequestID_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "RequestID");
+    private final static QName _ConverterSpecificSettingsHTMLWebKitViewPortSize_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "WebKitViewPortSize");
+    private final static QName _ConverterSpecificSettingsHTMLPageMargins_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "PageMargins");
+    private final static QName _ConverterSpecificSettingsHTMLPaperSize_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "PaperSize");
+    private final static QName _OCRSettingsRegions_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Regions");
+    private final static QName _OCRSettingsWhiteList_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "WhiteList");
+    private final static QName _OCRSettingsLanguage_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Language");
+    private final static QName _OCRSettingsOCREngine_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "OCREngine");
+    private final static QName _OCRSettingsOCREngineSpecificSettings_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "OCREngineSpecificSettings");
+    private final static QName _OCRSettingsBlackList_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "BlackList");
+    private final static QName _InfoPathViewName_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "Name");
+    private final static QName _StatusRequestStatusRequestItems_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "StatusRequestItems");
     private final static QName _RtfRtfData_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "RtfData");
-    private final static QName _ConverterSpecificSettingsCadForegroundColor_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ForegroundColor");
-    private final static QName _ConverterSpecificSettingsCadExternalReferences_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ExternalReferences");
-    private final static QName _ConverterSpecificSettingsCadPageMargins_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "PageMargins");
-    private final static QName _ConverterSpecificSettingsCadBackgroundColor_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "BackgroundColor");
-    private final static QName _ConverterSpecificSettingsCadCadConversionElements_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "CadConversionElements");
-    private final static QName _ConverterSpecificSettingsCadPaperSize_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "PaperSize");
     private final static QName _TextContent_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "Content");
     private final static QName _TextFontFamilyName_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "FontFamilyName");
     private final static QName _TextFontSize_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "FontSize");
-    private final static QName _ProcessChangesResponseProcessChangesResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "ProcessChangesResult");
-    private final static QName _ConverterSpecificSettingsInfoPathXSNData_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "XSNData");
-    private final static QName _ConverterSpecificSettingsInfoPathDefaultPaperSize_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "DefaultPaperSize");
-    private final static QName _ConverterSpecificSettingsInfoPathConversionViews_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ConversionViews");
-    private final static QName _ConverterSpecificSettingsInfoPathForcePaperSize_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ForcePaperSize");
-    private final static QName _GetConfigurationResponseGetConfigurationResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "GetConfigurationResult");
-    private final static QName _GetDiagnosticsResponseGetDiagnosticsResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "GetDiagnosticsResult");
-    private final static QName _ContainerElements_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "Elements");
+    private final static QName _BookmarkMappingSource_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "Source");
+    private final static QName _DiagnosticsItems_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "Items");
     private final static QName _ConverterSpecificSettingsTIFFSourceFileResolution_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "SourceFileResolution");
-    private final static QName _ApplyWatermarkResponseApplyWatermarkResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "ApplyWatermarkResult");
+    private final static QName _RegionTextText_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Text");
+    private final static QName _RegionTextRegionId_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "RegionId");
+    private final static QName _BatchResultOCRResult_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "OCRResult");
+    private final static QName _BatchResultFileName_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "FileName");
+    private final static QName _BatchResultFile_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "File");
+    private final static QName _WebServiceFaultExceptionExceptionDetails_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ExceptionDetails");
+    private final static QName _SubscriptionSettingsSubscriptionID_QNAME = new QName("http://types.muhimbi.com/2015/04/13", "SubscriptionID");
+    private final static QName _StatusRequestItemData_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "Data");
+    private final static QName _OperationTypeConfigurationDescription_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "Description");
+    private final static QName _StatusItems_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "Items");
+    private final static QName _FileSplitOptionsFileNameTemplate_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "FileNameTemplate");
     private final static QName _ProcessingOptionsOCRSettings_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "OCRSettings");
     private final static QName _ProcessingOptionsSplitOptions_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "SplitOptions");
     private final static QName _ProcessingOptionsSubscriptionSettings_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "SubscriptionSettings");
     private final static QName _ProcessingOptionsSourceFiles_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "SourceFiles");
-    private final static QName _StatusRequestItemRequestID_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "RequestID");
-    private final static QName _StatusRequestItemData_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "Data");
+    private final static QName _FileMergeSettingsTopLevelBookmark_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "TopLevelBookmark");
+    private final static QName _LinearBarcodeMargin_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "Margin");
+    private final static QName _LinearBarcodeBarcodeToTextGapHeight_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "BarcodeToTextGapHeight");
+    private final static QName _LineEndY_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "EndY");
+    private final static QName _LineEndX_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "EndX");
+    private final static QName _ContainerElements_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "Elements");
+    private final static QName _OCRRegionId_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Id");
+    private final static QName _OCRRegionWidth_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Width");
+    private final static QName _OCRRegionHeight_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Height");
+    private final static QName _OCRRegionPageRange_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "PageRange");
+    private final static QName _OCRRegionY_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Y");
+    private final static QName _OCRRegionX_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "X");
+    private final static QName _GetStatusStatusRequest_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "statusRequest");
+    private final static QName _OCRResultRegionTexts_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "RegionTexts");
+    private final static QName _ProcessChangesResponseProcessChangesResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "ProcessChangesResult");
+    private final static QName _ConfigurationOperationTypes_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "OperationTypes");
+    private final static QName _ConfigurationConversionServerAddress_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ConversionServerAddress");
+    private final static QName _ConfigurationConverters_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "Converters");
+    private final static QName _PdfPdfData_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "PdfData");
+    private final static QName _NameValuePairName_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "Name");
+    private final static QName _NameValuePairValue_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "Value");
     private final static QName _DefaultsScaleX_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "ScaleX");
     private final static QName _DefaultsScaleY_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "ScaleY");
     private final static QName _DefaultsRotation_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "Rotation");
@@ -222,58 +262,55 @@ public class ObjectFactory {
     private final static QName _DefaultsFillColor_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "FillColor");
     private final static QName _DefaultsLineWidth_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "LineWidth");
     private final static QName _DefaultsTransparency_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "Transparency");
+    private final static QName _ApplySecurityResponseApplySecurityResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "ApplySecurityResult");
+    private final static QName _GetConfigurationResponseGetConfigurationResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "GetConfigurationResult");
+    private final static QName _ImageImageData_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "ImageData");
+    private final static QName _ConverterSpecificSettingsInfoPathXSNData_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "XSNData");
+    private final static QName _ConverterSpecificSettingsInfoPathDefaultPaperSize_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "DefaultPaperSize");
+    private final static QName _ConverterSpecificSettingsInfoPathExcludeAttachmentTypes_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ExcludeAttachmentTypes");
+    private final static QName _ConverterSpecificSettingsInfoPathIncludeAttachmentTypes_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "IncludeAttachmentTypes");
+    private final static QName _ConverterSpecificSettingsInfoPathConversionViews_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ConversionViews");
+    private final static QName _ConverterSpecificSettingsInfoPathForcePaperSize_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ForcePaperSize");
+    private final static QName _ConvertResponseConvertResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "ConvertResult");
     private final static QName _ConversionSettingsTOCSettings_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "TOCSettings");
     private final static QName _ConversionSettingsConverterSpecificSettings_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ConverterSpecificSettings");
     private final static QName _ConversionSettingsOwnerPassword_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "OwnerPassword");
     private final static QName _ConversionSettingsOutputFormatSpecificSettings_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "OutputFormatSpecificSettings");
     private final static QName _ConversionSettingsOpenPassword_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "OpenPassword");
     private final static QName _ConversionSettingsWatermarks_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "Watermarks");
-    private final static QName _OpenOptionsOriginalFileName_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "OriginalFileName");
-    private final static QName _OpenOptionsUserName_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "UserName");
-    private final static QName _OpenOptionsSystemSettings_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "SystemSettings");
-    private final static QName _OpenOptionsFileExtension_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "FileExtension");
-    private final static QName _OpenOptionsPassword_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "Password");
-    private final static QName _ApplySecurityResponseApplySecurityResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "ApplySecurityResult");
-    private final static QName _WebServiceFaultExceptionExceptionDetails_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ExceptionDetails");
-    private final static QName _ConverterSpecificSettingsMSGWebKitViewPortSize_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "WebKitViewPortSize");
-    private final static QName _ConverterSpecificSettingsMSGSentDateMissingDisplayMode_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "SentDateMissingDisplayMode");
-    private final static QName _FileMergeSettingsTopLevelBookmark_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "TopLevelBookmark");
-    private final static QName _WatermarkPageRange_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "PageRange");
+    private final static QName _ApplyWatermarkResponseApplyWatermarkResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "ApplyWatermarkResult");
+    private final static QName _ConverterConfigurationSupportedFileExtensions_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "SupportedFileExtensions");
+    private final static QName _ConverterConfigurationSupportedOutputFormats_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "SupportedOutputFormats");
+    private final static QName _ConverterConfigurationConverterName_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ConverterName");
+    private final static QName _ConverterConfigurationDescription_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "Description");
     private final static QName _BatchResultsResults_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "Results");
     private final static QName _ElementWidth_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "Width");
     private final static QName _ElementHeight_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "Height");
-    private final static QName _ProcessBatchOptions_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "options");
-    private final static QName _ProcessBatchResponseProcessBatchResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "ProcessBatchResult");
-    private final static QName _NameValuePairName_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "Name");
-    private final static QName _NameValuePairValue_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "Value");
-    private final static QName _CadConversionElementName_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "Name");
-    private final static QName _OCRSettingsRegions_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Regions");
-    private final static QName _OCRSettingsWhiteList_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "WhiteList");
-    private final static QName _OCRSettingsLanguage_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Language");
-    private final static QName _OCRSettingsOCREngine_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "OCREngine");
-    private final static QName _OCRSettingsOCREngineSpecificSettings_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "OCREngineSpecificSettings");
-    private final static QName _OCRSettingsBlackList_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "BlackList");
-    private final static QName _DiagnosticRequestItemConverterName_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ConverterName");
-    private final static QName _GetDiagnosticsConvertersToDiagnose_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "convertersToDiagnose");
     private final static QName _TOCSettingsTemplate_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "Template");
     private final static QName _TOCSettingsWebKitViewPortSize_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "WebKitViewPortSize");
     private final static QName _TOCSettingsBookmark_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "Bookmark");
     private final static QName _TOCSettingsPaperSize_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "PaperSize");
     private final static QName _TOCSettingsProperties_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "Properties");
     private final static QName _TOCSettingsPageMargins_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "PageMargins");
-    private final static QName _GetStatusStatusRequest_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "statusRequest");
-    private final static QName _FileSplitOptionsFileNameTemplate_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "FileNameTemplate");
-    private final static QName _OutputFormatSpecificSettingsPDFViewerPreferences_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "ViewerPreferences");
-    private final static QName _RegionTextText_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Text");
-    private final static QName _RegionTextRegionId_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "RegionId");
-    private final static QName _ConverterConfigurationSupportedFileExtensions_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "SupportedFileExtensions");
-    private final static QName _ConverterConfigurationSupportedOutputFormats_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "SupportedOutputFormats");
-    private final static QName _ConverterConfigurationDescription_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "Description");
-    private final static QName _BatchResultOCRResult_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "OCRResult");
-    private final static QName _BatchResultFileName_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "FileName");
-    private final static QName _BatchResultFile_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "File");
-    private final static QName _ConvertResponseConvertResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "ConvertResult");
-    private final static QName _SubscriptionSettingsSubscriptionID_QNAME = new QName("http://types.muhimbi.com/2015/04/13", "SubscriptionID");
+    private final static QName _ConverterSpecificSettingsCadForegroundColor_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ForegroundColor");
+    private final static QName _ConverterSpecificSettingsCadExternalReferences_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "ExternalReferences");
+    private final static QName _ConverterSpecificSettingsCadBackgroundColor_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "BackgroundColor");
+    private final static QName _ConverterSpecificSettingsCadCadConversionElements_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "CadConversionElements");
+    private final static QName _ConverterSpecificSettingsWordProcessingBookmarkOptions_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "BookmarkOptions");
+    private final static QName _GetDiagnosticsResponseGetDiagnosticsResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "GetDiagnosticsResult");
+    private final static QName _ProcessBatchOptions_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "options");
+    private final static QName _BookmarkOptionsWordProcessingBookmarkMappings_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "BookmarkMappings");
+    private final static QName _ConverterSpecificSettingsMSGSentDateMissingDisplayMode_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "SentDateMissingDisplayMode");
+    private final static QName _ConverterSpecificSettingsPDFExcludeAttachmentTypes_QNAME = new QName("http://types.muhimbi.com/2014/04/16", "ExcludeAttachmentTypes");
+    private final static QName _ConverterSpecificSettingsPDFIncludeAttachmentTypes_QNAME = new QName("http://types.muhimbi.com/2014/04/16", "IncludeAttachmentTypes");
+    private final static QName _GetDiagnosticsConvertersToDiagnose_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "convertersToDiagnose");
+    private final static QName _ProcessBatchResponseProcessBatchResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "ProcessBatchResult");
+    private final static QName _GetStatusResponseGetStatusResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "GetStatusResult");
+    private final static QName _OpenOptionsOriginalFileName_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "OriginalFileName");
+    private final static QName _OpenOptionsUserName_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "UserName");
+    private final static QName _OpenOptionsSystemSettings_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "SystemSettings");
+    private final static QName _OpenOptionsFileExtension_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "FileExtension");
+    private final static QName _OpenOptionsPassword_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "Password");
     private final static QName _ConverterSpecificSettingsCommandLineConverterParameter9_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "Parameter9");
     private final static QName _ConverterSpecificSettingsCommandLineConverterParameter10_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "Parameter10");
     private final static QName _ConverterSpecificSettingsCommandLineConverterParameter2_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "Parameter2");
@@ -284,240 +321,15 @@ public class ObjectFactory {
     private final static QName _ConverterSpecificSettingsCommandLineConverterParameter5_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "Parameter5");
     private final static QName _ConverterSpecificSettingsCommandLineConverterParameter8_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "Parameter8");
     private final static QName _ConverterSpecificSettingsCommandLineConverterParameter7_QNAME = new QName("http://types.muhimbi.com/2010/11/22", "Parameter7");
-    private final static QName _ConfigurationOperationTypes_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "OperationTypes");
-    private final static QName _ConfigurationConversionServerAddress_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "ConversionServerAddress");
-    private final static QName _ConfigurationConverters_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "Converters");
-    private final static QName _OCRResultRegionTexts_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "RegionTexts");
-    private final static QName _PdfPdfData_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "PdfData");
-    private final static QName _OperationTypeConfigurationDescription_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "Description");
-    private final static QName _LineEndY_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "EndY");
-    private final static QName _LineEndX_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "EndX");
-    private final static QName _StatusRequestStatusRequestItems_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "StatusRequestItems");
-    private final static QName _ImageImageData_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "ImageData");
+    private final static QName _WatermarkPageRange_QNAME = new QName("http://types.muhimbi.com/2010/05/17", "PageRange");
     private final static QName _SystemSettingsCultureName_QNAME = new QName("http://types.muhimbi.com/2014/02/06", "CultureName");
-    private final static QName _OCRRegionId_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Id");
-    private final static QName _OCRRegionWidth_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Width");
-    private final static QName _OCRRegionHeight_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Height");
-    private final static QName _OCRRegionPageRange_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "PageRange");
-    private final static QName _OCRRegionY_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "Y");
-    private final static QName _OCRRegionX_QNAME = new QName("http://types.muhimbi.com/2013/08/01", "X");
-    private final static QName _GetStatusResponseGetStatusResult_QNAME = new QName("http://services.muhimbi.com/2009/10/06", "GetStatusResult");
-    private final static QName _StatusItems_QNAME = new QName("http://types.muhimbi.com/2018/01/11", "Items");
-    private final static QName _DiagnosticsItems_QNAME = new QName("http://types.muhimbi.com/2009/10/06", "Items");
+    private final static QName _OutputFormatSpecificSettingsPDFViewerPreferences_QNAME = new QName("http://types.muhimbi.com/2013/01/14", "ViewerPreferences");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.muhimbi.ws
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link Rtf }
-     * 
-     */
-    public Rtf createRtf() {
-        return new Rtf();
-    }
-
-    /**
-     * Create an instance of {@link ProcessChanges }
-     * 
-     */
-    public ProcessChanges createProcessChanges() {
-        return new ProcessChanges();
-    }
-
-    /**
-     * Create an instance of {@link ConverterSpecificSettingsCad }
-     * 
-     */
-    public ConverterSpecificSettingsCad createConverterSpecificSettingsCad() {
-        return new ConverterSpecificSettingsCad();
-    }
-
-    /**
-     * Create an instance of {@link Text }
-     * 
-     */
-    public Text createText() {
-        return new Text();
-    }
-
-    /**
-     * Create an instance of {@link PDFViewerPreferences }
-     * 
-     */
-    public PDFViewerPreferences createPDFViewerPreferences() {
-        return new PDFViewerPreferences();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfElement }
-     * 
-     */
-    public ArrayOfElement createArrayOfElement() {
-        return new ArrayOfElement();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfDiagnosticRequestItem }
-     * 
-     */
-    public ArrayOfDiagnosticRequestItem createArrayOfDiagnosticRequestItem() {
-        return new ArrayOfDiagnosticRequestItem();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfStatusResultItem }
-     * 
-     */
-    public ArrayOfStatusResultItem createArrayOfStatusResultItem() {
-        return new ArrayOfStatusResultItem();
-    }
-
-    /**
-     * Create an instance of {@link ProcessChangesResponse }
-     * 
-     */
-    public ProcessChangesResponse createProcessChangesResponse() {
-        return new ProcessChangesResponse();
-    }
-
-    /**
-     * Create an instance of {@link ConverterSpecificSettingsInfoPath }
-     * 
-     */
-    public ConverterSpecificSettingsInfoPath createConverterSpecificSettingsInfoPath() {
-        return new ConverterSpecificSettingsInfoPath();
-    }
-
-    /**
-     * Create an instance of {@link ConverterSpecificSettingsWordProcessing }
-     * 
-     */
-    public ConverterSpecificSettingsWordProcessing createConverterSpecificSettingsWordProcessing() {
-        return new ConverterSpecificSettingsWordProcessing();
-    }
-
-    /**
-     * Create an instance of {@link GetConfigurationResponse }
-     * 
-     */
-    public GetConfigurationResponse createGetConfigurationResponse() {
-        return new GetConfigurationResponse();
-    }
-
-    /**
-     * Create an instance of {@link Container }
-     * 
-     */
-    public Container createContainer() {
-        return new Container();
-    }
-
-    /**
-     * Create an instance of {@link GetDiagnosticsResponse }
-     * 
-     */
-    public GetDiagnosticsResponse createGetDiagnosticsResponse() {
-        return new GetDiagnosticsResponse();
-    }
-
-    /**
-     * Create an instance of {@link ConverterSpecificSettingsTIFF }
-     * 
-     */
-    public ConverterSpecificSettingsTIFF createConverterSpecificSettingsTIFF() {
-        return new ConverterSpecificSettingsTIFF();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfOperationTypeConfiguration }
-     * 
-     */
-    public ArrayOfOperationTypeConfiguration createArrayOfOperationTypeConfiguration() {
-        return new ArrayOfOperationTypeConfiguration();
-    }
-
-    /**
-     * Create an instance of {@link ApplyWatermarkResponse }
-     * 
-     */
-    public ApplyWatermarkResponse createApplyWatermarkResponse() {
-        return new ApplyWatermarkResponse();
-    }
-
-    /**
-     * Create an instance of {@link ProcessingOptions }
-     * 
-     */
-    public ProcessingOptions createProcessingOptions() {
-        return new ProcessingOptions();
-    }
-
-    /**
-     * Create an instance of {@link StatusRequestItem }
-     * 
-     */
-    public StatusRequestItem createStatusRequestItem() {
-        return new StatusRequestItem();
-    }
-
-    /**
-     * Create an instance of {@link Defaults }
-     * 
-     */
-    public Defaults createDefaults() {
-        return new Defaults();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfstring }
-     * 
-     */
-    public ArrayOfstring createArrayOfstring() {
-        return new ArrayOfstring();
-    }
-
-    /**
-     * Create an instance of {@link ConversionSettings }
-     * 
-     */
-    public ConversionSettings createConversionSettings() {
-        return new ConversionSettings();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfNameValuePair }
-     * 
-     */
-    public ArrayOfNameValuePair createArrayOfNameValuePair() {
-        return new ArrayOfNameValuePair();
-    }
-
-    /**
-     * Create an instance of {@link OpenOptions }
-     * 
-     */
-    public OpenOptions createOpenOptions() {
-        return new OpenOptions();
-    }
-
-    /**
-     * Create an instance of {@link ApplySecurityResponse }
-     * 
-     */
-    public ApplySecurityResponse createApplySecurityResponse() {
-        return new ApplySecurityResponse();
-    }
-
-    /**
-     * Create an instance of {@link EnumsProxy }
-     * 
-     */
-    public EnumsProxy createEnumsProxy() {
-        return new EnumsProxy();
     }
 
     /**
@@ -529,59 +341,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConverterSpecificSettingsMSG }
+     * Create an instance of {@link ArrayOfNameValuePair }
      * 
      */
-    public ConverterSpecificSettingsMSG createConverterSpecificSettingsMSG() {
-        return new ConverterSpecificSettingsMSG();
-    }
-
-    /**
-     * Create an instance of {@link WebServiceFaultException }
-     * 
-     */
-    public WebServiceFaultException createWebServiceFaultException() {
-        return new WebServiceFaultException();
-    }
-
-    /**
-     * Create an instance of {@link Convert }
-     * 
-     */
-    public Convert createConvert() {
-        return new Convert();
-    }
-
-    /**
-     * Create an instance of {@link FileMergeSettings }
-     * 
-     */
-    public FileMergeSettings createFileMergeSettings() {
-        return new FileMergeSettings();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfRegionText }
-     * 
-     */
-    public ArrayOfRegionText createArrayOfRegionText() {
-        return new ArrayOfRegionText();
-    }
-
-    /**
-     * Create an instance of {@link OCREngineSpecificSettings }
-     * 
-     */
-    public OCREngineSpecificSettings createOCREngineSpecificSettings() {
-        return new OCREngineSpecificSettings();
-    }
-
-    /**
-     * Create an instance of {@link Watermark }
-     * 
-     */
-    public Watermark createWatermark() {
-        return new Watermark();
+    public ArrayOfNameValuePair createArrayOfNameValuePair() {
+        return new ArrayOfNameValuePair();
     }
 
     /**
@@ -593,355 +357,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConverterSpecificSettingsImage }
-     * 
-     */
-    public ConverterSpecificSettingsImage createConverterSpecificSettingsImage() {
-        return new ConverterSpecificSettingsImage();
-    }
-
-    /**
-     * Create an instance of {@link BatchResults }
-     * 
-     */
-    public BatchResults createBatchResults() {
-        return new BatchResults();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfSourceFile }
-     * 
-     */
-    public ArrayOfSourceFile createArrayOfSourceFile() {
-        return new ArrayOfSourceFile();
-    }
-
-    /**
-     * Create an instance of {@link Element }
-     * 
-     */
-    public Element createElement() {
-        return new Element();
-    }
-
-    /**
-     * Create an instance of {@link Ellipse }
-     * 
-     */
-    public Ellipse createEllipse() {
-        return new Ellipse();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfDiagnosticResultItem }
-     * 
-     */
-    public ArrayOfDiagnosticResultItem createArrayOfDiagnosticResultItem() {
-        return new ArrayOfDiagnosticResultItem();
-    }
-
-    /**
-     * Create an instance of {@link ProcessBatch }
-     * 
-     */
-    public ProcessBatch createProcessBatch() {
-        return new ProcessBatch();
-    }
-
-    /**
-     * Create an instance of {@link MergeSettings }
-     * 
-     */
-    public MergeSettings createMergeSettings() {
-        return new MergeSettings();
-    }
-
-    /**
-     * Create an instance of {@link QRCode }
-     * 
-     */
-    public QRCode createQRCode() {
-        return new QRCode();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfInfoPathView }
-     * 
-     */
-    public ArrayOfInfoPathView createArrayOfInfoPathView() {
-        return new ArrayOfInfoPathView();
-    }
-
-    /**
-     * Create an instance of {@link ProcessBatchResponse }
-     * 
-     */
-    public ProcessBatchResponse createProcessBatchResponse() {
-        return new ProcessBatchResponse();
-    }
-
-    /**
-     * Create an instance of {@link NameValuePair }
-     * 
-     */
-    public NameValuePair createNameValuePair() {
-        return new NameValuePair();
-    }
-
-    /**
-     * Create an instance of {@link CadConversionElement }
-     * 
-     */
-    public CadConversionElement createCadConversionElement() {
-        return new CadConversionElement();
-    }
-
-    /**
-     * Create an instance of {@link GetConfiguration }
-     * 
-     */
-    public GetConfiguration createGetConfiguration() {
-        return new GetConfiguration();
-    }
-
-    /**
      * Create an instance of {@link OCRSettings }
      * 
      */
     public OCRSettings createOCRSettings() {
         return new OCRSettings();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfCadConversionElement }
-     * 
-     */
-    public ArrayOfCadConversionElement createArrayOfCadConversionElement() {
-        return new ArrayOfCadConversionElement();
-    }
-
-    /**
-     * Create an instance of {@link DiagnosticRequestItem }
-     * 
-     */
-    public DiagnosticRequestItem createDiagnosticRequestItem() {
-        return new DiagnosticRequestItem();
-    }
-
-    /**
-     * Create an instance of {@link OCREngineSpecificSettingsPrimeOCR }
-     * 
-     */
-    public OCREngineSpecificSettingsPrimeOCR createOCREngineSpecificSettingsPrimeOCR() {
-        return new OCREngineSpecificSettingsPrimeOCR();
-    }
-
-    /**
-     * Create an instance of {@link GetDiagnostics }
-     * 
-     */
-    public GetDiagnostics createGetDiagnostics() {
-        return new GetDiagnostics();
-    }
-
-    /**
-     * Create an instance of {@link TOCSettings }
-     * 
-     */
-    public TOCSettings createTOCSettings() {
-        return new TOCSettings();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfOCRRegion }
-     * 
-     */
-    public ArrayOfOCRRegion createArrayOfOCRRegion() {
-        return new ArrayOfOCRRegion();
-    }
-
-    /**
-     * Create an instance of {@link GetStatus }
-     * 
-     */
-    public GetStatus createGetStatus() {
-        return new GetStatus();
-    }
-
-    /**
-     * Create an instance of {@link FileSplitOptions }
-     * 
-     */
-    public FileSplitOptions createFileSplitOptions() {
-        return new FileSplitOptions();
-    }
-
-    /**
-     * Create an instance of {@link OutputFormatSpecificSettingsPDF }
-     * 
-     */
-    public OutputFormatSpecificSettingsPDF createOutputFormatSpecificSettingsPDF() {
-        return new OutputFormatSpecificSettingsPDF();
-    }
-
-    /**
-     * Create an instance of {@link DiagnosticResultItem }
-     * 
-     */
-    public DiagnosticResultItem createDiagnosticResultItem() {
-        return new DiagnosticResultItem();
-    }
-
-    /**
-     * Create an instance of {@link InfoPathView }
-     * 
-     */
-    public InfoPathView createInfoPathView() {
-        return new InfoPathView();
-    }
-
-    /**
-     * Create an instance of {@link ConverterSpecificSettingsHTML }
-     * 
-     */
-    public ConverterSpecificSettingsHTML createConverterSpecificSettingsHTML() {
-        return new ConverterSpecificSettingsHTML();
-    }
-
-    /**
-     * Create an instance of {@link RegionText }
-     * 
-     */
-    public RegionText createRegionText() {
-        return new RegionText();
-    }
-
-    /**
-     * Create an instance of {@link ConverterSpecificSettingsPresentations }
-     * 
-     */
-    public ConverterSpecificSettingsPresentations createConverterSpecificSettingsPresentations() {
-        return new ConverterSpecificSettingsPresentations();
-    }
-
-    /**
-     * Create an instance of {@link ConverterConfiguration }
-     * 
-     */
-    public ConverterConfiguration createConverterConfiguration() {
-        return new ConverterConfiguration();
-    }
-
-    /**
-     * Create an instance of {@link ConverterSpecificSettingsSpreadsheets }
-     * 
-     */
-    public ConverterSpecificSettingsSpreadsheets createConverterSpecificSettingsSpreadsheets() {
-        return new ConverterSpecificSettingsSpreadsheets();
-    }
-
-    /**
-     * Create an instance of {@link BatchResult }
-     * 
-     */
-    public BatchResult createBatchResult() {
-        return new BatchResult();
-    }
-
-    /**
-     * Create an instance of {@link SubscriptionSettings }
-     * 
-     */
-    public SubscriptionSettings createSubscriptionSettings() {
-        return new SubscriptionSettings();
-    }
-
-    /**
-     * Create an instance of {@link ConvertResponse }
-     * 
-     */
-    public ConvertResponse createConvertResponse() {
-        return new ConvertResponse();
-    }
-
-    /**
-     * Create an instance of {@link SourceFile }
-     * 
-     */
-    public SourceFile createSourceFile() {
-        return new SourceFile();
-    }
-
-    /**
-     * Create an instance of {@link ConverterSpecificSettingsCommandLineConverter }
-     * 
-     */
-    public ConverterSpecificSettingsCommandLineConverter createConverterSpecificSettingsCommandLineConverter() {
-        return new ConverterSpecificSettingsCommandLineConverter();
-    }
-
-    /**
-     * Create an instance of {@link Configuration }
-     * 
-     */
-    public Configuration createConfiguration() {
-        return new Configuration();
-    }
-
-    /**
-     * Create an instance of {@link ConverterSpecificSettingsPDF }
-     * 
-     */
-    public ConverterSpecificSettingsPDF createConverterSpecificSettingsPDF() {
-        return new ConverterSpecificSettingsPDF();
-    }
-
-    /**
-     * Create an instance of {@link OCRResult }
-     * 
-     */
-    public OCRResult createOCRResult() {
-        return new OCRResult();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfBatchResult }
-     * 
-     */
-    public ArrayOfBatchResult createArrayOfBatchResult() {
-        return new ArrayOfBatchResult();
-    }
-
-    /**
-     * Create an instance of {@link Pdf }
-     * 
-     */
-    public Pdf createPdf() {
-        return new Pdf();
-    }
-
-    /**
-     * Create an instance of {@link ApplyWatermark }
-     * 
-     */
-    public ApplyWatermark createApplyWatermark() {
-        return new ApplyWatermark();
-    }
-
-    /**
-     * Create an instance of {@link OperationTypeConfiguration }
-     * 
-     */
-    public OperationTypeConfiguration createOperationTypeConfiguration() {
-        return new OperationTypeConfiguration();
-    }
-
-    /**
-     * Create an instance of {@link Line }
-     * 
-     */
-    public Line createLine() {
-        return new Line();
     }
 
     /**
@@ -953,22 +373,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ArrayOfConverterConfiguration }
-     * 
-     */
-    public ArrayOfConverterConfiguration createArrayOfConverterConfiguration() {
-        return new ArrayOfConverterConfiguration();
-    }
-
-    /**
-     * Create an instance of {@link Image }
-     * 
-     */
-    public Image createImage() {
-        return new Image();
-    }
-
-    /**
      * Create an instance of {@link TaskMonitorSettings }
      * 
      */
@@ -977,51 +381,355 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConverterSpecificSettings }
+     * Create an instance of {@link Text }
      * 
      */
-    public ConverterSpecificSettings createConverterSpecificSettings() {
-        return new ConverterSpecificSettings();
+    public Text createText() {
+        return new Text();
     }
 
     /**
-     * Create an instance of {@link SystemSettings }
+     * Create an instance of {@link ProcessChanges }
      * 
      */
-    public SystemSettings createSystemSettings() {
-        return new SystemSettings();
+    public ProcessChanges createProcessChanges() {
+        return new ProcessChanges();
     }
 
     /**
-     * Create an instance of {@link Rectangle }
+     * Create an instance of {@link OCREngineSpecificSettingsPrimeOCR }
      * 
      */
-    public Rectangle createRectangle() {
-        return new Rectangle();
+    public OCREngineSpecificSettingsPrimeOCR createOCREngineSpecificSettingsPrimeOCR() {
+        return new OCREngineSpecificSettingsPrimeOCR();
     }
 
     /**
-     * Create an instance of {@link OCRRegion }
+     * Create an instance of {@link BookmarkOptions }
      * 
      */
-    public OCRRegion createOCRRegion() {
-        return new OCRRegion();
+    public BookmarkOptions createBookmarkOptions() {
+        return new BookmarkOptions();
     }
 
     /**
-     * Create an instance of {@link GetStatusResponse }
+     * Create an instance of {@link Diagnostics }
      * 
      */
-    public GetStatusResponse createGetStatusResponse() {
-        return new GetStatusResponse();
+    public Diagnostics createDiagnostics() {
+        return new Diagnostics();
     }
 
     /**
-     * Create an instance of {@link ArrayOfStatusRequestItem }
+     * Create an instance of {@link ConverterSpecificSettingsTIFF }
      * 
      */
-    public ArrayOfStatusRequestItem createArrayOfStatusRequestItem() {
-        return new ArrayOfStatusRequestItem();
+    public ConverterSpecificSettingsTIFF createConverterSpecificSettingsTIFF() {
+        return new ConverterSpecificSettingsTIFF();
+    }
+
+    /**
+     * Create an instance of {@link EnumsProxy }
+     * 
+     */
+    public EnumsProxy createEnumsProxy() {
+        return new EnumsProxy();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfBookmarkMapping }
+     * 
+     */
+    public ArrayOfBookmarkMapping createArrayOfBookmarkMapping() {
+        return new ArrayOfBookmarkMapping();
+    }
+
+    /**
+     * Create an instance of {@link SubscriptionSettings }
+     * 
+     */
+    public SubscriptionSettings createSubscriptionSettings() {
+        return new SubscriptionSettings();
+    }
+
+    /**
+     * Create an instance of {@link StatusRequestItem }
+     * 
+     */
+    public StatusRequestItem createStatusRequestItem() {
+        return new StatusRequestItem();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfInfoPathView }
+     * 
+     */
+    public ArrayOfInfoPathView createArrayOfInfoPathView() {
+        return new ArrayOfInfoPathView();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfstring }
+     * 
+     */
+    public ArrayOfstring createArrayOfstring() {
+        return new ArrayOfstring();
+    }
+
+    /**
+     * Create an instance of {@link FileSplitOptions }
+     * 
+     */
+    public FileSplitOptions createFileSplitOptions() {
+        return new FileSplitOptions();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfConverterConfiguration }
+     * 
+     */
+    public ArrayOfConverterConfiguration createArrayOfConverterConfiguration() {
+        return new ArrayOfConverterConfiguration();
+    }
+
+    /**
+     * Create an instance of {@link ProcessingOptions }
+     * 
+     */
+    public ProcessingOptions createProcessingOptions() {
+        return new ProcessingOptions();
+    }
+
+    /**
+     * Create an instance of {@link LinearBarcode }
+     * 
+     */
+    public LinearBarcode createLinearBarcode() {
+        return new LinearBarcode();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfDiagnosticResultItem }
+     * 
+     */
+    public ArrayOfDiagnosticResultItem createArrayOfDiagnosticResultItem() {
+        return new ArrayOfDiagnosticResultItem();
+    }
+
+    /**
+     * Create an instance of {@link ApplyWatermark }
+     * 
+     */
+    public ApplyWatermark createApplyWatermark() {
+        return new ApplyWatermark();
+    }
+
+    /**
+     * Create an instance of {@link QRCode }
+     * 
+     */
+    public QRCode createQRCode() {
+        return new QRCode();
+    }
+
+    /**
+     * Create an instance of {@link Line }
+     * 
+     */
+    public Line createLine() {
+        return new Line();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfOperationTypeConfiguration }
+     * 
+     */
+    public ArrayOfOperationTypeConfiguration createArrayOfOperationTypeConfiguration() {
+        return new ArrayOfOperationTypeConfiguration();
+    }
+
+    /**
+     * Create an instance of {@link CadConversionElement }
+     * 
+     */
+    public CadConversionElement createCadConversionElement() {
+        return new CadConversionElement();
+    }
+
+    /**
+     * Create an instance of {@link Convert }
+     * 
+     */
+    public Convert createConvert() {
+        return new Convert();
+    }
+
+    /**
+     * Create an instance of {@link PDFViewerPreferences }
+     * 
+     */
+    public PDFViewerPreferences createPDFViewerPreferences() {
+        return new PDFViewerPreferences();
+    }
+
+    /**
+     * Create an instance of {@link OCRResult }
+     * 
+     */
+    public OCRResult createOCRResult() {
+        return new OCRResult();
+    }
+
+    /**
+     * Create an instance of {@link Configuration }
+     * 
+     */
+    public Configuration createConfiguration() {
+        return new Configuration();
+    }
+
+    /**
+     * Create an instance of {@link Pdf }
+     * 
+     */
+    public Pdf createPdf() {
+        return new Pdf();
+    }
+
+    /**
+     * Create an instance of {@link Defaults }
+     * 
+     */
+    public Defaults createDefaults() {
+        return new Defaults();
+    }
+
+    /**
+     * Create an instance of {@link ApplySecurityResponse }
+     * 
+     */
+    public ApplySecurityResponse createApplySecurityResponse() {
+        return new ApplySecurityResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetConfigurationResponse }
+     * 
+     */
+    public GetConfigurationResponse createGetConfigurationResponse() {
+        return new GetConfigurationResponse();
+    }
+
+    /**
+     * Create an instance of {@link ConverterSpecificSettingsInfoPath }
+     * 
+     */
+    public ConverterSpecificSettingsInfoPath createConverterSpecificSettingsInfoPath() {
+        return new ConverterSpecificSettingsInfoPath();
+    }
+
+    /**
+     * Create an instance of {@link ConvertResponse }
+     * 
+     */
+    public ConvertResponse createConvertResponse() {
+        return new ConvertResponse();
+    }
+
+    /**
+     * Create an instance of {@link ApplyWatermarkResponse }
+     * 
+     */
+    public ApplyWatermarkResponse createApplyWatermarkResponse() {
+        return new ApplyWatermarkResponse();
+    }
+
+    /**
+     * Create an instance of {@link ConverterConfiguration }
+     * 
+     */
+    public ConverterConfiguration createConverterConfiguration() {
+        return new ConverterConfiguration();
+    }
+
+    /**
+     * Create an instance of {@link Element }
+     * 
+     */
+    public Element createElement() {
+        return new Element();
+    }
+
+    /**
+     * Create an instance of {@link ConverterSpecificSettingsCad }
+     * 
+     */
+    public ConverterSpecificSettingsCad createConverterSpecificSettingsCad() {
+        return new ConverterSpecificSettingsCad();
+    }
+
+    /**
+     * Create an instance of {@link ConverterSpecificSettingsWordProcessing }
+     * 
+     */
+    public ConverterSpecificSettingsWordProcessing createConverterSpecificSettingsWordProcessing() {
+        return new ConverterSpecificSettingsWordProcessing();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfCadConversionElement }
+     * 
+     */
+    public ArrayOfCadConversionElement createArrayOfCadConversionElement() {
+        return new ArrayOfCadConversionElement();
+    }
+
+    /**
+     * Create an instance of {@link GetDiagnosticsResponse }
+     * 
+     */
+    public GetDiagnosticsResponse createGetDiagnosticsResponse() {
+        return new GetDiagnosticsResponse();
+    }
+
+    /**
+     * Create an instance of {@link ProcessBatch }
+     * 
+     */
+    public ProcessBatch createProcessBatch() {
+        return new ProcessBatch();
+    }
+
+    /**
+     * Create an instance of {@link ConverterSpecificSettingsMSG }
+     * 
+     */
+    public ConverterSpecificSettingsMSG createConverterSpecificSettingsMSG() {
+        return new ConverterSpecificSettingsMSG();
+    }
+
+    /**
+     * Create an instance of {@link MergeSettings }
+     * 
+     */
+    public MergeSettings createMergeSettings() {
+        return new MergeSettings();
+    }
+
+    /**
+     * Create an instance of {@link ProcessBatchResponse }
+     * 
+     */
+    public ProcessBatchResponse createProcessBatchResponse() {
+        return new ProcessBatchResponse();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfBatchResult }
+     * 
+     */
+    public ArrayOfBatchResult createArrayOfBatchResult() {
+        return new ArrayOfBatchResult();
     }
 
     /**
@@ -1033,11 +741,99 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ArrayOfWatermark }
+     * Create an instance of {@link ConverterSpecificSettingsSpreadsheets }
      * 
      */
-    public ArrayOfWatermark createArrayOfWatermark() {
-        return new ArrayOfWatermark();
+    public ConverterSpecificSettingsSpreadsheets createConverterSpecificSettingsSpreadsheets() {
+        return new ConverterSpecificSettingsSpreadsheets();
+    }
+
+    /**
+     * Create an instance of {@link ConverterSpecificSettingsHTML }
+     * 
+     */
+    public ConverterSpecificSettingsHTML createConverterSpecificSettingsHTML() {
+        return new ConverterSpecificSettingsHTML();
+    }
+
+    /**
+     * Create an instance of {@link InfoPathView }
+     * 
+     */
+    public InfoPathView createInfoPathView() {
+        return new InfoPathView();
+    }
+
+    /**
+     * Create an instance of {@link Rtf }
+     * 
+     */
+    public Rtf createRtf() {
+        return new Rtf();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfElement }
+     * 
+     */
+    public ArrayOfElement createArrayOfElement() {
+        return new ArrayOfElement();
+    }
+
+    /**
+     * Create an instance of {@link BookmarkMapping }
+     * 
+     */
+    public BookmarkMapping createBookmarkMapping() {
+        return new BookmarkMapping();
+    }
+
+    /**
+     * Create an instance of {@link ConverterSpecificSettingsImage }
+     * 
+     */
+    public ConverterSpecificSettingsImage createConverterSpecificSettingsImage() {
+        return new ConverterSpecificSettingsImage();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfStatusResultItem }
+     * 
+     */
+    public ArrayOfStatusResultItem createArrayOfStatusResultItem() {
+        return new ArrayOfStatusResultItem();
+    }
+
+    /**
+     * Create an instance of {@link RegionText }
+     * 
+     */
+    public RegionText createRegionText() {
+        return new RegionText();
+    }
+
+    /**
+     * Create an instance of {@link BatchResult }
+     * 
+     */
+    public BatchResult createBatchResult() {
+        return new BatchResult();
+    }
+
+    /**
+     * Create an instance of {@link WebServiceFaultException }
+     * 
+     */
+    public WebServiceFaultException createWebServiceFaultException() {
+        return new WebServiceFaultException();
+    }
+
+    /**
+     * Create an instance of {@link OperationTypeConfiguration }
+     * 
+     */
+    public OperationTypeConfiguration createOperationTypeConfiguration() {
+        return new OperationTypeConfiguration();
     }
 
     /**
@@ -1049,11 +845,275 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Diagnostics }
+     * Create an instance of {@link ArrayOfStatusRequestItem }
      * 
      */
-    public Diagnostics createDiagnostics() {
-        return new Diagnostics();
+    public ArrayOfStatusRequestItem createArrayOfStatusRequestItem() {
+        return new ArrayOfStatusRequestItem();
+    }
+
+    /**
+     * Create an instance of {@link FileMergeSettings }
+     * 
+     */
+    public FileMergeSettings createFileMergeSettings() {
+        return new FileMergeSettings();
+    }
+
+    /**
+     * Create an instance of {@link Container }
+     * 
+     */
+    public Container createContainer() {
+        return new Container();
+    }
+
+    /**
+     * Create an instance of {@link OCREngineSpecificSettings }
+     * 
+     */
+    public OCREngineSpecificSettings createOCREngineSpecificSettings() {
+        return new OCREngineSpecificSettings();
+    }
+
+    /**
+     * Create an instance of {@link OCRRegion }
+     * 
+     */
+    public OCRRegion createOCRRegion() {
+        return new OCRRegion();
+    }
+
+    /**
+     * Create an instance of {@link GetStatus }
+     * 
+     */
+    public GetStatus createGetStatus() {
+        return new GetStatus();
+    }
+
+    /**
+     * Create an instance of {@link ProcessChangesResponse }
+     * 
+     */
+    public ProcessChangesResponse createProcessChangesResponse() {
+        return new ProcessChangesResponse();
+    }
+
+    /**
+     * Create an instance of {@link ConverterSpecificSettings }
+     * 
+     */
+    public ConverterSpecificSettings createConverterSpecificSettings() {
+        return new ConverterSpecificSettings();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfSourceFile }
+     * 
+     */
+    public ArrayOfSourceFile createArrayOfSourceFile() {
+        return new ArrayOfSourceFile();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfRegionText }
+     * 
+     */
+    public ArrayOfRegionText createArrayOfRegionText() {
+        return new ArrayOfRegionText();
+    }
+
+    /**
+     * Create an instance of {@link NameValuePair }
+     * 
+     */
+    public NameValuePair createNameValuePair() {
+        return new NameValuePair();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfWatermark }
+     * 
+     */
+    public ArrayOfWatermark createArrayOfWatermark() {
+        return new ArrayOfWatermark();
+    }
+
+    /**
+     * Create an instance of {@link Image }
+     * 
+     */
+    public Image createImage() {
+        return new Image();
+    }
+
+    /**
+     * Create an instance of {@link ConversionSettings }
+     * 
+     */
+    public ConversionSettings createConversionSettings() {
+        return new ConversionSettings();
+    }
+
+    /**
+     * Create an instance of {@link BatchResults }
+     * 
+     */
+    public BatchResults createBatchResults() {
+        return new BatchResults();
+    }
+
+    /**
+     * Create an instance of {@link SourceFile }
+     * 
+     */
+    public SourceFile createSourceFile() {
+        return new SourceFile();
+    }
+
+    /**
+     * Create an instance of {@link TOCSettings }
+     * 
+     */
+    public TOCSettings createTOCSettings() {
+        return new TOCSettings();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfDiagnosticRequestItem }
+     * 
+     */
+    public ArrayOfDiagnosticRequestItem createArrayOfDiagnosticRequestItem() {
+        return new ArrayOfDiagnosticRequestItem();
+    }
+
+    /**
+     * Create an instance of {@link BookmarkOptionsWordProcessing }
+     * 
+     */
+    public BookmarkOptionsWordProcessing createBookmarkOptionsWordProcessing() {
+        return new BookmarkOptionsWordProcessing();
+    }
+
+    /**
+     * Create an instance of {@link Rectangle }
+     * 
+     */
+    public Rectangle createRectangle() {
+        return new Rectangle();
+    }
+
+    /**
+     * Create an instance of {@link DiagnosticResultItem }
+     * 
+     */
+    public DiagnosticResultItem createDiagnosticResultItem() {
+        return new DiagnosticResultItem();
+    }
+
+    /**
+     * Create an instance of {@link DiagnosticRequestItem }
+     * 
+     */
+    public DiagnosticRequestItem createDiagnosticRequestItem() {
+        return new DiagnosticRequestItem();
+    }
+
+    /**
+     * Create an instance of {@link GetConfiguration }
+     * 
+     */
+    public GetConfiguration createGetConfiguration() {
+        return new GetConfiguration();
+    }
+
+    /**
+     * Create an instance of {@link ConverterSpecificSettingsPDF }
+     * 
+     */
+    public ConverterSpecificSettingsPDF createConverterSpecificSettingsPDF() {
+        return new ConverterSpecificSettingsPDF();
+    }
+
+    /**
+     * Create an instance of {@link GetDiagnostics }
+     * 
+     */
+    public GetDiagnostics createGetDiagnostics() {
+        return new GetDiagnostics();
+    }
+
+    /**
+     * Create an instance of {@link GetStatusResponse }
+     * 
+     */
+    public GetStatusResponse createGetStatusResponse() {
+        return new GetStatusResponse();
+    }
+
+    /**
+     * Create an instance of {@link ConverterSpecificSettingsPresentations }
+     * 
+     */
+    public ConverterSpecificSettingsPresentations createConverterSpecificSettingsPresentations() {
+        return new ConverterSpecificSettingsPresentations();
+    }
+
+    /**
+     * Create an instance of {@link Ellipse }
+     * 
+     */
+    public Ellipse createEllipse() {
+        return new Ellipse();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfOCRRegion }
+     * 
+     */
+    public ArrayOfOCRRegion createArrayOfOCRRegion() {
+        return new ArrayOfOCRRegion();
+    }
+
+    /**
+     * Create an instance of {@link OpenOptions }
+     * 
+     */
+    public OpenOptions createOpenOptions() {
+        return new OpenOptions();
+    }
+
+    /**
+     * Create an instance of {@link ConverterSpecificSettingsCommandLineConverter }
+     * 
+     */
+    public ConverterSpecificSettingsCommandLineConverter createConverterSpecificSettingsCommandLineConverter() {
+        return new ConverterSpecificSettingsCommandLineConverter();
+    }
+
+    /**
+     * Create an instance of {@link Watermark }
+     * 
+     */
+    public Watermark createWatermark() {
+        return new Watermark();
+    }
+
+    /**
+     * Create an instance of {@link SystemSettings }
+     * 
+     */
+    public SystemSettings createSystemSettings() {
+        return new SystemSettings();
+    }
+
+    /**
+     * Create an instance of {@link OutputFormatSpecificSettingsPDF }
+     * 
+     */
+    public OutputFormatSpecificSettingsPDF createOutputFormatSpecificSettingsPDF() {
+        return new OutputFormatSpecificSettingsPDF();
     }
 
     /**
@@ -1066,21 +1126,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfDiagnosticResultItem }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ArrayOfDiagnosticResultItem")
-    public JAXBElement<ArrayOfDiagnosticResultItem> createArrayOfDiagnosticResultItem(ArrayOfDiagnosticResultItem value) {
-        return new JAXBElement<ArrayOfDiagnosticResultItem>(_ArrayOfDiagnosticResultItem_QNAME, ArrayOfDiagnosticResultItem.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ConversionRange }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", name = "ConversionRange")
     public JAXBElement<ConversionRange> createConversionRange(ConversionRange value) {
         return new JAXBElement<ConversionRange>(_ConversionRange_QNAME, ConversionRange.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfDiagnosticResultItem }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ArrayOfDiagnosticResultItem")
+    public JAXBElement<ArrayOfDiagnosticResultItem> createArrayOfDiagnosticResultItem(ArrayOfDiagnosticResultItem value) {
+        return new JAXBElement<ArrayOfDiagnosticResultItem>(_ArrayOfDiagnosticResultItem_QNAME, ArrayOfDiagnosticResultItem.class, null, value);
     }
 
     /**
@@ -1099,6 +1159,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ArrayOfBatchResult")
     public JAXBElement<ArrayOfBatchResult> createArrayOfBatchResult(ArrayOfBatchResult value) {
         return new JAXBElement<ArrayOfBatchResult>(_ArrayOfBatchResult_QNAME, ArrayOfBatchResult.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UnsupportedFileBehaviour }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", name = "UnsupportedFileBehaviour")
+    public JAXBElement<UnsupportedFileBehaviour> createUnsupportedFileBehaviour(UnsupportedFileBehaviour value) {
+        return new JAXBElement<UnsupportedFileBehaviour>(_UnsupportedFileBehaviour_QNAME, UnsupportedFileBehaviour.class, null, value);
     }
 
     /**
@@ -1219,6 +1288,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MergeMode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", name = "MergeMode")
+    public JAXBElement<MergeMode> createMergeMode(MergeMode value) {
+        return new JAXBElement<MergeMode>(_MergeMode_QNAME, MergeMode.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
@@ -1270,6 +1348,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics", name = "HAlign")
     public JAXBElement<HAlign> createHAlign(HAlign value) {
         return new JAXBElement<HAlign>(_HAlign_QNAME, HAlign.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BookmarkMapping }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "BookmarkMapping")
+    public JAXBElement<BookmarkMapping> createBookmarkMapping(BookmarkMapping value) {
+        return new JAXBElement<BookmarkMapping>(_BookmarkMapping_QNAME, BookmarkMapping.class, null, value);
     }
 
     /**
@@ -1354,6 +1441,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BookmarkOptions }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "BookmarkOptions")
+    public JAXBElement<BookmarkOptions> createBookmarkOptions(BookmarkOptions value) {
+        return new JAXBElement<BookmarkOptions>(_BookmarkOptions_QNAME, BookmarkOptions.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ConverterSpecificSettingsWordProcessing }{@code >}}
      * 
      */
@@ -1387,6 +1483,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "SourceFile")
     public JAXBElement<SourceFile> createSourceFile(SourceFile value) {
         return new JAXBElement<SourceFile>(_SourceFile_QNAME, SourceFile.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfBookmarkMapping }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ArrayOfBookmarkMapping")
+    public JAXBElement<ArrayOfBookmarkMapping> createArrayOfBookmarkMapping(ArrayOfBookmarkMapping value) {
+        return new JAXBElement<ArrayOfBookmarkMapping>(_ArrayOfBookmarkMapping_QNAME, ArrayOfBookmarkMapping.class, null, value);
     }
 
     /**
@@ -1525,6 +1630,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BooleanEnum }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", name = "BooleanEnum")
+    public JAXBElement<BooleanEnum> createBooleanEnum(BooleanEnum value) {
+        return new JAXBElement<BooleanEnum>(_BooleanEnum_QNAME, BooleanEnum.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ConverterSpecificSettingsHTML }{@code >}}
      * 
      */
@@ -1561,15 +1675,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CadEmptyLayoutDetectionMode }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", name = "CadEmptyLayoutDetectionMode")
-    public JAXBElement<CadEmptyLayoutDetectionMode> createCadEmptyLayoutDetectionMode(CadEmptyLayoutDetectionMode value) {
-        return new JAXBElement<CadEmptyLayoutDetectionMode>(_CadEmptyLayoutDetectionMode_QNAME, CadEmptyLayoutDetectionMode.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ConverterSpecificSettingsImage }{@code >}}
      * 
      */
@@ -1579,12 +1684,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CadEmptyLayoutDetectionMode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", name = "CadEmptyLayoutDetectionMode")
+    public JAXBElement<CadEmptyLayoutDetectionMode> createCadEmptyLayoutDetectionMode(CadEmptyLayoutDetectionMode value) {
+        return new JAXBElement<CadEmptyLayoutDetectionMode>(_CadEmptyLayoutDetectionMode_QNAME, CadEmptyLayoutDetectionMode.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ConverterSpecificSettings }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ConverterSpecificSettings")
     public JAXBElement<ConverterSpecificSettings> createConverterSpecificSettings(ConverterSpecificSettings value) {
         return new JAXBElement<ConverterSpecificSettings>(_ConverterSpecificSettings_QNAME, ConverterSpecificSettings.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link LinearBarcode }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "LinearBarcode")
+    public JAXBElement<LinearBarcode> createLinearBarcode(LinearBarcode value) {
+        return new JAXBElement<LinearBarcode>(_LinearBarcode_QNAME, LinearBarcode.class, null, value);
     }
 
     /**
@@ -1648,6 +1771,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR", name = "PrimeOCR_ImageProcessingOptions")
     public JAXBElement<List<String>> createPrimeOCRImageProcessingOptions(List<String> value) {
         return new JAXBElement<List<String>>(_PrimeOCRImageProcessingOptions_QNAME, ((Class) List.class), null, ((List<String> ) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BarcodeTextLocation }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics", name = "BarcodeTextLocation")
+    public JAXBElement<BarcodeTextLocation> createBarcodeTextLocation(BarcodeTextLocation value) {
+        return new JAXBElement<BarcodeTextLocation>(_BarcodeTextLocation_QNAME, BarcodeTextLocation.class, null, value);
     }
 
     /**
@@ -1750,21 +1882,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OutputFormat }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", name = "OutputFormat")
-    public JAXBElement<OutputFormat> createOutputFormat(OutputFormat value) {
-        return new JAXBElement<OutputFormat>(_OutputFormat_QNAME, OutputFormat.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ConverterSpecificSettingsCad }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ConverterSpecificSettings_Cad")
     public JAXBElement<ConverterSpecificSettingsCad> createConverterSpecificSettingsCad(ConverterSpecificSettingsCad value) {
         return new JAXBElement<ConverterSpecificSettingsCad>(_ConverterSpecificSettingsCad_QNAME, ConverterSpecificSettingsCad.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link OutputFormat }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", name = "OutputFormat")
+    public JAXBElement<OutputFormat> createOutputFormat(OutputFormat value) {
+        return new JAXBElement<OutputFormat>(_OutputFormat_QNAME, OutputFormat.class, null, value);
     }
 
     /**
@@ -1777,21 +1909,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConverterConfiguration }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ConverterConfiguration")
-    public JAXBElement<ConverterConfiguration> createConverterConfiguration(ConverterConfiguration value) {
-        return new JAXBElement<ConverterConfiguration>(_ConverterConfiguration_QNAME, ConverterConfiguration.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link PDFConvertAttachmentMode }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", name = "PDFConvertAttachmentMode")
     public JAXBElement<PDFConvertAttachmentMode> createPDFConvertAttachmentMode(PDFConvertAttachmentMode value) {
         return new JAXBElement<PDFConvertAttachmentMode>(_PDFConvertAttachmentMode_QNAME, PDFConvertAttachmentMode.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConverterConfiguration }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ConverterConfiguration")
+    public JAXBElement<ConverterConfiguration> createConverterConfiguration(ConverterConfiguration value) {
+        return new JAXBElement<ConverterConfiguration>(_ConverterConfiguration_QNAME, ConverterConfiguration.class, null, value);
     }
 
     /**
@@ -1858,6 +1990,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ForceMessageHeaderEncoding }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", name = "ForceMessageHeaderEncoding")
+    public JAXBElement<ForceMessageHeaderEncoding> createForceMessageHeaderEncoding(ForceMessageHeaderEncoding value) {
+        return new JAXBElement<ForceMessageHeaderEncoding>(_ForceMessageHeaderEncoding_QNAME, ForceMessageHeaderEncoding.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Defaults }{@code >}}
      * 
      */
@@ -1909,6 +2050,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data", name = "RevisionsAndCommentsMarkupMode")
     public JAXBElement<RevisionsAndCommentsMarkupMode> createRevisionsAndCommentsMarkupMode(RevisionsAndCommentsMarkupMode value) {
         return new JAXBElement<RevisionsAndCommentsMarkupMode>(_RevisionsAndCommentsMarkupMode_QNAME, RevisionsAndCommentsMarkupMode.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BookmarkOptionsWordProcessing }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "BookmarkOptions_WordProcessing")
+    public JAXBElement<BookmarkOptionsWordProcessing> createBookmarkOptionsWordProcessing(BookmarkOptionsWordProcessing value) {
+        return new JAXBElement<BookmarkOptionsWordProcessing>(_BookmarkOptionsWordProcessing_QNAME, BookmarkOptionsWordProcessing.class, null, value);
     }
 
     /**
@@ -2017,6 +2167,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "StatusResultItem")
     public JAXBElement<StatusResultItem> createStatusResultItem(StatusResultItem value) {
         return new JAXBElement<StatusResultItem>(_StatusResultItem_QNAME, StatusResultItem.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BarcodeType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics", name = "BarcodeType")
+    public JAXBElement<BarcodeType> createBarcodeType(BarcodeType value) {
+        return new JAXBElement<BarcodeType>(_BarcodeType_QNAME, BarcodeType.class, null, value);
     }
 
     /**
@@ -2455,27 +2614,135 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "sourceFile", scope = ProcessChanges.class)
-    public JAXBElement<byte[]> createProcessChangesSourceFile(byte[] value) {
-        return new JAXBElement<byte[]>(_ProcessChangesSourceFile_QNAME, byte[].class, ProcessChanges.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "sourceFile", scope = ApplySecurity.class)
+    public JAXBElement<byte[]> createApplySecuritySourceFile(byte[] value) {
+        return new JAXBElement<byte[]>(_ApplySecuritySourceFile_QNAME, byte[].class, ApplySecurity.class, ((byte[]) value));
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ConversionSettings }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "conversionSettings", scope = ProcessChanges.class)
-    public JAXBElement<ConversionSettings> createProcessChangesConversionSettings(ConversionSettings value) {
-        return new JAXBElement<ConversionSettings>(_ProcessChangesConversionSettings_QNAME, ConversionSettings.class, ProcessChanges.class, value);
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "conversionSettings", scope = ApplySecurity.class)
+    public JAXBElement<ConversionSettings> createApplySecurityConversionSettings(ConversionSettings value) {
+        return new JAXBElement<ConversionSettings>(_ApplySecurityConversionSettings_QNAME, ConversionSettings.class, ApplySecurity.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link OpenOptions }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "openOptions", scope = ProcessChanges.class)
-    public JAXBElement<OpenOptions> createProcessChangesOpenOptions(OpenOptions value) {
-        return new JAXBElement<OpenOptions>(_ProcessChangesOpenOptions_QNAME, OpenOptions.class, ProcessChanges.class, value);
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "openOptions", scope = ApplySecurity.class)
+    public JAXBElement<OpenOptions> createApplySecurityOpenOptions(OpenOptions value) {
+        return new JAXBElement<OpenOptions>(_ApplySecurityOpenOptions_QNAME, OpenOptions.class, ApplySecurity.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "RequestID", scope = StatusResultItem.class)
+    public JAXBElement<String> createStatusResultItemRequestID(String value) {
+        return new JAXBElement<String>(_StatusResultItemRequestID_QNAME, String.class, StatusResultItem.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "WebKitViewPortSize", scope = ConverterSpecificSettingsHTML.class)
+    public JAXBElement<String> createConverterSpecificSettingsHTMLWebKitViewPortSize(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLWebKitViewPortSize_QNAME, String.class, ConverterSpecificSettingsHTML.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PageMargins", scope = ConverterSpecificSettingsHTML.class)
+    public JAXBElement<String> createConverterSpecificSettingsHTMLPageMargins(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLPageMargins_QNAME, String.class, ConverterSpecificSettingsHTML.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PaperSize", scope = ConverterSpecificSettingsHTML.class)
+    public JAXBElement<String> createConverterSpecificSettingsHTMLPaperSize(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLPaperSize_QNAME, String.class, ConverterSpecificSettingsHTML.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfOCRRegion }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Regions", scope = OCRSettings.class)
+    public JAXBElement<ArrayOfOCRRegion> createOCRSettingsRegions(ArrayOfOCRRegion value) {
+        return new JAXBElement<ArrayOfOCRRegion>(_OCRSettingsRegions_QNAME, ArrayOfOCRRegion.class, OCRSettings.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "WhiteList", scope = OCRSettings.class)
+    public JAXBElement<String> createOCRSettingsWhiteList(String value) {
+        return new JAXBElement<String>(_OCRSettingsWhiteList_QNAME, String.class, OCRSettings.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Language", scope = OCRSettings.class)
+    public JAXBElement<String> createOCRSettingsLanguage(String value) {
+        return new JAXBElement<String>(_OCRSettingsLanguage_QNAME, String.class, OCRSettings.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "OCREngine", scope = OCRSettings.class)
+    public JAXBElement<String> createOCRSettingsOCREngine(String value) {
+        return new JAXBElement<String>(_OCRSettingsOCREngine_QNAME, String.class, OCRSettings.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link OCREngineSpecificSettings }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "OCREngineSpecificSettings", scope = OCRSettings.class)
+    public JAXBElement<OCREngineSpecificSettings> createOCRSettingsOCREngineSpecificSettings(OCREngineSpecificSettings value) {
+        return new JAXBElement<OCREngineSpecificSettings>(_OCRSettingsOCREngineSpecificSettings_QNAME, OCREngineSpecificSettings.class, OCRSettings.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "BlackList", scope = OCRSettings.class)
+    public JAXBElement<String> createOCRSettingsBlackList(String value) {
+        return new JAXBElement<String>(_OCRSettingsBlackList_QNAME, String.class, OCRSettings.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "Name", scope = InfoPathView.class)
+    public JAXBElement<String> createInfoPathViewName(String value) {
+        return new JAXBElement<String>(_InfoPathViewName_QNAME, String.class, InfoPathView.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfStatusRequestItem }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "StatusRequestItems", scope = StatusRequest.class)
+    public JAXBElement<ArrayOfStatusRequestItem> createStatusRequestStatusRequestItems(ArrayOfStatusRequestItem value) {
+        return new JAXBElement<ArrayOfStatusRequestItem>(_StatusRequestStatusRequestItems_QNAME, ArrayOfStatusRequestItem.class, StatusRequest.class, value);
     }
 
     /**
@@ -2485,60 +2752,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "RtfData", scope = Rtf.class)
     public JAXBElement<String> createRtfRtfData(String value) {
         return new JAXBElement<String>(_RtfRtfData_QNAME, String.class, Rtf.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ForegroundColor", scope = ConverterSpecificSettingsCad.class)
-    public JAXBElement<String> createConverterSpecificSettingsCadForegroundColor(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadForegroundColor_QNAME, String.class, ConverterSpecificSettingsCad.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ExternalReferences", scope = ConverterSpecificSettingsCad.class)
-    public JAXBElement<String> createConverterSpecificSettingsCadExternalReferences(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadExternalReferences_QNAME, String.class, ConverterSpecificSettingsCad.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PageMargins", scope = ConverterSpecificSettingsCad.class)
-    public JAXBElement<String> createConverterSpecificSettingsCadPageMargins(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadPageMargins_QNAME, String.class, ConverterSpecificSettingsCad.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "BackgroundColor", scope = ConverterSpecificSettingsCad.class)
-    public JAXBElement<String> createConverterSpecificSettingsCadBackgroundColor(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadBackgroundColor_QNAME, String.class, ConverterSpecificSettingsCad.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfCadConversionElement }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "CadConversionElements", scope = ConverterSpecificSettingsCad.class)
-    public JAXBElement<ArrayOfCadConversionElement> createConverterSpecificSettingsCadCadConversionElements(ArrayOfCadConversionElement value) {
-        return new JAXBElement<ArrayOfCadConversionElement>(_ConverterSpecificSettingsCadCadConversionElements_QNAME, ArrayOfCadConversionElement.class, ConverterSpecificSettingsCad.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PaperSize", scope = ConverterSpecificSettingsCad.class)
-    public JAXBElement<String> createConverterSpecificSettingsCadPaperSize(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadPaperSize_QNAME, String.class, ConverterSpecificSettingsCad.class, value);
     }
 
     /**
@@ -2572,81 +2785,45 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "ProcessChangesResult", scope = ProcessChangesResponse.class)
-    public JAXBElement<byte[]> createProcessChangesResponseProcessChangesResult(byte[] value) {
-        return new JAXBElement<byte[]>(_ProcessChangesResponseProcessChangesResult_QNAME, byte[].class, ProcessChangesResponse.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "sourceFile", scope = ProcessChanges.class)
+    public JAXBElement<byte[]> createProcessChangesSourceFile(byte[] value) {
+        return new JAXBElement<byte[]>(_ApplySecuritySourceFile_QNAME, byte[].class, ProcessChanges.class, ((byte[]) value));
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConversionSettings }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "XSNData", scope = ConverterSpecificSettingsInfoPath.class)
-    public JAXBElement<byte[]> createConverterSpecificSettingsInfoPathXSNData(byte[] value) {
-        return new JAXBElement<byte[]>(_ConverterSpecificSettingsInfoPathXSNData_QNAME, byte[].class, ConverterSpecificSettingsInfoPath.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "conversionSettings", scope = ProcessChanges.class)
+    public JAXBElement<ConversionSettings> createProcessChangesConversionSettings(ConversionSettings value) {
+        return new JAXBElement<ConversionSettings>(_ApplySecurityConversionSettings_QNAME, ConversionSettings.class, ProcessChanges.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link OpenOptions }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "DefaultPaperSize", scope = ConverterSpecificSettingsInfoPath.class)
-    public JAXBElement<String> createConverterSpecificSettingsInfoPathDefaultPaperSize(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsInfoPathDefaultPaperSize_QNAME, String.class, ConverterSpecificSettingsInfoPath.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfInfoPathView }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ConversionViews", scope = ConverterSpecificSettingsInfoPath.class)
-    public JAXBElement<ArrayOfInfoPathView> createConverterSpecificSettingsInfoPathConversionViews(ArrayOfInfoPathView value) {
-        return new JAXBElement<ArrayOfInfoPathView>(_ConverterSpecificSettingsInfoPathConversionViews_QNAME, ArrayOfInfoPathView.class, ConverterSpecificSettingsInfoPath.class, value);
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "openOptions", scope = ProcessChanges.class)
+    public JAXBElement<OpenOptions> createProcessChangesOpenOptions(OpenOptions value) {
+        return new JAXBElement<OpenOptions>(_ApplySecurityOpenOptions_QNAME, OpenOptions.class, ProcessChanges.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ForcePaperSize", scope = ConverterSpecificSettingsInfoPath.class)
-    public JAXBElement<String> createConverterSpecificSettingsInfoPathForcePaperSize(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsInfoPathForcePaperSize_QNAME, String.class, ConverterSpecificSettingsInfoPath.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "Source", scope = BookmarkMapping.class)
+    public JAXBElement<String> createBookmarkMappingSource(String value) {
+        return new JAXBElement<String>(_BookmarkMappingSource_QNAME, String.class, BookmarkMapping.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Configuration }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfDiagnosticResultItem }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "GetConfigurationResult", scope = GetConfigurationResponse.class)
-    public JAXBElement<Configuration> createGetConfigurationResponseGetConfigurationResult(Configuration value) {
-        return new JAXBElement<Configuration>(_GetConfigurationResponseGetConfigurationResult_QNAME, Configuration.class, GetConfigurationResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Diagnostics }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "GetDiagnosticsResult", scope = GetDiagnosticsResponse.class)
-    public JAXBElement<Diagnostics> createGetDiagnosticsResponseGetDiagnosticsResult(Diagnostics value) {
-        return new JAXBElement<Diagnostics>(_GetDiagnosticsResponseGetDiagnosticsResult_QNAME, Diagnostics.class, GetDiagnosticsResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Defaults }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "Defaults", scope = Container.class)
-    public JAXBElement<Defaults> createContainerDefaults(Defaults value) {
-        return new JAXBElement<Defaults>(_Defaults_QNAME, Defaults.class, Container.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfElement }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "Elements", scope = Container.class)
-    public JAXBElement<ArrayOfElement> createContainerElements(ArrayOfElement value) {
-        return new JAXBElement<ArrayOfElement>(_ContainerElements_QNAME, ArrayOfElement.class, Container.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "Items", scope = Diagnostics.class)
+    public JAXBElement<ArrayOfDiagnosticResultItem> createDiagnosticsItems(ArrayOfDiagnosticResultItem value) {
+        return new JAXBElement<ArrayOfDiagnosticResultItem>(_DiagnosticsItems_QNAME, ArrayOfDiagnosticResultItem.class, Diagnostics.class, value);
     }
 
     /**
@@ -2664,7 +2841,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PageMargins", scope = ConverterSpecificSettingsTIFF.class)
     public JAXBElement<String> createConverterSpecificSettingsTIFFPageMargins(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadPageMargins_QNAME, String.class, ConverterSpecificSettingsTIFF.class, value);
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLPageMargins_QNAME, String.class, ConverterSpecificSettingsTIFF.class, value);
     }
 
     /**
@@ -2673,16 +2850,142 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PaperSize", scope = ConverterSpecificSettingsTIFF.class)
     public JAXBElement<String> createConverterSpecificSettingsTIFFPaperSize(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadPaperSize_QNAME, String.class, ConverterSpecificSettingsTIFF.class, value);
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLPaperSize_QNAME, String.class, ConverterSpecificSettingsTIFF.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "SourceFileResolution", scope = ConverterSpecificSettingsImage.class)
+    public JAXBElement<String> createConverterSpecificSettingsImageSourceFileResolution(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsTIFFSourceFileResolution_QNAME, String.class, ConverterSpecificSettingsImage.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PageMargins", scope = ConverterSpecificSettingsImage.class)
+    public JAXBElement<String> createConverterSpecificSettingsImagePageMargins(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLPageMargins_QNAME, String.class, ConverterSpecificSettingsImage.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PaperSize", scope = ConverterSpecificSettingsImage.class)
+    public JAXBElement<String> createConverterSpecificSettingsImagePaperSize(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLPaperSize_QNAME, String.class, ConverterSpecificSettingsImage.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Text", scope = RegionText.class)
+    public JAXBElement<String> createRegionTextText(String value) {
+        return new JAXBElement<String>(_RegionTextText_QNAME, String.class, RegionText.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "RegionId", scope = RegionText.class)
+    public JAXBElement<String> createRegionTextRegionId(String value) {
+        return new JAXBElement<String>(_RegionTextRegionId_QNAME, String.class, RegionText.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link OCRResult }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OCRResult", scope = BatchResult.class)
+    public JAXBElement<OCRResult> createBatchResultOCRResult(OCRResult value) {
+        return new JAXBElement<OCRResult>(_BatchResultOCRResult_QNAME, OCRResult.class, BatchResult.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "FileName", scope = BatchResult.class)
+    public JAXBElement<String> createBatchResultFileName(String value) {
+        return new JAXBElement<String>(_BatchResultFileName_QNAME, String.class, BatchResult.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "ApplyWatermarkResult", scope = ApplyWatermarkResponse.class)
-    public JAXBElement<byte[]> createApplyWatermarkResponseApplyWatermarkResult(byte[] value) {
-        return new JAXBElement<byte[]>(_ApplyWatermarkResponseApplyWatermarkResult_QNAME, byte[].class, ApplyWatermarkResponse.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "File", scope = BatchResult.class)
+    public JAXBElement<byte[]> createBatchResultFile(byte[] value) {
+        return new JAXBElement<byte[]>(_BatchResultFile_QNAME, byte[].class, BatchResult.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfstring }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ExceptionDetails", scope = WebServiceFaultException.class)
+    public JAXBElement<ArrayOfstring> createWebServiceFaultExceptionExceptionDetails(ArrayOfstring value) {
+        return new JAXBElement<ArrayOfstring>(_WebServiceFaultExceptionExceptionDetails_QNAME, ArrayOfstring.class, WebServiceFaultException.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2015/04/13", name = "SubscriptionID", scope = SubscriptionSettings.class)
+    public JAXBElement<String> createSubscriptionSettingsSubscriptionID(String value) {
+        return new JAXBElement<String>(_SubscriptionSettingsSubscriptionID_QNAME, String.class, SubscriptionSettings.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "RequestID", scope = StatusRequestItem.class)
+    public JAXBElement<String> createStatusRequestItemRequestID(String value) {
+        return new JAXBElement<String>(_StatusResultItemRequestID_QNAME, String.class, StatusRequestItem.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "Data", scope = StatusRequestItem.class)
+    public JAXBElement<String> createStatusRequestItemData(String value) {
+        return new JAXBElement<String>(_StatusRequestItemData_QNAME, String.class, StatusRequestItem.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "Description", scope = OperationTypeConfiguration.class)
+    public JAXBElement<String> createOperationTypeConfigurationDescription(String value) {
+        return new JAXBElement<String>(_OperationTypeConfigurationDescription_QNAME, String.class, OperationTypeConfiguration.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfStatusResultItem }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "Items", scope = Status.class)
+    public JAXBElement<ArrayOfStatusResultItem> createStatusItems(ArrayOfStatusResultItem value) {
+        return new JAXBElement<ArrayOfStatusResultItem>(_StatusItems_QNAME, ArrayOfStatusResultItem.class, Status.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "FileNameTemplate", scope = FileSplitOptions.class)
+    public JAXBElement<String> createFileSplitOptionsFileNameTemplate(String value) {
+        return new JAXBElement<String>(_FileSplitOptionsFileNameTemplate_QNAME, String.class, FileSplitOptions.class, value);
     }
 
     /**
@@ -2734,18 +3037,306 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "RequestID", scope = StatusRequestItem.class)
-    public JAXBElement<String> createStatusRequestItemRequestID(String value) {
-        return new JAXBElement<String>(_StatusRequestItemRequestID_QNAME, String.class, StatusRequestItem.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "TopLevelBookmark", scope = FileMergeSettings.class)
+    public JAXBElement<String> createFileMergeSettingsTopLevelBookmark(String value) {
+        return new JAXBElement<String>(_FileMergeSettingsTopLevelBookmark_QNAME, String.class, FileMergeSettings.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "Data", scope = StatusRequestItem.class)
-    public JAXBElement<String> createStatusRequestItemData(String value) {
-        return new JAXBElement<String>(_StatusRequestItemData_QNAME, String.class, StatusRequestItem.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "Margin", scope = LinearBarcode.class)
+    public JAXBElement<String> createLinearBarcodeMargin(String value) {
+        return new JAXBElement<String>(_LinearBarcodeMargin_QNAME, String.class, LinearBarcode.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "FontFamilyName", scope = LinearBarcode.class)
+    public JAXBElement<String> createLinearBarcodeFontFamilyName(String value) {
+        return new JAXBElement<String>(_TextFontFamilyName_QNAME, String.class, LinearBarcode.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "FontSize", scope = LinearBarcode.class)
+    public JAXBElement<String> createLinearBarcodeFontSize(String value) {
+        return new JAXBElement<String>(_TextFontSize_QNAME, String.class, LinearBarcode.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "BarcodeToTextGapHeight", scope = LinearBarcode.class)
+    public JAXBElement<String> createLinearBarcodeBarcodeToTextGapHeight(String value) {
+        return new JAXBElement<String>(_LinearBarcodeBarcodeToTextGapHeight_QNAME, String.class, LinearBarcode.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "Text", scope = LinearBarcode.class)
+    public JAXBElement<String> createLinearBarcodeText(String value) {
+        return new JAXBElement<String>(_Text_QNAME, String.class, LinearBarcode.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "sourceFile", scope = ApplyWatermark.class)
+    public JAXBElement<byte[]> createApplyWatermarkSourceFile(byte[] value) {
+        return new JAXBElement<byte[]>(_ApplySecuritySourceFile_QNAME, byte[].class, ApplyWatermark.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConversionSettings }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "conversionSettings", scope = ApplyWatermark.class)
+    public JAXBElement<ConversionSettings> createApplyWatermarkConversionSettings(ConversionSettings value) {
+        return new JAXBElement<ConversionSettings>(_ApplySecurityConversionSettings_QNAME, ConversionSettings.class, ApplyWatermark.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link OpenOptions }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "openOptions", scope = ApplyWatermark.class)
+    public JAXBElement<OpenOptions> createApplyWatermarkOpenOptions(OpenOptions value) {
+        return new JAXBElement<OpenOptions>(_ApplySecurityOpenOptions_QNAME, OpenOptions.class, ApplyWatermark.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "EndY", scope = Line.class)
+    public JAXBElement<String> createLineEndY(String value) {
+        return new JAXBElement<String>(_LineEndY_QNAME, String.class, Line.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "EndX", scope = Line.class)
+    public JAXBElement<String> createLineEndX(String value) {
+        return new JAXBElement<String>(_LineEndX_QNAME, String.class, Line.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "Text", scope = QRCode.class)
+    public JAXBElement<String> createQRCodeText(String value) {
+        return new JAXBElement<String>(_Text_QNAME, String.class, QRCode.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Defaults }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "Defaults", scope = Container.class)
+    public JAXBElement<Defaults> createContainerDefaults(Defaults value) {
+        return new JAXBElement<Defaults>(_Defaults_QNAME, Defaults.class, Container.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfElement }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "Elements", scope = Container.class)
+    public JAXBElement<ArrayOfElement> createContainerElements(ArrayOfElement value) {
+        return new JAXBElement<ArrayOfElement>(_ContainerElements_QNAME, ArrayOfElement.class, Container.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Id", scope = OCRRegion.class)
+    public JAXBElement<String> createOCRRegionId(String value) {
+        return new JAXBElement<String>(_OCRRegionId_QNAME, String.class, OCRRegion.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Width", scope = OCRRegion.class)
+    public JAXBElement<String> createOCRRegionWidth(String value) {
+        return new JAXBElement<String>(_OCRRegionWidth_QNAME, String.class, OCRRegion.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Height", scope = OCRRegion.class)
+    public JAXBElement<String> createOCRRegionHeight(String value) {
+        return new JAXBElement<String>(_OCRRegionHeight_QNAME, String.class, OCRRegion.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "PageRange", scope = OCRRegion.class)
+    public JAXBElement<String> createOCRRegionPageRange(String value) {
+        return new JAXBElement<String>(_OCRRegionPageRange_QNAME, String.class, OCRRegion.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Y", scope = OCRRegion.class)
+    public JAXBElement<String> createOCRRegionY(String value) {
+        return new JAXBElement<String>(_OCRRegionY_QNAME, String.class, OCRRegion.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "X", scope = OCRRegion.class)
+    public JAXBElement<String> createOCRRegionX(String value) {
+        return new JAXBElement<String>(_OCRRegionX_QNAME, String.class, OCRRegion.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link StatusRequest }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "statusRequest", scope = GetStatus.class)
+    public JAXBElement<StatusRequest> createGetStatusStatusRequest(StatusRequest value) {
+        return new JAXBElement<StatusRequest>(_GetStatusStatusRequest_QNAME, StatusRequest.class, GetStatus.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "Name", scope = CadConversionElement.class)
+    public JAXBElement<String> createCadConversionElementName(String value) {
+        return new JAXBElement<String>(_InfoPathViewName_QNAME, String.class, CadConversionElement.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "sourceFile", scope = Convert.class)
+    public JAXBElement<byte[]> createConvertSourceFile(byte[] value) {
+        return new JAXBElement<byte[]>(_ApplySecuritySourceFile_QNAME, byte[].class, Convert.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConversionSettings }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "conversionSettings", scope = Convert.class)
+    public JAXBElement<ConversionSettings> createConvertConversionSettings(ConversionSettings value) {
+        return new JAXBElement<ConversionSettings>(_ApplySecurityConversionSettings_QNAME, ConversionSettings.class, Convert.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link OpenOptions }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "openOptions", scope = Convert.class)
+    public JAXBElement<OpenOptions> createConvertOpenOptions(OpenOptions value) {
+        return new JAXBElement<OpenOptions>(_ApplySecurityOpenOptions_QNAME, OpenOptions.class, Convert.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfRegionText }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "RegionTexts", scope = OCRResult.class)
+    public JAXBElement<ArrayOfRegionText> createOCRResultRegionTexts(ArrayOfRegionText value) {
+        return new JAXBElement<ArrayOfRegionText>(_OCRResultRegionTexts_QNAME, ArrayOfRegionText.class, OCRResult.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Text", scope = OCRResult.class)
+    public JAXBElement<String> createOCRResultText(String value) {
+        return new JAXBElement<String>(_RegionTextText_QNAME, String.class, OCRResult.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "ProcessChangesResult", scope = ProcessChangesResponse.class)
+    public JAXBElement<byte[]> createProcessChangesResponseProcessChangesResult(byte[] value) {
+        return new JAXBElement<byte[]>(_ProcessChangesResponseProcessChangesResult_QNAME, byte[].class, ProcessChangesResponse.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfOperationTypeConfiguration }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OperationTypes", scope = Configuration.class)
+    public JAXBElement<ArrayOfOperationTypeConfiguration> createConfigurationOperationTypes(ArrayOfOperationTypeConfiguration value) {
+        return new JAXBElement<ArrayOfOperationTypeConfiguration>(_ConfigurationOperationTypes_QNAME, ArrayOfOperationTypeConfiguration.class, Configuration.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ConversionServerAddress", scope = Configuration.class)
+    public JAXBElement<String> createConfigurationConversionServerAddress(String value) {
+        return new JAXBElement<String>(_ConfigurationConversionServerAddress_QNAME, String.class, Configuration.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfConverterConfiguration }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "Converters", scope = Configuration.class)
+    public JAXBElement<ArrayOfConverterConfiguration> createConfigurationConverters(ArrayOfConverterConfiguration value) {
+        return new JAXBElement<ArrayOfConverterConfiguration>(_ConfigurationConverters_QNAME, ArrayOfConverterConfiguration.class, Configuration.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "PdfData", scope = Pdf.class)
+    public JAXBElement<byte[]> createPdfPdfData(byte[] value) {
+        return new JAXBElement<byte[]>(_PdfPdfData_QNAME, byte[].class, Pdf.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/01/14", name = "Name", scope = NameValuePair.class)
+    public JAXBElement<String> createNameValuePairName(String value) {
+        return new JAXBElement<String>(_NameValuePairName_QNAME, String.class, NameValuePair.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/01/14", name = "Value", scope = NameValuePair.class)
+    public JAXBElement<String> createNameValuePairValue(String value) {
+        return new JAXBElement<String>(_NameValuePairValue_QNAME, String.class, NameValuePair.class, value);
     }
 
     /**
@@ -2848,6 +3439,96 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "ApplySecurityResult", scope = ApplySecurityResponse.class)
+    public JAXBElement<byte[]> createApplySecurityResponseApplySecurityResult(byte[] value) {
+        return new JAXBElement<byte[]>(_ApplySecurityResponseApplySecurityResult_QNAME, byte[].class, ApplySecurityResponse.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Configuration }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "GetConfigurationResult", scope = GetConfigurationResponse.class)
+    public JAXBElement<Configuration> createGetConfigurationResponseGetConfigurationResult(Configuration value) {
+        return new JAXBElement<Configuration>(_GetConfigurationResponseGetConfigurationResult_QNAME, Configuration.class, GetConfigurationResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "ImageData", scope = Image.class)
+    public JAXBElement<byte[]> createImageImageData(byte[] value) {
+        return new JAXBElement<byte[]>(_ImageImageData_QNAME, byte[].class, Image.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "XSNData", scope = ConverterSpecificSettingsInfoPath.class)
+    public JAXBElement<byte[]> createConverterSpecificSettingsInfoPathXSNData(byte[] value) {
+        return new JAXBElement<byte[]>(_ConverterSpecificSettingsInfoPathXSNData_QNAME, byte[].class, ConverterSpecificSettingsInfoPath.class, ((byte[]) value));
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "DefaultPaperSize", scope = ConverterSpecificSettingsInfoPath.class)
+    public JAXBElement<String> createConverterSpecificSettingsInfoPathDefaultPaperSize(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsInfoPathDefaultPaperSize_QNAME, String.class, ConverterSpecificSettingsInfoPath.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ExcludeAttachmentTypes", scope = ConverterSpecificSettingsInfoPath.class)
+    public JAXBElement<String> createConverterSpecificSettingsInfoPathExcludeAttachmentTypes(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsInfoPathExcludeAttachmentTypes_QNAME, String.class, ConverterSpecificSettingsInfoPath.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "IncludeAttachmentTypes", scope = ConverterSpecificSettingsInfoPath.class)
+    public JAXBElement<String> createConverterSpecificSettingsInfoPathIncludeAttachmentTypes(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsInfoPathIncludeAttachmentTypes_QNAME, String.class, ConverterSpecificSettingsInfoPath.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfInfoPathView }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ConversionViews", scope = ConverterSpecificSettingsInfoPath.class)
+    public JAXBElement<ArrayOfInfoPathView> createConverterSpecificSettingsInfoPathConversionViews(ArrayOfInfoPathView value) {
+        return new JAXBElement<ArrayOfInfoPathView>(_ConverterSpecificSettingsInfoPathConversionViews_QNAME, ArrayOfInfoPathView.class, ConverterSpecificSettingsInfoPath.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ForcePaperSize", scope = ConverterSpecificSettingsInfoPath.class)
+    public JAXBElement<String> createConverterSpecificSettingsInfoPathForcePaperSize(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsInfoPathForcePaperSize_QNAME, String.class, ConverterSpecificSettingsInfoPath.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "ConvertResult", scope = ConvertResponse.class)
+    public JAXBElement<byte[]> createConvertResponseConvertResult(byte[] value) {
+        return new JAXBElement<byte[]>(_ConvertResponseConvertResult_QNAME, byte[].class, ConvertResponse.class, ((byte[]) value));
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link OCRSettings }{@code >}}
      * 
      */
@@ -2911,192 +3592,48 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OriginalFileName", scope = OpenOptions.class)
-    public JAXBElement<String> createOpenOptionsOriginalFileName(String value) {
-        return new JAXBElement<String>(_OpenOptionsOriginalFileName_QNAME, String.class, OpenOptions.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SubscriptionSettings }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "SubscriptionSettings", scope = OpenOptions.class)
-    public JAXBElement<SubscriptionSettings> createOpenOptionsSubscriptionSettings(SubscriptionSettings value) {
-        return new JAXBElement<SubscriptionSettings>(_ProcessingOptionsSubscriptionSettings_QNAME, SubscriptionSettings.class, OpenOptions.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "UserName", scope = OpenOptions.class)
-    public JAXBElement<String> createOpenOptionsUserName(String value) {
-        return new JAXBElement<String>(_OpenOptionsUserName_QNAME, String.class, OpenOptions.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SystemSettings }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "SystemSettings", scope = OpenOptions.class)
-    public JAXBElement<SystemSettings> createOpenOptionsSystemSettings(SystemSettings value) {
-        return new JAXBElement<SystemSettings>(_OpenOptionsSystemSettings_QNAME, SystemSettings.class, OpenOptions.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "FileExtension", scope = OpenOptions.class)
-    public JAXBElement<String> createOpenOptionsFileExtension(String value) {
-        return new JAXBElement<String>(_OpenOptionsFileExtension_QNAME, String.class, OpenOptions.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "Password", scope = OpenOptions.class)
-    public JAXBElement<String> createOpenOptionsPassword(String value) {
-        return new JAXBElement<String>(_OpenOptionsPassword_QNAME, String.class, OpenOptions.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "ApplySecurityResult", scope = ApplySecurityResponse.class)
-    public JAXBElement<byte[]> createApplySecurityResponseApplySecurityResult(byte[] value) {
-        return new JAXBElement<byte[]>(_ApplySecurityResponseApplySecurityResult_QNAME, byte[].class, ApplySecurityResponse.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "sourceFile", scope = ApplySecurity.class)
-    public JAXBElement<byte[]> createApplySecuritySourceFile(byte[] value) {
-        return new JAXBElement<byte[]>(_ProcessChangesSourceFile_QNAME, byte[].class, ApplySecurity.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConversionSettings }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "conversionSettings", scope = ApplySecurity.class)
-    public JAXBElement<ConversionSettings> createApplySecurityConversionSettings(ConversionSettings value) {
-        return new JAXBElement<ConversionSettings>(_ProcessChangesConversionSettings_QNAME, ConversionSettings.class, ApplySecurity.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OpenOptions }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "openOptions", scope = ApplySecurity.class)
-    public JAXBElement<OpenOptions> createApplySecurityOpenOptions(OpenOptions value) {
-        return new JAXBElement<OpenOptions>(_ProcessChangesOpenOptions_QNAME, OpenOptions.class, ApplySecurity.class, value);
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "ApplyWatermarkResult", scope = ApplyWatermarkResponse.class)
+    public JAXBElement<byte[]> createApplyWatermarkResponseApplyWatermarkResult(byte[] value) {
+        return new JAXBElement<byte[]>(_ApplyWatermarkResponseApplyWatermarkResult_QNAME, byte[].class, ApplyWatermarkResponse.class, ((byte[]) value));
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfstring }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ExceptionDetails", scope = WebServiceFaultException.class)
-    public JAXBElement<ArrayOfstring> createWebServiceFaultExceptionExceptionDetails(ArrayOfstring value) {
-        return new JAXBElement<ArrayOfstring>(_WebServiceFaultExceptionExceptionDetails_QNAME, ArrayOfstring.class, WebServiceFaultException.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "SupportedFileExtensions", scope = ConverterConfiguration.class)
+    public JAXBElement<ArrayOfstring> createConverterConfigurationSupportedFileExtensions(ArrayOfstring value) {
+        return new JAXBElement<ArrayOfstring>(_ConverterConfigurationSupportedFileExtensions_QNAME, ArrayOfstring.class, ConverterConfiguration.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfstring }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "SupportedOutputFormats", scope = ConverterConfiguration.class)
+    public JAXBElement<ArrayOfstring> createConverterConfigurationSupportedOutputFormats(ArrayOfstring value) {
+        return new JAXBElement<ArrayOfstring>(_ConverterConfigurationSupportedOutputFormats_QNAME, ArrayOfstring.class, ConverterConfiguration.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "WebKitViewPortSize", scope = ConverterSpecificSettingsMSG.class)
-    public JAXBElement<String> createConverterSpecificSettingsMSGWebKitViewPortSize(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsMSGWebKitViewPortSize_QNAME, String.class, ConverterSpecificSettingsMSG.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ConverterName", scope = ConverterConfiguration.class)
+    public JAXBElement<String> createConverterConfigurationConverterName(String value) {
+        return new JAXBElement<String>(_ConverterConfigurationConverterName_QNAME, String.class, ConverterConfiguration.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PageMargins", scope = ConverterSpecificSettingsMSG.class)
-    public JAXBElement<String> createConverterSpecificSettingsMSGPageMargins(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadPageMargins_QNAME, String.class, ConverterSpecificSettingsMSG.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "SentDateMissingDisplayMode", scope = ConverterSpecificSettingsMSG.class)
-    public JAXBElement<String> createConverterSpecificSettingsMSGSentDateMissingDisplayMode(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsMSGSentDateMissingDisplayMode_QNAME, String.class, ConverterSpecificSettingsMSG.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PaperSize", scope = ConverterSpecificSettingsMSG.class)
-    public JAXBElement<String> createConverterSpecificSettingsMSGPaperSize(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadPaperSize_QNAME, String.class, ConverterSpecificSettingsMSG.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "TopLevelBookmark", scope = FileMergeSettings.class)
-    public JAXBElement<String> createFileMergeSettingsTopLevelBookmark(String value) {
-        return new JAXBElement<String>(_FileMergeSettingsTopLevelBookmark_QNAME, String.class, FileMergeSettings.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "sourceFile", scope = Convert.class)
-    public JAXBElement<byte[]> createConvertSourceFile(byte[] value) {
-        return new JAXBElement<byte[]>(_ProcessChangesSourceFile_QNAME, byte[].class, Convert.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConversionSettings }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "conversionSettings", scope = Convert.class)
-    public JAXBElement<ConversionSettings> createConvertConversionSettings(ConversionSettings value) {
-        return new JAXBElement<ConversionSettings>(_ProcessChangesConversionSettings_QNAME, ConversionSettings.class, Convert.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OpenOptions }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "openOptions", scope = Convert.class)
-    public JAXBElement<OpenOptions> createConvertOpenOptions(OpenOptions value) {
-        return new JAXBElement<OpenOptions>(_ProcessChangesOpenOptions_QNAME, OpenOptions.class, Convert.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "PageRange", scope = Watermark.class)
-    public JAXBElement<String> createWatermarkPageRange(String value) {
-        return new JAXBElement<String>(_WatermarkPageRange_QNAME, String.class, Watermark.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "RequestID", scope = StatusResultItem.class)
-    public JAXBElement<String> createStatusResultItemRequestID(String value) {
-        return new JAXBElement<String>(_StatusRequestItemRequestID_QNAME, String.class, StatusResultItem.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "Description", scope = ConverterConfiguration.class)
+    public JAXBElement<String> createConverterConfigurationDescription(String value) {
+        return new JAXBElement<String>(_ConverterConfigurationDescription_QNAME, String.class, ConverterConfiguration.class, value);
     }
 
     /**
@@ -3106,33 +3643,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "Results", scope = BatchResults.class)
     public JAXBElement<ArrayOfBatchResult> createBatchResultsResults(ArrayOfBatchResult value) {
         return new JAXBElement<ArrayOfBatchResult>(_BatchResultsResults_QNAME, ArrayOfBatchResult.class, BatchResults.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "SourceFileResolution", scope = ConverterSpecificSettingsImage.class)
-    public JAXBElement<String> createConverterSpecificSettingsImageSourceFileResolution(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsTIFFSourceFileResolution_QNAME, String.class, ConverterSpecificSettingsImage.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PageMargins", scope = ConverterSpecificSettingsImage.class)
-    public JAXBElement<String> createConverterSpecificSettingsImagePageMargins(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadPageMargins_QNAME, String.class, ConverterSpecificSettingsImage.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PaperSize", scope = ConverterSpecificSettingsImage.class)
-    public JAXBElement<String> createConverterSpecificSettingsImagePaperSize(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadPaperSize_QNAME, String.class, ConverterSpecificSettingsImage.class, value);
     }
 
     /**
@@ -3235,174 +3745,39 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link TOCSettings }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConversionSettings }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "TOCSettings", scope = MergeSettings.class)
-    public JAXBElement<TOCSettings> createMergeSettingsTOCSettings(TOCSettings value) {
-        return new JAXBElement<TOCSettings>(_ConversionSettingsTOCSettings_QNAME, TOCSettings.class, MergeSettings.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ConversionSettings", scope = SourceFile.class)
+    public JAXBElement<ConversionSettings> createSourceFileConversionSettings(ConversionSettings value) {
+        return new JAXBElement<ConversionSettings>(_ConversionSettings_QNAME, ConversionSettings.class, SourceFile.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link OpenOptions }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OwnerPassword", scope = MergeSettings.class)
-    public JAXBElement<String> createMergeSettingsOwnerPassword(String value) {
-        return new JAXBElement<String>(_ConversionSettingsOwnerPassword_QNAME, String.class, MergeSettings.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OpenOptions", scope = SourceFile.class)
+    public JAXBElement<OpenOptions> createSourceFileOpenOptions(OpenOptions value) {
+        return new JAXBElement<OpenOptions>(_OpenOptions_QNAME, OpenOptions.class, SourceFile.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OutputFormatSpecificSettings }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link FileMergeSettings }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OutputFormatSpecificSettings", scope = MergeSettings.class)
-    public JAXBElement<OutputFormatSpecificSettings> createMergeSettingsOutputFormatSpecificSettings(OutputFormatSpecificSettings value) {
-        return new JAXBElement<OutputFormatSpecificSettings>(_ConversionSettingsOutputFormatSpecificSettings_QNAME, OutputFormatSpecificSettings.class, MergeSettings.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "MergeSettings", scope = SourceFile.class)
+    public JAXBElement<FileMergeSettings> createSourceFileMergeSettings(FileMergeSettings value) {
+        return new JAXBElement<FileMergeSettings>(_MergeSettings_QNAME, FileMergeSettings.class, SourceFile.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OpenPassword", scope = MergeSettings.class)
-    public JAXBElement<String> createMergeSettingsOpenPassword(String value) {
-        return new JAXBElement<String>(_ConversionSettingsOpenPassword_QNAME, String.class, MergeSettings.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfWatermark }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "Watermarks", scope = MergeSettings.class)
-    public JAXBElement<ArrayOfWatermark> createMergeSettingsWatermarks(ArrayOfWatermark value) {
-        return new JAXBElement<ArrayOfWatermark>(_ConversionSettingsWatermarks_QNAME, ArrayOfWatermark.class, MergeSettings.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ProcessingOptions }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "options", scope = ProcessBatch.class)
-    public JAXBElement<ProcessingOptions> createProcessBatchOptions(ProcessingOptions value) {
-        return new JAXBElement<ProcessingOptions>(_ProcessBatchOptions_QNAME, ProcessingOptions.class, ProcessBatch.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BatchResults }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "ProcessBatchResult", scope = ProcessBatchResponse.class)
-    public JAXBElement<BatchResults> createProcessBatchResponseProcessBatchResult(BatchResults value) {
-        return new JAXBElement<BatchResults>(_ProcessBatchResponseProcessBatchResult_QNAME, BatchResults.class, ProcessBatchResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "Text", scope = QRCode.class)
-    public JAXBElement<String> createQRCodeText(String value) {
-        return new JAXBElement<String>(_Text_QNAME, String.class, QRCode.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/01/14", name = "Name", scope = NameValuePair.class)
-    public JAXBElement<String> createNameValuePairName(String value) {
-        return new JAXBElement<String>(_NameValuePairName_QNAME, String.class, NameValuePair.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/01/14", name = "Value", scope = NameValuePair.class)
-    public JAXBElement<String> createNameValuePairValue(String value) {
-        return new JAXBElement<String>(_NameValuePairValue_QNAME, String.class, NameValuePair.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "Name", scope = CadConversionElement.class)
-    public JAXBElement<String> createCadConversionElementName(String value) {
-        return new JAXBElement<String>(_CadConversionElementName_QNAME, String.class, CadConversionElement.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfOCRRegion }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Regions", scope = OCRSettings.class)
-    public JAXBElement<ArrayOfOCRRegion> createOCRSettingsRegions(ArrayOfOCRRegion value) {
-        return new JAXBElement<ArrayOfOCRRegion>(_OCRSettingsRegions_QNAME, ArrayOfOCRRegion.class, OCRSettings.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "WhiteList", scope = OCRSettings.class)
-    public JAXBElement<String> createOCRSettingsWhiteList(String value) {
-        return new JAXBElement<String>(_OCRSettingsWhiteList_QNAME, String.class, OCRSettings.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Language", scope = OCRSettings.class)
-    public JAXBElement<String> createOCRSettingsLanguage(String value) {
-        return new JAXBElement<String>(_OCRSettingsLanguage_QNAME, String.class, OCRSettings.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "OCREngine", scope = OCRSettings.class)
-    public JAXBElement<String> createOCRSettingsOCREngine(String value) {
-        return new JAXBElement<String>(_OCRSettingsOCREngine_QNAME, String.class, OCRSettings.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OCREngineSpecificSettings }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "OCREngineSpecificSettings", scope = OCRSettings.class)
-    public JAXBElement<OCREngineSpecificSettings> createOCRSettingsOCREngineSpecificSettings(OCREngineSpecificSettings value) {
-        return new JAXBElement<OCREngineSpecificSettings>(_OCRSettingsOCREngineSpecificSettings_QNAME, OCREngineSpecificSettings.class, OCRSettings.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "BlackList", scope = OCRSettings.class)
-    public JAXBElement<String> createOCRSettingsBlackList(String value) {
-        return new JAXBElement<String>(_OCRSettingsBlackList_QNAME, String.class, OCRSettings.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ConverterName", scope = DiagnosticRequestItem.class)
-    public JAXBElement<String> createDiagnosticRequestItemConverterName(String value) {
-        return new JAXBElement<String>(_DiagnosticRequestItemConverterName_QNAME, String.class, DiagnosticRequestItem.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfDiagnosticRequestItem }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "convertersToDiagnose", scope = GetDiagnostics.class)
-    public JAXBElement<ArrayOfDiagnosticRequestItem> createGetDiagnosticsConvertersToDiagnose(ArrayOfDiagnosticRequestItem value) {
-        return new JAXBElement<ArrayOfDiagnosticRequestItem>(_GetDiagnosticsConvertersToDiagnose_QNAME, ArrayOfDiagnosticRequestItem.class, GetDiagnostics.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "File", scope = SourceFile.class)
+    public JAXBElement<byte[]> createSourceFileFile(byte[] value) {
+        return new JAXBElement<byte[]>(_BatchResultFile_QNAME, byte[].class, SourceFile.class, ((byte[]) value));
     }
 
     /**
@@ -3460,30 +3835,93 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link StatusRequest }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "statusRequest", scope = GetStatus.class)
-    public JAXBElement<StatusRequest> createGetStatusStatusRequest(StatusRequest value) {
-        return new JAXBElement<StatusRequest>(_GetStatusStatusRequest_QNAME, StatusRequest.class, GetStatus.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ForegroundColor", scope = ConverterSpecificSettingsCad.class)
+    public JAXBElement<String> createConverterSpecificSettingsCadForegroundColor(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsCadForegroundColor_QNAME, String.class, ConverterSpecificSettingsCad.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "FileNameTemplate", scope = FileSplitOptions.class)
-    public JAXBElement<String> createFileSplitOptionsFileNameTemplate(String value) {
-        return new JAXBElement<String>(_FileSplitOptionsFileNameTemplate_QNAME, String.class, FileSplitOptions.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ExternalReferences", scope = ConverterSpecificSettingsCad.class)
+    public JAXBElement<String> createConverterSpecificSettingsCadExternalReferences(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsCadExternalReferences_QNAME, String.class, ConverterSpecificSettingsCad.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PDFViewerPreferences }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/01/14", name = "ViewerPreferences", scope = OutputFormatSpecificSettingsPDF.class)
-    public JAXBElement<PDFViewerPreferences> createOutputFormatSpecificSettingsPDFViewerPreferences(PDFViewerPreferences value) {
-        return new JAXBElement<PDFViewerPreferences>(_OutputFormatSpecificSettingsPDFViewerPreferences_QNAME, PDFViewerPreferences.class, OutputFormatSpecificSettingsPDF.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PageMargins", scope = ConverterSpecificSettingsCad.class)
+    public JAXBElement<String> createConverterSpecificSettingsCadPageMargins(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLPageMargins_QNAME, String.class, ConverterSpecificSettingsCad.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "BackgroundColor", scope = ConverterSpecificSettingsCad.class)
+    public JAXBElement<String> createConverterSpecificSettingsCadBackgroundColor(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsCadBackgroundColor_QNAME, String.class, ConverterSpecificSettingsCad.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfCadConversionElement }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "CadConversionElements", scope = ConverterSpecificSettingsCad.class)
+    public JAXBElement<ArrayOfCadConversionElement> createConverterSpecificSettingsCadCadConversionElements(ArrayOfCadConversionElement value) {
+        return new JAXBElement<ArrayOfCadConversionElement>(_ConverterSpecificSettingsCadCadConversionElements_QNAME, ArrayOfCadConversionElement.class, ConverterSpecificSettingsCad.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PaperSize", scope = ConverterSpecificSettingsCad.class)
+    public JAXBElement<String> createConverterSpecificSettingsCadPaperSize(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLPaperSize_QNAME, String.class, ConverterSpecificSettingsCad.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BookmarkOptionsWordProcessing }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "BookmarkOptions", scope = ConverterSpecificSettingsWordProcessing.class)
+    public JAXBElement<BookmarkOptionsWordProcessing> createConverterSpecificSettingsWordProcessingBookmarkOptions(BookmarkOptionsWordProcessing value) {
+        return new JAXBElement<BookmarkOptionsWordProcessing>(_ConverterSpecificSettingsWordProcessingBookmarkOptions_QNAME, BookmarkOptionsWordProcessing.class, ConverterSpecificSettingsWordProcessing.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Diagnostics }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "GetDiagnosticsResult", scope = GetDiagnosticsResponse.class)
+    public JAXBElement<Diagnostics> createGetDiagnosticsResponseGetDiagnosticsResult(Diagnostics value) {
+        return new JAXBElement<Diagnostics>(_GetDiagnosticsResponseGetDiagnosticsResult_QNAME, Diagnostics.class, GetDiagnosticsResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ProcessingOptions }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "options", scope = ProcessBatch.class)
+    public JAXBElement<ProcessingOptions> createProcessBatchOptions(ProcessingOptions value) {
+        return new JAXBElement<ProcessingOptions>(_ProcessBatchOptions_QNAME, ProcessingOptions.class, ProcessBatch.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfBookmarkMapping }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "BookmarkMappings", scope = BookmarkOptionsWordProcessing.class)
+    public JAXBElement<ArrayOfBookmarkMapping> createBookmarkOptionsWordProcessingBookmarkMappings(ArrayOfBookmarkMapping value) {
+        return new JAXBElement<ArrayOfBookmarkMapping>(_BookmarkOptionsWordProcessingBookmarkMappings_QNAME, ArrayOfBookmarkMapping.class, BookmarkOptionsWordProcessing.class, value);
     }
 
     /**
@@ -3492,178 +3930,214 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ConverterName", scope = DiagnosticResultItem.class)
     public JAXBElement<String> createDiagnosticResultItemConverterName(String value) {
-        return new JAXBElement<String>(_DiagnosticRequestItemConverterName_QNAME, String.class, DiagnosticResultItem.class, value);
+        return new JAXBElement<String>(_ConverterConfigurationConverterName_QNAME, String.class, DiagnosticResultItem.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "Name", scope = InfoPathView.class)
-    public JAXBElement<String> createInfoPathViewName(String value) {
-        return new JAXBElement<String>(_CadConversionElementName_QNAME, String.class, InfoPathView.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "WebKitViewPortSize", scope = ConverterSpecificSettingsMSG.class)
+    public JAXBElement<String> createConverterSpecificSettingsMSGWebKitViewPortSize(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLWebKitViewPortSize_QNAME, String.class, ConverterSpecificSettingsMSG.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "WebKitViewPortSize", scope = ConverterSpecificSettingsHTML.class)
-    public JAXBElement<String> createConverterSpecificSettingsHTMLWebKitViewPortSize(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsMSGWebKitViewPortSize_QNAME, String.class, ConverterSpecificSettingsHTML.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "ExcludeAttachmentTypes", scope = ConverterSpecificSettingsMSG.class)
+    public JAXBElement<String> createConverterSpecificSettingsMSGExcludeAttachmentTypes(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsInfoPathExcludeAttachmentTypes_QNAME, String.class, ConverterSpecificSettingsMSG.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PageMargins", scope = ConverterSpecificSettingsHTML.class)
-    public JAXBElement<String> createConverterSpecificSettingsHTMLPageMargins(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadPageMargins_QNAME, String.class, ConverterSpecificSettingsHTML.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "IncludeAttachmentTypes", scope = ConverterSpecificSettingsMSG.class)
+    public JAXBElement<String> createConverterSpecificSettingsMSGIncludeAttachmentTypes(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsInfoPathIncludeAttachmentTypes_QNAME, String.class, ConverterSpecificSettingsMSG.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PaperSize", scope = ConverterSpecificSettingsHTML.class)
-    public JAXBElement<String> createConverterSpecificSettingsHTMLPaperSize(String value) {
-        return new JAXBElement<String>(_ConverterSpecificSettingsCadPaperSize_QNAME, String.class, ConverterSpecificSettingsHTML.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PageMargins", scope = ConverterSpecificSettingsMSG.class)
+    public JAXBElement<String> createConverterSpecificSettingsMSGPageMargins(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLPageMargins_QNAME, String.class, ConverterSpecificSettingsMSG.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Text", scope = RegionText.class)
-    public JAXBElement<String> createRegionTextText(String value) {
-        return new JAXBElement<String>(_RegionTextText_QNAME, String.class, RegionText.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "SentDateMissingDisplayMode", scope = ConverterSpecificSettingsMSG.class)
+    public JAXBElement<String> createConverterSpecificSettingsMSGSentDateMissingDisplayMode(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsMSGSentDateMissingDisplayMode_QNAME, String.class, ConverterSpecificSettingsMSG.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "RegionId", scope = RegionText.class)
-    public JAXBElement<String> createRegionTextRegionId(String value) {
-        return new JAXBElement<String>(_RegionTextRegionId_QNAME, String.class, RegionText.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfstring }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "SupportedFileExtensions", scope = ConverterConfiguration.class)
-    public JAXBElement<ArrayOfstring> createConverterConfigurationSupportedFileExtensions(ArrayOfstring value) {
-        return new JAXBElement<ArrayOfstring>(_ConverterConfigurationSupportedFileExtensions_QNAME, ArrayOfstring.class, ConverterConfiguration.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfstring }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "SupportedOutputFormats", scope = ConverterConfiguration.class)
-    public JAXBElement<ArrayOfstring> createConverterConfigurationSupportedOutputFormats(ArrayOfstring value) {
-        return new JAXBElement<ArrayOfstring>(_ConverterConfigurationSupportedOutputFormats_QNAME, ArrayOfstring.class, ConverterConfiguration.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/11/22", name = "PaperSize", scope = ConverterSpecificSettingsMSG.class)
+    public JAXBElement<String> createConverterSpecificSettingsMSGPaperSize(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsHTMLPaperSize_QNAME, String.class, ConverterSpecificSettingsMSG.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ConverterName", scope = ConverterConfiguration.class)
-    public JAXBElement<String> createConverterConfigurationConverterName(String value) {
-        return new JAXBElement<String>(_DiagnosticRequestItemConverterName_QNAME, String.class, ConverterConfiguration.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ConverterName", scope = DiagnosticRequestItem.class)
+    public JAXBElement<String> createDiagnosticRequestItemConverterName(String value) {
+        return new JAXBElement<String>(_ConverterConfigurationConverterName_QNAME, String.class, DiagnosticRequestItem.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link TOCSettings }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "TOCSettings", scope = MergeSettings.class)
+    public JAXBElement<TOCSettings> createMergeSettingsTOCSettings(TOCSettings value) {
+        return new JAXBElement<TOCSettings>(_ConversionSettingsTOCSettings_QNAME, TOCSettings.class, MergeSettings.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "Description", scope = ConverterConfiguration.class)
-    public JAXBElement<String> createConverterConfigurationDescription(String value) {
-        return new JAXBElement<String>(_ConverterConfigurationDescription_QNAME, String.class, ConverterConfiguration.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OwnerPassword", scope = MergeSettings.class)
+    public JAXBElement<String> createMergeSettingsOwnerPassword(String value) {
+        return new JAXBElement<String>(_ConversionSettingsOwnerPassword_QNAME, String.class, MergeSettings.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OCRResult }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link OutputFormatSpecificSettings }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OCRResult", scope = BatchResult.class)
-    public JAXBElement<OCRResult> createBatchResultOCRResult(OCRResult value) {
-        return new JAXBElement<OCRResult>(_BatchResultOCRResult_QNAME, OCRResult.class, BatchResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "FileName", scope = BatchResult.class)
-    public JAXBElement<String> createBatchResultFileName(String value) {
-        return new JAXBElement<String>(_BatchResultFileName_QNAME, String.class, BatchResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "File", scope = BatchResult.class)
-    public JAXBElement<byte[]> createBatchResultFile(byte[] value) {
-        return new JAXBElement<byte[]>(_BatchResultFile_QNAME, byte[].class, BatchResult.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "ConvertResult", scope = ConvertResponse.class)
-    public JAXBElement<byte[]> createConvertResponseConvertResult(byte[] value) {
-        return new JAXBElement<byte[]>(_ConvertResponseConvertResult_QNAME, byte[].class, ConvertResponse.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OutputFormatSpecificSettings", scope = MergeSettings.class)
+    public JAXBElement<OutputFormatSpecificSettings> createMergeSettingsOutputFormatSpecificSettings(OutputFormatSpecificSettings value) {
+        return new JAXBElement<OutputFormatSpecificSettings>(_ConversionSettingsOutputFormatSpecificSettings_QNAME, OutputFormatSpecificSettings.class, MergeSettings.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2015/04/13", name = "SubscriptionID", scope = SubscriptionSettings.class)
-    public JAXBElement<String> createSubscriptionSettingsSubscriptionID(String value) {
-        return new JAXBElement<String>(_SubscriptionSettingsSubscriptionID_QNAME, String.class, SubscriptionSettings.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OpenPassword", scope = MergeSettings.class)
+    public JAXBElement<String> createMergeSettingsOpenPassword(String value) {
+        return new JAXBElement<String>(_ConversionSettingsOpenPassword_QNAME, String.class, MergeSettings.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConversionSettings }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfWatermark }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ConversionSettings", scope = SourceFile.class)
-    public JAXBElement<ConversionSettings> createSourceFileConversionSettings(ConversionSettings value) {
-        return new JAXBElement<ConversionSettings>(_ConversionSettings_QNAME, ConversionSettings.class, SourceFile.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "Watermarks", scope = MergeSettings.class)
+    public JAXBElement<ArrayOfWatermark> createMergeSettingsWatermarks(ArrayOfWatermark value) {
+        return new JAXBElement<ArrayOfWatermark>(_ConversionSettingsWatermarks_QNAME, ArrayOfWatermark.class, MergeSettings.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OpenOptions }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OpenOptions", scope = SourceFile.class)
-    public JAXBElement<OpenOptions> createSourceFileOpenOptions(OpenOptions value) {
-        return new JAXBElement<OpenOptions>(_OpenOptions_QNAME, OpenOptions.class, SourceFile.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2014/04/16", name = "ExcludeAttachmentTypes", scope = ConverterSpecificSettingsPDF.class)
+    public JAXBElement<String> createConverterSpecificSettingsPDFExcludeAttachmentTypes(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsPDFExcludeAttachmentTypes_QNAME, String.class, ConverterSpecificSettingsPDF.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FileMergeSettings }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "MergeSettings", scope = SourceFile.class)
-    public JAXBElement<FileMergeSettings> createSourceFileMergeSettings(FileMergeSettings value) {
-        return new JAXBElement<FileMergeSettings>(_MergeSettings_QNAME, FileMergeSettings.class, SourceFile.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2014/04/16", name = "IncludeAttachmentTypes", scope = ConverterSpecificSettingsPDF.class)
+    public JAXBElement<String> createConverterSpecificSettingsPDFIncludeAttachmentTypes(String value) {
+        return new JAXBElement<String>(_ConverterSpecificSettingsPDFIncludeAttachmentTypes_QNAME, String.class, ConverterSpecificSettingsPDF.class, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfDiagnosticRequestItem }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "File", scope = SourceFile.class)
-    public JAXBElement<byte[]> createSourceFileFile(byte[] value) {
-        return new JAXBElement<byte[]>(_BatchResultFile_QNAME, byte[].class, SourceFile.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "convertersToDiagnose", scope = GetDiagnostics.class)
+    public JAXBElement<ArrayOfDiagnosticRequestItem> createGetDiagnosticsConvertersToDiagnose(ArrayOfDiagnosticRequestItem value) {
+        return new JAXBElement<ArrayOfDiagnosticRequestItem>(_GetDiagnosticsConvertersToDiagnose_QNAME, ArrayOfDiagnosticRequestItem.class, GetDiagnostics.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BatchResults }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "ProcessBatchResult", scope = ProcessBatchResponse.class)
+    public JAXBElement<BatchResults> createProcessBatchResponseProcessBatchResult(BatchResults value) {
+        return new JAXBElement<BatchResults>(_ProcessBatchResponseProcessBatchResult_QNAME, BatchResults.class, ProcessBatchResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Status }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "GetStatusResult", scope = GetStatusResponse.class)
+    public JAXBElement<Status> createGetStatusResponseGetStatusResult(Status value) {
+        return new JAXBElement<Status>(_GetStatusResponseGetStatusResult_QNAME, Status.class, GetStatusResponse.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OriginalFileName", scope = OpenOptions.class)
+    public JAXBElement<String> createOpenOptionsOriginalFileName(String value) {
+        return new JAXBElement<String>(_OpenOptionsOriginalFileName_QNAME, String.class, OpenOptions.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SubscriptionSettings }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "SubscriptionSettings", scope = OpenOptions.class)
+    public JAXBElement<SubscriptionSettings> createOpenOptionsSubscriptionSettings(SubscriptionSettings value) {
+        return new JAXBElement<SubscriptionSettings>(_ProcessingOptionsSubscriptionSettings_QNAME, SubscriptionSettings.class, OpenOptions.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "UserName", scope = OpenOptions.class)
+    public JAXBElement<String> createOpenOptionsUserName(String value) {
+        return new JAXBElement<String>(_OpenOptionsUserName_QNAME, String.class, OpenOptions.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SystemSettings }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "SystemSettings", scope = OpenOptions.class)
+    public JAXBElement<SystemSettings> createOpenOptionsSystemSettings(SystemSettings value) {
+        return new JAXBElement<SystemSettings>(_OpenOptionsSystemSettings_QNAME, SystemSettings.class, OpenOptions.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "FileExtension", scope = OpenOptions.class)
+    public JAXBElement<String> createOpenOptionsFileExtension(String value) {
+        return new JAXBElement<String>(_OpenOptionsFileExtension_QNAME, String.class, OpenOptions.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "Password", scope = OpenOptions.class)
+    public JAXBElement<String> createOpenOptionsPassword(String value) {
+        return new JAXBElement<String>(_OpenOptionsPassword_QNAME, String.class, OpenOptions.class, value);
     }
 
     /**
@@ -3757,129 +4231,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfOperationTypeConfiguration }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "OperationTypes", scope = Configuration.class)
-    public JAXBElement<ArrayOfOperationTypeConfiguration> createConfigurationOperationTypes(ArrayOfOperationTypeConfiguration value) {
-        return new JAXBElement<ArrayOfOperationTypeConfiguration>(_ConfigurationOperationTypes_QNAME, ArrayOfOperationTypeConfiguration.class, Configuration.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "ConversionServerAddress", scope = Configuration.class)
-    public JAXBElement<String> createConfigurationConversionServerAddress(String value) {
-        return new JAXBElement<String>(_ConfigurationConversionServerAddress_QNAME, String.class, Configuration.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfConverterConfiguration }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "Converters", scope = Configuration.class)
-    public JAXBElement<ArrayOfConverterConfiguration> createConfigurationConverters(ArrayOfConverterConfiguration value) {
-        return new JAXBElement<ArrayOfConverterConfiguration>(_ConfigurationConverters_QNAME, ArrayOfConverterConfiguration.class, Configuration.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfRegionText }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "RegionTexts", scope = OCRResult.class)
-    public JAXBElement<ArrayOfRegionText> createOCRResultRegionTexts(ArrayOfRegionText value) {
-        return new JAXBElement<ArrayOfRegionText>(_OCRResultRegionTexts_QNAME, ArrayOfRegionText.class, OCRResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Text", scope = OCRResult.class)
-    public JAXBElement<String> createOCRResultText(String value) {
-        return new JAXBElement<String>(_RegionTextText_QNAME, String.class, OCRResult.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "sourceFile", scope = ApplyWatermark.class)
-    public JAXBElement<byte[]> createApplyWatermarkSourceFile(byte[] value) {
-        return new JAXBElement<byte[]>(_ProcessChangesSourceFile_QNAME, byte[].class, ApplyWatermark.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ConversionSettings }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "conversionSettings", scope = ApplyWatermark.class)
-    public JAXBElement<ConversionSettings> createApplyWatermarkConversionSettings(ConversionSettings value) {
-        return new JAXBElement<ConversionSettings>(_ProcessChangesConversionSettings_QNAME, ConversionSettings.class, ApplyWatermark.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OpenOptions }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "openOptions", scope = ApplyWatermark.class)
-    public JAXBElement<OpenOptions> createApplyWatermarkOpenOptions(OpenOptions value) {
-        return new JAXBElement<OpenOptions>(_ProcessChangesOpenOptions_QNAME, OpenOptions.class, ApplyWatermark.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "PdfData", scope = Pdf.class)
-    public JAXBElement<byte[]> createPdfPdfData(byte[] value) {
-        return new JAXBElement<byte[]>(_PdfPdfData_QNAME, byte[].class, Pdf.class, ((byte[]) value));
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "Description", scope = OperationTypeConfiguration.class)
-    public JAXBElement<String> createOperationTypeConfigurationDescription(String value) {
-        return new JAXBElement<String>(_OperationTypeConfigurationDescription_QNAME, String.class, OperationTypeConfiguration.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "EndY", scope = Line.class)
-    public JAXBElement<String> createLineEndY(String value) {
-        return new JAXBElement<String>(_LineEndY_QNAME, String.class, Line.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "EndX", scope = Line.class)
-    public JAXBElement<String> createLineEndX(String value) {
-        return new JAXBElement<String>(_LineEndX_QNAME, String.class, Line.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfStatusRequestItem }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "StatusRequestItems", scope = StatusRequest.class)
-    public JAXBElement<ArrayOfStatusRequestItem> createStatusRequestStatusRequestItems(ArrayOfStatusRequestItem value) {
-        return new JAXBElement<ArrayOfStatusRequestItem>(_StatusRequestStatusRequestItems_QNAME, ArrayOfStatusRequestItem.class, StatusRequest.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link byte[]}{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "ImageData", scope = Image.class)
-    public JAXBElement<byte[]> createImageImageData(byte[] value) {
-        return new JAXBElement<byte[]>(_ImageImageData_QNAME, byte[].class, Image.class, ((byte[]) value));
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2010/05/17", name = "PageRange", scope = Watermark.class)
+    public JAXBElement<String> createWatermarkPageRange(String value) {
+        return new JAXBElement<String>(_WatermarkPageRange_QNAME, String.class, Watermark.class, value);
     }
 
     /**
@@ -3901,84 +4258,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link PDFViewerPreferences }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Id", scope = OCRRegion.class)
-    public JAXBElement<String> createOCRRegionId(String value) {
-        return new JAXBElement<String>(_OCRRegionId_QNAME, String.class, OCRRegion.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Width", scope = OCRRegion.class)
-    public JAXBElement<String> createOCRRegionWidth(String value) {
-        return new JAXBElement<String>(_OCRRegionWidth_QNAME, String.class, OCRRegion.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Height", scope = OCRRegion.class)
-    public JAXBElement<String> createOCRRegionHeight(String value) {
-        return new JAXBElement<String>(_OCRRegionHeight_QNAME, String.class, OCRRegion.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "PageRange", scope = OCRRegion.class)
-    public JAXBElement<String> createOCRRegionPageRange(String value) {
-        return new JAXBElement<String>(_OCRRegionPageRange_QNAME, String.class, OCRRegion.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "Y", scope = OCRRegion.class)
-    public JAXBElement<String> createOCRRegionY(String value) {
-        return new JAXBElement<String>(_OCRRegionY_QNAME, String.class, OCRRegion.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/08/01", name = "X", scope = OCRRegion.class)
-    public JAXBElement<String> createOCRRegionX(String value) {
-        return new JAXBElement<String>(_OCRRegionX_QNAME, String.class, OCRRegion.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Status }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://services.muhimbi.com/2009/10/06", name = "GetStatusResult", scope = GetStatusResponse.class)
-    public JAXBElement<Status> createGetStatusResponseGetStatusResult(Status value) {
-        return new JAXBElement<Status>(_GetStatusResponseGetStatusResult_QNAME, Status.class, GetStatusResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfStatusResultItem }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2018/01/11", name = "Items", scope = Status.class)
-    public JAXBElement<ArrayOfStatusResultItem> createStatusItems(ArrayOfStatusResultItem value) {
-        return new JAXBElement<ArrayOfStatusResultItem>(_StatusItems_QNAME, ArrayOfStatusResultItem.class, Status.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfDiagnosticResultItem }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://types.muhimbi.com/2009/10/06", name = "Items", scope = Diagnostics.class)
-    public JAXBElement<ArrayOfDiagnosticResultItem> createDiagnosticsItems(ArrayOfDiagnosticResultItem value) {
-        return new JAXBElement<ArrayOfDiagnosticResultItem>(_DiagnosticsItems_QNAME, ArrayOfDiagnosticResultItem.class, Diagnostics.class, value);
+    @XmlElementDecl(namespace = "http://types.muhimbi.com/2013/01/14", name = "ViewerPreferences", scope = OutputFormatSpecificSettingsPDF.class)
+    public JAXBElement<PDFViewerPreferences> createOutputFormatSpecificSettingsPDFViewerPreferences(PDFViewerPreferences value) {
+        return new JAXBElement<PDFViewerPreferences>(_OutputFormatSpecificSettingsPDFViewerPreferences_QNAME, PDFViewerPreferences.class, OutputFormatSpecificSettingsPDF.class, value);
     }
 
 }

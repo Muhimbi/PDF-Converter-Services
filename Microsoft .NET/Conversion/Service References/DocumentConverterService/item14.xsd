@@ -228,283 +228,6 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="RevisionsAndCommentsDisplayMode" nillable="true" type="tns:RevisionsAndCommentsDisplayMode" />
-  <xs:simpleType name="PresentationsPrintOutputType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Slides">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="OneSlideHandouts">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="TwoSlideHandouts" />
-      <xs:enumeration value="ThreeSlideHandouts" />
-      <xs:enumeration value="FourSlideHandouts">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="SixSlideHandouts">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="NineSlideHandouts">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="NotesPages">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Outline">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="PresentationsPrintOutputType" nillable="true" type="tns:PresentationsPrintOutputType" />
-  <xs:simpleType name="ContentScale">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Default" />
-      <xs:enumeration value="NoScale" />
-      <xs:enumeration value="FitWidth" />
-      <xs:enumeration value="FitHeight" />
-      <xs:enumeration value="FitPage" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ContentScale" nillable="true" type="tns:ContentScale" />
-  <xs:simpleType name="CadConversionElementType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="AllLayouts" />
-      <xs:enumeration value="NamedLayout" />
-      <xs:enumeration value="TopView" />
-      <xs:enumeration value="BottomView" />
-      <xs:enumeration value="LeftView" />
-      <xs:enumeration value="RightView" />
-      <xs:enumeration value="FrontView" />
-      <xs:enumeration value="BackView" />
-      <xs:enumeration value="SW_IsometricView" />
-      <xs:enumeration value="SE_IsometricView" />
-      <xs:enumeration value="NE_IsometricView" />
-      <xs:enumeration value="NW_IsometricView" />
-      <xs:enumeration value="NamedView" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="CadConversionElementType" nillable="true" type="tns:CadConversionElementType" />
-  <xs:simpleType name="CadEmptyLayoutDetectionMode">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Default" />
-      <xs:enumeration value="SkipNone" />
-      <xs:enumeration value="SkipEmptyLayouts" />
-      <xs:enumeration value="SkipLayoutsWithoutViewports" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="CadEmptyLayoutDetectionMode" nillable="true" type="tns:CadEmptyLayoutDetectionMode" />
-  <xs:simpleType name="CadLayoutSortOrder">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Default" />
-      <xs:enumeration value="Ascending" />
-      <xs:enumeration value="Descending" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="CadLayoutSortOrder" nillable="true" type="tns:CadLayoutSortOrder" />
-  <xs:simpleType name="HTMLScaleMode">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Default" />
-      <xs:enumeration value="FitWidth" />
-      <xs:enumeration value="NoScale" />
-      <xs:enumeration value="FitWidthScaleImagesOnly" />
-      <xs:enumeration value="FitWidthScaleWideImagesOnly" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="HTMLScaleMode" nillable="true" type="tns:HTMLScaleMode" />
-  <xs:simpleType name="HTMLRenderingEngine">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Default" />
-      <xs:enumeration value="IE" />
-      <xs:enumeration value="WebKit" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="HTMLRenderingEngine" nillable="true" type="tns:HTMLRenderingEngine" />
-  <xs:simpleType name="AuthenticationMode">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Default" />
-      <xs:enumeration value="WebAuthentication" />
-      <xs:enumeration value="MSOAuthentication" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="AuthenticationMode" nillable="true" type="tns:AuthenticationMode" />
-  <xs:simpleType name="MediaType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Default" />
-      <xs:enumeration value="Screen" />
-      <xs:enumeration value="Print" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="MediaType" nillable="true" type="tns:MediaType" />
-  <xs:simpleType name="MSGPlainTextLineBreaks">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="RetainAll">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="RemoveExtra">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Legacy">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="MSGPlainTextLineBreaks" nillable="true" type="tns:MSGPlainTextLineBreaks" />
-  <xs:simpleType name="MSGBestBodyMode">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Strict">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Default">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="MSGBestBodyMode" nillable="true" type="tns:MSGBestBodyMode" />
-  <xs:simpleType name="MSGEmailAddressDisplayMode">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Name">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="NameAndAddress">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Address">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="NameAndSMTPAddress">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="MSGEmailAddressDisplayMode" nillable="true" type="tns:MSGEmailAddressDisplayMode" />
-  <xs:simpleType name="MSGEmbeddedObjectDisplayMode">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="InlineNoScale">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="InlineFitWidth">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Disabled">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="MSGEmbeddedObjectDisplayMode" nillable="true" type="tns:MSGEmbeddedObjectDisplayMode" />
-  <xs:simpleType name="MSGEmbeddedObjectIconDisplayMode">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="IconOnly">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Disabled">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="MSGEmbeddedObjectIconDisplayMode" nillable="true" type="tns:MSGEmbeddedObjectIconDisplayMode" />
-  <xs:simpleType name="PDFConvertAttachmentMode">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="RemoveAll">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="RemoveSupported">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="PDFConvertAttachmentMode" nillable="true" type="tns:PDFConvertAttachmentMode" />
   <xs:simpleType name="OCRLanguage">
     <xs:restriction base="xs:string">
       <xs:enumeration value="All">
@@ -664,6 +387,307 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="OCRLanguage" nillable="true" type="tns:OCRLanguage" />
+  <xs:simpleType name="PresentationsPrintOutputType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Slides">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OneSlideHandouts">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TwoSlideHandouts" />
+      <xs:enumeration value="ThreeSlideHandouts" />
+      <xs:enumeration value="FourSlideHandouts">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SixSlideHandouts">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NineSlideHandouts">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotesPages">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Outline">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PresentationsPrintOutputType" nillable="true" type="tns:PresentationsPrintOutputType" />
+  <xs:simpleType name="ContentScale">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="NoScale" />
+      <xs:enumeration value="FitWidth" />
+      <xs:enumeration value="FitHeight" />
+      <xs:enumeration value="FitPage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ContentScale" nillable="true" type="tns:ContentScale" />
+  <xs:simpleType name="MergeMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="Merge" />
+      <xs:enumeration value="AttachAsPDF" />
+      <xs:enumeration value="AttachOriginal" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MergeMode" nillable="true" type="tns:MergeMode" />
+  <xs:simpleType name="UnsupportedFileBehaviour">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="Remove" />
+      <xs:enumeration value="AttachOriginal" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UnsupportedFileBehaviour" nillable="true" type="tns:UnsupportedFileBehaviour" />
+  <xs:simpleType name="CadConversionElementType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AllLayouts" />
+      <xs:enumeration value="NamedLayout" />
+      <xs:enumeration value="TopView" />
+      <xs:enumeration value="BottomView" />
+      <xs:enumeration value="LeftView" />
+      <xs:enumeration value="RightView" />
+      <xs:enumeration value="FrontView" />
+      <xs:enumeration value="BackView" />
+      <xs:enumeration value="SW_IsometricView" />
+      <xs:enumeration value="SE_IsometricView" />
+      <xs:enumeration value="NE_IsometricView" />
+      <xs:enumeration value="NW_IsometricView" />
+      <xs:enumeration value="NamedView" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CadConversionElementType" nillable="true" type="tns:CadConversionElementType" />
+  <xs:simpleType name="CadEmptyLayoutDetectionMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="SkipNone" />
+      <xs:enumeration value="SkipEmptyLayouts" />
+      <xs:enumeration value="SkipLayoutsWithoutViewports" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CadEmptyLayoutDetectionMode" nillable="true" type="tns:CadEmptyLayoutDetectionMode" />
+  <xs:simpleType name="CadLayoutSortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="Ascending" />
+      <xs:enumeration value="Descending" />
+      <xs:enumeration value="TabOrder" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CadLayoutSortOrder" nillable="true" type="tns:CadLayoutSortOrder" />
+  <xs:simpleType name="HTMLScaleMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="FitWidth" />
+      <xs:enumeration value="NoScale" />
+      <xs:enumeration value="FitWidthScaleImagesOnly" />
+      <xs:enumeration value="FitWidthScaleWideImagesOnly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HTMLScaleMode" nillable="true" type="tns:HTMLScaleMode" />
+  <xs:simpleType name="HTMLRenderingEngine">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="IE" />
+      <xs:enumeration value="WebKit" />
+      <xs:enumeration value="Chromium" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HTMLRenderingEngine" nillable="true" type="tns:HTMLRenderingEngine" />
+  <xs:simpleType name="AuthenticationMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="WebAuthentication" />
+      <xs:enumeration value="MSOAuthentication" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AuthenticationMode" nillable="true" type="tns:AuthenticationMode" />
+  <xs:simpleType name="MediaType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="Screen" />
+      <xs:enumeration value="Print" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MediaType" nillable="true" type="tns:MediaType" />
+  <xs:simpleType name="MSGPlainTextLineBreaks">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RetainAll">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RemoveExtra">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Legacy">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MSGPlainTextLineBreaks" nillable="true" type="tns:MSGPlainTextLineBreaks" />
+  <xs:simpleType name="MSGBestBodyMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Strict">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Default">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MSGBestBodyMode" nillable="true" type="tns:MSGBestBodyMode" />
+  <xs:simpleType name="MSGEmailAddressDisplayMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Name">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NameAndAddress">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Address">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NameAndSMTPAddress">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MSGEmailAddressDisplayMode" nillable="true" type="tns:MSGEmailAddressDisplayMode" />
+  <xs:simpleType name="MSGEmbeddedObjectDisplayMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InlineNoScale">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InlineFitWidth">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Disabled">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MSGEmbeddedObjectDisplayMode" nillable="true" type="tns:MSGEmbeddedObjectDisplayMode" />
+  <xs:simpleType name="MSGEmbeddedObjectIconDisplayMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IconOnly">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Disabled">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MSGEmbeddedObjectIconDisplayMode" nillable="true" type="tns:MSGEmbeddedObjectIconDisplayMode" />
+  <xs:simpleType name="ForceMessageHeaderEncoding">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="UTF8" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ForceMessageHeaderEncoding" nillable="true" type="tns:ForceMessageHeaderEncoding" />
+  <xs:simpleType name="PDFConvertAttachmentMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="RemoveAll" />
+      <xs:enumeration value="RemoveSupported" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PDFConvertAttachmentMode" nillable="true" type="tns:PDFConvertAttachmentMode" />
+  <xs:simpleType name="BooleanEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="True" />
+      <xs:enumeration value="False" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BooleanEnum" nillable="true" type="tns:BooleanEnum" />
   <xs:simpleType name="PDFPageLayout">
     <xs:restriction base="xs:string">
       <xs:enumeration value="SinglePage" />

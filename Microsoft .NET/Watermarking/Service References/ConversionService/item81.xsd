@@ -9,6 +9,11 @@
           <xs:element minOccurs="0" name="ConvertAttachments" type="xs:boolean" />
           <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ConvertAttachmentMode" type="q2:PDFConvertAttachmentMode" />
           <xs:element minOccurs="0" name="IgnorePortfolioCoverSheet" type="xs:boolean" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="AttachmentMergeMode" type="q3:MergeMode" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="UnsupportedAttachmentBehaviour" type="q4:UnsupportedFileBehaviour" />
+          <xs:element minOccurs="0" name="BreakMergeOnError" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IncludeAttachmentTypes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExcludeAttachmentTypes" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

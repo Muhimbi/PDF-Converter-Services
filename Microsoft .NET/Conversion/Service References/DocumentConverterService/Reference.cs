@@ -714,8 +714,8 @@ namespace TestHarness.DocumentConverterService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.ConverterSpecificSettings_MSG))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.ConverterSpecificSettings_CommandLineConverter))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.ConverterSpecificSettings_TIFF))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.ConverterSpecificSettings_PDF))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.EnumsProxy))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.ConverterSpecificSettings_PDF))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.ConverterSpecificSettings_Spreadsheets))]
     public partial class ConverterSpecificSettings : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1386,6 +1386,9 @@ namespace TestHarness.DocumentConverterService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PageRangeField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool PrintOnlyField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public TestHarness.DocumentConverterService.PageOrientation PageOrientation {
             get {
@@ -1450,6 +1453,19 @@ namespace TestHarness.DocumentConverterService {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public bool PrintOnly {
+            get {
+                return this.PrintOnlyField;
+            }
+            set {
+                if ((this.PrintOnlyField.Equals(value) != true)) {
+                    this.PrintOnlyField = value;
+                    this.RaisePropertyChanged("PrintOnly");
+                }
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -1482,6 +1498,7 @@ namespace TestHarness.DocumentConverterService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.Ellipse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.Line))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.QRCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.LinearBarcode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.Container))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.Watermark))]
     public partial class Element : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2056,6 +2073,205 @@ namespace TestHarness.DocumentConverterService {
                 if ((this.VersionField.Equals(value) != true)) {
                     this.VersionField = value;
                     this.RaisePropertyChanged("Version");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LinearBarcode", Namespace="http://types.muhimbi.com/2010/05/17")]
+    [System.SerializableAttribute()]
+    public partial class LinearBarcode : TestHarness.DocumentConverterService.Element {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.BarcodeType BarcodeTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool OmitStartStopSymbolsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DisableCheckDigitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ShowCheckDigitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.BarcodeTextLocation TextLocationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BarcodeToTextGapHeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FontFamilyNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FontSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.FontStyle FontStyleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.HAlign TextAlignmentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MarginField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Text {
+            get {
+                return this.TextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TextField, value) != true)) {
+                    this.TextField = value;
+                    this.RaisePropertyChanged("Text");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public TestHarness.DocumentConverterService.BarcodeType BarcodeType {
+            get {
+                return this.BarcodeTypeField;
+            }
+            set {
+                if ((this.BarcodeTypeField.Equals(value) != true)) {
+                    this.BarcodeTypeField = value;
+                    this.RaisePropertyChanged("BarcodeType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public bool OmitStartStopSymbols {
+            get {
+                return this.OmitStartStopSymbolsField;
+            }
+            set {
+                if ((this.OmitStartStopSymbolsField.Equals(value) != true)) {
+                    this.OmitStartStopSymbolsField = value;
+                    this.RaisePropertyChanged("OmitStartStopSymbols");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public bool DisableCheckDigit {
+            get {
+                return this.DisableCheckDigitField;
+            }
+            set {
+                if ((this.DisableCheckDigitField.Equals(value) != true)) {
+                    this.DisableCheckDigitField = value;
+                    this.RaisePropertyChanged("DisableCheckDigit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public bool ShowCheckDigit {
+            get {
+                return this.ShowCheckDigitField;
+            }
+            set {
+                if ((this.ShowCheckDigitField.Equals(value) != true)) {
+                    this.ShowCheckDigitField = value;
+                    this.RaisePropertyChanged("ShowCheckDigit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public TestHarness.DocumentConverterService.BarcodeTextLocation TextLocation {
+            get {
+                return this.TextLocationField;
+            }
+            set {
+                if ((this.TextLocationField.Equals(value) != true)) {
+                    this.TextLocationField = value;
+                    this.RaisePropertyChanged("TextLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public string BarcodeToTextGapHeight {
+            get {
+                return this.BarcodeToTextGapHeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BarcodeToTextGapHeightField, value) != true)) {
+                    this.BarcodeToTextGapHeightField = value;
+                    this.RaisePropertyChanged("BarcodeToTextGapHeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string FontFamilyName {
+            get {
+                return this.FontFamilyNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FontFamilyNameField, value) != true)) {
+                    this.FontFamilyNameField = value;
+                    this.RaisePropertyChanged("FontFamilyName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public string FontSize {
+            get {
+                return this.FontSizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FontSizeField, value) != true)) {
+                    this.FontSizeField = value;
+                    this.RaisePropertyChanged("FontSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public TestHarness.DocumentConverterService.FontStyle FontStyle {
+            get {
+                return this.FontStyleField;
+            }
+            set {
+                if ((this.FontStyleField.Equals(value) != true)) {
+                    this.FontStyleField = value;
+                    this.RaisePropertyChanged("FontStyle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public TestHarness.DocumentConverterService.HAlign TextAlignment {
+            get {
+                return this.TextAlignmentField;
+            }
+            set {
+                if ((this.TextAlignmentField.Equals(value) != true)) {
+                    this.TextAlignmentField = value;
+                    this.RaisePropertyChanged("TextAlignment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public string Margin {
+            get {
+                return this.MarginField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MarginField, value) != true)) {
+                    this.MarginField = value;
+                    this.RaisePropertyChanged("Margin");
                 }
             }
         }
@@ -2731,6 +2947,63 @@ namespace TestHarness.DocumentConverterService {
         Version40 = 40,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BarcodeType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        ".Graphics")]
+    public enum BarcodeType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Codabar = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code11 = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code32 = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code39 = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code39Extended = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code93 = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code93Extended = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128 = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128A = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128B = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128C = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GS1Code128 = 11,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BarcodeTextLocation", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        ".Graphics")]
+    public enum BarcodeTextLocation : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Bottom = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Top = 2,
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_WordProcessing", Namespace="http://types.muhimbi.com/2010/11/22")]
@@ -2745,6 +3018,9 @@ namespace TestHarness.DocumentConverterService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool ProcessDocumentTemplateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.BookmarkOptions_WordProcessing BookmarkOptionsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public TestHarness.DocumentConverterService.RevisionsAndCommentsMarkupMode RevisionsAndCommentsMarkupMode {
@@ -2781,6 +3057,19 @@ namespace TestHarness.DocumentConverterService {
                 if ((this.ProcessDocumentTemplateField.Equals(value) != true)) {
                     this.ProcessDocumentTemplateField = value;
                     this.RaisePropertyChanged("ProcessDocumentTemplate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TestHarness.DocumentConverterService.BookmarkOptions_WordProcessing BookmarkOptions {
+            get {
+                return this.BookmarkOptionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BookmarkOptionsField, value) != true)) {
+                    this.BookmarkOptionsField = value;
+                    this.RaisePropertyChanged("BookmarkOptions");
                 }
             }
         }
@@ -2954,6 +3243,21 @@ namespace TestHarness.DocumentConverterService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private byte[] XSNDataField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.MergeMode AttachmentMergeModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.UnsupportedFileBehaviour UnsupportedAttachmentBehaviourField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool BreakMergeOnErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IncludeAttachmentTypesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExcludeAttachmentTypesField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool StripDotNETCode {
             get {
@@ -3106,6 +3410,71 @@ namespace TestHarness.DocumentConverterService {
                 if ((object.ReferenceEquals(this.XSNDataField, value) != true)) {
                     this.XSNDataField = value;
                     this.RaisePropertyChanged("XSNData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public TestHarness.DocumentConverterService.MergeMode AttachmentMergeMode {
+            get {
+                return this.AttachmentMergeModeField;
+            }
+            set {
+                if ((this.AttachmentMergeModeField.Equals(value) != true)) {
+                    this.AttachmentMergeModeField = value;
+                    this.RaisePropertyChanged("AttachmentMergeMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public TestHarness.DocumentConverterService.UnsupportedFileBehaviour UnsupportedAttachmentBehaviour {
+            get {
+                return this.UnsupportedAttachmentBehaviourField;
+            }
+            set {
+                if ((this.UnsupportedAttachmentBehaviourField.Equals(value) != true)) {
+                    this.UnsupportedAttachmentBehaviourField = value;
+                    this.RaisePropertyChanged("UnsupportedAttachmentBehaviour");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public bool BreakMergeOnError {
+            get {
+                return this.BreakMergeOnErrorField;
+            }
+            set {
+                if ((this.BreakMergeOnErrorField.Equals(value) != true)) {
+                    this.BreakMergeOnErrorField = value;
+                    this.RaisePropertyChanged("BreakMergeOnError");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public string IncludeAttachmentTypes {
+            get {
+                return this.IncludeAttachmentTypesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IncludeAttachmentTypesField, value) != true)) {
+                    this.IncludeAttachmentTypesField = value;
+                    this.RaisePropertyChanged("IncludeAttachmentTypes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public string ExcludeAttachmentTypes {
+            get {
+                return this.ExcludeAttachmentTypesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExcludeAttachmentTypesField, value) != true)) {
+                    this.ExcludeAttachmentTypesField = value;
+                    this.RaisePropertyChanged("ExcludeAttachmentTypes");
                 }
             }
         }
@@ -3489,6 +3858,27 @@ namespace TestHarness.DocumentConverterService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PageMarginsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.MergeMode AttachmentMergeModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.UnsupportedFileBehaviour UnsupportedAttachmentBehaviourField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool BreakMergeOnErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.ForceMessageHeaderEncoding ForceMessageHeaderEncodingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MinimumImageAttachmentDimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IncludeAttachmentTypesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExcludeAttachmentTypesField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool ConvertAttachments {
             get {
@@ -3719,6 +4109,97 @@ namespace TestHarness.DocumentConverterService {
                 if ((object.ReferenceEquals(this.PageMarginsField, value) != true)) {
                     this.PageMarginsField = value;
                     this.RaisePropertyChanged("PageMargins");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public TestHarness.DocumentConverterService.MergeMode AttachmentMergeMode {
+            get {
+                return this.AttachmentMergeModeField;
+            }
+            set {
+                if ((this.AttachmentMergeModeField.Equals(value) != true)) {
+                    this.AttachmentMergeModeField = value;
+                    this.RaisePropertyChanged("AttachmentMergeMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public TestHarness.DocumentConverterService.UnsupportedFileBehaviour UnsupportedAttachmentBehaviour {
+            get {
+                return this.UnsupportedAttachmentBehaviourField;
+            }
+            set {
+                if ((this.UnsupportedAttachmentBehaviourField.Equals(value) != true)) {
+                    this.UnsupportedAttachmentBehaviourField = value;
+                    this.RaisePropertyChanged("UnsupportedAttachmentBehaviour");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+        public bool BreakMergeOnError {
+            get {
+                return this.BreakMergeOnErrorField;
+            }
+            set {
+                if ((this.BreakMergeOnErrorField.Equals(value) != true)) {
+                    this.BreakMergeOnErrorField = value;
+                    this.RaisePropertyChanged("BreakMergeOnError");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
+        public TestHarness.DocumentConverterService.ForceMessageHeaderEncoding ForceMessageHeaderEncoding {
+            get {
+                return this.ForceMessageHeaderEncodingField;
+            }
+            set {
+                if ((this.ForceMessageHeaderEncodingField.Equals(value) != true)) {
+                    this.ForceMessageHeaderEncodingField = value;
+                    this.RaisePropertyChanged("ForceMessageHeaderEncoding");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+        public int MinimumImageAttachmentDimension {
+            get {
+                return this.MinimumImageAttachmentDimensionField;
+            }
+            set {
+                if ((this.MinimumImageAttachmentDimensionField.Equals(value) != true)) {
+                    this.MinimumImageAttachmentDimensionField = value;
+                    this.RaisePropertyChanged("MinimumImageAttachmentDimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+        public string IncludeAttachmentTypes {
+            get {
+                return this.IncludeAttachmentTypesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IncludeAttachmentTypesField, value) != true)) {
+                    this.IncludeAttachmentTypesField = value;
+                    this.RaisePropertyChanged("IncludeAttachmentTypes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+        public string ExcludeAttachmentTypes {
+            get {
+                return this.ExcludeAttachmentTypesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExcludeAttachmentTypesField, value) != true)) {
+                    this.ExcludeAttachmentTypesField = value;
+                    this.RaisePropertyChanged("ExcludeAttachmentTypes");
                 }
             }
         }
@@ -3980,6 +4461,45 @@ namespace TestHarness.DocumentConverterService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EnumsProxy", Namespace="http://types.muhimbi.com/2013/08/01")]
+    [System.SerializableAttribute()]
+    public partial class EnumsProxy : TestHarness.DocumentConverterService.ConverterSpecificSettings {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.OCRLanguage OCRLanguageProxyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxyField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestHarness.DocumentConverterService.OCRLanguage OCRLanguageProxy {
+            get {
+                return this.OCRLanguageProxyField;
+            }
+            set {
+                if ((this.OCRLanguageProxyField.Equals(value) != true)) {
+                    this.OCRLanguageProxyField = value;
+                    this.RaisePropertyChanged("OCRLanguageProxy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestHarness.DocumentConverterService.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxy {
+            get {
+                return this.PrimeOCR_AccuracyLevelProxyField;
+            }
+            set {
+                if ((this.PrimeOCR_AccuracyLevelProxyField.Equals(value) != true)) {
+                    this.PrimeOCR_AccuracyLevelProxyField = value;
+                    this.RaisePropertyChanged("PrimeOCR_AccuracyLevelProxy");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_PDF", Namespace="http://types.muhimbi.com/2014/04/16")]
     [System.SerializableAttribute()]
     public partial class ConverterSpecificSettings_PDF : TestHarness.DocumentConverterService.ConverterSpecificSettings {
@@ -3992,6 +4512,21 @@ namespace TestHarness.DocumentConverterService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IgnorePortfolioCoverSheetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.MergeMode AttachmentMergeModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.UnsupportedFileBehaviour UnsupportedAttachmentBehaviourField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool BreakMergeOnErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IncludeAttachmentTypesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExcludeAttachmentTypesField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool ConvertAttachments {
@@ -4031,42 +4566,68 @@ namespace TestHarness.DocumentConverterService {
                 }
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EnumsProxy", Namespace="http://types.muhimbi.com/2013/08/01")]
-    [System.SerializableAttribute()]
-    public partial class EnumsProxy : TestHarness.DocumentConverterService.ConverterSpecificSettings {
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TestHarness.DocumentConverterService.OCRLanguage OCRLanguageProxyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TestHarness.DocumentConverterService.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxyField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TestHarness.DocumentConverterService.OCRLanguage OCRLanguageProxy {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TestHarness.DocumentConverterService.MergeMode AttachmentMergeMode {
             get {
-                return this.OCRLanguageProxyField;
+                return this.AttachmentMergeModeField;
             }
             set {
-                if ((this.OCRLanguageProxyField.Equals(value) != true)) {
-                    this.OCRLanguageProxyField = value;
-                    this.RaisePropertyChanged("OCRLanguageProxy");
+                if ((this.AttachmentMergeModeField.Equals(value) != true)) {
+                    this.AttachmentMergeModeField = value;
+                    this.RaisePropertyChanged("AttachmentMergeMode");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TestHarness.DocumentConverterService.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxy {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TestHarness.DocumentConverterService.UnsupportedFileBehaviour UnsupportedAttachmentBehaviour {
             get {
-                return this.PrimeOCR_AccuracyLevelProxyField;
+                return this.UnsupportedAttachmentBehaviourField;
             }
             set {
-                if ((this.PrimeOCR_AccuracyLevelProxyField.Equals(value) != true)) {
-                    this.PrimeOCR_AccuracyLevelProxyField = value;
-                    this.RaisePropertyChanged("PrimeOCR_AccuracyLevelProxy");
+                if ((this.UnsupportedAttachmentBehaviourField.Equals(value) != true)) {
+                    this.UnsupportedAttachmentBehaviourField = value;
+                    this.RaisePropertyChanged("UnsupportedAttachmentBehaviour");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public bool BreakMergeOnError {
+            get {
+                return this.BreakMergeOnErrorField;
+            }
+            set {
+                if ((this.BreakMergeOnErrorField.Equals(value) != true)) {
+                    this.BreakMergeOnErrorField = value;
+                    this.RaisePropertyChanged("BreakMergeOnError");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public string IncludeAttachmentTypes {
+            get {
+                return this.IncludeAttachmentTypesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IncludeAttachmentTypesField, value) != true)) {
+                    this.IncludeAttachmentTypesField = value;
+                    this.RaisePropertyChanged("IncludeAttachmentTypes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string ExcludeAttachmentTypes {
+            get {
+                return this.ExcludeAttachmentTypesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExcludeAttachmentTypesField, value) != true)) {
+                    this.ExcludeAttachmentTypesField = value;
+                    this.RaisePropertyChanged("ExcludeAttachmentTypes");
                 }
             }
         }
@@ -4143,6 +4704,93 @@ namespace TestHarness.DocumentConverterService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BookmarkOptions_WordProcessing", Namespace="http://types.muhimbi.com/2009/10/06")]
+    [System.SerializableAttribute()]
+    public partial class BookmarkOptions_WordProcessing : TestHarness.DocumentConverterService.BookmarkOptions {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.BooleanEnum UseHeadingStylesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.BooleanEnum UseOutlineLevelsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UpperBookmarkLevelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LowerBookmarkLevelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.BookmarkMapping[] BookmarkMappingsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestHarness.DocumentConverterService.BooleanEnum UseHeadingStyles {
+            get {
+                return this.UseHeadingStylesField;
+            }
+            set {
+                if ((this.UseHeadingStylesField.Equals(value) != true)) {
+                    this.UseHeadingStylesField = value;
+                    this.RaisePropertyChanged("UseHeadingStyles");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TestHarness.DocumentConverterService.BooleanEnum UseOutlineLevels {
+            get {
+                return this.UseOutlineLevelsField;
+            }
+            set {
+                if ((this.UseOutlineLevelsField.Equals(value) != true)) {
+                    this.UseOutlineLevelsField = value;
+                    this.RaisePropertyChanged("UseOutlineLevels");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int UpperBookmarkLevel {
+            get {
+                return this.UpperBookmarkLevelField;
+            }
+            set {
+                if ((this.UpperBookmarkLevelField.Equals(value) != true)) {
+                    this.UpperBookmarkLevelField = value;
+                    this.RaisePropertyChanged("UpperBookmarkLevel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int LowerBookmarkLevel {
+            get {
+                return this.LowerBookmarkLevelField;
+            }
+            set {
+                if ((this.LowerBookmarkLevelField.Equals(value) != true)) {
+                    this.LowerBookmarkLevelField = value;
+                    this.RaisePropertyChanged("LowerBookmarkLevel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TestHarness.DocumentConverterService.BookmarkMapping[] BookmarkMappings {
+            get {
+                return this.BookmarkMappingsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BookmarkMappingsField, value) != true)) {
+                    this.BookmarkMappingsField = value;
+                    this.RaisePropertyChanged("BookmarkMappings");
+                }
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="RevisionsAndCommentsMarkupMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
         "")]
@@ -4174,6 +4822,112 @@ namespace TestHarness.DocumentConverterService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Original = 1,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BookmarkOptions", Namespace="http://types.muhimbi.com/2009/10/06")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TestHarness.DocumentConverterService.BookmarkOptions_WordProcessing))]
+    public partial class BookmarkOptions : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BooleanEnum", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum BooleanEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        True = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        False = 2,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BookmarkMapping", Namespace="http://types.muhimbi.com/2010/11/22")]
+    [System.SerializableAttribute()]
+    public partial class BookmarkMapping : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LevelField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Source {
+            get {
+                return this.SourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SourceField, value) != true)) {
+                    this.SourceField = value;
+                    this.RaisePropertyChanged("Source");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int Level {
+            get {
+                return this.LevelField;
+            }
+            set {
+                if ((this.LevelField.Equals(value) != true)) {
+                    this.LevelField = value;
+                    this.RaisePropertyChanged("Level");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -4275,6 +5029,39 @@ namespace TestHarness.DocumentConverterService {
         }
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MergeMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MergeMode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Merge = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttachAsPDF = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttachOriginal = 3,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UnsupportedFileBehaviour", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum UnsupportedFileBehaviour : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Error = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Remove = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttachOriginal = 2,
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CadConversionElement", Namespace="http://types.muhimbi.com/2010/11/22")]
@@ -4367,6 +5154,9 @@ namespace TestHarness.DocumentConverterService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Descending = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TabOrder = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -4448,6 +5238,9 @@ namespace TestHarness.DocumentConverterService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         WebKit = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Chromium = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -4553,15 +5346,18 @@ namespace TestHarness.DocumentConverterService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PDFConvertAttachmentMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+    [System.Runtime.Serialization.DataContractAttribute(Name="ForceMessageHeaderEncoding", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
         "")]
-    public enum PDFConvertAttachmentMode : int {
+    public enum ForceMessageHeaderEncoding : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        RemoveAll = 1,
+        Default = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        RemoveSupported = 2,
+        None = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UTF8 = 2,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -4664,6 +5460,21 @@ namespace TestHarness.DocumentConverterService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Level7 = 9999999,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PDFConvertAttachmentMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum PDFConvertAttachmentMode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RemoveAll = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RemoveSupported = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6213,6 +7024,12 @@ namespace TestHarness.DocumentConverterService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TopLevelBookmarkField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.MergeMode MergeModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.UnsupportedFileBehaviour UnsupportedFileBehaviourField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -6232,6 +7049,32 @@ namespace TestHarness.DocumentConverterService {
                 if ((object.ReferenceEquals(this.TopLevelBookmarkField, value) != true)) {
                     this.TopLevelBookmarkField = value;
                     this.RaisePropertyChanged("TopLevelBookmark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public TestHarness.DocumentConverterService.MergeMode MergeMode {
+            get {
+                return this.MergeModeField;
+            }
+            set {
+                if ((this.MergeModeField.Equals(value) != true)) {
+                    this.MergeModeField = value;
+                    this.RaisePropertyChanged("MergeMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TestHarness.DocumentConverterService.UnsupportedFileBehaviour UnsupportedFileBehaviour {
+            get {
+                return this.UnsupportedFileBehaviourField;
+            }
+            set {
+                if ((this.UnsupportedFileBehaviourField.Equals(value) != true)) {
+                    this.UnsupportedFileBehaviourField = value;
+                    this.RaisePropertyChanged("UnsupportedFileBehaviour");
                 }
             }
         }

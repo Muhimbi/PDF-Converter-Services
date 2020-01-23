@@ -23,9 +23,9 @@ require_once "documentConverterServices.php";
 // ** Optional function to add test watermarks to the converted document
 function createWatermarks(){
 	try {
-		$watermark = new Watermark(null, null, null, null);
+		$watermark = new Watermark(null, null, null, null, null);
 
-        // ** Define the parent container for the watermark		
+		// ** Define the parent container for the watermark		
 		$watermark->StartPage = 1; 
 		$watermark->EndPage = 1; 
 		$watermark->Rotation = "0"; 
@@ -33,35 +33,44 @@ function createWatermarks(){
 		$watermark->Height = "500"; 
 		$watermark->HPosition = HPosition::Center; 
 		$watermark->VPosition = VPosition::Middle; 
-        // ** Display the watermark in the foreground so it is even displayed 
-        // ** for scans with a white, non-transparent, background.
+		// ** Display the watermark in the foreground so it is even displayed 
+		// ** for scans with a white, non-transparent, background.
 		$watermark->ZOrder = 1;
 		
-        // ** Create a simple text based watermark, this will be placed inside the parent container
+		// ** Create a simple text based watermark, this will be placed inside the parent container
 		$cfText = new Text(null, null, null, null);
 		$cfText->Content = "Confidential"; 
 		$cfText->FontSize = "20"; 
-        $cfText->Rotation = "-45"; 
-        $cfText->HPosition = HPosition::Left; 
-        $cfText->VPosition = VPosition::Middle; 
+		$cfText->Rotation = "-45"; 
+		$cfText->HPosition = HPosition::Left; 
+		$cfText->VPosition = VPosition::Middle; 
 		$cfText->Width = "200"; 
 		$cfText->Height = "200"; 
 		$cfText->Transparency = "0.10";
-        $cfText->ZOrder = 0.1;
+		$cfText->ZOrder = 0.1;
 
-        // ** Create a simple QR Code based watermark, this will also be placed in the parent container
-        $cfQR = new QRCode(null, null, null);
-        $cfQR->Text = "http://www.muhimbi.com/";
+		// ** Create a simple QR Code based watermark, this will also be placed in the parent container
+		$cfQR = new QRCode(null, null, null);
+		$cfQR->Text = "http://www.muhimbi.com/";
 		$cfQR->ErrorCorrectionLevel = ErrorCorrectionLevel::Low;
-        $cfQR->InputMode = BarcodeInputMode::Binary;
-        $cfQR->Version = QRCodeVersion::Auto;
-        $cfQR->HPosition = HPosition::Right; 
-        $cfQR->VPosition = VPosition::Middle; 
-        $cfQR->Width = "200"; 
+		$cfQR->InputMode = BarcodeInputMode::Binary;
+		$cfQR->Version = QRCodeVersion::Auto;
+		$cfQR->HPosition = HPosition::Right; 
+		$cfQR->VPosition = VPosition::Middle; 
+		$cfQR->Width = "200"; 
 		$cfQR->Height = "200"; 
 		
-        // ** Add the individual watermarks to the container
-		$elements = array($cfText, $cfQR);		
+		// ** Create a simple Linear Barcode watermark
+		$cfLB = new LinearBarcode(null, null, null, null, null, null, null);
+		$cfLB->Text = "012345678";
+		$cfLB->BarcodeType = BarcodeType::Code39;
+		$cfLB->HPosition = HPosition::Center; 
+		$cfLB->VPosition = VPosition::Bottom; 
+		$cfLB->Width = "200"; 
+		$cfLB->Height = "50";
+		
+		// ** Add the individual watermarks to the container
+		$elements = array($cfText, $cfQR, $cfLB);	
 		$watermark->Elements = $elements;
 		
 		return array($watermark);

@@ -5,3 +5,12 @@
 /.vs
 /Microsoft .NET/Conversion/.vs/Sample Code .NET/v15
 /Microsoft .NET Core/Convert PDF to PDF-A/obj
+/Microsoft .NET/Conversion/obj
+/Microsoft .NET/Convert PDF to PDF-A/obj
+/Microsoft .NET/OCR PDF/obj
+/Microsoft .NET/OCR PDF (PrimeOCR)/obj
+/Microsoft .NET/Split PDF/obj
+/Microsoft .NET/Watermarking/obj
+/Microsoft .NET Core/OCR PDF/obj
+/Microsoft .NET Core/Split PDF/obj
+/Microsoft .NET Core/Watermarking/obj

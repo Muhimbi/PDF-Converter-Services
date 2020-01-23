@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://types.muhimbi.com/2010/11/22" elementFormDefault="qualified" targetNamespace="http://types.muhimbi.com/2010/11/22" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" />
+  <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd2" namespace="http://types.muhimbi.com/2009/10/06" />
   <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" />
-  <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" />
+  <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" />
   <xs:complexType name="ConverterSpecificSettings">
     <xs:sequence />
   </xs:complexType>
@@ -14,6 +15,7 @@
           <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="RevisionsAndCommentsMarkupMode" type="q1:RevisionsAndCommentsMarkupMode" />
           <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="RevisionsAndCommentsDisplayMode" type="q2:RevisionsAndCommentsDisplayMode" />
           <xs:element minOccurs="0" name="ProcessDocumentTemplate" type="xs:boolean" />
+          <xs:element xmlns:q3="http://types.muhimbi.com/2009/10/06" minOccurs="0" name="BookmarkOptions" nillable="true" type="q3:BookmarkOptions_WordProcessing" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -23,7 +25,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ConverterSpecificSettings">
         <xs:sequence>
-          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="PrintOutputType" type="q3:PresentationsPrintOutputType" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="PrintOutputType" type="q4:PresentationsPrintOutputType" />
           <xs:element minOccurs="0" name="FrameSlides" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
@@ -37,7 +39,7 @@
           <xs:element minOccurs="0" name="PaperSize" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PageMargins" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="AutoRotatePage" type="xs:boolean" />
-          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ScaleMode" type="q4:ContentScale" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ScaleMode" type="q5:ContentScale" />
           <xs:element minOccurs="0" name="SourceFileResolution" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -57,9 +59,14 @@
           <xs:element minOccurs="0" name="UseNativePrintEngine" type="xs:boolean" />
           <xs:element minOccurs="0" name="DefaultPaperSize" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ForcePaperSize" nillable="true" type="xs:string" />
-          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="DefaultPageOrientation" type="q5:PageOrientation" />
-          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="ForcePageOrientation" type="q6:PageOrientation" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="DefaultPageOrientation" type="q6:PageOrientation" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="ForcePageOrientation" type="q7:PageOrientation" />
           <xs:element minOccurs="0" name="XSNData" nillable="true" type="xs:base64Binary" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="AttachmentMergeMode" type="q8:MergeMode" />
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="UnsupportedAttachmentBehaviour" type="q9:UnsupportedFileBehaviour" />
+          <xs:element minOccurs="0" name="BreakMergeOnError" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IncludeAttachmentTypes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExcludeAttachmentTypes" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -86,8 +93,8 @@
           <xs:element minOccurs="0" name="ForegroundColor" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CadConversionElements" nillable="true" type="tns:ArrayOfCadConversionElement" />
           <xs:element minOccurs="0" name="PageMargins" nillable="true" type="xs:string" />
-          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="EmptyLayoutDetectionMode" type="q7:CadEmptyLayoutDetectionMode" />
-          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="LayoutSortOrder" type="q8:CadLayoutSortOrder" />
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="EmptyLayoutDetectionMode" type="q10:CadEmptyLayoutDetectionMode" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="LayoutSortOrder" type="q11:CadLayoutSortOrder" />
           <xs:element minOccurs="0" name="ExternalReferences" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
@@ -102,7 +109,7 @@
   <xs:element name="ArrayOfCadConversionElement" nillable="true" type="tns:ArrayOfCadConversionElement" />
   <xs:complexType name="CadConversionElement">
     <xs:sequence>
-      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="Type" type="q9:CadConversionElementType" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="Type" type="q12:CadConversionElementType" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -112,15 +119,15 @@
       <xs:extension base="tns:ConverterSpecificSettings">
         <xs:sequence>
           <xs:element minOccurs="0" name="PaperSize" nillable="true" type="xs:string" />
-          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ScaleMode" type="q10:HTMLScaleMode" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ScaleMode" type="q13:HTMLScaleMode" />
           <xs:element minOccurs="0" name="PageMargins" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ConversionDelay" type="xs:int" />
           <xs:element minOccurs="0" name="ClearBrowserCache" type="xs:boolean" />
           <xs:element minOccurs="0" name="SplitImages" type="xs:boolean" />
-          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="HtmlRenderingEngine" type="q11:HTMLRenderingEngine" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="HtmlRenderingEngine" type="q14:HTMLRenderingEngine" />
           <xs:element minOccurs="0" name="WebKitViewPortSize" nillable="true" type="xs:string" />
-          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="AuthenticationMode" type="q12:AuthenticationMode" />
-          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="MediaType" type="q13:MediaType" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="AuthenticationMode" type="q15:AuthenticationMode" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="MediaType" type="q16:MediaType" />
           <xs:element minOccurs="0" name="EnableWebKitOfflineMode" type="xs:boolean" />
         </xs:sequence>
       </xs:extension>
@@ -133,22 +140,29 @@
         <xs:sequence>
           <xs:element minOccurs="0" name="ConvertAttachments" type="xs:boolean" />
           <xs:element minOccurs="0" name="PaperSize" nillable="true" type="xs:string" />
-          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="HTMLScaleMode" type="q14:HTMLScaleMode" />
-          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="PlainTextLineBreaks" type="q15:MSGPlainTextLineBreaks" />
-          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="BestBodyMode" type="q16:MSGBestBodyMode" />
-          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="EmailAddressDisplayMode" type="q17:MSGEmailAddressDisplayMode" />
-          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="FromEmailAddressDisplayMode" type="q18:MSGEmailAddressDisplayMode" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="HTMLScaleMode" type="q17:HTMLScaleMode" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="PlainTextLineBreaks" type="q18:MSGPlainTextLineBreaks" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="BestBodyMode" type="q19:MSGBestBodyMode" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="EmailAddressDisplayMode" type="q20:MSGEmailAddressDisplayMode" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="FromEmailAddressDisplayMode" type="q21:MSGEmailAddressDisplayMode" />
           <xs:element minOccurs="0" name="DisplayAttachmentSummary" type="xs:boolean" />
           <xs:element minOccurs="0" name="BreakOnUnsupportedAttachment" type="xs:boolean" />
           <xs:element minOccurs="0" name="BreakOnUnsupportedEmbeddedObject" type="xs:boolean" />
-          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="EmbeddedObjectDisplayMode" type="q19:MSGEmbeddedObjectDisplayMode" />
-          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="EmbeddedObjectIconDisplayMode" type="q20:MSGEmbeddedObjectIconDisplayMode" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="EmbeddedObjectDisplayMode" type="q22:MSGEmbeddedObjectDisplayMode" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="EmbeddedObjectIconDisplayMode" type="q23:MSGEmbeddedObjectIconDisplayMode" />
           <xs:element minOccurs="0" name="EmbeddedObjectScalePercentage" type="xs:decimal" />
           <xs:element minOccurs="0" name="SentDateMissingDisplayMode" nillable="true" type="xs:string" />
-          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="HtmlRenderingEngine" type="q21:HTMLRenderingEngine" />
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="HtmlRenderingEngine" type="q24:HTMLRenderingEngine" />
           <xs:element minOccurs="0" name="WebKitViewPortSize" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="EnableWebKitOfflineMode" type="xs:boolean" />
           <xs:element minOccurs="0" name="PageMargins" nillable="true" type="xs:string" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="AttachmentMergeMode" type="q25:MergeMode" />
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="UnsupportedAttachmentBehaviour" type="q26:UnsupportedFileBehaviour" />
+          <xs:element minOccurs="0" name="BreakMergeOnError" type="xs:boolean" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ForceMessageHeaderEncoding" type="q27:ForceMessageHeaderEncoding" />
+          <xs:element minOccurs="0" name="MinimumImageAttachmentDimension" type="xs:int" />
+          <xs:element minOccurs="0" name="IncludeAttachmentTypes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExcludeAttachmentTypes" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -180,13 +194,26 @@
           <xs:element minOccurs="0" name="PaperSize" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PageMargins" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="AutoRotatePage" type="xs:boolean" />
-          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ScaleMode" type="q22:ContentScale" />
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ScaleMode" type="q28:ContentScale" />
           <xs:element minOccurs="0" name="SourceFileResolution" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ConverterSpecificSettings_TIFF" nillable="true" type="tns:ConverterSpecificSettings_TIFF" />
+  <xs:complexType name="ArrayOfBookmarkMapping">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BookmarkMapping" nillable="true" type="tns:BookmarkMapping" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBookmarkMapping" nillable="true" type="tns:ArrayOfBookmarkMapping" />
+  <xs:complexType name="BookmarkMapping">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Level" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookmarkMapping" nillable="true" type="tns:BookmarkMapping" />
   <xs:complexType name="OCREngineSpecificSettings">
     <xs:sequence />
   </xs:complexType>
@@ -196,13 +223,13 @@
       <xs:extension base="tns:OCREngineSpecificSettings">
         <xs:sequence>
           <xs:element minOccurs="0" name="AccuracyLevel" type="xs:int" />
-          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="Deskew" type="q23:PrimeOCR_Deskew" />
-          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="ImageProcessingOptions" type="q24:PrimeOCR_ImageProcessingOptions" />
-          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="LexicalChecking" type="q25:PrimeOCR_LexicalChecking" />
-          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="PageQuality" type="q26:PrimeOCR_PageQuality" />
-          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="PrintType" type="q27:PrimeOCR_PrintType" />
-          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="AutoZone" type="q28:PrimeOCR_AutoZone" />
-          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="ZoneContent" type="q29:PrimeOCR_ZoneContent" />
+          <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="Deskew" type="q29:PrimeOCR_Deskew" />
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="ImageProcessingOptions" type="q30:PrimeOCR_ImageProcessingOptions" />
+          <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="LexicalChecking" type="q31:PrimeOCR_LexicalChecking" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="PageQuality" type="q32:PrimeOCR_PageQuality" />
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="PrintType" type="q33:PrimeOCR_PrintType" />
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="AutoZone" type="q34:PrimeOCR_AutoZone" />
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="ZoneContent" type="q35:PrimeOCR_ZoneContent" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

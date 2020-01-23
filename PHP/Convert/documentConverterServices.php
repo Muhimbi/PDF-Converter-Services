@@ -13,6 +13,7 @@
 //        History:  7 Feb 2013 - BM - Initial version
 //                  9 Mar 2018 - JR - Refreshed proxies
 //                 11 Jan 2019 - BM - Refreshed proxies
+//                 18 Jul 2019 - BM - Refreshed proxies
 //
 //   This file was generated automatically using wsdl2php
 //   For details see https://goo.gl/B5skSn
@@ -45,6 +46,7 @@ class DocumentConverterService extends \SoapClient
     'ConverterSpecificSettings_MSG' => 'ConverterSpecificSettings_MSG',
     'ConverterSpecificSettings_CommandLineConverter' => 'ConverterSpecificSettings_CommandLineConverter',
     'ConverterSpecificSettings_TIFF' => 'ConverterSpecificSettings_TIFF',
+    'BookmarkMapping' => 'BookmarkMapping',
     'OCREngineSpecificSettings' => 'OCREngineSpecificSettings',
     'OCREngineSpecificSettings_PrimeOCR' => 'OCREngineSpecificSettings_PrimeOCR',
     'SystemSettings' => 'SystemSettings',
@@ -63,6 +65,7 @@ class DocumentConverterService extends \SoapClient
     'Ellipse' => 'Ellipse',
     'Line' => 'Line',
     'QRCode' => 'QRCode',
+    'LinearBarcode' => 'LinearBarcode',
     'OutputFormatSpecificSettings' => 'OutputFormatSpecificSettings',
     'OutputFormatSpecificSettings_PDF' => 'OutputFormatSpecificSettings_PDF',
     'PDFViewerPreferences' => 'PDFViewerPreferences',
@@ -80,6 +83,8 @@ class DocumentConverterService extends \SoapClient
     'StatusResultItem' => 'StatusResultItem',
     'OpenOptions' => 'OpenOptions',
     'ConversionSettings' => 'ConversionSettings',
+    'BookmarkOptions_WordProcessing' => 'BookmarkOptions_WordProcessing',
+    'BookmarkOptions' => 'BookmarkOptions',
     'WebServiceFaultException' => 'WebServiceFaultException',
     'ProcessingOptions' => 'ProcessingOptions',
     'SourceFile' => 'SourceFile',
@@ -344,6 +349,34 @@ class RevisionsAndCommentsDisplayMode
 
 
 }
+class OCRLanguage
+{
+  const __default = 'All';
+  const All = 'All';
+  const Arabic = 'Arabic';
+  const SimplifiedChinese = 'SimplifiedChinese';
+  const TraditionalChinese = 'TraditionalChinese';
+  const Danish = 'Danish';
+  const German = 'German';
+  const English = 'English';
+  const English_UK = 'English_UK';
+  const English_US = 'English_US';
+  const Dutch = 'Dutch';
+  const Finnish = 'Finnish';
+  const French = 'French';
+  const Hebrew = 'Hebrew';
+  const Hungarian = 'Hungarian';
+  const Italian = 'Italian';
+  const Japanese = 'Japanese';
+  const Korean = 'Korean';
+  const Norwegian = 'Norwegian';
+  const Portuguese = 'Portuguese';
+  const Russian = 'Russian';
+  const Spanish = 'Spanish';
+  const Swedish = 'Swedish';
+
+
+}
 class PresentationsPrintOutputType
 {
   const __default = 'Slides';
@@ -367,6 +400,25 @@ class ContentScale
   const FitWidth = 'FitWidth';
   const FitHeight = 'FitHeight';
   const FitPage = 'FitPage';
+
+
+}
+class MergeMode
+{
+  const __default = 'DefaultCustom';
+  const DefaultCustom = 'Default';
+  const Merge = 'Merge';
+  const AttachAsPDF = 'AttachAsPDF';
+  const AttachOriginal = 'AttachOriginal';
+
+
+}
+class UnsupportedFileBehaviour
+{
+  const __default = 'Error';
+  const Error = 'Error';
+  const Remove = 'Remove';
+  const AttachOriginal = 'AttachOriginal';
 
 
 }
@@ -405,6 +457,7 @@ class CadLayoutSortOrder
   const DefaultCustom = 'Default';
   const Ascending = 'Ascending';
   const Descending = 'Descending';
+  const TabOrder = 'TabOrder';
 
 
 }
@@ -425,6 +478,7 @@ class HTMLRenderingEngine
   const DefaultCustom = 'Default';
   const IE = 'IE';
   const WebKit = 'WebKit';
+  const Chromium = 'Chromium';
 
 
 }
@@ -490,39 +544,30 @@ class MSGEmbeddedObjectIconDisplayMode
 
 
 }
+class ForceMessageHeaderEncoding
+{
+  const __default = 'DefaultCustom';
+  const DefaultCustom = 'Default';
+  const None = 'None';
+  const UTF8 = 'UTF8';
+
+
+}
 class PDFConvertAttachmentMode
 {
-  const __default = 'RemoveAll';
+  const __default = 'DefaultCustom';
+  const DefaultCustom = 'Default';
   const RemoveAll = 'RemoveAll';
   const RemoveSupported = 'RemoveSupported';
 
 
 }
-class OCRLanguage
+class BooleanEnum
 {
-  const __default = 'All';
-  const All = 'All';
-  const Arabic = 'Arabic';
-  const SimplifiedChinese = 'SimplifiedChinese';
-  const TraditionalChinese = 'TraditionalChinese';
-  const Danish = 'Danish';
-  const German = 'German';
-  const English = 'English';
-  const English_UK = 'English_UK';
-  const English_US = 'English_US';
-  const Dutch = 'Dutch';
-  const Finnish = 'Finnish';
-  const French = 'French';
-  const Hebrew = 'Hebrew';
-  const Hungarian = 'Hungarian';
-  const Italian = 'Italian';
-  const Japanese = 'Japanese';
-  const Korean = 'Korean';
-  const Norwegian = 'Norwegian';
-  const Portuguese = 'Portuguese';
-  const Russian = 'Russian';
-  const Spanish = 'Spanish';
-  const Swedish = 'Swedish';
+  const __default = 'DefaultCustom';
+  const DefaultCustom = 'Default';
+  const True = 'True';
+  const False = 'False';
 
 
 }
@@ -801,6 +846,33 @@ class QRCodeVersion
 
 
 }
+class BarcodeType
+{
+  const __default = 'Codabar';
+  const Codabar = 'Codabar';
+  const Code11 = 'Code11';
+  const Code32 = 'Code32';
+  const Code39 = 'Code39';
+  const Code39Extended = 'Code39Extended';
+  const Code93 = 'Code93';
+  const Code93Extended = 'Code93Extended';
+  const Code128 = 'Code128';
+  const Code128A = 'Code128A';
+  const Code128B = 'Code128B';
+  const Code128C = 'Code128C';
+  const GS1Code128 = 'GS1Code128';
+
+
+}
+class BarcodeTextLocation
+{
+  const __default = 'Bottom';
+  const Bottom = 'Bottom';
+  const None = 'None';
+  const Top = 'Top';
+
+
+}
 class PageOrientation
 {
   const __default = 'DefaultCustom';
@@ -958,6 +1030,13 @@ class ConverterSpecificSettings_WordProcessing
    * @access public
    */
   public $ProcessDocumentTemplate = null;
+
+  /**
+   * 
+   * @var BookmarkOptions_WordProcessing $BookmarkOptions
+   * @access public
+   */
+  public $BookmarkOptions = null;
 
   /**
    * 
@@ -1144,6 +1223,41 @@ class ConverterSpecificSettings_InfoPath
 
   /**
    * 
+   * @var MergeMode $AttachmentMergeMode
+   * @access public
+   */
+  public $AttachmentMergeMode = null;
+
+  /**
+   * 
+   * @var UnsupportedFileBehaviour $UnsupportedAttachmentBehaviour
+   * @access public
+   */
+  public $UnsupportedAttachmentBehaviour = null;
+
+  /**
+   * 
+   * @var boolean $BreakMergeOnError
+   * @access public
+   */
+  public $BreakMergeOnError = null;
+
+  /**
+   * 
+   * @var string $IncludeAttachmentTypes
+   * @access public
+   */
+  public $IncludeAttachmentTypes = null;
+
+  /**
+   * 
+   * @var string $ExcludeAttachmentTypes
+   * @access public
+   */
+  public $ExcludeAttachmentTypes = null;
+
+  /**
+   * 
    * @param boolean $StripDotNETCode
    * @param boolean $StripDataObjects
    * @param boolean $ConvertAttachments
@@ -1152,9 +1266,12 @@ class ConverterSpecificSettings_InfoPath
    * @param boolean $UseNativePrintEngine
    * @param PageOrientation $DefaultPageOrientation
    * @param PageOrientation $ForcePageOrientation
+   * @param MergeMode $AttachmentMergeMode
+   * @param UnsupportedFileBehaviour $UnsupportedAttachmentBehaviour
+   * @param boolean $BreakMergeOnError
    * @access public
    */
-  public function __construct($StripDotNETCode, $StripDataObjects, $ConvertAttachments, $AutoTrustForms, $ProcessFullTrustForms, $UseNativePrintEngine, $DefaultPageOrientation, $ForcePageOrientation)
+  public function __construct($StripDotNETCode, $StripDataObjects, $ConvertAttachments, $AutoTrustForms, $ProcessFullTrustForms, $UseNativePrintEngine, $DefaultPageOrientation, $ForcePageOrientation, $AttachmentMergeMode, $UnsupportedAttachmentBehaviour, $BreakMergeOnError)
   {
     $this->StripDotNETCode = $StripDotNETCode;
     $this->StripDataObjects = $StripDataObjects;
@@ -1164,6 +1281,9 @@ class ConverterSpecificSettings_InfoPath
     $this->UseNativePrintEngine = $UseNativePrintEngine;
     $this->DefaultPageOrientation = $DefaultPageOrientation;
     $this->ForcePageOrientation = $ForcePageOrientation;
+    $this->AttachmentMergeMode = $AttachmentMergeMode;
+    $this->UnsupportedAttachmentBehaviour = $UnsupportedAttachmentBehaviour;
+    $this->BreakMergeOnError = $BreakMergeOnError;
   }
 
 }
@@ -1523,6 +1643,55 @@ class ConverterSpecificSettings_MSG
 
   /**
    * 
+   * @var MergeMode $AttachmentMergeMode
+   * @access public
+   */
+  public $AttachmentMergeMode = null;
+
+  /**
+   * 
+   * @var UnsupportedFileBehaviour $UnsupportedAttachmentBehaviour
+   * @access public
+   */
+  public $UnsupportedAttachmentBehaviour = null;
+
+  /**
+   * 
+   * @var boolean $BreakMergeOnError
+   * @access public
+   */
+  public $BreakMergeOnError = null;
+
+  /**
+   * 
+   * @var ForceMessageHeaderEncoding $ForceMessageHeaderEncoding
+   * @access public
+   */
+  public $ForceMessageHeaderEncoding = null;
+
+  /**
+   * 
+   * @var int $MinimumImageAttachmentDimension
+   * @access public
+   */
+  public $MinimumImageAttachmentDimension = null;
+
+  /**
+   * 
+   * @var string $IncludeAttachmentTypes
+   * @access public
+   */
+  public $IncludeAttachmentTypes = null;
+
+  /**
+   * 
+   * @var string $ExcludeAttachmentTypes
+   * @access public
+   */
+  public $ExcludeAttachmentTypes = null;
+
+  /**
+   * 
    * @param boolean $ConvertAttachments
    * @param HTMLScaleMode $HTMLScaleMode
    * @param MSGPlainTextLineBreaks $PlainTextLineBreaks
@@ -1537,9 +1706,14 @@ class ConverterSpecificSettings_MSG
    * @param float $EmbeddedObjectScalePercentage
    * @param HTMLRenderingEngine $HtmlRenderingEngine
    * @param boolean $EnableWebKitOfflineMode
+   * @param MergeMode $AttachmentMergeMode
+   * @param UnsupportedFileBehaviour $UnsupportedAttachmentBehaviour
+   * @param boolean $BreakMergeOnError
+   * @param ForceMessageHeaderEncoding $ForceMessageHeaderEncoding
+   * @param int $MinimumImageAttachmentDimension
    * @access public
    */
-  public function __construct($ConvertAttachments, $HTMLScaleMode, $PlainTextLineBreaks, $BestBodyMode, $EmailAddressDisplayMode, $FromEmailAddressDisplayMode, $DisplayAttachmentSummary, $BreakOnUnsupportedAttachment, $BreakOnUnsupportedEmbeddedObject, $EmbeddedObjectDisplayMode, $EmbeddedObjectIconDisplayMode, $EmbeddedObjectScalePercentage, $HtmlRenderingEngine, $EnableWebKitOfflineMode)
+  public function __construct($ConvertAttachments, $HTMLScaleMode, $PlainTextLineBreaks, $BestBodyMode, $EmailAddressDisplayMode, $FromEmailAddressDisplayMode, $DisplayAttachmentSummary, $BreakOnUnsupportedAttachment, $BreakOnUnsupportedEmbeddedObject, $EmbeddedObjectDisplayMode, $EmbeddedObjectIconDisplayMode, $EmbeddedObjectScalePercentage, $HtmlRenderingEngine, $EnableWebKitOfflineMode, $AttachmentMergeMode, $UnsupportedAttachmentBehaviour, $BreakMergeOnError, $ForceMessageHeaderEncoding, $MinimumImageAttachmentDimension)
   {
     $this->ConvertAttachments = $ConvertAttachments;
     $this->HTMLScaleMode = $HTMLScaleMode;
@@ -1555,6 +1729,11 @@ class ConverterSpecificSettings_MSG
     $this->EmbeddedObjectScalePercentage = $EmbeddedObjectScalePercentage;
     $this->HtmlRenderingEngine = $HtmlRenderingEngine;
     $this->EnableWebKitOfflineMode = $EnableWebKitOfflineMode;
+    $this->AttachmentMergeMode = $AttachmentMergeMode;
+    $this->UnsupportedAttachmentBehaviour = $UnsupportedAttachmentBehaviour;
+    $this->BreakMergeOnError = $BreakMergeOnError;
+    $this->ForceMessageHeaderEncoding = $ForceMessageHeaderEncoding;
+    $this->MinimumImageAttachmentDimension = $MinimumImageAttachmentDimension;
   }
 
 }
@@ -1689,6 +1868,34 @@ class ConverterSpecificSettings_TIFF
   {
     $this->AutoRotatePage = $AutoRotatePage;
     $this->ScaleMode = $ScaleMode;
+  }
+
+}
+class BookmarkMapping
+{
+
+  /**
+   * 
+   * @var string $Source
+   * @access public
+   */
+  public $Source = null;
+
+  /**
+   * 
+   * @var int $Level
+   * @access public
+   */
+  public $Level = null;
+
+  /**
+   * 
+   * @param int $Level
+   * @access public
+   */
+  public function __construct($Level)
+  {
+    $this->Level = $Level;
   }
 
 }
@@ -1971,18 +2178,27 @@ class Watermark
 
   /**
    * 
+   * @var boolean $PrintOnly
+   * @access public
+   */
+  public $PrintOnly = null;
+
+  /**
+   * 
    * @param PageOrientation $PageOrientation
    * @param int $StartPage
    * @param int $EndPage
    * @param int $PageInterval
+   * @param boolean $PrintOnly
    * @access public
    */
-  public function __construct($PageOrientation, $StartPage, $EndPage, $PageInterval)
+  public function __construct($PageOrientation, $StartPage, $EndPage, $PageInterval, $PrintOnly)
   {
     $this->PageOrientation = $PageOrientation;
     $this->StartPage = $StartPage;
     $this->EndPage = $EndPage;
     $this->PageInterval = $PageInterval;
+    $this->PrintOnly = $PrintOnly;
   }
 
 }
@@ -2515,6 +2731,116 @@ class QRCode
     $this->ErrorCorrectionLevel = $ErrorCorrectionLevel;
     $this->InputMode = $InputMode;
     $this->Version = $Version;
+  }
+
+}
+class LinearBarcode
+{
+
+  /**
+   * 
+   * @var string $Text
+   * @access public
+   */
+  public $Text = null;
+
+  /**
+   * 
+   * @var BarcodeType $BarcodeType
+   * @access public
+   */
+  public $BarcodeType = null;
+
+  /**
+   * 
+   * @var boolean $OmitStartStopSymbols
+   * @access public
+   */
+  public $OmitStartStopSymbols = null;
+
+  /**
+   * 
+   * @var boolean $DisableCheckDigit
+   * @access public
+   */
+  public $DisableCheckDigit = null;
+
+  /**
+   * 
+   * @var boolean $ShowCheckDigit
+   * @access public
+   */
+  public $ShowCheckDigit = null;
+
+  /**
+   * 
+   * @var BarcodeTextLocation $TextLocation
+   * @access public
+   */
+  public $TextLocation = null;
+
+  /**
+   * 
+   * @var string $BarcodeToTextGapHeight
+   * @access public
+   */
+  public $BarcodeToTextGapHeight = null;
+
+  /**
+   * 
+   * @var string $FontFamilyName
+   * @access public
+   */
+  public $FontFamilyName = null;
+
+  /**
+   * 
+   * @var string $FontSize
+   * @access public
+   */
+  public $FontSize = null;
+
+  /**
+   * 
+   * @var FontStyle $FontStyle
+   * @access public
+   */
+  public $FontStyle = null;
+
+  /**
+   * 
+   * @var HAlign $TextAlignment
+   * @access public
+   */
+  public $TextAlignment = null;
+
+  /**
+   * 
+   * @var string $Margin
+   * @access public
+   */
+  public $Margin = null;
+
+  /**
+   * 
+   * @param BarcodeType $BarcodeType
+   * @param boolean $OmitStartStopSymbols
+   * @param boolean $DisableCheckDigit
+   * @param boolean $ShowCheckDigit
+   * @param BarcodeTextLocation $TextLocation
+   * @param FontStyle $FontStyle
+   * @param HAlign $TextAlignment
+   * @access public
+   */
+  public function __construct($BarcodeType, $OmitStartStopSymbols, $DisableCheckDigit, $ShowCheckDigit, $TextLocation, $FontStyle, $TextAlignment)
+  {
+    $this->BarcodeType = $BarcodeType;
+    $this->OmitStartStopSymbols = $OmitStartStopSymbols;
+    $this->DisableCheckDigit = $DisableCheckDigit;
+    $this->ShowCheckDigit = $ShowCheckDigit;
+    $this->TextLocation = $TextLocation;
+    $this->FontStyle = $FontStyle;
+    $this->TextAlignment = $TextAlignment;
   }
 
 }
@@ -3519,6 +3845,74 @@ class ConversionSettings
   }
 
 }
+class BookmarkOptions_WordProcessing
+{
+
+  /**
+   * 
+   * @var BooleanEnum $UseHeadingStyles
+   * @access public
+   */
+  public $UseHeadingStyles = null;
+
+  /**
+   * 
+   * @var BooleanEnum $UseOutlineLevels
+   * @access public
+   */
+  public $UseOutlineLevels = null;
+
+  /**
+   * 
+   * @var int $UpperBookmarkLevel
+   * @access public
+   */
+  public $UpperBookmarkLevel = null;
+
+  /**
+   * 
+   * @var int $LowerBookmarkLevel
+   * @access public
+   */
+  public $LowerBookmarkLevel = null;
+
+  /**
+   * 
+   * @var BookmarkMapping[] $BookmarkMappings
+   * @access public
+   */
+  public $BookmarkMappings = null;
+
+  /**
+   * 
+   * @param BooleanEnum $UseHeadingStyles
+   * @param BooleanEnum $UseOutlineLevels
+   * @param int $UpperBookmarkLevel
+   * @param int $LowerBookmarkLevel
+   * @access public
+   */
+  public function __construct($UseHeadingStyles, $UseOutlineLevels, $UpperBookmarkLevel, $LowerBookmarkLevel)
+  {
+    $this->UseHeadingStyles = $UseHeadingStyles;
+    $this->UseOutlineLevels = $UseOutlineLevels;
+    $this->UpperBookmarkLevel = $UpperBookmarkLevel;
+    $this->LowerBookmarkLevel = $LowerBookmarkLevel;
+  }
+
+}
+class BookmarkOptions
+{
+
+  /**
+   * 
+   * @access public
+   */
+  public function __construct()
+  {
+  
+  }
+
+}
 class WebServiceFaultException
 {
 
@@ -3648,11 +4042,28 @@ class FileMergeSettings
 
   /**
    * 
+   * @var MergeMode $MergeMode
    * @access public
    */
-  public function __construct()
+  public $MergeMode = null;
+
+  /**
+   * 
+   * @var UnsupportedFileBehaviour $UnsupportedFileBehaviour
+   * @access public
+   */
+  public $UnsupportedFileBehaviour = null;
+
+  /**
+   * 
+   * @param MergeMode $MergeMode
+   * @param UnsupportedFileBehaviour $UnsupportedFileBehaviour
+   * @access public
+   */
+  public function __construct($MergeMode, $UnsupportedFileBehaviour)
   {
-  
+    $this->MergeMode = $MergeMode;
+    $this->UnsupportedFileBehaviour = $UnsupportedFileBehaviour;
   }
 
 }
@@ -4434,16 +4845,57 @@ class ConverterSpecificSettings_PDF
 
   /**
    * 
+   * @var MergeMode $AttachmentMergeMode
+   * @access public
+   */
+  public $AttachmentMergeMode = null;
+
+  /**
+   * 
+   * @var UnsupportedFileBehaviour $UnsupportedAttachmentBehaviour
+   * @access public
+   */
+  public $UnsupportedAttachmentBehaviour = null;
+
+  /**
+   * 
+   * @var boolean $BreakMergeOnError
+   * @access public
+   */
+  public $BreakMergeOnError = null;
+
+  /**
+   * 
+   * @var string $IncludeAttachmentTypes
+   * @access public
+   */
+  public $IncludeAttachmentTypes = null;
+
+  /**
+   * 
+   * @var string $ExcludeAttachmentTypes
+   * @access public
+   */
+  public $ExcludeAttachmentTypes = null;
+
+  /**
+   * 
    * @param boolean $ConvertAttachments
    * @param PDFConvertAttachmentMode $ConvertAttachmentMode
    * @param boolean $IgnorePortfolioCoverSheet
+   * @param MergeMode $AttachmentMergeMode
+   * @param UnsupportedFileBehaviour $UnsupportedAttachmentBehaviour
+   * @param boolean $BreakMergeOnError
    * @access public
    */
-  public function __construct($ConvertAttachments, $ConvertAttachmentMode, $IgnorePortfolioCoverSheet)
+  public function __construct($ConvertAttachments, $ConvertAttachmentMode, $IgnorePortfolioCoverSheet, $AttachmentMergeMode, $UnsupportedAttachmentBehaviour, $BreakMergeOnError)
   {
     $this->ConvertAttachments = $ConvertAttachments;
     $this->ConvertAttachmentMode = $ConvertAttachmentMode;
     $this->IgnorePortfolioCoverSheet = $IgnorePortfolioCoverSheet;
+    $this->AttachmentMergeMode = $AttachmentMergeMode;
+    $this->UnsupportedAttachmentBehaviour = $UnsupportedAttachmentBehaviour;
+    $this->BreakMergeOnError = $BreakMergeOnError;
   }
 
 }

@@ -46,10 +46,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ConversionSettings" nillable="true" type="tns:ConversionSettings" />
+  <xs:complexType name="BookmarkOptions_WordProcessing">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BookmarkOptions">
+        <xs:sequence>
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="UseHeadingStyles" type="q17:BooleanEnum" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="UseOutlineLevels" type="q18:BooleanEnum" />
+          <xs:element minOccurs="0" name="UpperBookmarkLevel" type="xs:int" />
+          <xs:element minOccurs="0" name="LowerBookmarkLevel" type="xs:int" />
+          <xs:element xmlns:q19="http://types.muhimbi.com/2010/11/22" minOccurs="0" name="BookmarkMappings" nillable="true" type="q19:ArrayOfBookmarkMapping" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BookmarkOptions_WordProcessing" nillable="true" type="tns:BookmarkOptions_WordProcessing" />
+  <xs:complexType name="BookmarkOptions">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="BookmarkOptions" nillable="true" type="tns:BookmarkOptions" />
   <xs:complexType name="WebServiceFaultException">
     <xs:sequence>
-      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ExceptionType" type="q17:WebServiceExceptionType" />
-      <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExceptionDetails" nillable="true" type="q18:ArrayOfstring" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ExceptionType" type="q20:WebServiceExceptionType" />
+      <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExceptionDetails" nillable="true" type="q21:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="WebServiceFaultException" nillable="true" type="tns:WebServiceFaultException" />
@@ -58,8 +76,8 @@
       <xs:element minOccurs="0" name="SourceFiles" nillable="true" type="tns:ArrayOfSourceFile" />
       <xs:element minOccurs="0" name="MergeSettings" nillable="true" type="tns:MergeSettings" />
       <xs:element minOccurs="0" name="SplitOptions" nillable="true" type="tns:FileSplitOptions" />
-      <xs:element xmlns:q19="http://types.muhimbi.com/2013/08/01" minOccurs="0" name="OCRSettings" nillable="true" type="q19:OCRSettings" />
-      <xs:element xmlns:q20="http://types.muhimbi.com/2015/04/13" minOccurs="0" name="SubscriptionSettings" nillable="true" type="q20:SubscriptionSettings" />
+      <xs:element xmlns:q22="http://types.muhimbi.com/2013/08/01" minOccurs="0" name="OCRSettings" nillable="true" type="q22:OCRSettings" />
+      <xs:element xmlns:q23="http://types.muhimbi.com/2015/04/13" minOccurs="0" name="SubscriptionSettings" nillable="true" type="q23:SubscriptionSettings" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProcessingOptions" nillable="true" type="tns:ProcessingOptions" />
@@ -81,27 +99,29 @@
   <xs:complexType name="FileMergeSettings">
     <xs:sequence>
       <xs:element minOccurs="0" name="TopLevelBookmark" nillable="true" type="xs:string" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="MergeMode" type="q24:MergeMode" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="UnsupportedFileBehaviour" type="q25:UnsupportedFileBehaviour" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FileMergeSettings" nillable="true" type="tns:FileMergeSettings" />
   <xs:complexType name="MergeSettings">
     <xs:sequence>
       <xs:element minOccurs="0" name="BreakOnError" type="xs:boolean" />
-      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="PDFProfile" type="q21:PDFProfile" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="PDFProfile" type="q26:PDFProfile" />
       <xs:element minOccurs="0" name="OpenPassword" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OwnerPassword" nillable="true" type="xs:string" />
-      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="SecurityOptions" type="q22:SecurityOptions" />
-      <xs:element xmlns:q23="http://types.muhimbi.com/2010/05/17" minOccurs="0" name="Watermarks" nillable="true" type="q23:ArrayOfWatermark" />
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="SecurityOptions" type="q27:SecurityOptions" />
+      <xs:element xmlns:q28="http://types.muhimbi.com/2010/05/17" minOccurs="0" name="Watermarks" nillable="true" type="q28:ArrayOfWatermark" />
       <xs:element minOccurs="0" name="OmitErrorPages" type="xs:boolean" />
-      <xs:element xmlns:q24="http://types.muhimbi.com/2013/01/14" minOccurs="0" name="OutputFormatSpecificSettings" nillable="true" type="q24:OutputFormatSpecificSettings" />
-      <xs:element xmlns:q25="http://types.muhimbi.com/2013/01/14" minOccurs="0" name="TOCSettings" nillable="true" type="q25:TOCSettings" />
-      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="DocumentStartPage" type="q26:DocumentStartPage" />
+      <xs:element xmlns:q29="http://types.muhimbi.com/2013/01/14" minOccurs="0" name="OutputFormatSpecificSettings" nillable="true" type="q29:OutputFormatSpecificSettings" />
+      <xs:element xmlns:q30="http://types.muhimbi.com/2013/01/14" minOccurs="0" name="TOCSettings" nillable="true" type="q30:TOCSettings" />
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="DocumentStartPage" type="q31:DocumentStartPage" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MergeSettings" nillable="true" type="tns:MergeSettings" />
   <xs:complexType name="FileSplitOptions">
     <xs:sequence>
-      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="FileSplitType" type="q27:FileSplitType" />
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="FileSplitType" type="q32:FileSplitType" />
       <xs:element minOccurs="0" name="BatchSize" type="xs:int" />
       <xs:element minOccurs="0" name="BookmarkLevel" type="xs:int" />
       <xs:element minOccurs="0" name="FileNameTemplate" nillable="true" type="xs:string" />
@@ -124,7 +144,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="File" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
-      <xs:element xmlns:q28="http://types.muhimbi.com/2013/08/01" minOccurs="0" name="OCRResult" nillable="true" type="q28:OCRResult" />
+      <xs:element xmlns:q33="http://types.muhimbi.com/2013/08/01" minOccurs="0" name="OCRResult" nillable="true" type="q33:OCRResult" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BatchResult" nillable="true" type="tns:BatchResult" />
@@ -132,7 +152,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="ConversionServerAddress" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Converters" nillable="true" type="tns:ArrayOfConverterConfiguration" />
-      <xs:element xmlns:q29="http://types.muhimbi.com/2018/01/11" minOccurs="0" name="OperationTypes" nillable="true" type="q29:ArrayOfOperationTypeConfiguration" />
+      <xs:element xmlns:q34="http://types.muhimbi.com/2018/01/11" minOccurs="0" name="OperationTypes" nillable="true" type="q34:ArrayOfOperationTypeConfiguration" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Configuration" nillable="true" type="tns:Configuration" />
@@ -145,10 +165,10 @@
   <xs:complexType name="ConverterConfiguration">
     <xs:sequence>
       <xs:element minOccurs="0" name="ConverterName" nillable="true" type="xs:string" />
-      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="SupportedFidelity" type="q30:ConversionFidelities" />
-      <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SupportedFileExtensions" nillable="true" type="q31:ArrayOfstring" />
+      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="SupportedFidelity" type="q35:ConversionFidelities" />
+      <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SupportedFileExtensions" nillable="true" type="q36:ArrayOfstring" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SupportedOutputFormats" nillable="true" type="q32:ArrayOfstring" />
+      <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SupportedOutputFormats" nillable="true" type="q37:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ConverterConfiguration" nillable="true" type="tns:ConverterConfiguration" />
@@ -179,7 +199,7 @@
   <xs:complexType name="DiagnosticResultItem">
     <xs:sequence>
       <xs:element minOccurs="0" name="Valid" type="xs:boolean" />
-      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ExceptionType" type="q33:WebServiceExceptionType" />
+      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ExceptionType" type="q38:WebServiceExceptionType" />
       <xs:element minOccurs="0" name="ConverterName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

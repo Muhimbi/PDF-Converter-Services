@@ -4,6 +4,7 @@ package com.muhimbi.ws;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlType;
 
@@ -19,6 +20,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="TopLevelBookmark" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="MergeMode" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data}MergeMode" minOccurs="0"/>
+ *         &lt;element name="UnsupportedFileBehaviour" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data}UnsupportedFileBehaviour" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,12 +32,18 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FileMergeSettings", propOrder = {
-    "topLevelBookmark"
+    "topLevelBookmark",
+    "mergeMode",
+    "unsupportedFileBehaviour"
 })
 public class FileMergeSettings {
 
     @XmlElementRef(name = "TopLevelBookmark", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
     protected JAXBElement<String> topLevelBookmark;
+    @XmlElement(name = "MergeMode")
+    protected MergeMode mergeMode;
+    @XmlElement(name = "UnsupportedFileBehaviour")
+    protected UnsupportedFileBehaviour unsupportedFileBehaviour;
 
     /**
      * Gets the value of the topLevelBookmark property.
@@ -58,6 +67,54 @@ public class FileMergeSettings {
      */
     public void setTopLevelBookmark(JAXBElement<String> value) {
         this.topLevelBookmark = ((JAXBElement<String> ) value);
+    }
+
+    /**
+     * Gets the value of the mergeMode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link MergeMode }
+     *     
+     */
+    public MergeMode getMergeMode() {
+        return mergeMode;
+    }
+
+    /**
+     * Sets the value of the mergeMode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link MergeMode }
+     *     
+     */
+    public void setMergeMode(MergeMode value) {
+        this.mergeMode = value;
+    }
+
+    /**
+     * Gets the value of the unsupportedFileBehaviour property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link UnsupportedFileBehaviour }
+     *     
+     */
+    public UnsupportedFileBehaviour getUnsupportedFileBehaviour() {
+        return unsupportedFileBehaviour;
+    }
+
+    /**
+     * Sets the value of the unsupportedFileBehaviour property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link UnsupportedFileBehaviour }
+     *     
+     */
+    public void setUnsupportedFileBehaviour(UnsupportedFileBehaviour value) {
+        this.unsupportedFileBehaviour = value;
     }
 
 }
