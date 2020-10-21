@@ -29,15 +29,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ConverterSpecificSettings", namespace = "http://types.muhimbi.com/2010/11/22")
 @XmlSeeAlso({
     ConverterSpecificSettingsSpreadsheets.class,
-    ConverterSpecificSettingsInfoPath.class,
-    ConverterSpecificSettingsPresentations.class,
-    ConverterSpecificSettingsWordProcessing.class,
     ConverterSpecificSettingsHTML.class,
-    ConverterSpecificSettingsImage.class,
-    ConverterSpecificSettingsCad.class,
+    ConverterSpecificSettingsWordProcessing.class,
     ConverterSpecificSettingsMSG.class,
     ConverterSpecificSettingsTIFF.class,
+    ConverterSpecificSettingsCad.class,
+    ConverterSpecificSettingsInfoPath.class,
+    ConverterSpecificSettingsImage.class,
     ConverterSpecificSettingsCommandLineConverter.class,
+    ConverterSpecificSettingsPresentations.class,
     EnumsProxy.class,
     ConverterSpecificSettingsPDF.class
 })

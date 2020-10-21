@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -54,27 +55,31 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class TOCSettings {
 
-    @XmlElementRef(name = "Template", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class)
+    @XmlElementRef(name = "Template", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class, required = false)
     protected JAXBElement<String> template;
-    @XmlElementRef(name = "Properties", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class)
+    @XmlElementRef(name = "Properties", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfNameValuePair> properties;
-    @XmlElementRef(name = "Bookmark", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class)
+    @XmlElementRef(name = "Bookmark", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class, required = false)
     protected JAXBElement<String> bookmark;
     @XmlElement(name = "Location")
+    @XmlSchemaType(name = "string")
     protected TOCLocation location;
-    @XmlElementRef(name = "PaperSize", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class)
+    @XmlElementRef(name = "PaperSize", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class, required = false)
     protected JAXBElement<String> paperSize;
     @XmlElement(name = "PageOrientation")
+    @XmlSchemaType(name = "string")
     protected PageOrientation pageOrientation;
-    @XmlElementRef(name = "PageMargins", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class)
+    @XmlElementRef(name = "PageMargins", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class, required = false)
     protected JAXBElement<String> pageMargins;
     @XmlElement(name = "MinimumEntries")
     protected Integer minimumEntries;
     @XmlElement(name = "DocumentStartPage")
+    @XmlSchemaType(name = "string")
     protected DocumentStartPage documentStartPage;
     @XmlElement(name = "HtmlRenderingEngine")
+    @XmlSchemaType(name = "string")
     protected HTMLRenderingEngine htmlRenderingEngine;
-    @XmlElementRef(name = "WebKitViewPortSize", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class)
+    @XmlElementRef(name = "WebKitViewPortSize", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class, required = false)
     protected JAXBElement<String> webKitViewPortSize;
 
     /**
@@ -98,7 +103,7 @@ public class TOCSettings {
      *     
      */
     public void setTemplate(JAXBElement<String> value) {
-        this.template = ((JAXBElement<String> ) value);
+        this.template = value;
     }
 
     /**
@@ -122,7 +127,7 @@ public class TOCSettings {
      *     
      */
     public void setProperties(JAXBElement<ArrayOfNameValuePair> value) {
-        this.properties = ((JAXBElement<ArrayOfNameValuePair> ) value);
+        this.properties = value;
     }
 
     /**
@@ -146,7 +151,7 @@ public class TOCSettings {
      *     
      */
     public void setBookmark(JAXBElement<String> value) {
-        this.bookmark = ((JAXBElement<String> ) value);
+        this.bookmark = value;
     }
 
     /**
@@ -194,7 +199,7 @@ public class TOCSettings {
      *     
      */
     public void setPaperSize(JAXBElement<String> value) {
-        this.paperSize = ((JAXBElement<String> ) value);
+        this.paperSize = value;
     }
 
     /**
@@ -242,7 +247,7 @@ public class TOCSettings {
      *     
      */
     public void setPageMargins(JAXBElement<String> value) {
-        this.pageMargins = ((JAXBElement<String> ) value);
+        this.pageMargins = value;
     }
 
     /**
@@ -338,7 +343,7 @@ public class TOCSettings {
      *     
      */
     public void setWebKitViewPortSize(JAXBElement<String> value) {
-        this.webKitViewPortSize = ((JAXBElement<String> ) value);
+        this.webKitViewPortSize = value;
     }
 
 }

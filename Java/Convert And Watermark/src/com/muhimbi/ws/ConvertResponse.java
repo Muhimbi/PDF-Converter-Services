@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "ConvertResponse", namespace = "http://services.muhimbi.com/2009/10/06")
 public class ConvertResponse {
 
-    @XmlElementRef(name = "ConvertResult", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "ConvertResult", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<byte[]> convertResult;
 
     /**
@@ -59,7 +59,7 @@ public class ConvertResponse {
      *     
      */
     public void setConvertResult(JAXBElement<byte[]> value) {
-        this.convertResult = ((JAXBElement<byte[]> ) value);
+        this.convertResult = value;
     }
 
 }

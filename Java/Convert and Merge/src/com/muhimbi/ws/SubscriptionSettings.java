@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SubscriptionSettings {
 
-    @XmlElementRef(name = "SubscriptionID", namespace = "http://types.muhimbi.com/2015/04/13", type = JAXBElement.class)
+    @XmlElementRef(name = "SubscriptionID", namespace = "http://types.muhimbi.com/2015/04/13", type = JAXBElement.class, required = false)
     protected JAXBElement<String> subscriptionID;
     @XmlElement(name = "ForceTrialWatermark")
     protected Boolean forceTrialWatermark;
@@ -62,7 +62,7 @@ public class SubscriptionSettings {
      *     
      */
     public void setSubscriptionID(JAXBElement<String> value) {
-        this.subscriptionID = ((JAXBElement<String> ) value);
+        this.subscriptionID = value;
     }
 
     /**

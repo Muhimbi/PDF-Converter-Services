@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -45,14 +46,16 @@ public class BookmarkOptionsWordProcessing
 {
 
     @XmlElement(name = "UseHeadingStyles")
+    @XmlSchemaType(name = "string")
     protected BooleanEnum useHeadingStyles;
     @XmlElement(name = "UseOutlineLevels")
+    @XmlSchemaType(name = "string")
     protected BooleanEnum useOutlineLevels;
     @XmlElement(name = "UpperBookmarkLevel")
     protected Integer upperBookmarkLevel;
     @XmlElement(name = "LowerBookmarkLevel")
     protected Integer lowerBookmarkLevel;
-    @XmlElementRef(name = "BookmarkMappings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "BookmarkMappings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfBookmarkMapping> bookmarkMappings;
 
     /**
@@ -172,7 +175,7 @@ public class BookmarkOptionsWordProcessing
      *     
      */
     public void setBookmarkMappings(JAXBElement<ArrayOfBookmarkMapping> value) {
-        this.bookmarkMappings = ((JAXBElement<ArrayOfBookmarkMapping> ) value);
+        this.bookmarkMappings = value;
     }
 
 }

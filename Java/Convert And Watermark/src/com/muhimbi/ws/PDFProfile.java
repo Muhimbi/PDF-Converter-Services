@@ -18,7 +18,9 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="PDF_1_5"/>
  *     &lt;enumeration value="PDF_A1B"/>
  *     &lt;enumeration value="PDF_A2B"/>
+ *     &lt;enumeration value="PDF_A2U"/>
  *     &lt;enumeration value="PDF_A3B"/>
+ *     &lt;enumeration value="PDF_A3U"/>
  *     &lt;enumeration value="PDF_1_1"/>
  *     &lt;enumeration value="PDF_1_2"/>
  *     &lt;enumeration value="PDF_1_3"/>
@@ -41,8 +43,12 @@ public enum PDFProfile {
     PDF_A_1_B("PDF_A1B"),
     @XmlEnumValue("PDF_A2B")
     PDF_A_2_B("PDF_A2B"),
+    @XmlEnumValue("PDF_A2U")
+    PDF_A_2_U("PDF_A2U"),
     @XmlEnumValue("PDF_A3B")
     PDF_A_3_B("PDF_A3B"),
+    @XmlEnumValue("PDF_A3U")
+    PDF_A_3_U("PDF_A3U"),
     PDF_1_1("PDF_1_1"),
     PDF_1_2("PDF_1_2"),
     PDF_1_3("PDF_1_3"),

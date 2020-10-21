@@ -38,9 +38,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class OCRResult {
 
-    @XmlElementRef(name = "Text", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "Text", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> text;
-    @XmlElementRef(name = "RegionTexts", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "RegionTexts", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfRegionText> regionTexts;
     @XmlElement(name = "PageCount")
     protected Integer pageCount;
@@ -66,7 +66,7 @@ public class OCRResult {
      *     
      */
     public void setText(JAXBElement<String> value) {
-        this.text = ((JAXBElement<String> ) value);
+        this.text = value;
     }
 
     /**
@@ -90,7 +90,7 @@ public class OCRResult {
      *     
      */
     public void setRegionTexts(JAXBElement<ArrayOfRegionText> value) {
-        this.regionTexts = ((JAXBElement<ArrayOfRegionText> ) value);
+        this.regionTexts = value;
     }
 
     /**

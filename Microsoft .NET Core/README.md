@@ -55,10 +55,11 @@ A full overview of the examples can be found below.
 
 Sample								| Description
 ------------------------------------|---------------------------------------------------------
-[Convert PDF to PDF-A](Convert%20PDF%20to%20PDF-A)	| Convert a PDF document to PDF/A.
-[OCR PDF](OCR%20PDF/)								| Use Optical Character Recognition to convert a fax, scan or other image into a text PDF.
-[Split PDF](Split%20PDF/)							| Split a large PDF into smaller PDFs.
-[Watermarking](Watermarking/)					| Add watermarks to a PDF file.
+[Convert PDF to PDF-A](Convert%20PDF%20to%20PDF-A)		| Convert a PDF document to PDF/A.
+[MS Office Watermarking](MS%20Office%20Watermarking)	| Add watermarks to an MS Office document (.docx, .xlsx or .pptx)
+[OCR PDF](OCR%20PDF/)									| Use Optical Character Recognition to convert a fax, scan or other image into a text PDF.
+[Split PDF](Split%20PDF/)								| Split a large PDF into smaller PDFs.
+[Watermarking](Watermarking/)							| Add watermarks to a PDF file.
 
 <br/>
 

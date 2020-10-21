@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -43,8 +44,9 @@ import javax.xml.bind.annotation.XmlType;
 public class OperationTypeConfiguration {
 
     @XmlElement(name = "OperationType")
+    @XmlSchemaType(name = "string")
     protected OperationType operationType;
-    @XmlElementRef(name = "Description", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class)
+    @XmlElementRef(name = "Description", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class, required = false)
     protected JAXBElement<String> description;
     @XmlElement(name = "Enabled")
     protected Boolean enabled;
@@ -98,7 +100,7 @@ public class OperationTypeConfiguration {
      *     
      */
     public void setDescription(JAXBElement<String> value) {
-        this.description = ((JAXBElement<String> ) value);
+        this.description = value;
     }
 
     /**

@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "GetDiagnostics", namespace = "http://services.muhimbi.com/2009/10/06")
 public class GetDiagnostics {
 
-    @XmlElementRef(name = "convertersToDiagnose", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "convertersToDiagnose", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfDiagnosticRequestItem> convertersToDiagnose;
 
     /**
@@ -59,7 +59,7 @@ public class GetDiagnostics {
      *     
      */
     public void setConvertersToDiagnose(JAXBElement<ArrayOfDiagnosticRequestItem> value) {
-        this.convertersToDiagnose = ((JAXBElement<ArrayOfDiagnosticRequestItem> ) value);
+        this.convertersToDiagnose = value;
     }
 
 }

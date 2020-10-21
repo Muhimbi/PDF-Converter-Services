@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -53,18 +54,21 @@ public class ConverterSpecificSettingsPDF
     @XmlElement(name = "ConvertAttachments")
     protected Boolean convertAttachments;
     @XmlElement(name = "ConvertAttachmentMode")
+    @XmlSchemaType(name = "string")
     protected PDFConvertAttachmentMode convertAttachmentMode;
     @XmlElement(name = "IgnorePortfolioCoverSheet")
     protected Boolean ignorePortfolioCoverSheet;
     @XmlElement(name = "AttachmentMergeMode")
+    @XmlSchemaType(name = "string")
     protected MergeMode attachmentMergeMode;
     @XmlElement(name = "UnsupportedAttachmentBehaviour")
+    @XmlSchemaType(name = "string")
     protected UnsupportedFileBehaviour unsupportedAttachmentBehaviour;
     @XmlElement(name = "BreakMergeOnError")
     protected Boolean breakMergeOnError;
-    @XmlElementRef(name = "IncludeAttachmentTypes", namespace = "http://types.muhimbi.com/2014/04/16", type = JAXBElement.class)
+    @XmlElementRef(name = "IncludeAttachmentTypes", namespace = "http://types.muhimbi.com/2014/04/16", type = JAXBElement.class, required = false)
     protected JAXBElement<String> includeAttachmentTypes;
-    @XmlElementRef(name = "ExcludeAttachmentTypes", namespace = "http://types.muhimbi.com/2014/04/16", type = JAXBElement.class)
+    @XmlElementRef(name = "ExcludeAttachmentTypes", namespace = "http://types.muhimbi.com/2014/04/16", type = JAXBElement.class, required = false)
     protected JAXBElement<String> excludeAttachmentTypes;
 
     /**
@@ -232,7 +236,7 @@ public class ConverterSpecificSettingsPDF
      *     
      */
     public void setIncludeAttachmentTypes(JAXBElement<String> value) {
-        this.includeAttachmentTypes = ((JAXBElement<String> ) value);
+        this.includeAttachmentTypes = value;
     }
 
     /**
@@ -256,7 +260,7 @@ public class ConverterSpecificSettingsPDF
      *     
      */
     public void setExcludeAttachmentTypes(JAXBElement<String> value) {
-        this.excludeAttachmentTypes = ((JAXBElement<String> ) value);
+        this.excludeAttachmentTypes = value;
     }
 
 }

@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -53,24 +54,26 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class OCRSettings {
 
-    @XmlElementRef(name = "Language", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "Language", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> language;
     @XmlElement(name = "Performance")
+    @XmlSchemaType(name = "string")
     protected OCRPerformance performance;
-    @XmlElementRef(name = "WhiteList", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "WhiteList", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> whiteList;
-    @XmlElementRef(name = "BlackList", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "BlackList", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> blackList;
     @XmlElement(name = "Paginate")
     protected Boolean paginate;
-    @XmlElementRef(name = "Regions", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "Regions", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfOCRRegion> regions;
     @XmlList
     @XmlElement(name = "OutputType")
+    @XmlSchemaType(name = "anySimpleType")
     protected List<String> outputType;
-    @XmlElementRef(name = "OCREngine", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "OCREngine", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> ocrEngine;
-    @XmlElementRef(name = "OCREngineSpecificSettings", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "OCREngineSpecificSettings", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<OCREngineSpecificSettings> ocrEngineSpecificSettings;
 
     /**
@@ -94,7 +97,7 @@ public class OCRSettings {
      *     
      */
     public void setLanguage(JAXBElement<String> value) {
-        this.language = ((JAXBElement<String> ) value);
+        this.language = value;
     }
 
     /**
@@ -142,7 +145,7 @@ public class OCRSettings {
      *     
      */
     public void setWhiteList(JAXBElement<String> value) {
-        this.whiteList = ((JAXBElement<String> ) value);
+        this.whiteList = value;
     }
 
     /**
@@ -166,7 +169,7 @@ public class OCRSettings {
      *     
      */
     public void setBlackList(JAXBElement<String> value) {
-        this.blackList = ((JAXBElement<String> ) value);
+        this.blackList = value;
     }
 
     /**
@@ -214,7 +217,7 @@ public class OCRSettings {
      *     
      */
     public void setRegions(JAXBElement<ArrayOfOCRRegion> value) {
-        this.regions = ((JAXBElement<ArrayOfOCRRegion> ) value);
+        this.regions = value;
     }
 
     /**
@@ -267,7 +270,7 @@ public class OCRSettings {
      *     
      */
     public void setOCREngine(JAXBElement<String> value) {
-        this.ocrEngine = ((JAXBElement<String> ) value);
+        this.ocrEngine = value;
     }
 
     /**
@@ -291,7 +294,7 @@ public class OCRSettings {
      *     
      */
     public void setOCREngineSpecificSettings(JAXBElement<OCREngineSpecificSettings> value) {
-        this.ocrEngineSpecificSettings = ((JAXBElement<OCREngineSpecificSettings> ) value);
+        this.ocrEngineSpecificSettings = value;
     }
 
 }

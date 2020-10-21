@@ -45,22 +45,6 @@
 
         
            /**
-            * auto generated Axis2 call back method for processBatch method
-            * override this method for handling normal response from processBatch operation
-            */
-           public void receiveResultprocessBatch(
-                    com.muhimbi.ws.DocumentConverterServiceStub.ProcessBatchResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from processBatch operation
-           */
-            public void receiveErrorprocessBatch(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for convert method
             * override this method for handling normal response from convert operation
             */
@@ -74,22 +58,6 @@
            * override this method for handling error response from convert operation
            */
             public void receiveErrorconvert(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for getConfiguration method
-            * override this method for handling normal response from getConfiguration operation
-            */
-           public void receiveResultgetConfiguration(
-                    com.muhimbi.ws.DocumentConverterServiceStub.GetConfigurationResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from getConfiguration operation
-           */
-            public void receiveErrorgetConfiguration(java.lang.Exception e) {
             }
                 
            /**
@@ -109,19 +77,51 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for getStatus method
-            * override this method for handling normal response from getStatus operation
+            * auto generated Axis2 call back method for processBatch method
+            * override this method for handling normal response from processBatch operation
             */
-           public void receiveResultgetStatus(
-                    com.muhimbi.ws.DocumentConverterServiceStub.GetStatusResponse result
+           public void receiveResultprocessBatch(
+                    com.muhimbi.ws.DocumentConverterServiceStub.ProcessBatchResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from getStatus operation
+           * override this method for handling error response from processBatch operation
            */
-            public void receiveErrorgetStatus(java.lang.Exception e) {
+            public void receiveErrorprocessBatch(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for applyWatermark method
+            * override this method for handling normal response from applyWatermark operation
+            */
+           public void receiveResultapplyWatermark(
+                    com.muhimbi.ws.DocumentConverterServiceStub.ApplyWatermarkResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from applyWatermark operation
+           */
+            public void receiveErrorapplyWatermark(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for getConfiguration method
+            * override this method for handling normal response from getConfiguration operation
+            */
+           public void receiveResultgetConfiguration(
+                    com.muhimbi.ws.DocumentConverterServiceStub.GetConfigurationResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getConfiguration operation
+           */
+            public void receiveErrorgetConfiguration(java.lang.Exception e) {
             }
                 
            /**
@@ -141,19 +141,19 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for applyWatermark method
-            * override this method for handling normal response from applyWatermark operation
+            * auto generated Axis2 call back method for getStatus method
+            * override this method for handling normal response from getStatus operation
             */
-           public void receiveResultapplyWatermark(
-                    com.muhimbi.ws.DocumentConverterServiceStub.ApplyWatermarkResponse result
+           public void receiveResultgetStatus(
+                    com.muhimbi.ws.DocumentConverterServiceStub.GetStatusResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from applyWatermark operation
+           * override this method for handling error response from getStatus operation
            */
-            public void receiveErrorapplyWatermark(java.lang.Exception e) {
+            public void receiveErrorgetStatus(java.lang.Exception e) {
             }
                 
            /**

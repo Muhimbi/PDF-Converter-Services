@@ -4,6 +4,7 @@ package com.muhimbi.ws;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -37,6 +38,7 @@ public class ConverterSpecificSettingsPresentations
 {
 
     @XmlElement(name = "PrintOutputType")
+    @XmlSchemaType(name = "string")
     protected PresentationsPrintOutputType printOutputType;
     @XmlElement(name = "FrameSlides")
     protected Boolean frameSlides;

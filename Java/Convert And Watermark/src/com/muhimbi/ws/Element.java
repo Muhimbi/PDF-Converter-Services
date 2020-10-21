@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -62,48 +63,51 @@ import javax.xml.bind.annotation.XmlType;
     "fillColor"
 })
 @XmlSeeAlso({
-    QRCode.class,
-    Text.class,
-    Rtf.class,
-    Image.class,
-    Rectangle.class,
-    LinearBarcode.class,
-    Pdf.class,
     Ellipse.class,
+    Rtf.class,
+    Rectangle.class,
+    Text.class,
+    Image.class,
     Line.class,
+    LinearBarcode.class,
+    QRCode.class,
+    Pdf.class,
     Container.class
 })
 public class Element {
 
     @XmlElement(name = "HPosition")
+    @XmlSchemaType(name = "string")
     protected HPosition hPosition;
     @XmlElement(name = "VPosition")
+    @XmlSchemaType(name = "string")
     protected VPosition vPosition;
-    @XmlElementRef(name = "X", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "X", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> x;
-    @XmlElementRef(name = "Y", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Y", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> y;
-    @XmlElementRef(name = "Width", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Width", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> width;
-    @XmlElementRef(name = "Height", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Height", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> height;
     @XmlElement(name = "ZOrder")
     protected Integer zOrder;
     @XmlElement(name = "ScaleMode")
+    @XmlSchemaType(name = "string")
     protected ScaleMode scaleMode;
-    @XmlElementRef(name = "ScaleX", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "ScaleX", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> scaleX;
-    @XmlElementRef(name = "ScaleY", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "ScaleY", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> scaleY;
-    @XmlElementRef(name = "Rotation", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Rotation", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> rotation;
-    @XmlElementRef(name = "Transparency", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Transparency", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> transparency;
-    @XmlElementRef(name = "LineColor", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "LineColor", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> lineColor;
-    @XmlElementRef(name = "LineWidth", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "LineWidth", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> lineWidth;
-    @XmlElementRef(name = "FillColor", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "FillColor", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> fillColor;
 
     /**
@@ -175,7 +179,7 @@ public class Element {
      *     
      */
     public void setX(JAXBElement<String> value) {
-        this.x = ((JAXBElement<String> ) value);
+        this.x = value;
     }
 
     /**
@@ -199,7 +203,7 @@ public class Element {
      *     
      */
     public void setY(JAXBElement<String> value) {
-        this.y = ((JAXBElement<String> ) value);
+        this.y = value;
     }
 
     /**
@@ -223,7 +227,7 @@ public class Element {
      *     
      */
     public void setWidth(JAXBElement<String> value) {
-        this.width = ((JAXBElement<String> ) value);
+        this.width = value;
     }
 
     /**
@@ -247,7 +251,7 @@ public class Element {
      *     
      */
     public void setHeight(JAXBElement<String> value) {
-        this.height = ((JAXBElement<String> ) value);
+        this.height = value;
     }
 
     /**
@@ -319,7 +323,7 @@ public class Element {
      *     
      */
     public void setScaleX(JAXBElement<String> value) {
-        this.scaleX = ((JAXBElement<String> ) value);
+        this.scaleX = value;
     }
 
     /**
@@ -343,7 +347,7 @@ public class Element {
      *     
      */
     public void setScaleY(JAXBElement<String> value) {
-        this.scaleY = ((JAXBElement<String> ) value);
+        this.scaleY = value;
     }
 
     /**
@@ -367,7 +371,7 @@ public class Element {
      *     
      */
     public void setRotation(JAXBElement<String> value) {
-        this.rotation = ((JAXBElement<String> ) value);
+        this.rotation = value;
     }
 
     /**
@@ -391,7 +395,7 @@ public class Element {
      *     
      */
     public void setTransparency(JAXBElement<String> value) {
-        this.transparency = ((JAXBElement<String> ) value);
+        this.transparency = value;
     }
 
     /**
@@ -415,7 +419,7 @@ public class Element {
      *     
      */
     public void setLineColor(JAXBElement<String> value) {
-        this.lineColor = ((JAXBElement<String> ) value);
+        this.lineColor = value;
     }
 
     /**
@@ -439,7 +443,7 @@ public class Element {
      *     
      */
     public void setLineWidth(JAXBElement<String> value) {
-        this.lineWidth = ((JAXBElement<String> ) value);
+        this.lineWidth = value;
     }
 
     /**
@@ -463,7 +467,7 @@ public class Element {
      *     
      */
     public void setFillColor(JAXBElement<String> value) {
-        this.fillColor = ((JAXBElement<String> ) value);
+        this.fillColor = value;
     }
 
 }

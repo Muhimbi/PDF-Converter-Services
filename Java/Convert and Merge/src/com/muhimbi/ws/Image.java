@@ -35,7 +35,7 @@ public class Image
     extends Element
 {
 
-    @XmlElementRef(name = "ImageData", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "ImageData", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<byte[]> imageData;
 
     /**
@@ -59,7 +59,7 @@ public class Image
      *     
      */
     public void setImageData(JAXBElement<byte[]> value) {
-        this.imageData = ((JAXBElement<byte[]> ) value);
+        this.imageData = value;
     }
 
 }

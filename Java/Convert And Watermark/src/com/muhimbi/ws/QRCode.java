@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -42,13 +43,16 @@ public class QRCode
     extends Element
 {
 
-    @XmlElementRef(name = "Text", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Text", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> text;
     @XmlElement(name = "ErrorCorrectionLevel")
+    @XmlSchemaType(name = "string")
     protected ErrorCorrectionLevel errorCorrectionLevel;
     @XmlElement(name = "InputMode")
+    @XmlSchemaType(name = "string")
     protected BarcodeInputMode inputMode;
     @XmlElement(name = "Version")
+    @XmlSchemaType(name = "string")
     protected QRCodeVersion version;
 
     /**
@@ -72,7 +76,7 @@ public class QRCode
      *     
      */
     public void setText(JAXBElement<String> value) {
-        this.text = ((JAXBElement<String> ) value);
+        this.text = value;
     }
 
     /**

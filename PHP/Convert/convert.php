@@ -23,7 +23,7 @@ require_once "documentConverterServices.php";
 // ** Optional function to add test watermarks to the converted document
 function createWatermarks(){
 	try {
-		$watermark = new Watermark(null, null, null, null, null);
+		$watermark = new Watermark(null, null, null, null, null, null, null, null);
 
 		// ** Define the parent container for the watermark		
 		$watermark->StartPage = 1; 

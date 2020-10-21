@@ -4,6 +4,7 @@ package com.muhimbi.ws;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -37,8 +38,10 @@ public class EnumsProxy
 {
 
     @XmlElement(name = "OCRLanguageProxy")
+    @XmlSchemaType(name = "string")
     protected OCRLanguage ocrLanguageProxy;
     @XmlElement(name = "PrimeOCR_AccuracyLevelProxy")
+    @XmlSchemaType(name = "string")
     protected PrimeOCRAccuracyLevel primeOCRAccuracyLevelProxy;
 
     /**

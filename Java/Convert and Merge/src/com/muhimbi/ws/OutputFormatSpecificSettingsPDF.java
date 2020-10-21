@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -52,11 +53,12 @@ public class OutputFormatSpecificSettingsPDF
     protected Boolean embedAllFonts;
     @XmlElement(name = "SubsetFonts")
     protected Boolean subsetFonts;
-    @XmlElementRef(name = "ViewerPreferences", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class)
+    @XmlElementRef(name = "ViewerPreferences", namespace = "http://types.muhimbi.com/2013/01/14", type = JAXBElement.class, required = false)
     protected JAXBElement<PDFViewerPreferences> viewerPreferences;
     @XmlElement(name = "PostProcessFile")
     protected Boolean postProcessFile;
     @XmlElement(name = "NamedDestinationProcessingMode")
+    @XmlSchemaType(name = "string")
     protected NamedDestinationProcessingMode namedDestinationProcessingMode;
 
     /**
@@ -152,7 +154,7 @@ public class OutputFormatSpecificSettingsPDF
      *     
      */
     public void setViewerPreferences(JAXBElement<PDFViewerPreferences> value) {
-        this.viewerPreferences = ((JAXBElement<PDFViewerPreferences> ) value);
+        this.viewerPreferences = value;
     }
 
     /**

@@ -53,25 +53,25 @@ public class ConverterSpecificSettingsCommandLineConverter
     extends ConverterSpecificSettings
 {
 
-    @XmlElementRef(name = "Parameter1", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Parameter1", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> parameter1;
-    @XmlElementRef(name = "Parameter2", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Parameter2", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> parameter2;
-    @XmlElementRef(name = "Parameter3", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Parameter3", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> parameter3;
-    @XmlElementRef(name = "Parameter4", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Parameter4", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> parameter4;
-    @XmlElementRef(name = "Parameter5", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Parameter5", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> parameter5;
-    @XmlElementRef(name = "Parameter6", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Parameter6", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> parameter6;
-    @XmlElementRef(name = "Parameter7", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Parameter7", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> parameter7;
-    @XmlElementRef(name = "Parameter8", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Parameter8", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> parameter8;
-    @XmlElementRef(name = "Parameter9", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Parameter9", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> parameter9;
-    @XmlElementRef(name = "Parameter10", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Parameter10", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> parameter10;
 
     /**
@@ -95,7 +95,7 @@ public class ConverterSpecificSettingsCommandLineConverter
      *     
      */
     public void setParameter1(JAXBElement<String> value) {
-        this.parameter1 = ((JAXBElement<String> ) value);
+        this.parameter1 = value;
     }
 
     /**
@@ -119,7 +119,7 @@ public class ConverterSpecificSettingsCommandLineConverter
      *     
      */
     public void setParameter2(JAXBElement<String> value) {
-        this.parameter2 = ((JAXBElement<String> ) value);
+        this.parameter2 = value;
     }
 
     /**
@@ -143,7 +143,7 @@ public class ConverterSpecificSettingsCommandLineConverter
      *     
      */
     public void setParameter3(JAXBElement<String> value) {
-        this.parameter3 = ((JAXBElement<String> ) value);
+        this.parameter3 = value;
     }
 
     /**
@@ -167,7 +167,7 @@ public class ConverterSpecificSettingsCommandLineConverter
      *     
      */
     public void setParameter4(JAXBElement<String> value) {
-        this.parameter4 = ((JAXBElement<String> ) value);
+        this.parameter4 = value;
     }
 
     /**
@@ -191,7 +191,7 @@ public class ConverterSpecificSettingsCommandLineConverter
      *     
      */
     public void setParameter5(JAXBElement<String> value) {
-        this.parameter5 = ((JAXBElement<String> ) value);
+        this.parameter5 = value;
     }
 
     /**
@@ -215,7 +215,7 @@ public class ConverterSpecificSettingsCommandLineConverter
      *     
      */
     public void setParameter6(JAXBElement<String> value) {
-        this.parameter6 = ((JAXBElement<String> ) value);
+        this.parameter6 = value;
     }
 
     /**
@@ -239,7 +239,7 @@ public class ConverterSpecificSettingsCommandLineConverter
      *     
      */
     public void setParameter7(JAXBElement<String> value) {
-        this.parameter7 = ((JAXBElement<String> ) value);
+        this.parameter7 = value;
     }
 
     /**
@@ -263,7 +263,7 @@ public class ConverterSpecificSettingsCommandLineConverter
      *     
      */
     public void setParameter8(JAXBElement<String> value) {
-        this.parameter8 = ((JAXBElement<String> ) value);
+        this.parameter8 = value;
     }
 
     /**
@@ -287,7 +287,7 @@ public class ConverterSpecificSettingsCommandLineConverter
      *     
      */
     public void setParameter9(JAXBElement<String> value) {
-        this.parameter9 = ((JAXBElement<String> ) value);
+        this.parameter9 = value;
     }
 
     /**
@@ -311,7 +311,7 @@ public class ConverterSpecificSettingsCommandLineConverter
      *     
      */
     public void setParameter10(JAXBElement<String> value) {
-        this.parameter10 = ((JAXBElement<String> ) value);
+        this.parameter10 = value;
     }
 
 }

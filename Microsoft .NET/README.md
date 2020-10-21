@@ -46,6 +46,7 @@ Sample								| Description
 ------------------------------------|---------------------------------------------------------
 [Conversion](Conversion/)						| WinForms application to demonstrate and test various aspects of the PDF Converter.
 [Convert PDF to PDF-A](Convert%20PDF%20to%20PDF-A)	| Convert a PDF document to PDF/A.
+[MS Office Watermarking](MS%20Office%20Watermarking)	| Add watermarks to MS Office documents (.docx, .xlsx or .pptx files).
 [OCR PDF](OCR%20PDF/)								| Use Optical Character Recognition to convert a fax, scan or other image into a text PDF.
 [OCR PDF (PrimeOCR)](OCR%20PDF%20(PrimeOCR)/)	| Use Optical Character Recognition using the 3rd part PrimeOCR engine.
 [Split PDF](Split%20PDF/)							| Split a large PDF into smaller PDFs.

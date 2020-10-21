@@ -289,7 +289,9 @@ class PDFProfile
   const PDF_1_5 = 'PDF_1_5';
   const PDF_A1B = 'PDF_A1B';
   const PDF_A2B = 'PDF_A2B';
+  const PDF_A2U = 'PDF_A2U';
   const PDF_A3B = 'PDF_A3B';
+  const PDF_A3U = 'PDF_A3U';
   const PDF_1_1 = 'PDF_1_1';
   const PDF_1_2 = 'PDF_1_2';
   const PDF_1_3 = 'PDF_1_3';
@@ -419,6 +421,15 @@ class UnsupportedFileBehaviour
   const Error = 'Error';
   const Remove = 'Remove';
   const AttachOriginal = 'AttachOriginal';
+
+
+}
+class BooleanEnum
+{
+  const __default = 'DefaultCustom';
+  const DefaultCustom = 'Default';
+  const True = 'True';
+  const False = 'False';
 
 
 }
@@ -559,15 +570,6 @@ class PDFConvertAttachmentMode
   const DefaultCustom = 'Default';
   const RemoveAll = 'RemoveAll';
   const RemoveSupported = 'RemoveSupported';
-
-
-}
-class BooleanEnum
-{
-  const __default = 'DefaultCustom';
-  const DefaultCustom = 'Default';
-  const True = 'True';
-  const False = 'False';
 
 
 }
@@ -861,6 +863,7 @@ class BarcodeType
   const Code128B = 'Code128B';
   const Code128C = 'Code128C';
   const GS1Code128 = 'GS1Code128';
+  const UPC_A = 'UPC_A';
 
 
 }
@@ -880,6 +883,16 @@ class PageOrientation
   const Portrait = 'Portrait';
   const Landscape = 'Landscape';
   const Both = 'Both';
+
+
+}
+class PageType
+{
+  const __default = 'NotSet';
+  const NotSet = 'NotSet';
+  const DefaultCustom = 'Default';
+  const First = 'First';
+  const Even = 'Even';
 
 
 }
@@ -1258,6 +1271,34 @@ class ConverterSpecificSettings_InfoPath
 
   /**
    * 
+   * @var BooleanEnum $ProcessRuleSets
+   * @access public
+   */
+  public $ProcessRuleSets = null;
+
+  /**
+   * 
+   * @var string $XSNUserName
+   * @access public
+   */
+  public $XSNUserName = null;
+
+  /**
+   * 
+   * @var string $XSNPassword
+   * @access public
+   */
+  public $XSNPassword = null;
+
+  /**
+   * 
+   * @var string $XSNDomain
+   * @access public
+   */
+  public $XSNDomain = null;
+
+  /**
+   * 
    * @param boolean $StripDotNETCode
    * @param boolean $StripDataObjects
    * @param boolean $ConvertAttachments
@@ -1269,9 +1310,10 @@ class ConverterSpecificSettings_InfoPath
    * @param MergeMode $AttachmentMergeMode
    * @param UnsupportedFileBehaviour $UnsupportedAttachmentBehaviour
    * @param boolean $BreakMergeOnError
+   * @param BooleanEnum $ProcessRuleSets
    * @access public
    */
-  public function __construct($StripDotNETCode, $StripDataObjects, $ConvertAttachments, $AutoTrustForms, $ProcessFullTrustForms, $UseNativePrintEngine, $DefaultPageOrientation, $ForcePageOrientation, $AttachmentMergeMode, $UnsupportedAttachmentBehaviour, $BreakMergeOnError)
+  public function __construct($StripDotNETCode, $StripDataObjects, $ConvertAttachments, $AutoTrustForms, $ProcessFullTrustForms, $UseNativePrintEngine, $DefaultPageOrientation, $ForcePageOrientation, $AttachmentMergeMode, $UnsupportedAttachmentBehaviour, $BreakMergeOnError, $ProcessRuleSets)
   {
     $this->StripDotNETCode = $StripDotNETCode;
     $this->StripDataObjects = $StripDataObjects;
@@ -1284,6 +1326,7 @@ class ConverterSpecificSettings_InfoPath
     $this->AttachmentMergeMode = $AttachmentMergeMode;
     $this->UnsupportedAttachmentBehaviour = $UnsupportedAttachmentBehaviour;
     $this->BreakMergeOnError = $BreakMergeOnError;
+    $this->ProcessRuleSets = $ProcessRuleSets;
   }
 
 }
@@ -2185,20 +2228,54 @@ class Watermark
 
   /**
    * 
+   * @var int $StartSection
+   * @access public
+   */
+  public $StartSection = null;
+
+  /**
+   * 
+   * @var int $EndSection
+   * @access public
+   */
+  public $EndSection = null;
+
+  /**
+   * 
+   * @var string $SectionRange
+   * @access public
+   */
+  public $SectionRange = null;
+
+  /**
+   * 
+   * @var PageType $PageType
+   * @access public
+   */
+  public $PageType = null;
+
+  /**
+   * 
    * @param PageOrientation $PageOrientation
    * @param int $StartPage
    * @param int $EndPage
    * @param int $PageInterval
    * @param boolean $PrintOnly
+   * @param int $StartSection
+   * @param int $EndSection
+   * @param PageType $PageType
    * @access public
    */
-  public function __construct($PageOrientation, $StartPage, $EndPage, $PageInterval, $PrintOnly)
+  public function __construct($PageOrientation, $StartPage, $EndPage, $PageInterval, $PrintOnly, $StartSection, $EndSection, $PageType)
   {
     $this->PageOrientation = $PageOrientation;
     $this->StartPage = $StartPage;
     $this->EndPage = $EndPage;
     $this->PageInterval = $PageInterval;
     $this->PrintOnly = $PrintOnly;
+    $this->StartSection = $StartSection;
+    $this->EndSection = $EndSection;
+    $this->PageType = $PageType;
   }
 
 }

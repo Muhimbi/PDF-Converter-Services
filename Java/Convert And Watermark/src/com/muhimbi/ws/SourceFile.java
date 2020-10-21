@@ -39,13 +39,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SourceFile {
 
-    @XmlElementRef(name = "File", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "File", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<byte[]> file;
-    @XmlElementRef(name = "OpenOptions", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OpenOptions", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<OpenOptions> openOptions;
-    @XmlElementRef(name = "ConversionSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "ConversionSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ConversionSettings> conversionSettings;
-    @XmlElementRef(name = "MergeSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "MergeSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<FileMergeSettings> mergeSettings;
 
     /**
@@ -69,7 +69,7 @@ public class SourceFile {
      *     
      */
     public void setFile(JAXBElement<byte[]> value) {
-        this.file = ((JAXBElement<byte[]> ) value);
+        this.file = value;
     }
 
     /**
@@ -93,7 +93,7 @@ public class SourceFile {
      *     
      */
     public void setOpenOptions(JAXBElement<OpenOptions> value) {
-        this.openOptions = ((JAXBElement<OpenOptions> ) value);
+        this.openOptions = value;
     }
 
     /**
@@ -117,7 +117,7 @@ public class SourceFile {
      *     
      */
     public void setConversionSettings(JAXBElement<ConversionSettings> value) {
-        this.conversionSettings = ((JAXBElement<ConversionSettings> ) value);
+        this.conversionSettings = value;
     }
 
     /**
@@ -141,7 +141,7 @@ public class SourceFile {
      *     
      */
     public void setMergeSettings(JAXBElement<FileMergeSettings> value) {
-        this.mergeSettings = ((JAXBElement<FileMergeSettings> ) value);
+        this.mergeSettings = value;
     }
 
 }

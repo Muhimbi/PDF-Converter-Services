@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -45,16 +46,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ConverterConfiguration {
 
-    @XmlElementRef(name = "ConverterName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "ConverterName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> converterName;
     @XmlList
     @XmlElement(name = "SupportedFidelity")
+    @XmlSchemaType(name = "anySimpleType")
     protected List<String> supportedFidelity;
-    @XmlElementRef(name = "SupportedFileExtensions", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "SupportedFileExtensions", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfstring> supportedFileExtensions;
-    @XmlElementRef(name = "Description", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "Description", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> description;
-    @XmlElementRef(name = "SupportedOutputFormats", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "SupportedOutputFormats", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfstring> supportedOutputFormats;
 
     /**
@@ -78,7 +80,7 @@ public class ConverterConfiguration {
      *     
      */
     public void setConverterName(JAXBElement<String> value) {
-        this.converterName = ((JAXBElement<String> ) value);
+        this.converterName = value;
     }
 
     /**
@@ -131,7 +133,7 @@ public class ConverterConfiguration {
      *     
      */
     public void setSupportedFileExtensions(JAXBElement<ArrayOfstring> value) {
-        this.supportedFileExtensions = ((JAXBElement<ArrayOfstring> ) value);
+        this.supportedFileExtensions = value;
     }
 
     /**
@@ -155,7 +157,7 @@ public class ConverterConfiguration {
      *     
      */
     public void setDescription(JAXBElement<String> value) {
-        this.description = ((JAXBElement<String> ) value);
+        this.description = value;
     }
 
     /**
@@ -179,7 +181,7 @@ public class ConverterConfiguration {
      *     
      */
     public void setSupportedOutputFormats(JAXBElement<ArrayOfstring> value) {
-        this.supportedOutputFormats = ((JAXBElement<ArrayOfstring> ) value);
+        this.supportedOutputFormats = value;
     }
 
 }

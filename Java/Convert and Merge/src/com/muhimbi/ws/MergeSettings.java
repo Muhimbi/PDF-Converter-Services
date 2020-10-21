@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -58,23 +59,26 @@ public class MergeSettings {
     @XmlElement(name = "BreakOnError")
     protected Boolean breakOnError;
     @XmlElement(name = "PDFProfile")
+    @XmlSchemaType(name = "string")
     protected PDFProfile pdfProfile;
-    @XmlElementRef(name = "OpenPassword", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OpenPassword", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> openPassword;
-    @XmlElementRef(name = "OwnerPassword", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OwnerPassword", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> ownerPassword;
     @XmlList
     @XmlElement(name = "SecurityOptions")
+    @XmlSchemaType(name = "anySimpleType")
     protected List<String> securityOptions;
-    @XmlElementRef(name = "Watermarks", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "Watermarks", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfWatermark> watermarks;
     @XmlElement(name = "OmitErrorPages")
     protected Boolean omitErrorPages;
-    @XmlElementRef(name = "OutputFormatSpecificSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OutputFormatSpecificSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<OutputFormatSpecificSettings> outputFormatSpecificSettings;
-    @XmlElementRef(name = "TOCSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "TOCSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<TOCSettings> tocSettings;
     @XmlElement(name = "DocumentStartPage")
+    @XmlSchemaType(name = "string")
     protected DocumentStartPage documentStartPage;
 
     /**
@@ -146,7 +150,7 @@ public class MergeSettings {
      *     
      */
     public void setOpenPassword(JAXBElement<String> value) {
-        this.openPassword = ((JAXBElement<String> ) value);
+        this.openPassword = value;
     }
 
     /**
@@ -170,7 +174,7 @@ public class MergeSettings {
      *     
      */
     public void setOwnerPassword(JAXBElement<String> value) {
-        this.ownerPassword = ((JAXBElement<String> ) value);
+        this.ownerPassword = value;
     }
 
     /**
@@ -223,7 +227,7 @@ public class MergeSettings {
      *     
      */
     public void setWatermarks(JAXBElement<ArrayOfWatermark> value) {
-        this.watermarks = ((JAXBElement<ArrayOfWatermark> ) value);
+        this.watermarks = value;
     }
 
     /**
@@ -271,7 +275,7 @@ public class MergeSettings {
      *     
      */
     public void setOutputFormatSpecificSettings(JAXBElement<OutputFormatSpecificSettings> value) {
-        this.outputFormatSpecificSettings = ((JAXBElement<OutputFormatSpecificSettings> ) value);
+        this.outputFormatSpecificSettings = value;
     }
 
     /**
@@ -295,7 +299,7 @@ public class MergeSettings {
      *     
      */
     public void setTOCSettings(JAXBElement<TOCSettings> value) {
-        this.tocSettings = ((JAXBElement<TOCSettings> ) value);
+        this.tocSettings = value;
     }
 
     /**

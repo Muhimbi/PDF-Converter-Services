@@ -38,11 +38,11 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class RegionText {
 
-    @XmlElementRef(name = "RegionId", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "RegionId", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> regionId;
     @XmlElement(name = "PageNumber")
     protected Integer pageNumber;
-    @XmlElementRef(name = "Text", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "Text", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> text;
 
     /**
@@ -66,7 +66,7 @@ public class RegionText {
      *     
      */
     public void setRegionId(JAXBElement<String> value) {
-        this.regionId = ((JAXBElement<String> ) value);
+        this.regionId = value;
     }
 
     /**
@@ -114,7 +114,7 @@ public class RegionText {
      *     
      */
     public void setText(JAXBElement<String> value) {
-        this.text = ((JAXBElement<String> ) value);
+        this.text = value;
     }
 
 }

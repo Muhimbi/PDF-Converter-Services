@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -38,11 +39,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class FileMergeSettings {
 
-    @XmlElementRef(name = "TopLevelBookmark", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "TopLevelBookmark", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> topLevelBookmark;
     @XmlElement(name = "MergeMode")
+    @XmlSchemaType(name = "string")
     protected MergeMode mergeMode;
     @XmlElement(name = "UnsupportedFileBehaviour")
+    @XmlSchemaType(name = "string")
     protected UnsupportedFileBehaviour unsupportedFileBehaviour;
 
     /**
@@ -66,7 +69,7 @@ public class FileMergeSettings {
      *     
      */
     public void setTopLevelBookmark(JAXBElement<String> value) {
-        this.topLevelBookmark = ((JAXBElement<String> ) value);
+        this.topLevelBookmark = value;
     }
 
     /**

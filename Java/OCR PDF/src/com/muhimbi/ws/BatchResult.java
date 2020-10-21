@@ -37,11 +37,11 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class BatchResult {
 
-    @XmlElementRef(name = "File", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "File", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<byte[]> file;
-    @XmlElementRef(name = "FileName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "FileName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> fileName;
-    @XmlElementRef(name = "OCRResult", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OCRResult", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<OCRResult> ocrResult;
 
     /**
@@ -65,7 +65,7 @@ public class BatchResult {
      *     
      */
     public void setFile(JAXBElement<byte[]> value) {
-        this.file = ((JAXBElement<byte[]> ) value);
+        this.file = value;
     }
 
     /**
@@ -89,7 +89,7 @@ public class BatchResult {
      *     
      */
     public void setFileName(JAXBElement<String> value) {
-        this.fileName = ((JAXBElement<String> ) value);
+        this.fileName = value;
     }
 
     /**
@@ -113,7 +113,7 @@ public class BatchResult {
      *     
      */
     public void setOCRResult(JAXBElement<OCRResult> value) {
-        this.ocrResult = ((JAXBElement<OCRResult> ) value);
+        this.ocrResult = value;
     }
 
 }

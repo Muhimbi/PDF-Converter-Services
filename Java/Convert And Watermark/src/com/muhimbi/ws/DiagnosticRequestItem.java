@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class DiagnosticRequestItem {
 
-    @XmlElementRef(name = "ConverterName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "ConverterName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> converterName;
 
     /**
@@ -57,7 +57,7 @@ public class DiagnosticRequestItem {
      *     
      */
     public void setConverterName(JAXBElement<String> value) {
-        this.converterName = ((JAXBElement<String> ) value);
+        this.converterName = value;
     }
 
 }

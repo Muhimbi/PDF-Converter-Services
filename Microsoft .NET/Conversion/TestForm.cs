@@ -240,9 +240,9 @@ namespace TestHarness
                             conversionSettings.OutputFormatSpecificSettings = GetOutputFormatSpecificSettings(formSettings);
 
                             string destinationFileName;
-                            if (sourceFileName.ToLower().Trim().EndsWith(".pdf"))
+                            if(Path.GetExtension(sourceFileName).Equals("." + conversionSettings.Format.ToString(), StringComparison.OrdinalIgnoreCase))
                             {
-                                // ** We don't want to overwrite the source PDF file, so the destination file name is changed.
+                                // ** We don't want to overwrite the source file if input and output format are the same, so the destination file name is changed.
                                 destinationFileName = Path.GetDirectoryName(sourceFileName) + @"\" + Path.GetFileNameWithoutExtension(sourceFileName) + "_processed." + conversionSettings.Format;
                             }
                             else
@@ -1117,16 +1117,16 @@ namespace TestHarness
             oddPageText.HAlign = HAlign.Right;
             oddPageText.VAlign = VAlign.Bottom;
 
-            //* create pdf watermark element
-            Pdf oddPagePdf = new Pdf();
-            oddPagePdf.PdfData = File.ReadAllBytes(Application.StartupPath + "/SampleWatermarkFiles/Sample.pdf");
-            oddPagePdf.HPosition = HPosition.Center;
-            oddPagePdf.VPosition = VPosition.Middle;
-            oddPagePdf.Transparency = "1";              // ** The actual PDF file is already transparent
-            //* set background fill to transparent
-            oddPagePdf.FillColor = "#00000000";
-            //* get rid of lines
-            oddPagePdf.LineWidth = "-1";
+            // A secont text watermark across the page
+            Text oddPageText2 = new Text();
+            oddPageText2.Width = "580";
+            oddPageText2.Height = "180";
+            oddPageText2.Rotation = "-45";
+            oddPageText2.Content = "CONFIDENTIAL";
+            oddPageText2.HPosition = HPosition.Center;
+            oddPageText2.VPosition = VPosition.Middle;
+            oddPageText2.Transparency = "0.05";
+            oddPageText2.FontSize = "70";
 
             //* Create QRCode object
             QRCode oddPageQRCode = new QRCode();
@@ -1140,7 +1140,7 @@ namespace TestHarness
             oddPageQRCode.Text = "http://www.muhimbi.com/";
             
             //* create array of watermark elements
-            Element[] oddPageWatermarkElements = new Element[] { oddPageText, oddPagePdf, oddPageQRCode };
+            Element[] oddPageWatermarkElements = new Element[] { oddPageText, oddPageText2, oddPageQRCode };
 
             //* set elements of watermark
             oddPageWatermark.Elements = oddPageWatermarkElements;

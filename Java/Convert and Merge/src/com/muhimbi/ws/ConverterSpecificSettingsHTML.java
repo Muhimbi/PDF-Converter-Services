@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -56,11 +57,12 @@ public class ConverterSpecificSettingsHTML
     extends ConverterSpecificSettings
 {
 
-    @XmlElementRef(name = "PaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "PaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> paperSize;
     @XmlElement(name = "ScaleMode")
+    @XmlSchemaType(name = "string")
     protected HTMLScaleMode scaleMode;
-    @XmlElementRef(name = "PageMargins", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "PageMargins", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> pageMargins;
     @XmlElement(name = "ConversionDelay")
     protected Integer conversionDelay;
@@ -69,12 +71,15 @@ public class ConverterSpecificSettingsHTML
     @XmlElement(name = "SplitImages")
     protected Boolean splitImages;
     @XmlElement(name = "HtmlRenderingEngine")
+    @XmlSchemaType(name = "string")
     protected HTMLRenderingEngine htmlRenderingEngine;
-    @XmlElementRef(name = "WebKitViewPortSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "WebKitViewPortSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> webKitViewPortSize;
     @XmlElement(name = "AuthenticationMode")
+    @XmlSchemaType(name = "string")
     protected AuthenticationMode authenticationMode;
     @XmlElement(name = "MediaType")
+    @XmlSchemaType(name = "string")
     protected MediaType mediaType;
     @XmlElement(name = "EnableWebKitOfflineMode")
     protected Boolean enableWebKitOfflineMode;
@@ -100,7 +105,7 @@ public class ConverterSpecificSettingsHTML
      *     
      */
     public void setPaperSize(JAXBElement<String> value) {
-        this.paperSize = ((JAXBElement<String> ) value);
+        this.paperSize = value;
     }
 
     /**
@@ -148,7 +153,7 @@ public class ConverterSpecificSettingsHTML
      *     
      */
     public void setPageMargins(JAXBElement<String> value) {
-        this.pageMargins = ((JAXBElement<String> ) value);
+        this.pageMargins = value;
     }
 
     /**
@@ -268,7 +273,7 @@ public class ConverterSpecificSettingsHTML
      *     
      */
     public void setWebKitViewPortSize(JAXBElement<String> value) {
-        this.webKitViewPortSize = ((JAXBElement<String> ) value);
+        this.webKitViewPortSize = value;
     }
 
     /**

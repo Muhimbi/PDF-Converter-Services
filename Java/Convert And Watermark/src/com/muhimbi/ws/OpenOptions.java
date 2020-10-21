@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -50,23 +51,24 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class OpenOptions {
 
-    @XmlElementRef(name = "UserName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "UserName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> userName;
-    @XmlElementRef(name = "Password", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "Password", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> password;
-    @XmlElementRef(name = "FileExtension", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "FileExtension", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> fileExtension;
-    @XmlElementRef(name = "OriginalFileName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OriginalFileName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> originalFileName;
     @XmlElement(name = "RefreshContent")
     protected Boolean refreshContent;
     @XmlElement(name = "AllowExternalConnections")
     protected Boolean allowExternalConnections;
     @XmlElement(name = "AllowMacros")
+    @XmlSchemaType(name = "string")
     protected MacroSecurityOption allowMacros;
-    @XmlElementRef(name = "SystemSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "SystemSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<SystemSettings> systemSettings;
-    @XmlElementRef(name = "SubscriptionSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "SubscriptionSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<SubscriptionSettings> subscriptionSettings;
 
     /**
@@ -90,7 +92,7 @@ public class OpenOptions {
      *     
      */
     public void setUserName(JAXBElement<String> value) {
-        this.userName = ((JAXBElement<String> ) value);
+        this.userName = value;
     }
 
     /**
@@ -114,7 +116,7 @@ public class OpenOptions {
      *     
      */
     public void setPassword(JAXBElement<String> value) {
-        this.password = ((JAXBElement<String> ) value);
+        this.password = value;
     }
 
     /**
@@ -138,7 +140,7 @@ public class OpenOptions {
      *     
      */
     public void setFileExtension(JAXBElement<String> value) {
-        this.fileExtension = ((JAXBElement<String> ) value);
+        this.fileExtension = value;
     }
 
     /**
@@ -162,7 +164,7 @@ public class OpenOptions {
      *     
      */
     public void setOriginalFileName(JAXBElement<String> value) {
-        this.originalFileName = ((JAXBElement<String> ) value);
+        this.originalFileName = value;
     }
 
     /**
@@ -258,7 +260,7 @@ public class OpenOptions {
      *     
      */
     public void setSystemSettings(JAXBElement<SystemSettings> value) {
-        this.systemSettings = ((JAXBElement<SystemSettings> ) value);
+        this.systemSettings = value;
     }
 
     /**
@@ -282,7 +284,7 @@ public class OpenOptions {
      *     
      */
     public void setSubscriptionSettings(JAXBElement<SubscriptionSettings> value) {
-        this.subscriptionSettings = ((JAXBElement<SubscriptionSettings> ) value);
+        this.subscriptionSettings = value;
     }
 
 }

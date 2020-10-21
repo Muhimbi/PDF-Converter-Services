@@ -112,31 +112,6 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="WordWrap" nillable="true" type="tns:WordWrap" />
-  <xs:simpleType name="BarcodeType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Codabar" />
-      <xs:enumeration value="Code11" />
-      <xs:enumeration value="Code32" />
-      <xs:enumeration value="Code39" />
-      <xs:enumeration value="Code39Extended" />
-      <xs:enumeration value="Code93" />
-      <xs:enumeration value="Code93Extended" />
-      <xs:enumeration value="Code128" />
-      <xs:enumeration value="Code128A" />
-      <xs:enumeration value="Code128B" />
-      <xs:enumeration value="Code128C" />
-      <xs:enumeration value="GS1Code128" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="BarcodeType" nillable="true" type="tns:BarcodeType" />
-  <xs:simpleType name="BarcodeTextLocation">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Bottom" />
-      <xs:enumeration value="None" />
-      <xs:enumeration value="Top" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="BarcodeTextLocation" nillable="true" type="tns:BarcodeTextLocation" />
   <xs:simpleType name="ErrorCorrectionLevel">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Low" />
@@ -218,6 +193,32 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="QRCodeVersion" nillable="true" type="tns:QRCodeVersion" />
+  <xs:simpleType name="BarcodeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Codabar" />
+      <xs:enumeration value="Code11" />
+      <xs:enumeration value="Code32" />
+      <xs:enumeration value="Code39" />
+      <xs:enumeration value="Code39Extended" />
+      <xs:enumeration value="Code93" />
+      <xs:enumeration value="Code93Extended" />
+      <xs:enumeration value="Code128" />
+      <xs:enumeration value="Code128A" />
+      <xs:enumeration value="Code128B" />
+      <xs:enumeration value="Code128C" />
+      <xs:enumeration value="GS1Code128" />
+      <xs:enumeration value="UPC_A" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BarcodeType" nillable="true" type="tns:BarcodeType" />
+  <xs:simpleType name="BarcodeTextLocation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Bottom" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Top" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BarcodeTextLocation" nillable="true" type="tns:BarcodeTextLocation" />
   <xs:simpleType name="PageOrientation">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Default" />
@@ -227,4 +228,41 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="PageOrientation" nillable="true" type="tns:PageOrientation" />
+  <xs:simpleType name="PageType">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NotSet">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Default">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="First">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Even">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="PageType" nillable="true" type="tns:PageType" />
 </xs:schema>

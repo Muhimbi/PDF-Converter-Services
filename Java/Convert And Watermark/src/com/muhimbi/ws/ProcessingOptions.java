@@ -41,15 +41,15 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ProcessingOptions {
 
-    @XmlElementRef(name = "SourceFiles", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "SourceFiles", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfSourceFile> sourceFiles;
-    @XmlElementRef(name = "MergeSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "MergeSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<MergeSettings> mergeSettings;
-    @XmlElementRef(name = "SplitOptions", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "SplitOptions", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<FileSplitOptions> splitOptions;
-    @XmlElementRef(name = "OCRSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OCRSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<OCRSettings> ocrSettings;
-    @XmlElementRef(name = "SubscriptionSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "SubscriptionSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<SubscriptionSettings> subscriptionSettings;
 
     /**
@@ -73,7 +73,7 @@ public class ProcessingOptions {
      *     
      */
     public void setSourceFiles(JAXBElement<ArrayOfSourceFile> value) {
-        this.sourceFiles = ((JAXBElement<ArrayOfSourceFile> ) value);
+        this.sourceFiles = value;
     }
 
     /**
@@ -97,7 +97,7 @@ public class ProcessingOptions {
      *     
      */
     public void setMergeSettings(JAXBElement<MergeSettings> value) {
-        this.mergeSettings = ((JAXBElement<MergeSettings> ) value);
+        this.mergeSettings = value;
     }
 
     /**
@@ -121,7 +121,7 @@ public class ProcessingOptions {
      *     
      */
     public void setSplitOptions(JAXBElement<FileSplitOptions> value) {
-        this.splitOptions = ((JAXBElement<FileSplitOptions> ) value);
+        this.splitOptions = value;
     }
 
     /**
@@ -145,7 +145,7 @@ public class ProcessingOptions {
      *     
      */
     public void setOCRSettings(JAXBElement<OCRSettings> value) {
-        this.ocrSettings = ((JAXBElement<OCRSettings> ) value);
+        this.ocrSettings = value;
     }
 
     /**
@@ -169,7 +169,7 @@ public class ProcessingOptions {
      *     
      */
     public void setSubscriptionSettings(JAXBElement<SubscriptionSettings> value) {
-        this.subscriptionSettings = ((JAXBElement<SubscriptionSettings> ) value);
+        this.subscriptionSettings = value;
     }
 
 }

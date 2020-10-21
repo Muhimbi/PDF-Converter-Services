@@ -35,9 +35,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SystemSettings {
 
-    @XmlElementRef(name = "TaskMonitorSettings", namespace = "http://types.muhimbi.com/2014/02/06", type = JAXBElement.class)
+    @XmlElementRef(name = "TaskMonitorSettings", namespace = "http://types.muhimbi.com/2014/02/06", type = JAXBElement.class, required = false)
     protected JAXBElement<TaskMonitorSettings> taskMonitorSettings;
-    @XmlElementRef(name = "CultureName", namespace = "http://types.muhimbi.com/2014/02/06", type = JAXBElement.class)
+    @XmlElementRef(name = "CultureName", namespace = "http://types.muhimbi.com/2014/02/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> cultureName;
 
     /**
@@ -61,7 +61,7 @@ public class SystemSettings {
      *     
      */
     public void setTaskMonitorSettings(JAXBElement<TaskMonitorSettings> value) {
-        this.taskMonitorSettings = ((JAXBElement<TaskMonitorSettings> ) value);
+        this.taskMonitorSettings = value;
     }
 
     /**
@@ -85,7 +85,7 @@ public class SystemSettings {
      *     
      */
     public void setCultureName(JAXBElement<String> value) {
-        this.cultureName = ((JAXBElement<String> ) value);
+        this.cultureName = value;
     }
 
 }

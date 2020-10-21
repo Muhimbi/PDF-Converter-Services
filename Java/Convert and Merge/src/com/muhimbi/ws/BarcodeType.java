@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="Code128B"/>
  *     &lt;enumeration value="Code128C"/>
  *     &lt;enumeration value="GS1Code128"/>
+ *     &lt;enumeration value="UPC_A"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -58,7 +59,8 @@ public enum BarcodeType {
     @XmlEnumValue("Code128C")
     CODE_128_C("Code128C"),
     @XmlEnumValue("GS1Code128")
-    GS_1_CODE_128("GS1Code128");
+    GS_1_CODE_128("GS1Code128"),
+    UPC_A("UPC_A");
     private final String value;
 
     BarcodeType(String v) {

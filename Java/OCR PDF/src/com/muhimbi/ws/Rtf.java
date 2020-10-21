@@ -35,7 +35,7 @@ public class Rtf
     extends Element
 {
 
-    @XmlElementRef(name = "RtfData", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "RtfData", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> rtfData;
 
     /**
@@ -59,7 +59,7 @@ public class Rtf
      *     
      */
     public void setRtfData(JAXBElement<String> value) {
-        this.rtfData = ((JAXBElement<String> ) value);
+        this.rtfData = value;
     }
 
 }

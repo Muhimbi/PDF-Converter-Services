@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Status {
 
-    @XmlElementRef(name = "Items", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class)
+    @XmlElementRef(name = "Items", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfStatusResultItem> items;
     @XmlElement(name = "MaximumInstances")
     protected Integer maximumInstances;
@@ -66,7 +66,7 @@ public class Status {
      *     
      */
     public void setItems(JAXBElement<ArrayOfStatusResultItem> value) {
-        this.items = ((JAXBElement<ArrayOfStatusResultItem> ) value);
+        this.items = value;
     }
 
     /**

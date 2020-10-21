@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -61,9 +62,10 @@ public class LinearBarcode
     extends Element
 {
 
-    @XmlElementRef(name = "Text", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Text", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> text;
     @XmlElement(name = "BarcodeType")
+    @XmlSchemaType(name = "string")
     protected BarcodeType barcodeType;
     @XmlElement(name = "OmitStartStopSymbols")
     protected Boolean omitStartStopSymbols;
@@ -72,19 +74,22 @@ public class LinearBarcode
     @XmlElement(name = "ShowCheckDigit")
     protected Boolean showCheckDigit;
     @XmlElement(name = "TextLocation")
+    @XmlSchemaType(name = "string")
     protected BarcodeTextLocation textLocation;
-    @XmlElementRef(name = "BarcodeToTextGapHeight", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "BarcodeToTextGapHeight", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> barcodeToTextGapHeight;
-    @XmlElementRef(name = "FontFamilyName", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "FontFamilyName", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> fontFamilyName;
-    @XmlElementRef(name = "FontSize", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "FontSize", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> fontSize;
     @XmlList
     @XmlElement(name = "FontStyle")
+    @XmlSchemaType(name = "anySimpleType")
     protected List<String> fontStyle;
     @XmlElement(name = "TextAlignment")
+    @XmlSchemaType(name = "string")
     protected HAlign textAlignment;
-    @XmlElementRef(name = "Margin", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Margin", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> margin;
 
     /**
@@ -108,7 +113,7 @@ public class LinearBarcode
      *     
      */
     public void setText(JAXBElement<String> value) {
-        this.text = ((JAXBElement<String> ) value);
+        this.text = value;
     }
 
     /**
@@ -252,7 +257,7 @@ public class LinearBarcode
      *     
      */
     public void setBarcodeToTextGapHeight(JAXBElement<String> value) {
-        this.barcodeToTextGapHeight = ((JAXBElement<String> ) value);
+        this.barcodeToTextGapHeight = value;
     }
 
     /**
@@ -276,7 +281,7 @@ public class LinearBarcode
      *     
      */
     public void setFontFamilyName(JAXBElement<String> value) {
-        this.fontFamilyName = ((JAXBElement<String> ) value);
+        this.fontFamilyName = value;
     }
 
     /**
@@ -300,7 +305,7 @@ public class LinearBarcode
      *     
      */
     public void setFontSize(JAXBElement<String> value) {
-        this.fontSize = ((JAXBElement<String> ) value);
+        this.fontSize = value;
     }
 
     /**
@@ -377,7 +382,7 @@ public class LinearBarcode
      *     
      */
     public void setMargin(JAXBElement<String> value) {
-        this.margin = ((JAXBElement<String> ) value);
+        this.margin = value;
     }
 
 }

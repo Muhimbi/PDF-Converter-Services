@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "ApplySecurityResponse", namespace = "http://services.muhimbi.com/2009/10/06")
 public class ApplySecurityResponse {
 
-    @XmlElementRef(name = "ApplySecurityResult", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "ApplySecurityResult", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<byte[]> applySecurityResult;
 
     /**
@@ -59,7 +59,7 @@ public class ApplySecurityResponse {
      *     
      */
     public void setApplySecurityResult(JAXBElement<byte[]> value) {
-        this.applySecurityResult = ((JAXBElement<byte[]> ) value);
+        this.applySecurityResult = value;
     }
 
 }

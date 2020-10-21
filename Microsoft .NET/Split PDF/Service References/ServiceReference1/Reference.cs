@@ -705,17 +705,17 @@ namespace Split_PDF.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings", Namespace="http://types.muhimbi.com/2010/11/22")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_Presentations))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_CommandLineConverter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_MSG))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_InfoPath))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_HTML))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_WordProcessing))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_Presentations))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_Image))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_InfoPath))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_Cad))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_HTML))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_MSG))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_CommandLineConverter))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_TIFF))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_PDF))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.EnumsProxy))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_PDF))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.ConverterSpecificSettings_Spreadsheets))]
     public partial class ConverterSpecificSettings : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1285,7 +1285,13 @@ namespace Split_PDF.ServiceReference1 {
         PDF_A2B = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        PDF_A2U = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         PDF_A3B = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PDF_A3U = 12,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         PDF_1_1 = 110,
@@ -1389,6 +1395,18 @@ namespace Split_PDF.ServiceReference1 {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool PrintOnlyField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StartSectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int EndSectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SectionRangeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.PageType PageTypeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Split_PDF.ServiceReference1.PageOrientation PageOrientation {
             get {
@@ -1466,6 +1484,58 @@ namespace Split_PDF.ServiceReference1 {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public int StartSection {
+            get {
+                return this.StartSectionField;
+            }
+            set {
+                if ((this.StartSectionField.Equals(value) != true)) {
+                    this.StartSectionField = value;
+                    this.RaisePropertyChanged("StartSection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int EndSection {
+            get {
+                return this.EndSectionField;
+            }
+            set {
+                if ((this.EndSectionField.Equals(value) != true)) {
+                    this.EndSectionField = value;
+                    this.RaisePropertyChanged("EndSection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public string SectionRange {
+            get {
+                return this.SectionRangeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SectionRangeField, value) != true)) {
+                    this.SectionRangeField = value;
+                    this.RaisePropertyChanged("SectionRange");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public Split_PDF.ServiceReference1.PageType PageType {
+            get {
+                return this.PageTypeField;
+            }
+            set {
+                if ((this.PageTypeField.Equals(value) != true)) {
+                    this.PageTypeField = value;
+                    this.RaisePropertyChanged("PageType");
+                }
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
@@ -1490,15 +1560,15 @@ namespace Split_PDF.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Element", Namespace="http://types.muhimbi.com/2010/05/17")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Line))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Text))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.LinearBarcode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Ellipse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Image))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Rtf))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.QRCode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Pdf))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Rtf))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Image))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Rectangle))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Ellipse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Line))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.QRCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.LinearBarcode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Container))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Split_PDF.ServiceReference1.Watermark))]
     public partial class Element : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1768,45 +1838,6 @@ namespace Split_PDF.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Line", Namespace="http://types.muhimbi.com/2010/05/17")]
-    [System.SerializableAttribute()]
-    public partial class Line : Split_PDF.ServiceReference1.Element {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EndXField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EndYField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EndX {
-            get {
-                return this.EndXField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EndXField, value) != true)) {
-                    this.EndXField = value;
-                    this.RaisePropertyChanged("EndX");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EndY {
-            get {
-                return this.EndYField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EndYField, value) != true)) {
-                    this.EndYField = value;
-                    this.RaisePropertyChanged("EndY");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Text", Namespace="http://types.muhimbi.com/2010/05/17")]
     [System.SerializableAttribute()]
     public partial class Text : Split_PDF.ServiceReference1.Element {
@@ -1919,6 +1950,199 @@ namespace Split_PDF.ServiceReference1 {
                 if ((this.VAlignField.Equals(value) != true)) {
                     this.VAlignField = value;
                     this.RaisePropertyChanged("VAlign");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Pdf", Namespace="http://types.muhimbi.com/2010/05/17")]
+    [System.SerializableAttribute()]
+    public partial class Pdf : Split_PDF.ServiceReference1.Element {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] PdfDataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] PdfData {
+            get {
+                return this.PdfDataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PdfDataField, value) != true)) {
+                    this.PdfDataField = value;
+                    this.RaisePropertyChanged("PdfData");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Rtf", Namespace="http://types.muhimbi.com/2010/05/17")]
+    [System.SerializableAttribute()]
+    public partial class Rtf : Split_PDF.ServiceReference1.Element {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RtfDataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RtfData {
+            get {
+                return this.RtfDataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RtfDataField, value) != true)) {
+                    this.RtfDataField = value;
+                    this.RaisePropertyChanged("RtfData");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Image", Namespace="http://types.muhimbi.com/2010/05/17")]
+    [System.SerializableAttribute()]
+    public partial class Image : Split_PDF.ServiceReference1.Element {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] ImageDataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] ImageData {
+            get {
+                return this.ImageDataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageDataField, value) != true)) {
+                    this.ImageDataField = value;
+                    this.RaisePropertyChanged("ImageData");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Rectangle", Namespace="http://types.muhimbi.com/2010/05/17")]
+    [System.SerializableAttribute()]
+    public partial class Rectangle : Split_PDF.ServiceReference1.Element {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ellipse", Namespace="http://types.muhimbi.com/2010/05/17")]
+    [System.SerializableAttribute()]
+    public partial class Ellipse : Split_PDF.ServiceReference1.Element {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Line", Namespace="http://types.muhimbi.com/2010/05/17")]
+    [System.SerializableAttribute()]
+    public partial class Line : Split_PDF.ServiceReference1.Element {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EndXField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EndYField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EndX {
+            get {
+                return this.EndXField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EndXField, value) != true)) {
+                    this.EndXField = value;
+                    this.RaisePropertyChanged("EndX");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EndY {
+            get {
+                return this.EndYField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EndYField, value) != true)) {
+                    this.EndYField = value;
+                    this.RaisePropertyChanged("EndY");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="QRCode", Namespace="http://types.muhimbi.com/2010/05/17")]
+    [System.SerializableAttribute()]
+    public partial class QRCode : Split_PDF.ServiceReference1.Element {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.ErrorCorrectionLevel ErrorCorrectionLevelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.BarcodeInputMode InputModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.QRCodeVersion VersionField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Text {
+            get {
+                return this.TextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TextField, value) != true)) {
+                    this.TextField = value;
+                    this.RaisePropertyChanged("Text");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public Split_PDF.ServiceReference1.ErrorCorrectionLevel ErrorCorrectionLevel {
+            get {
+                return this.ErrorCorrectionLevelField;
+            }
+            set {
+                if ((this.ErrorCorrectionLevelField.Equals(value) != true)) {
+                    this.ErrorCorrectionLevelField = value;
+                    this.RaisePropertyChanged("ErrorCorrectionLevel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public Split_PDF.ServiceReference1.BarcodeInputMode InputMode {
+            get {
+                return this.InputModeField;
+            }
+            set {
+                if ((this.InputModeField.Equals(value) != true)) {
+                    this.InputModeField = value;
+                    this.RaisePropertyChanged("InputMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public Split_PDF.ServiceReference1.QRCodeVersion Version {
+            get {
+                return this.VersionField;
+            }
+            set {
+                if ((this.VersionField.Equals(value) != true)) {
+                    this.VersionField = value;
+                    this.RaisePropertyChanged("Version");
                 }
             }
         }
@@ -2121,160 +2345,6 @@ namespace Split_PDF.ServiceReference1 {
                 }
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Ellipse", Namespace="http://types.muhimbi.com/2010/05/17")]
-    [System.SerializableAttribute()]
-    public partial class Ellipse : Split_PDF.ServiceReference1.Element {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Image", Namespace="http://types.muhimbi.com/2010/05/17")]
-    [System.SerializableAttribute()]
-    public partial class Image : Split_PDF.ServiceReference1.Element {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] ImageDataField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] ImageData {
-            get {
-                return this.ImageDataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ImageDataField, value) != true)) {
-                    this.ImageDataField = value;
-                    this.RaisePropertyChanged("ImageData");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Rtf", Namespace="http://types.muhimbi.com/2010/05/17")]
-    [System.SerializableAttribute()]
-    public partial class Rtf : Split_PDF.ServiceReference1.Element {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RtfDataField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RtfData {
-            get {
-                return this.RtfDataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RtfDataField, value) != true)) {
-                    this.RtfDataField = value;
-                    this.RaisePropertyChanged("RtfData");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="QRCode", Namespace="http://types.muhimbi.com/2010/05/17")]
-    [System.SerializableAttribute()]
-    public partial class QRCode : Split_PDF.ServiceReference1.Element {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TextField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.ErrorCorrectionLevel ErrorCorrectionLevelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.BarcodeInputMode InputModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.QRCodeVersion VersionField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Text {
-            get {
-                return this.TextField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TextField, value) != true)) {
-                    this.TextField = value;
-                    this.RaisePropertyChanged("Text");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public Split_PDF.ServiceReference1.ErrorCorrectionLevel ErrorCorrectionLevel {
-            get {
-                return this.ErrorCorrectionLevelField;
-            }
-            set {
-                if ((this.ErrorCorrectionLevelField.Equals(value) != true)) {
-                    this.ErrorCorrectionLevelField = value;
-                    this.RaisePropertyChanged("ErrorCorrectionLevel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public Split_PDF.ServiceReference1.BarcodeInputMode InputMode {
-            get {
-                return this.InputModeField;
-            }
-            set {
-                if ((this.InputModeField.Equals(value) != true)) {
-                    this.InputModeField = value;
-                    this.RaisePropertyChanged("InputMode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public Split_PDF.ServiceReference1.QRCodeVersion Version {
-            get {
-                return this.VersionField;
-            }
-            set {
-                if ((this.VersionField.Equals(value) != true)) {
-                    this.VersionField = value;
-                    this.RaisePropertyChanged("Version");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Pdf", Namespace="http://types.muhimbi.com/2010/05/17")]
-    [System.SerializableAttribute()]
-    public partial class Pdf : Split_PDF.ServiceReference1.Element {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] PdfDataField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] PdfData {
-            get {
-                return this.PdfDataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PdfDataField, value) != true)) {
-                    this.PdfDataField = value;
-                    this.RaisePropertyChanged("PdfData");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Rectangle", Namespace="http://types.muhimbi.com/2010/05/17")]
-    [System.SerializableAttribute()]
-    public partial class Rectangle : Split_PDF.ServiceReference1.Element {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2702,6 +2772,25 @@ namespace Split_PDF.ServiceReference1 {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
     [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PageType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        ".Graphics")]
+    public enum PageType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NotSet = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        First = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Even = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.FlagsAttribute()]
     [System.Runtime.Serialization.DataContractAttribute(Name="FontStyle", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
         ".Graphics")]
     public enum FontStyle : int {
@@ -2783,63 +2872,6 @@ namespace Split_PDF.ServiceReference1 {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Top = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BarcodeType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        ".Graphics")]
-    public enum BarcodeType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Codabar = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code11 = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code32 = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code39 = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code39Extended = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code93 = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code93Extended = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code128 = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code128A = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code128B = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code128C = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GS1Code128 = 11,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BarcodeTextLocation", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        ".Graphics")]
-    public enum BarcodeTextLocation : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Bottom = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        None = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Top = 2,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
@@ -3004,6 +3036,137 @@ namespace Split_PDF.ServiceReference1 {
         Version40 = 40,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BarcodeType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        ".Graphics")]
+    public enum BarcodeType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Codabar = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code11 = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code32 = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code39 = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code39Extended = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code93 = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code93Extended = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128 = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128A = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128B = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128C = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GS1Code128 = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UPC_A = 12,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BarcodeTextLocation", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        ".Graphics")]
+    public enum BarcodeTextLocation : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Bottom = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Top = 2,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_WordProcessing", Namespace="http://types.muhimbi.com/2010/11/22")]
+    [System.SerializableAttribute()]
+    public partial class ConverterSpecificSettings_WordProcessing : Split_PDF.ServiceReference1.ConverterSpecificSettings {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.RevisionsAndCommentsMarkupMode RevisionsAndCommentsMarkupModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.RevisionsAndCommentsDisplayMode RevisionsAndCommentsDisplayModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ProcessDocumentTemplateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.BookmarkOptions_WordProcessing BookmarkOptionsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Split_PDF.ServiceReference1.RevisionsAndCommentsMarkupMode RevisionsAndCommentsMarkupMode {
+            get {
+                return this.RevisionsAndCommentsMarkupModeField;
+            }
+            set {
+                if ((this.RevisionsAndCommentsMarkupModeField.Equals(value) != true)) {
+                    this.RevisionsAndCommentsMarkupModeField = value;
+                    this.RaisePropertyChanged("RevisionsAndCommentsMarkupMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public Split_PDF.ServiceReference1.RevisionsAndCommentsDisplayMode RevisionsAndCommentsDisplayMode {
+            get {
+                return this.RevisionsAndCommentsDisplayModeField;
+            }
+            set {
+                if ((this.RevisionsAndCommentsDisplayModeField.Equals(value) != true)) {
+                    this.RevisionsAndCommentsDisplayModeField = value;
+                    this.RaisePropertyChanged("RevisionsAndCommentsDisplayMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public bool ProcessDocumentTemplate {
+            get {
+                return this.ProcessDocumentTemplateField;
+            }
+            set {
+                if ((this.ProcessDocumentTemplateField.Equals(value) != true)) {
+                    this.ProcessDocumentTemplateField = value;
+                    this.RaisePropertyChanged("ProcessDocumentTemplate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public Split_PDF.ServiceReference1.BookmarkOptions_WordProcessing BookmarkOptions {
+            get {
+                return this.BookmarkOptionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BookmarkOptionsField, value) != true)) {
+                    this.BookmarkOptionsField = value;
+                    this.RaisePropertyChanged("BookmarkOptions");
+                }
+            }
+        }
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Presentations", Namespace="http://types.muhimbi.com/2010/11/22")]
@@ -3045,166 +3208,747 @@ namespace Split_PDF.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_CommandLineConverter", Namespace="http://types.muhimbi.com/2010/11/22")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Image", Namespace="http://types.muhimbi.com/2010/11/22")]
     [System.SerializableAttribute()]
-    public partial class ConverterSpecificSettings_CommandLineConverter : Split_PDF.ServiceReference1.ConverterSpecificSettings {
+    public partial class ConverterSpecificSettings_Image : Split_PDF.ServiceReference1.ConverterSpecificSettings {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Parameter1Field;
+        private string PaperSizeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Parameter2Field;
+        private string PageMarginsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Parameter3Field;
+        private bool AutoRotatePageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Parameter4Field;
+        private Split_PDF.ServiceReference1.ContentScale ScaleModeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Parameter5Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Parameter6Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Parameter7Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Parameter8Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Parameter9Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Parameter10Field;
+        private string SourceFileResolutionField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter1 {
+        public string PaperSize {
             get {
-                return this.Parameter1Field;
+                return this.PaperSizeField;
             }
             set {
-                if ((object.ReferenceEquals(this.Parameter1Field, value) != true)) {
-                    this.Parameter1Field = value;
-                    this.RaisePropertyChanged("Parameter1");
+                if ((object.ReferenceEquals(this.PaperSizeField, value) != true)) {
+                    this.PaperSizeField = value;
+                    this.RaisePropertyChanged("PaperSize");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter2 {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public string PageMargins {
             get {
-                return this.Parameter2Field;
+                return this.PageMarginsField;
             }
             set {
-                if ((object.ReferenceEquals(this.Parameter2Field, value) != true)) {
-                    this.Parameter2Field = value;
-                    this.RaisePropertyChanged("Parameter2");
+                if ((object.ReferenceEquals(this.PageMarginsField, value) != true)) {
+                    this.PageMarginsField = value;
+                    this.RaisePropertyChanged("PageMargins");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter3 {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public bool AutoRotatePage {
             get {
-                return this.Parameter3Field;
+                return this.AutoRotatePageField;
             }
             set {
-                if ((object.ReferenceEquals(this.Parameter3Field, value) != true)) {
-                    this.Parameter3Field = value;
-                    this.RaisePropertyChanged("Parameter3");
+                if ((this.AutoRotatePageField.Equals(value) != true)) {
+                    this.AutoRotatePageField = value;
+                    this.RaisePropertyChanged("AutoRotatePage");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter4 {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public Split_PDF.ServiceReference1.ContentScale ScaleMode {
             get {
-                return this.Parameter4Field;
+                return this.ScaleModeField;
             }
             set {
-                if ((object.ReferenceEquals(this.Parameter4Field, value) != true)) {
-                    this.Parameter4Field = value;
-                    this.RaisePropertyChanged("Parameter4");
+                if ((this.ScaleModeField.Equals(value) != true)) {
+                    this.ScaleModeField = value;
+                    this.RaisePropertyChanged("ScaleMode");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter5 {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public string SourceFileResolution {
             get {
-                return this.Parameter5Field;
+                return this.SourceFileResolutionField;
             }
             set {
-                if ((object.ReferenceEquals(this.Parameter5Field, value) != true)) {
-                    this.Parameter5Field = value;
-                    this.RaisePropertyChanged("Parameter5");
+                if ((object.ReferenceEquals(this.SourceFileResolutionField, value) != true)) {
+                    this.SourceFileResolutionField = value;
+                    this.RaisePropertyChanged("SourceFileResolution");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_InfoPath", Namespace="http://types.muhimbi.com/2010/11/22")]
+    [System.SerializableAttribute()]
+    public partial class ConverterSpecificSettings_InfoPath : Split_PDF.ServiceReference1.ConverterSpecificSettings {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool StripDotNETCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool StripDataObjectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ConvertAttachmentsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.InfoPathView[] ConversionViewsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AutoTrustFormsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ProcessFullTrustFormsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseNativePrintEngineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DefaultPaperSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ForcePaperSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.PageOrientation DefaultPageOrientationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.PageOrientation ForcePageOrientationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] XSNDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.MergeMode AttachmentMergeModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.UnsupportedFileBehaviour UnsupportedAttachmentBehaviourField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool BreakMergeOnErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IncludeAttachmentTypesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExcludeAttachmentTypesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.BooleanEnum ProcessRuleSetsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string XSNUserNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string XSNPasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string XSNDomainField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool StripDotNETCode {
+            get {
+                return this.StripDotNETCodeField;
+            }
+            set {
+                if ((this.StripDotNETCodeField.Equals(value) != true)) {
+                    this.StripDotNETCodeField = value;
+                    this.RaisePropertyChanged("StripDotNETCode");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter6 {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public bool StripDataObjects {
             get {
-                return this.Parameter6Field;
+                return this.StripDataObjectsField;
             }
             set {
-                if ((object.ReferenceEquals(this.Parameter6Field, value) != true)) {
-                    this.Parameter6Field = value;
-                    this.RaisePropertyChanged("Parameter6");
+                if ((this.StripDataObjectsField.Equals(value) != true)) {
+                    this.StripDataObjectsField = value;
+                    this.RaisePropertyChanged("StripDataObjects");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter7 {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public bool ConvertAttachments {
             get {
-                return this.Parameter7Field;
+                return this.ConvertAttachmentsField;
             }
             set {
-                if ((object.ReferenceEquals(this.Parameter7Field, value) != true)) {
-                    this.Parameter7Field = value;
-                    this.RaisePropertyChanged("Parameter7");
+                if ((this.ConvertAttachmentsField.Equals(value) != true)) {
+                    this.ConvertAttachmentsField = value;
+                    this.RaisePropertyChanged("ConvertAttachments");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter8 {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public Split_PDF.ServiceReference1.InfoPathView[] ConversionViews {
             get {
-                return this.Parameter8Field;
+                return this.ConversionViewsField;
             }
             set {
-                if ((object.ReferenceEquals(this.Parameter8Field, value) != true)) {
-                    this.Parameter8Field = value;
-                    this.RaisePropertyChanged("Parameter8");
+                if ((object.ReferenceEquals(this.ConversionViewsField, value) != true)) {
+                    this.ConversionViewsField = value;
+                    this.RaisePropertyChanged("ConversionViews");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter9 {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public bool AutoTrustForms {
             get {
-                return this.Parameter9Field;
+                return this.AutoTrustFormsField;
             }
             set {
-                if ((object.ReferenceEquals(this.Parameter9Field, value) != true)) {
-                    this.Parameter9Field = value;
-                    this.RaisePropertyChanged("Parameter9");
+                if ((this.AutoTrustFormsField.Equals(value) != true)) {
+                    this.AutoTrustFormsField = value;
+                    this.RaisePropertyChanged("AutoTrustForms");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public bool ProcessFullTrustForms {
+            get {
+                return this.ProcessFullTrustFormsField;
+            }
+            set {
+                if ((this.ProcessFullTrustFormsField.Equals(value) != true)) {
+                    this.ProcessFullTrustFormsField = value;
+                    this.RaisePropertyChanged("ProcessFullTrustForms");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public bool UseNativePrintEngine {
+            get {
+                return this.UseNativePrintEngineField;
+            }
+            set {
+                if ((this.UseNativePrintEngineField.Equals(value) != true)) {
+                    this.UseNativePrintEngineField = value;
+                    this.RaisePropertyChanged("UseNativePrintEngine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string DefaultPaperSize {
+            get {
+                return this.DefaultPaperSizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DefaultPaperSizeField, value) != true)) {
+                    this.DefaultPaperSizeField = value;
+                    this.RaisePropertyChanged("DefaultPaperSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public string ForcePaperSize {
+            get {
+                return this.ForcePaperSizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ForcePaperSizeField, value) != true)) {
+                    this.ForcePaperSizeField = value;
+                    this.RaisePropertyChanged("ForcePaperSize");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public string Parameter10 {
+        public Split_PDF.ServiceReference1.PageOrientation DefaultPageOrientation {
             get {
-                return this.Parameter10Field;
+                return this.DefaultPageOrientationField;
             }
             set {
-                if ((object.ReferenceEquals(this.Parameter10Field, value) != true)) {
-                    this.Parameter10Field = value;
-                    this.RaisePropertyChanged("Parameter10");
+                if ((this.DefaultPageOrientationField.Equals(value) != true)) {
+                    this.DefaultPageOrientationField = value;
+                    this.RaisePropertyChanged("DefaultPageOrientation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public Split_PDF.ServiceReference1.PageOrientation ForcePageOrientation {
+            get {
+                return this.ForcePageOrientationField;
+            }
+            set {
+                if ((this.ForcePageOrientationField.Equals(value) != true)) {
+                    this.ForcePageOrientationField = value;
+                    this.RaisePropertyChanged("ForcePageOrientation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public byte[] XSNData {
+            get {
+                return this.XSNDataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XSNDataField, value) != true)) {
+                    this.XSNDataField = value;
+                    this.RaisePropertyChanged("XSNData");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public Split_PDF.ServiceReference1.MergeMode AttachmentMergeMode {
+            get {
+                return this.AttachmentMergeModeField;
+            }
+            set {
+                if ((this.AttachmentMergeModeField.Equals(value) != true)) {
+                    this.AttachmentMergeModeField = value;
+                    this.RaisePropertyChanged("AttachmentMergeMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public Split_PDF.ServiceReference1.UnsupportedFileBehaviour UnsupportedAttachmentBehaviour {
+            get {
+                return this.UnsupportedAttachmentBehaviourField;
+            }
+            set {
+                if ((this.UnsupportedAttachmentBehaviourField.Equals(value) != true)) {
+                    this.UnsupportedAttachmentBehaviourField = value;
+                    this.RaisePropertyChanged("UnsupportedAttachmentBehaviour");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public bool BreakMergeOnError {
+            get {
+                return this.BreakMergeOnErrorField;
+            }
+            set {
+                if ((this.BreakMergeOnErrorField.Equals(value) != true)) {
+                    this.BreakMergeOnErrorField = value;
+                    this.RaisePropertyChanged("BreakMergeOnError");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public string IncludeAttachmentTypes {
+            get {
+                return this.IncludeAttachmentTypesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IncludeAttachmentTypesField, value) != true)) {
+                    this.IncludeAttachmentTypesField = value;
+                    this.RaisePropertyChanged("IncludeAttachmentTypes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public string ExcludeAttachmentTypes {
+            get {
+                return this.ExcludeAttachmentTypesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExcludeAttachmentTypesField, value) != true)) {
+                    this.ExcludeAttachmentTypesField = value;
+                    this.RaisePropertyChanged("ExcludeAttachmentTypes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        public Split_PDF.ServiceReference1.BooleanEnum ProcessRuleSets {
+            get {
+                return this.ProcessRuleSetsField;
+            }
+            set {
+                if ((this.ProcessRuleSetsField.Equals(value) != true)) {
+                    this.ProcessRuleSetsField = value;
+                    this.RaisePropertyChanged("ProcessRuleSets");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public string XSNUserName {
+            get {
+                return this.XSNUserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XSNUserNameField, value) != true)) {
+                    this.XSNUserNameField = value;
+                    this.RaisePropertyChanged("XSNUserName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public string XSNPassword {
+            get {
+                return this.XSNPasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XSNPasswordField, value) != true)) {
+                    this.XSNPasswordField = value;
+                    this.RaisePropertyChanged("XSNPassword");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+        public string XSNDomain {
+            get {
+                return this.XSNDomainField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XSNDomainField, value) != true)) {
+                    this.XSNDomainField = value;
+                    this.RaisePropertyChanged("XSNDomain");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Cad", Namespace="http://types.muhimbi.com/2010/11/22")]
+    [System.SerializableAttribute()]
+    public partial class ConverterSpecificSettings_Cad : Split_PDF.ServiceReference1.ConverterSpecificSettings {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PaperSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BackgroundColorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ForegroundColorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.CadConversionElement[] CadConversionElementsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PageMarginsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.CadEmptyLayoutDetectionMode EmptyLayoutDetectionModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.CadLayoutSortOrder LayoutSortOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExternalReferencesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PaperSize {
+            get {
+                return this.PaperSizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaperSizeField, value) != true)) {
+                    this.PaperSizeField = value;
+                    this.RaisePropertyChanged("PaperSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public string BackgroundColor {
+            get {
+                return this.BackgroundColorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BackgroundColorField, value) != true)) {
+                    this.BackgroundColorField = value;
+                    this.RaisePropertyChanged("BackgroundColor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string ForegroundColor {
+            get {
+                return this.ForegroundColorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ForegroundColorField, value) != true)) {
+                    this.ForegroundColorField = value;
+                    this.RaisePropertyChanged("ForegroundColor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public Split_PDF.ServiceReference1.CadConversionElement[] CadConversionElements {
+            get {
+                return this.CadConversionElementsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CadConversionElementsField, value) != true)) {
+                    this.CadConversionElementsField = value;
+                    this.RaisePropertyChanged("CadConversionElements");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public string PageMargins {
+            get {
+                return this.PageMarginsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PageMarginsField, value) != true)) {
+                    this.PageMarginsField = value;
+                    this.RaisePropertyChanged("PageMargins");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public Split_PDF.ServiceReference1.CadEmptyLayoutDetectionMode EmptyLayoutDetectionMode {
+            get {
+                return this.EmptyLayoutDetectionModeField;
+            }
+            set {
+                if ((this.EmptyLayoutDetectionModeField.Equals(value) != true)) {
+                    this.EmptyLayoutDetectionModeField = value;
+                    this.RaisePropertyChanged("EmptyLayoutDetectionMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public Split_PDF.ServiceReference1.CadLayoutSortOrder LayoutSortOrder {
+            get {
+                return this.LayoutSortOrderField;
+            }
+            set {
+                if ((this.LayoutSortOrderField.Equals(value) != true)) {
+                    this.LayoutSortOrderField = value;
+                    this.RaisePropertyChanged("LayoutSortOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string ExternalReferences {
+            get {
+                return this.ExternalReferencesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExternalReferencesField, value) != true)) {
+                    this.ExternalReferencesField = value;
+                    this.RaisePropertyChanged("ExternalReferences");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_HTML", Namespace="http://types.muhimbi.com/2010/11/22")]
+    [System.SerializableAttribute()]
+    public partial class ConverterSpecificSettings_HTML : Split_PDF.ServiceReference1.ConverterSpecificSettings {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PaperSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.HTMLScaleMode ScaleModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PageMarginsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ConversionDelayField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ClearBrowserCacheField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SplitImagesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.HTMLRenderingEngine HtmlRenderingEngineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WebKitViewPortSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.AuthenticationMode AuthenticationModeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.MediaType MediaTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool EnableWebKitOfflineModeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PaperSize {
+            get {
+                return this.PaperSizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaperSizeField, value) != true)) {
+                    this.PaperSizeField = value;
+                    this.RaisePropertyChanged("PaperSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Split_PDF.ServiceReference1.HTMLScaleMode ScaleMode {
+            get {
+                return this.ScaleModeField;
+            }
+            set {
+                if ((this.ScaleModeField.Equals(value) != true)) {
+                    this.ScaleModeField = value;
+                    this.RaisePropertyChanged("ScaleMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string PageMargins {
+            get {
+                return this.PageMarginsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PageMarginsField, value) != true)) {
+                    this.PageMarginsField = value;
+                    this.RaisePropertyChanged("PageMargins");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int ConversionDelay {
+            get {
+                return this.ConversionDelayField;
+            }
+            set {
+                if ((this.ConversionDelayField.Equals(value) != true)) {
+                    this.ConversionDelayField = value;
+                    this.RaisePropertyChanged("ConversionDelay");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public bool ClearBrowserCache {
+            get {
+                return this.ClearBrowserCacheField;
+            }
+            set {
+                if ((this.ClearBrowserCacheField.Equals(value) != true)) {
+                    this.ClearBrowserCacheField = value;
+                    this.RaisePropertyChanged("ClearBrowserCache");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public bool SplitImages {
+            get {
+                return this.SplitImagesField;
+            }
+            set {
+                if ((this.SplitImagesField.Equals(value) != true)) {
+                    this.SplitImagesField = value;
+                    this.RaisePropertyChanged("SplitImages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public Split_PDF.ServiceReference1.HTMLRenderingEngine HtmlRenderingEngine {
+            get {
+                return this.HtmlRenderingEngineField;
+            }
+            set {
+                if ((this.HtmlRenderingEngineField.Equals(value) != true)) {
+                    this.HtmlRenderingEngineField = value;
+                    this.RaisePropertyChanged("HtmlRenderingEngine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string WebKitViewPortSize {
+            get {
+                return this.WebKitViewPortSizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WebKitViewPortSizeField, value) != true)) {
+                    this.WebKitViewPortSizeField = value;
+                    this.RaisePropertyChanged("WebKitViewPortSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public Split_PDF.ServiceReference1.AuthenticationMode AuthenticationMode {
+            get {
+                return this.AuthenticationModeField;
+            }
+            set {
+                if ((this.AuthenticationModeField.Equals(value) != true)) {
+                    this.AuthenticationModeField = value;
+                    this.RaisePropertyChanged("AuthenticationMode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public Split_PDF.ServiceReference1.MediaType MediaType {
+            get {
+                return this.MediaTypeField;
+            }
+            set {
+                if ((this.MediaTypeField.Equals(value) != true)) {
+                    this.MediaTypeField = value;
+                    this.RaisePropertyChanged("MediaType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public bool EnableWebKitOfflineMode {
+            get {
+                return this.EnableWebKitOfflineModeField;
+            }
+            set {
+                if ((this.EnableWebKitOfflineModeField.Equals(value) != true)) {
+                    this.EnableWebKitOfflineModeField = value;
+                    this.RaisePropertyChanged("EnableWebKitOfflineMode");
                 }
             }
         }
@@ -3619,754 +4363,166 @@ namespace Split_PDF.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_InfoPath", Namespace="http://types.muhimbi.com/2010/11/22")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_CommandLineConverter", Namespace="http://types.muhimbi.com/2010/11/22")]
     [System.SerializableAttribute()]
-    public partial class ConverterSpecificSettings_InfoPath : Split_PDF.ServiceReference1.ConverterSpecificSettings {
+    public partial class ConverterSpecificSettings_CommandLineConverter : Split_PDF.ServiceReference1.ConverterSpecificSettings {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool StripDotNETCodeField;
+        private string Parameter1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool StripDataObjectsField;
+        private string Parameter2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool ConvertAttachmentsField;
+        private string Parameter3Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.InfoPathView[] ConversionViewsField;
+        private string Parameter4Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool AutoTrustFormsField;
+        private string Parameter5Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool ProcessFullTrustFormsField;
+        private string Parameter6Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool UseNativePrintEngineField;
+        private string Parameter7Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DefaultPaperSizeField;
+        private string Parameter8Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ForcePaperSizeField;
+        private string Parameter9Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.PageOrientation DefaultPageOrientationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.PageOrientation ForcePageOrientationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] XSNDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.MergeMode AttachmentMergeModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.UnsupportedFileBehaviour UnsupportedAttachmentBehaviourField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BreakMergeOnErrorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IncludeAttachmentTypesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExcludeAttachmentTypesField;
+        private string Parameter10Field;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool StripDotNETCode {
+        public string Parameter1 {
             get {
-                return this.StripDotNETCodeField;
+                return this.Parameter1Field;
             }
             set {
-                if ((this.StripDotNETCodeField.Equals(value) != true)) {
-                    this.StripDotNETCodeField = value;
-                    this.RaisePropertyChanged("StripDotNETCode");
+                if ((object.ReferenceEquals(this.Parameter1Field, value) != true)) {
+                    this.Parameter1Field = value;
+                    this.RaisePropertyChanged("Parameter1");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public bool StripDataObjects {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter2 {
             get {
-                return this.StripDataObjectsField;
+                return this.Parameter2Field;
             }
             set {
-                if ((this.StripDataObjectsField.Equals(value) != true)) {
-                    this.StripDataObjectsField = value;
-                    this.RaisePropertyChanged("StripDataObjects");
+                if ((object.ReferenceEquals(this.Parameter2Field, value) != true)) {
+                    this.Parameter2Field = value;
+                    this.RaisePropertyChanged("Parameter2");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public bool ConvertAttachments {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter3 {
             get {
-                return this.ConvertAttachmentsField;
+                return this.Parameter3Field;
             }
             set {
-                if ((this.ConvertAttachmentsField.Equals(value) != true)) {
-                    this.ConvertAttachmentsField = value;
-                    this.RaisePropertyChanged("ConvertAttachments");
+                if ((object.ReferenceEquals(this.Parameter3Field, value) != true)) {
+                    this.Parameter3Field = value;
+                    this.RaisePropertyChanged("Parameter3");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public Split_PDF.ServiceReference1.InfoPathView[] ConversionViews {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter4 {
             get {
-                return this.ConversionViewsField;
+                return this.Parameter4Field;
             }
             set {
-                if ((object.ReferenceEquals(this.ConversionViewsField, value) != true)) {
-                    this.ConversionViewsField = value;
-                    this.RaisePropertyChanged("ConversionViews");
+                if ((object.ReferenceEquals(this.Parameter4Field, value) != true)) {
+                    this.Parameter4Field = value;
+                    this.RaisePropertyChanged("Parameter4");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public bool AutoTrustForms {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter5 {
             get {
-                return this.AutoTrustFormsField;
+                return this.Parameter5Field;
             }
             set {
-                if ((this.AutoTrustFormsField.Equals(value) != true)) {
-                    this.AutoTrustFormsField = value;
-                    this.RaisePropertyChanged("AutoTrustForms");
+                if ((object.ReferenceEquals(this.Parameter5Field, value) != true)) {
+                    this.Parameter5Field = value;
+                    this.RaisePropertyChanged("Parameter5");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public bool ProcessFullTrustForms {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter6 {
             get {
-                return this.ProcessFullTrustFormsField;
+                return this.Parameter6Field;
             }
             set {
-                if ((this.ProcessFullTrustFormsField.Equals(value) != true)) {
-                    this.ProcessFullTrustFormsField = value;
-                    this.RaisePropertyChanged("ProcessFullTrustForms");
+                if ((object.ReferenceEquals(this.Parameter6Field, value) != true)) {
+                    this.Parameter6Field = value;
+                    this.RaisePropertyChanged("Parameter6");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public bool UseNativePrintEngine {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter7 {
             get {
-                return this.UseNativePrintEngineField;
+                return this.Parameter7Field;
             }
             set {
-                if ((this.UseNativePrintEngineField.Equals(value) != true)) {
-                    this.UseNativePrintEngineField = value;
-                    this.RaisePropertyChanged("UseNativePrintEngine");
+                if ((object.ReferenceEquals(this.Parameter7Field, value) != true)) {
+                    this.Parameter7Field = value;
+                    this.RaisePropertyChanged("Parameter7");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public string DefaultPaperSize {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter8 {
             get {
-                return this.DefaultPaperSizeField;
+                return this.Parameter8Field;
             }
             set {
-                if ((object.ReferenceEquals(this.DefaultPaperSizeField, value) != true)) {
-                    this.DefaultPaperSizeField = value;
-                    this.RaisePropertyChanged("DefaultPaperSize");
+                if ((object.ReferenceEquals(this.Parameter8Field, value) != true)) {
+                    this.Parameter8Field = value;
+                    this.RaisePropertyChanged("Parameter8");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public string ForcePaperSize {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter9 {
             get {
-                return this.ForcePaperSizeField;
+                return this.Parameter9Field;
             }
             set {
-                if ((object.ReferenceEquals(this.ForcePaperSizeField, value) != true)) {
-                    this.ForcePaperSizeField = value;
-                    this.RaisePropertyChanged("ForcePaperSize");
+                if ((object.ReferenceEquals(this.Parameter9Field, value) != true)) {
+                    this.Parameter9Field = value;
+                    this.RaisePropertyChanged("Parameter9");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public Split_PDF.ServiceReference1.PageOrientation DefaultPageOrientation {
+        public string Parameter10 {
             get {
-                return this.DefaultPageOrientationField;
+                return this.Parameter10Field;
             }
             set {
-                if ((this.DefaultPageOrientationField.Equals(value) != true)) {
-                    this.DefaultPageOrientationField = value;
-                    this.RaisePropertyChanged("DefaultPageOrientation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
-        public Split_PDF.ServiceReference1.PageOrientation ForcePageOrientation {
-            get {
-                return this.ForcePageOrientationField;
-            }
-            set {
-                if ((this.ForcePageOrientationField.Equals(value) != true)) {
-                    this.ForcePageOrientationField = value;
-                    this.RaisePropertyChanged("ForcePageOrientation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
-        public byte[] XSNData {
-            get {
-                return this.XSNDataField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.XSNDataField, value) != true)) {
-                    this.XSNDataField = value;
-                    this.RaisePropertyChanged("XSNData");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
-        public Split_PDF.ServiceReference1.MergeMode AttachmentMergeMode {
-            get {
-                return this.AttachmentMergeModeField;
-            }
-            set {
-                if ((this.AttachmentMergeModeField.Equals(value) != true)) {
-                    this.AttachmentMergeModeField = value;
-                    this.RaisePropertyChanged("AttachmentMergeMode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
-        public Split_PDF.ServiceReference1.UnsupportedFileBehaviour UnsupportedAttachmentBehaviour {
-            get {
-                return this.UnsupportedAttachmentBehaviourField;
-            }
-            set {
-                if ((this.UnsupportedAttachmentBehaviourField.Equals(value) != true)) {
-                    this.UnsupportedAttachmentBehaviourField = value;
-                    this.RaisePropertyChanged("UnsupportedAttachmentBehaviour");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
-        public bool BreakMergeOnError {
-            get {
-                return this.BreakMergeOnErrorField;
-            }
-            set {
-                if ((this.BreakMergeOnErrorField.Equals(value) != true)) {
-                    this.BreakMergeOnErrorField = value;
-                    this.RaisePropertyChanged("BreakMergeOnError");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
-        public string IncludeAttachmentTypes {
-            get {
-                return this.IncludeAttachmentTypesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IncludeAttachmentTypesField, value) != true)) {
-                    this.IncludeAttachmentTypesField = value;
-                    this.RaisePropertyChanged("IncludeAttachmentTypes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
-        public string ExcludeAttachmentTypes {
-            get {
-                return this.ExcludeAttachmentTypesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExcludeAttachmentTypesField, value) != true)) {
-                    this.ExcludeAttachmentTypesField = value;
-                    this.RaisePropertyChanged("ExcludeAttachmentTypes");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_HTML", Namespace="http://types.muhimbi.com/2010/11/22")]
-    [System.SerializableAttribute()]
-    public partial class ConverterSpecificSettings_HTML : Split_PDF.ServiceReference1.ConverterSpecificSettings {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PaperSizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.HTMLScaleMode ScaleModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PageMarginsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ConversionDelayField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool ClearBrowserCacheField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool SplitImagesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.HTMLRenderingEngine HtmlRenderingEngineField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WebKitViewPortSizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.AuthenticationMode AuthenticationModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.MediaType MediaTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool EnableWebKitOfflineModeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PaperSize {
-            get {
-                return this.PaperSizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PaperSizeField, value) != true)) {
-                    this.PaperSizeField = value;
-                    this.RaisePropertyChanged("PaperSize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Split_PDF.ServiceReference1.HTMLScaleMode ScaleMode {
-            get {
-                return this.ScaleModeField;
-            }
-            set {
-                if ((this.ScaleModeField.Equals(value) != true)) {
-                    this.ScaleModeField = value;
-                    this.RaisePropertyChanged("ScaleMode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public string PageMargins {
-            get {
-                return this.PageMarginsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PageMarginsField, value) != true)) {
-                    this.PageMarginsField = value;
-                    this.RaisePropertyChanged("PageMargins");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public int ConversionDelay {
-            get {
-                return this.ConversionDelayField;
-            }
-            set {
-                if ((this.ConversionDelayField.Equals(value) != true)) {
-                    this.ConversionDelayField = value;
-                    this.RaisePropertyChanged("ConversionDelay");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public bool ClearBrowserCache {
-            get {
-                return this.ClearBrowserCacheField;
-            }
-            set {
-                if ((this.ClearBrowserCacheField.Equals(value) != true)) {
-                    this.ClearBrowserCacheField = value;
-                    this.RaisePropertyChanged("ClearBrowserCache");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public bool SplitImages {
-            get {
-                return this.SplitImagesField;
-            }
-            set {
-                if ((this.SplitImagesField.Equals(value) != true)) {
-                    this.SplitImagesField = value;
-                    this.RaisePropertyChanged("SplitImages");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public Split_PDF.ServiceReference1.HTMLRenderingEngine HtmlRenderingEngine {
-            get {
-                return this.HtmlRenderingEngineField;
-            }
-            set {
-                if ((this.HtmlRenderingEngineField.Equals(value) != true)) {
-                    this.HtmlRenderingEngineField = value;
-                    this.RaisePropertyChanged("HtmlRenderingEngine");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public string WebKitViewPortSize {
-            get {
-                return this.WebKitViewPortSizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WebKitViewPortSizeField, value) != true)) {
-                    this.WebKitViewPortSizeField = value;
-                    this.RaisePropertyChanged("WebKitViewPortSize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public Split_PDF.ServiceReference1.AuthenticationMode AuthenticationMode {
-            get {
-                return this.AuthenticationModeField;
-            }
-            set {
-                if ((this.AuthenticationModeField.Equals(value) != true)) {
-                    this.AuthenticationModeField = value;
-                    this.RaisePropertyChanged("AuthenticationMode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public Split_PDF.ServiceReference1.MediaType MediaType {
-            get {
-                return this.MediaTypeField;
-            }
-            set {
-                if ((this.MediaTypeField.Equals(value) != true)) {
-                    this.MediaTypeField = value;
-                    this.RaisePropertyChanged("MediaType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
-        public bool EnableWebKitOfflineMode {
-            get {
-                return this.EnableWebKitOfflineModeField;
-            }
-            set {
-                if ((this.EnableWebKitOfflineModeField.Equals(value) != true)) {
-                    this.EnableWebKitOfflineModeField = value;
-                    this.RaisePropertyChanged("EnableWebKitOfflineMode");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_WordProcessing", Namespace="http://types.muhimbi.com/2010/11/22")]
-    [System.SerializableAttribute()]
-    public partial class ConverterSpecificSettings_WordProcessing : Split_PDF.ServiceReference1.ConverterSpecificSettings {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.RevisionsAndCommentsMarkupMode RevisionsAndCommentsMarkupModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.RevisionsAndCommentsDisplayMode RevisionsAndCommentsDisplayModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool ProcessDocumentTemplateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.BookmarkOptions_WordProcessing BookmarkOptionsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Split_PDF.ServiceReference1.RevisionsAndCommentsMarkupMode RevisionsAndCommentsMarkupMode {
-            get {
-                return this.RevisionsAndCommentsMarkupModeField;
-            }
-            set {
-                if ((this.RevisionsAndCommentsMarkupModeField.Equals(value) != true)) {
-                    this.RevisionsAndCommentsMarkupModeField = value;
-                    this.RaisePropertyChanged("RevisionsAndCommentsMarkupMode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public Split_PDF.ServiceReference1.RevisionsAndCommentsDisplayMode RevisionsAndCommentsDisplayMode {
-            get {
-                return this.RevisionsAndCommentsDisplayModeField;
-            }
-            set {
-                if ((this.RevisionsAndCommentsDisplayModeField.Equals(value) != true)) {
-                    this.RevisionsAndCommentsDisplayModeField = value;
-                    this.RaisePropertyChanged("RevisionsAndCommentsDisplayMode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public bool ProcessDocumentTemplate {
-            get {
-                return this.ProcessDocumentTemplateField;
-            }
-            set {
-                if ((this.ProcessDocumentTemplateField.Equals(value) != true)) {
-                    this.ProcessDocumentTemplateField = value;
-                    this.RaisePropertyChanged("ProcessDocumentTemplate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public Split_PDF.ServiceReference1.BookmarkOptions_WordProcessing BookmarkOptions {
-            get {
-                return this.BookmarkOptionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BookmarkOptionsField, value) != true)) {
-                    this.BookmarkOptionsField = value;
-                    this.RaisePropertyChanged("BookmarkOptions");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Image", Namespace="http://types.muhimbi.com/2010/11/22")]
-    [System.SerializableAttribute()]
-    public partial class ConverterSpecificSettings_Image : Split_PDF.ServiceReference1.ConverterSpecificSettings {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PaperSizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PageMarginsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool AutoRotatePageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.ContentScale ScaleModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SourceFileResolutionField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PaperSize {
-            get {
-                return this.PaperSizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PaperSizeField, value) != true)) {
-                    this.PaperSizeField = value;
-                    this.RaisePropertyChanged("PaperSize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public string PageMargins {
-            get {
-                return this.PageMarginsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PageMarginsField, value) != true)) {
-                    this.PageMarginsField = value;
-                    this.RaisePropertyChanged("PageMargins");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public bool AutoRotatePage {
-            get {
-                return this.AutoRotatePageField;
-            }
-            set {
-                if ((this.AutoRotatePageField.Equals(value) != true)) {
-                    this.AutoRotatePageField = value;
-                    this.RaisePropertyChanged("AutoRotatePage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public Split_PDF.ServiceReference1.ContentScale ScaleMode {
-            get {
-                return this.ScaleModeField;
-            }
-            set {
-                if ((this.ScaleModeField.Equals(value) != true)) {
-                    this.ScaleModeField = value;
-                    this.RaisePropertyChanged("ScaleMode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public string SourceFileResolution {
-            get {
-                return this.SourceFileResolutionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SourceFileResolutionField, value) != true)) {
-                    this.SourceFileResolutionField = value;
-                    this.RaisePropertyChanged("SourceFileResolution");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Cad", Namespace="http://types.muhimbi.com/2010/11/22")]
-    [System.SerializableAttribute()]
-    public partial class ConverterSpecificSettings_Cad : Split_PDF.ServiceReference1.ConverterSpecificSettings {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PaperSizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BackgroundColorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ForegroundColorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.CadConversionElement[] CadConversionElementsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PageMarginsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.CadEmptyLayoutDetectionMode EmptyLayoutDetectionModeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.CadLayoutSortOrder LayoutSortOrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExternalReferencesField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PaperSize {
-            get {
-                return this.PaperSizeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PaperSizeField, value) != true)) {
-                    this.PaperSizeField = value;
-                    this.RaisePropertyChanged("PaperSize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public string BackgroundColor {
-            get {
-                return this.BackgroundColorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BackgroundColorField, value) != true)) {
-                    this.BackgroundColorField = value;
-                    this.RaisePropertyChanged("BackgroundColor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public string ForegroundColor {
-            get {
-                return this.ForegroundColorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ForegroundColorField, value) != true)) {
-                    this.ForegroundColorField = value;
-                    this.RaisePropertyChanged("ForegroundColor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public Split_PDF.ServiceReference1.CadConversionElement[] CadConversionElements {
-            get {
-                return this.CadConversionElementsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CadConversionElementsField, value) != true)) {
-                    this.CadConversionElementsField = value;
-                    this.RaisePropertyChanged("CadConversionElements");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public string PageMargins {
-            get {
-                return this.PageMarginsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PageMarginsField, value) != true)) {
-                    this.PageMarginsField = value;
-                    this.RaisePropertyChanged("PageMargins");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public Split_PDF.ServiceReference1.CadEmptyLayoutDetectionMode EmptyLayoutDetectionMode {
-            get {
-                return this.EmptyLayoutDetectionModeField;
-            }
-            set {
-                if ((this.EmptyLayoutDetectionModeField.Equals(value) != true)) {
-                    this.EmptyLayoutDetectionModeField = value;
-                    this.RaisePropertyChanged("EmptyLayoutDetectionMode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public Split_PDF.ServiceReference1.CadLayoutSortOrder LayoutSortOrder {
-            get {
-                return this.LayoutSortOrderField;
-            }
-            set {
-                if ((this.LayoutSortOrderField.Equals(value) != true)) {
-                    this.LayoutSortOrderField = value;
-                    this.RaisePropertyChanged("LayoutSortOrder");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public string ExternalReferences {
-            get {
-                return this.ExternalReferencesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExternalReferencesField, value) != true)) {
-                    this.ExternalReferencesField = value;
-                    this.RaisePropertyChanged("ExternalReferences");
+                if ((object.ReferenceEquals(this.Parameter10Field, value) != true)) {
+                    this.Parameter10Field = value;
+                    this.RaisePropertyChanged("Parameter10");
                 }
             }
         }
@@ -4454,6 +4610,45 @@ namespace Split_PDF.ServiceReference1 {
                 if ((object.ReferenceEquals(this.SourceFileResolutionField, value) != true)) {
                     this.SourceFileResolutionField = value;
                     this.RaisePropertyChanged("SourceFileResolution");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EnumsProxy", Namespace="http://types.muhimbi.com/2013/08/01")]
+    [System.SerializableAttribute()]
+    public partial class EnumsProxy : Split_PDF.ServiceReference1.ConverterSpecificSettings {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.OCRLanguage OCRLanguageProxyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxyField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Split_PDF.ServiceReference1.OCRLanguage OCRLanguageProxy {
+            get {
+                return this.OCRLanguageProxyField;
+            }
+            set {
+                if ((this.OCRLanguageProxyField.Equals(value) != true)) {
+                    this.OCRLanguageProxyField = value;
+                    this.RaisePropertyChanged("OCRLanguageProxy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Split_PDF.ServiceReference1.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxy {
+            get {
+                return this.PrimeOCR_AccuracyLevelProxyField;
+            }
+            set {
+                if ((this.PrimeOCR_AccuracyLevelProxyField.Equals(value) != true)) {
+                    this.PrimeOCR_AccuracyLevelProxyField = value;
+                    this.RaisePropertyChanged("PrimeOCR_AccuracyLevelProxy");
                 }
             }
         }
@@ -4596,45 +4791,6 @@ namespace Split_PDF.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EnumsProxy", Namespace="http://types.muhimbi.com/2013/08/01")]
-    [System.SerializableAttribute()]
-    public partial class EnumsProxy : Split_PDF.ServiceReference1.ConverterSpecificSettings {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.OCRLanguage OCRLanguageProxyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Split_PDF.ServiceReference1.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxyField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Split_PDF.ServiceReference1.OCRLanguage OCRLanguageProxy {
-            get {
-                return this.OCRLanguageProxyField;
-            }
-            set {
-                if ((this.OCRLanguageProxyField.Equals(value) != true)) {
-                    this.OCRLanguageProxyField = value;
-                    this.RaisePropertyChanged("OCRLanguageProxy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Split_PDF.ServiceReference1.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxy {
-            get {
-                return this.PrimeOCR_AccuracyLevelProxyField;
-            }
-            set {
-                if ((this.PrimeOCR_AccuracyLevelProxyField.Equals(value) != true)) {
-                    this.PrimeOCR_AccuracyLevelProxyField = value;
-                    this.RaisePropertyChanged("PrimeOCR_AccuracyLevelProxy");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Spreadsheets", Namespace="http://types.muhimbi.com/2014/02/06")]
     [System.SerializableAttribute()]
     public partial class ConverterSpecificSettings_Spreadsheets : Split_PDF.ServiceReference1.ConverterSpecificSettings {
@@ -4702,273 +4858,6 @@ namespace Split_PDF.ServiceReference1 {
                 }
             }
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PresentationsPrintOutputType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum PresentationsPrintOutputType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Slides = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OneSlideHandouts = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TwoSlideHandouts = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ThreeSlideHandouts = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FourSlideHandouts = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SixSlideHandouts = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NineSlideHandouts = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NotesPages = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Outline = 6,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HTMLScaleMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum HTMLScaleMode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FitWidth = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NoScale = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FitWidthScaleImagesOnly = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FitWidthScaleWideImagesOnly = 4,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MSGPlainTextLineBreaks", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MSGPlainTextLineBreaks : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RetainAll = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RemoveExtra = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Legacy = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MSGBestBodyMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MSGBestBodyMode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Strict = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmailAddressDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MSGEmailAddressDisplayMode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Name = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NameAndAddress = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Address = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NameAndSMTPAddress = 4,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmbeddedObjectDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MSGEmbeddedObjectDisplayMode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InlineNoScale = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InlineFitWidth = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Disabled = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmbeddedObjectIconDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MSGEmbeddedObjectIconDisplayMode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IconOnly = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Disabled = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HTMLRenderingEngine", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum HTMLRenderingEngine : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IE = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WebKit = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Chromium = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MergeMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MergeMode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Merge = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AttachAsPDF = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AttachOriginal = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UnsupportedFileBehaviour", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum UnsupportedFileBehaviour : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Error = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Remove = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AttachOriginal = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ForceMessageHeaderEncoding", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum ForceMessageHeaderEncoding : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        None = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UTF8 = 2,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InfoPathView", Namespace="http://types.muhimbi.com/2010/11/22")]
-    [System.SerializableAttribute()]
-    public partial class InfoPathView : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AuthenticationMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum AuthenticationMode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WebAuthentication = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MSOAuthentication = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MediaType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MediaType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Screen = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Print = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5198,6 +5087,39 @@ namespace Split_PDF.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PresentationsPrintOutputType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum PresentationsPrintOutputType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Slides = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OneSlideHandouts = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TwoSlideHandouts = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ThreeSlideHandouts = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FourSlideHandouts = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SixSlideHandouts = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NineSlideHandouts = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NotesPages = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Outline = 6,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ContentScale", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
         "")]
     public enum ContentScale : int {
@@ -5216,6 +5138,84 @@ namespace Split_PDF.ServiceReference1 {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         FitPage = 4,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InfoPathView", Namespace="http://types.muhimbi.com/2010/11/22")]
+    [System.SerializableAttribute()]
+    public partial class InfoPathView : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MergeMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MergeMode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Merge = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttachAsPDF = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttachOriginal = 3,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UnsupportedFileBehaviour", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum UnsupportedFileBehaviour : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Error = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Remove = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttachOriginal = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5361,18 +5361,159 @@ namespace Split_PDF.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PDFConvertAttachmentMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+    [System.Runtime.Serialization.DataContractAttribute(Name="HTMLScaleMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
         "")]
-    public enum PDFConvertAttachmentMode : int {
+    public enum HTMLScaleMode : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Default = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        RemoveAll = 1,
+        FitWidth = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        RemoveSupported = 2,
+        NoScale = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FitWidthScaleImagesOnly = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FitWidthScaleWideImagesOnly = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HTMLRenderingEngine", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum HTMLRenderingEngine : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IE = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WebKit = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Chromium = 3,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AuthenticationMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum AuthenticationMode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WebAuthentication = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MSOAuthentication = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MediaType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MediaType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Screen = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Print = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MSGPlainTextLineBreaks", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MSGPlainTextLineBreaks : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RetainAll = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RemoveExtra = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Legacy = 3,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MSGBestBodyMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MSGBestBodyMode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Strict = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmailAddressDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MSGEmailAddressDisplayMode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Name = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NameAndAddress = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Address = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NameAndSMTPAddress = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmbeddedObjectDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MSGEmbeddedObjectDisplayMode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InlineNoScale = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InlineFitWidth = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Disabled = 3,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmbeddedObjectIconDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MSGEmbeddedObjectIconDisplayMode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IconOnly = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Disabled = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ForceMessageHeaderEncoding", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum ForceMessageHeaderEncoding : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UTF8 = 2,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
@@ -5475,6 +5616,21 @@ namespace Split_PDF.ServiceReference1 {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Level7 = 9999999,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PDFConvertAttachmentMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum PDFConvertAttachmentMode : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RemoveAll = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RemoveSupported = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

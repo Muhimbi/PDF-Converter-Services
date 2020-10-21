@@ -37,9 +37,9 @@ public class Line
     extends Element
 {
 
-    @XmlElementRef(name = "EndX", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "EndX", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> endX;
-    @XmlElementRef(name = "EndY", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "EndY", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> endY;
 
     /**
@@ -63,7 +63,7 @@ public class Line
      *     
      */
     public void setEndX(JAXBElement<String> value) {
-        this.endX = ((JAXBElement<String> ) value);
+        this.endX = value;
     }
 
     /**
@@ -87,7 +87,7 @@ public class Line
      *     
      */
     public void setEndY(JAXBElement<String> value) {
-        this.endY = ((JAXBElement<String> ) value);
+        this.endY = value;
     }
 
 }

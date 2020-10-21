@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -44,15 +45,16 @@ public class ConverterSpecificSettingsImage
     extends ConverterSpecificSettings
 {
 
-    @XmlElementRef(name = "PaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "PaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> paperSize;
-    @XmlElementRef(name = "PageMargins", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "PageMargins", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> pageMargins;
     @XmlElement(name = "AutoRotatePage")
     protected Boolean autoRotatePage;
     @XmlElement(name = "ScaleMode")
+    @XmlSchemaType(name = "string")
     protected ContentScale scaleMode;
-    @XmlElementRef(name = "SourceFileResolution", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "SourceFileResolution", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> sourceFileResolution;
 
     /**
@@ -76,7 +78,7 @@ public class ConverterSpecificSettingsImage
      *     
      */
     public void setPaperSize(JAXBElement<String> value) {
-        this.paperSize = ((JAXBElement<String> ) value);
+        this.paperSize = value;
     }
 
     /**
@@ -100,7 +102,7 @@ public class ConverterSpecificSettingsImage
      *     
      */
     public void setPageMargins(JAXBElement<String> value) {
-        this.pageMargins = ((JAXBElement<String> ) value);
+        this.pageMargins = value;
     }
 
     /**
@@ -172,7 +174,7 @@ public class ConverterSpecificSettingsImage
      *     
      */
     public void setSourceFileResolution(JAXBElement<String> value) {
-        this.sourceFileResolution = ((JAXBElement<String> ) value);
+        this.sourceFileResolution = value;
     }
 
 }

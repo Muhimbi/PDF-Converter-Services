@@ -1,11 +1,15 @@
 
 package com.muhimbi.ws;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -25,6 +29,10 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="PageInterval" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="PageRange" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="PrintOnly" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="StartSection" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="EndSection" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="SectionRange" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="PageType" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics}PageType" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -40,13 +48,18 @@ import javax.xml.bind.annotation.XmlType;
     "endPage",
     "pageInterval",
     "pageRange",
-    "printOnly"
+    "printOnly",
+    "startSection",
+    "endSection",
+    "sectionRange",
+    "pageType"
 })
 public class Watermark
     extends Container
 {
 
     @XmlElement(name = "PageOrientation")
+    @XmlSchemaType(name = "string")
     protected PageOrientation pageOrientation;
     @XmlElement(name = "StartPage")
     protected Integer startPage;
@@ -54,10 +67,20 @@ public class Watermark
     protected Integer endPage;
     @XmlElement(name = "PageInterval")
     protected Integer pageInterval;
-    @XmlElementRef(name = "PageRange", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "PageRange", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> pageRange;
     @XmlElement(name = "PrintOnly")
     protected Boolean printOnly;
+    @XmlElement(name = "StartSection")
+    protected Integer startSection;
+    @XmlElement(name = "EndSection")
+    protected Integer endSection;
+    @XmlElementRef(name = "SectionRange", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> sectionRange;
+    @XmlList
+    @XmlElement(name = "PageType")
+    @XmlSchemaType(name = "anySimpleType")
+    protected List<String> pageType;
 
     /**
      * Gets the value of the pageOrientation property.
@@ -176,7 +199,7 @@ public class Watermark
      *     
      */
     public void setPageRange(JAXBElement<String> value) {
-        this.pageRange = ((JAXBElement<String> ) value);
+        this.pageRange = value;
     }
 
     /**
@@ -201,6 +224,107 @@ public class Watermark
      */
     public void setPrintOnly(Boolean value) {
         this.printOnly = value;
+    }
+
+    /**
+     * Gets the value of the startSection property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getStartSection() {
+        return startSection;
+    }
+
+    /**
+     * Sets the value of the startSection property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setStartSection(Integer value) {
+        this.startSection = value;
+    }
+
+    /**
+     * Gets the value of the endSection property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getEndSection() {
+        return endSection;
+    }
+
+    /**
+     * Sets the value of the endSection property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setEndSection(Integer value) {
+        this.endSection = value;
+    }
+
+    /**
+     * Gets the value of the sectionRange property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getSectionRange() {
+        return sectionRange;
+    }
+
+    /**
+     * Sets the value of the sectionRange property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setSectionRange(JAXBElement<String> value) {
+        this.sectionRange = value;
+    }
+
+    /**
+     * Gets the value of the pageType property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the pageType property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getPageType().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getPageType() {
+        if (pageType == null) {
+            pageType = new ArrayList<String>();
+        }
+        return this.pageType;
     }
 
 }

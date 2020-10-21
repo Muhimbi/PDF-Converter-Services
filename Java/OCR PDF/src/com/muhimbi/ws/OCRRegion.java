@@ -50,13 +50,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class OCRRegion {
 
-    @XmlElementRef(name = "X", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "X", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> x;
-    @XmlElementRef(name = "Y", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "Y", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> y;
-    @XmlElementRef(name = "Width", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "Width", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> width;
-    @XmlElementRef(name = "Height", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "Height", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> height;
     @XmlElement(name = "StartPage")
     protected Integer startPage;
@@ -64,9 +64,9 @@ public class OCRRegion {
     protected Integer endPage;
     @XmlElement(name = "PageInterval")
     protected Integer pageInterval;
-    @XmlElementRef(name = "PageRange", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "PageRange", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> pageRange;
-    @XmlElementRef(name = "Id", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class)
+    @XmlElementRef(name = "Id", namespace = "http://types.muhimbi.com/2013/08/01", type = JAXBElement.class, required = false)
     protected JAXBElement<String> id;
 
     /**
@@ -90,7 +90,7 @@ public class OCRRegion {
      *     
      */
     public void setX(JAXBElement<String> value) {
-        this.x = ((JAXBElement<String> ) value);
+        this.x = value;
     }
 
     /**
@@ -114,7 +114,7 @@ public class OCRRegion {
      *     
      */
     public void setY(JAXBElement<String> value) {
-        this.y = ((JAXBElement<String> ) value);
+        this.y = value;
     }
 
     /**
@@ -138,7 +138,7 @@ public class OCRRegion {
      *     
      */
     public void setWidth(JAXBElement<String> value) {
-        this.width = ((JAXBElement<String> ) value);
+        this.width = value;
     }
 
     /**
@@ -162,7 +162,7 @@ public class OCRRegion {
      *     
      */
     public void setHeight(JAXBElement<String> value) {
-        this.height = ((JAXBElement<String> ) value);
+        this.height = value;
     }
 
     /**
@@ -258,7 +258,7 @@ public class OCRRegion {
      *     
      */
     public void setPageRange(JAXBElement<String> value) {
-        this.pageRange = ((JAXBElement<String> ) value);
+        this.pageRange = value;
     }
 
     /**
@@ -282,7 +282,7 @@ public class OCRRegion {
      *     
      */
     public void setId(JAXBElement<String> value) {
-        this.id = ((JAXBElement<String> ) value);
+        this.id = value;
     }
 
 }

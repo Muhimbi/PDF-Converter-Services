@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -40,13 +41,14 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class StatusResultItem {
 
-    @XmlElementRef(name = "RequestID", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class)
+    @XmlElementRef(name = "RequestID", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class, required = false)
     protected JAXBElement<String> requestID;
     @XmlElement(name = "MaximumInstances")
     protected Integer maximumInstances;
     @XmlElement(name = "CurrentInstances")
     protected Integer currentInstances;
     @XmlElement(name = "OperationStatus")
+    @XmlSchemaType(name = "string")
     protected OperationStatus operationStatus;
 
     /**
@@ -70,7 +72,7 @@ public class StatusResultItem {
      *     
      */
     public void setRequestID(JAXBElement<String> value) {
-        this.requestID = ((JAXBElement<String> ) value);
+        this.requestID = value;
     }
 
     /**

@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -37,8 +38,9 @@ import javax.xml.bind.annotation.XmlType;
 public class WebServiceFaultException {
 
     @XmlElement(name = "ExceptionType")
+    @XmlSchemaType(name = "string")
     protected WebServiceExceptionType exceptionType;
-    @XmlElementRef(name = "ExceptionDetails", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "ExceptionDetails", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfstring> exceptionDetails;
 
     /**
@@ -86,7 +88,7 @@ public class WebServiceFaultException {
      *     
      */
     public void setExceptionDetails(JAXBElement<ArrayOfstring> value) {
-        this.exceptionDetails = ((JAXBElement<ArrayOfstring> ) value);
+        this.exceptionDetails = value;
     }
 
 }

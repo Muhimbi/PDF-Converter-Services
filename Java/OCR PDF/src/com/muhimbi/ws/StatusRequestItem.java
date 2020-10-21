@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -38,11 +39,12 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class StatusRequestItem {
 
-    @XmlElementRef(name = "RequestID", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class)
+    @XmlElementRef(name = "RequestID", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class, required = false)
     protected JAXBElement<String> requestID;
     @XmlElement(name = "OperationType")
+    @XmlSchemaType(name = "string")
     protected OperationType operationType;
-    @XmlElementRef(name = "Data", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class)
+    @XmlElementRef(name = "Data", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class, required = false)
     protected JAXBElement<String> data;
 
     /**
@@ -66,7 +68,7 @@ public class StatusRequestItem {
      *     
      */
     public void setRequestID(JAXBElement<String> value) {
-        this.requestID = ((JAXBElement<String> ) value);
+        this.requestID = value;
     }
 
     /**
@@ -114,7 +116,7 @@ public class StatusRequestItem {
      *     
      */
     public void setData(JAXBElement<String> value) {
-        this.data = ((JAXBElement<String> ) value);
+        this.data = value;
     }
 
 }

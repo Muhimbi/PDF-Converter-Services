@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class InfoPathView {
 
-    @XmlElementRef(name = "Name", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Name", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> name;
 
     /**
@@ -57,7 +57,7 @@ public class InfoPathView {
      *     
      */
     public void setName(JAXBElement<String> value) {
-        this.name = ((JAXBElement<String> ) value);
+        this.name = value;
     }
 
 }

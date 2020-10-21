@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -41,12 +42,13 @@ import javax.xml.bind.annotation.XmlType;
 public class FileSplitOptions {
 
     @XmlElement(name = "FileSplitType")
+    @XmlSchemaType(name = "string")
     protected FileSplitType fileSplitType;
     @XmlElement(name = "BatchSize")
     protected Integer batchSize;
     @XmlElement(name = "BookmarkLevel")
     protected Integer bookmarkLevel;
-    @XmlElementRef(name = "FileNameTemplate", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "FileNameTemplate", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> fileNameTemplate;
 
     /**
@@ -142,7 +144,7 @@ public class FileSplitOptions {
      *     
      */
     public void setFileNameTemplate(JAXBElement<String> value) {
-        this.fileNameTemplate = ((JAXBElement<String> ) value);
+        this.fileNameTemplate = value;
     }
 
 }

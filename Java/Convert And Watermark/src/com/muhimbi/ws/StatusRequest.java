@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class StatusRequest {
 
-    @XmlElementRef(name = "StatusRequestItems", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class)
+    @XmlElementRef(name = "StatusRequestItems", namespace = "http://types.muhimbi.com/2018/01/11", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfStatusRequestItem> statusRequestItems;
 
     /**
@@ -57,7 +57,7 @@ public class StatusRequest {
      *     
      */
     public void setStatusRequestItems(JAXBElement<ArrayOfStatusRequestItem> value) {
-        this.statusRequestItems = ((JAXBElement<ArrayOfStatusRequestItem> ) value);
+        this.statusRequestItems = value;
     }
 
 }

@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -70,40 +71,48 @@ import javax.xml.bind.annotation.XmlType;
 public class ConversionSettings {
 
     @XmlElement(name = "Format")
+    @XmlSchemaType(name = "string")
     protected OutputFormat format;
     @XmlElement(name = "StartPage")
     protected Integer startPage;
     @XmlElement(name = "EndPage")
     protected Integer endPage;
     @XmlElement(name = "Range")
+    @XmlSchemaType(name = "string")
     protected ConversionRange range;
     @XmlElement(name = "Quality")
+    @XmlSchemaType(name = "string")
     protected ConversionQuality quality;
     @XmlElement(name = "PDFProfile")
+    @XmlSchemaType(name = "string")
     protected PDFProfile pdfProfile;
-    @XmlElementRef(name = "OpenPassword", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OpenPassword", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> openPassword;
-    @XmlElementRef(name = "OwnerPassword", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OwnerPassword", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> ownerPassword;
     @XmlList
     @XmlElement(name = "SecurityOptions")
+    @XmlSchemaType(name = "anySimpleType")
     protected List<String> securityOptions;
     @XmlList
     @XmlElement(name = "Fidelity")
+    @XmlSchemaType(name = "anySimpleType")
     protected List<String> fidelity;
     @XmlElement(name = "GenerateBookmarks")
+    @XmlSchemaType(name = "string")
     protected BookmarkGenerationOption generateBookmarks;
-    @XmlElementRef(name = "Watermarks", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "Watermarks", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfWatermark> watermarks;
     @XmlElement(name = "PageOrientation")
+    @XmlSchemaType(name = "string")
     protected PageOrientation pageOrientation;
-    @XmlElementRef(name = "ConverterSpecificSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "ConverterSpecificSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ConverterSpecificSettings> converterSpecificSettings;
-    @XmlElementRef(name = "OutputFormatSpecificSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OutputFormatSpecificSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<OutputFormatSpecificSettings> outputFormatSpecificSettings;
-    @XmlElementRef(name = "OCRSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OCRSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<OCRSettings> ocrSettings;
-    @XmlElementRef(name = "TOCSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "TOCSettings", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<TOCSettings> tocSettings;
 
     /**
@@ -271,7 +280,7 @@ public class ConversionSettings {
      *     
      */
     public void setOpenPassword(JAXBElement<String> value) {
-        this.openPassword = ((JAXBElement<String> ) value);
+        this.openPassword = value;
     }
 
     /**
@@ -295,7 +304,7 @@ public class ConversionSettings {
      *     
      */
     public void setOwnerPassword(JAXBElement<String> value) {
-        this.ownerPassword = ((JAXBElement<String> ) value);
+        this.ownerPassword = value;
     }
 
     /**
@@ -401,7 +410,7 @@ public class ConversionSettings {
      *     
      */
     public void setWatermarks(JAXBElement<ArrayOfWatermark> value) {
-        this.watermarks = ((JAXBElement<ArrayOfWatermark> ) value);
+        this.watermarks = value;
     }
 
     /**
@@ -449,7 +458,7 @@ public class ConversionSettings {
      *     
      */
     public void setConverterSpecificSettings(JAXBElement<ConverterSpecificSettings> value) {
-        this.converterSpecificSettings = ((JAXBElement<ConverterSpecificSettings> ) value);
+        this.converterSpecificSettings = value;
     }
 
     /**
@@ -473,7 +482,7 @@ public class ConversionSettings {
      *     
      */
     public void setOutputFormatSpecificSettings(JAXBElement<OutputFormatSpecificSettings> value) {
-        this.outputFormatSpecificSettings = ((JAXBElement<OutputFormatSpecificSettings> ) value);
+        this.outputFormatSpecificSettings = value;
     }
 
     /**
@@ -497,7 +506,7 @@ public class ConversionSettings {
      *     
      */
     public void setOCRSettings(JAXBElement<OCRSettings> value) {
-        this.ocrSettings = ((JAXBElement<OCRSettings> ) value);
+        this.ocrSettings = value;
     }
 
     /**
@@ -521,7 +530,7 @@ public class ConversionSettings {
      *     
      */
     public void setTOCSettings(JAXBElement<TOCSettings> value) {
-        this.tocSettings = ((JAXBElement<TOCSettings> ) value);
+        this.tocSettings = value;
     }
 
 }

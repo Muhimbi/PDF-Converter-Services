@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -87,17 +88,22 @@ public class ConverterSpecificSettingsMSG
 
     @XmlElement(name = "ConvertAttachments")
     protected Boolean convertAttachments;
-    @XmlElementRef(name = "PaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "PaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> paperSize;
     @XmlElement(name = "HTMLScaleMode")
+    @XmlSchemaType(name = "string")
     protected HTMLScaleMode htmlScaleMode;
     @XmlElement(name = "PlainTextLineBreaks")
+    @XmlSchemaType(name = "string")
     protected MSGPlainTextLineBreaks plainTextLineBreaks;
     @XmlElement(name = "BestBodyMode")
+    @XmlSchemaType(name = "string")
     protected MSGBestBodyMode bestBodyMode;
     @XmlElement(name = "EmailAddressDisplayMode")
+    @XmlSchemaType(name = "string")
     protected MSGEmailAddressDisplayMode emailAddressDisplayMode;
     @XmlElement(name = "FromEmailAddressDisplayMode")
+    @XmlSchemaType(name = "string")
     protected MSGEmailAddressDisplayMode fromEmailAddressDisplayMode;
     @XmlElement(name = "DisplayAttachmentSummary")
     protected Boolean displayAttachmentSummary;
@@ -106,34 +112,40 @@ public class ConverterSpecificSettingsMSG
     @XmlElement(name = "BreakOnUnsupportedEmbeddedObject")
     protected Boolean breakOnUnsupportedEmbeddedObject;
     @XmlElement(name = "EmbeddedObjectDisplayMode")
+    @XmlSchemaType(name = "string")
     protected MSGEmbeddedObjectDisplayMode embeddedObjectDisplayMode;
     @XmlElement(name = "EmbeddedObjectIconDisplayMode")
+    @XmlSchemaType(name = "string")
     protected MSGEmbeddedObjectIconDisplayMode embeddedObjectIconDisplayMode;
     @XmlElement(name = "EmbeddedObjectScalePercentage")
     protected BigDecimal embeddedObjectScalePercentage;
-    @XmlElementRef(name = "SentDateMissingDisplayMode", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "SentDateMissingDisplayMode", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> sentDateMissingDisplayMode;
     @XmlElement(name = "HtmlRenderingEngine")
+    @XmlSchemaType(name = "string")
     protected HTMLRenderingEngine htmlRenderingEngine;
-    @XmlElementRef(name = "WebKitViewPortSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "WebKitViewPortSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> webKitViewPortSize;
     @XmlElement(name = "EnableWebKitOfflineMode")
     protected Boolean enableWebKitOfflineMode;
-    @XmlElementRef(name = "PageMargins", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "PageMargins", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> pageMargins;
     @XmlElement(name = "AttachmentMergeMode")
+    @XmlSchemaType(name = "string")
     protected MergeMode attachmentMergeMode;
     @XmlElement(name = "UnsupportedAttachmentBehaviour")
+    @XmlSchemaType(name = "string")
     protected UnsupportedFileBehaviour unsupportedAttachmentBehaviour;
     @XmlElement(name = "BreakMergeOnError")
     protected Boolean breakMergeOnError;
     @XmlElement(name = "ForceMessageHeaderEncoding")
+    @XmlSchemaType(name = "string")
     protected ForceMessageHeaderEncoding forceMessageHeaderEncoding;
     @XmlElement(name = "MinimumImageAttachmentDimension")
     protected Integer minimumImageAttachmentDimension;
-    @XmlElementRef(name = "IncludeAttachmentTypes", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "IncludeAttachmentTypes", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> includeAttachmentTypes;
-    @XmlElementRef(name = "ExcludeAttachmentTypes", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "ExcludeAttachmentTypes", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> excludeAttachmentTypes;
 
     /**
@@ -181,7 +193,7 @@ public class ConverterSpecificSettingsMSG
      *     
      */
     public void setPaperSize(JAXBElement<String> value) {
-        this.paperSize = ((JAXBElement<String> ) value);
+        this.paperSize = value;
     }
 
     /**
@@ -469,7 +481,7 @@ public class ConverterSpecificSettingsMSG
      *     
      */
     public void setSentDateMissingDisplayMode(JAXBElement<String> value) {
-        this.sentDateMissingDisplayMode = ((JAXBElement<String> ) value);
+        this.sentDateMissingDisplayMode = value;
     }
 
     /**
@@ -517,7 +529,7 @@ public class ConverterSpecificSettingsMSG
      *     
      */
     public void setWebKitViewPortSize(JAXBElement<String> value) {
-        this.webKitViewPortSize = ((JAXBElement<String> ) value);
+        this.webKitViewPortSize = value;
     }
 
     /**
@@ -565,7 +577,7 @@ public class ConverterSpecificSettingsMSG
      *     
      */
     public void setPageMargins(JAXBElement<String> value) {
-        this.pageMargins = ((JAXBElement<String> ) value);
+        this.pageMargins = value;
     }
 
     /**
@@ -709,7 +721,7 @@ public class ConverterSpecificSettingsMSG
      *     
      */
     public void setIncludeAttachmentTypes(JAXBElement<String> value) {
-        this.includeAttachmentTypes = ((JAXBElement<String> ) value);
+        this.includeAttachmentTypes = value;
     }
 
     /**
@@ -733,7 +745,7 @@ public class ConverterSpecificSettingsMSG
      *     
      */
     public void setExcludeAttachmentTypes(JAXBElement<String> value) {
-        this.excludeAttachmentTypes = ((JAXBElement<String> ) value);
+        this.excludeAttachmentTypes = value;
     }
 
 }

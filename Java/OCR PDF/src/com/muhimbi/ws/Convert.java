@@ -39,11 +39,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "Convert", namespace = "http://services.muhimbi.com/2009/10/06")
 public class Convert {
 
-    @XmlElementRef(name = "sourceFile", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "sourceFile", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<byte[]> sourceFile;
-    @XmlElementRef(name = "openOptions", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "openOptions", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<OpenOptions> openOptions;
-    @XmlElementRef(name = "conversionSettings", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "conversionSettings", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ConversionSettings> conversionSettings;
 
     /**
@@ -67,7 +67,7 @@ public class Convert {
      *     
      */
     public void setSourceFile(JAXBElement<byte[]> value) {
-        this.sourceFile = ((JAXBElement<byte[]> ) value);
+        this.sourceFile = value;
     }
 
     /**
@@ -91,7 +91,7 @@ public class Convert {
      *     
      */
     public void setOpenOptions(JAXBElement<OpenOptions> value) {
-        this.openOptions = ((JAXBElement<OpenOptions> ) value);
+        this.openOptions = value;
     }
 
     /**
@@ -115,7 +115,7 @@ public class Convert {
      *     
      */
     public void setConversionSettings(JAXBElement<ConversionSettings> value) {
-        this.conversionSettings = ((JAXBElement<ConversionSettings> ) value);
+        this.conversionSettings = value;
     }
 
 }

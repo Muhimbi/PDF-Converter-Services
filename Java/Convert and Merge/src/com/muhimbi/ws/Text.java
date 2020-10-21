@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -51,20 +52,24 @@ public class Text
     extends Element
 {
 
-    @XmlElementRef(name = "Content", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Content", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> content;
-    @XmlElementRef(name = "FontFamilyName", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "FontFamilyName", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> fontFamilyName;
-    @XmlElementRef(name = "FontSize", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "FontSize", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> fontSize;
     @XmlList
     @XmlElement(name = "FontStyle")
+    @XmlSchemaType(name = "anySimpleType")
     protected List<String> fontStyle;
     @XmlElement(name = "WordWrap")
+    @XmlSchemaType(name = "string")
     protected WordWrap wordWrap;
     @XmlElement(name = "HAlign")
+    @XmlSchemaType(name = "string")
     protected HAlign hAlign;
     @XmlElement(name = "VAlign")
+    @XmlSchemaType(name = "string")
     protected VAlign vAlign;
 
     /**
@@ -88,7 +93,7 @@ public class Text
      *     
      */
     public void setContent(JAXBElement<String> value) {
-        this.content = ((JAXBElement<String> ) value);
+        this.content = value;
     }
 
     /**
@@ -112,7 +117,7 @@ public class Text
      *     
      */
     public void setFontFamilyName(JAXBElement<String> value) {
-        this.fontFamilyName = ((JAXBElement<String> ) value);
+        this.fontFamilyName = value;
     }
 
     /**
@@ -136,7 +141,7 @@ public class Text
      *     
      */
     public void setFontSize(JAXBElement<String> value) {
-        this.fontSize = ((JAXBElement<String> ) value);
+        this.fontSize = value;
     }
 
     /**

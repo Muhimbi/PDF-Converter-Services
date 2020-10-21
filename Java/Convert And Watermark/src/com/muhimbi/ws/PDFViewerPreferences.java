@@ -4,6 +4,7 @@ package com.muhimbi.ws;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -65,12 +66,15 @@ public class PDFViewerPreferences {
     @XmlElement(name = "HideWindowUI")
     protected Boolean hideWindowUI;
     @XmlElement(name = "PageLayout")
+    @XmlSchemaType(name = "string")
     protected PDFPageLayout pageLayout;
     @XmlElement(name = "NavigationPane")
+    @XmlSchemaType(name = "string")
     protected PDFNavigationPane navigationPane;
     @XmlElement(name = "HideEmptyNavigationPane")
     protected Boolean hideEmptyNavigationPane;
     @XmlElement(name = "PageScalingMode")
+    @XmlSchemaType(name = "string")
     protected PDFPageScalingMode pageScalingMode;
     @XmlElement(name = "FullScreen")
     protected Boolean fullScreen;

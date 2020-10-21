@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -43,12 +44,14 @@ public class ConverterSpecificSettingsWordProcessing
 {
 
     @XmlElement(name = "RevisionsAndCommentsMarkupMode")
+    @XmlSchemaType(name = "string")
     protected RevisionsAndCommentsMarkupMode revisionsAndCommentsMarkupMode;
     @XmlElement(name = "RevisionsAndCommentsDisplayMode")
+    @XmlSchemaType(name = "string")
     protected RevisionsAndCommentsDisplayMode revisionsAndCommentsDisplayMode;
     @XmlElement(name = "ProcessDocumentTemplate")
     protected Boolean processDocumentTemplate;
-    @XmlElementRef(name = "BookmarkOptions", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "BookmarkOptions", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<BookmarkOptionsWordProcessing> bookmarkOptions;
 
     /**
@@ -144,7 +147,7 @@ public class ConverterSpecificSettingsWordProcessing
      *     
      */
     public void setBookmarkOptions(JAXBElement<BookmarkOptionsWordProcessing> value) {
-        this.bookmarkOptions = ((JAXBElement<BookmarkOptionsWordProcessing> ) value);
+        this.bookmarkOptions = value;
     }
 
 }

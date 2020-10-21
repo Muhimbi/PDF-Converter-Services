@@ -36,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class BookmarkMapping {
 
-    @XmlElementRef(name = "Source", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Source", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> source;
     @XmlElement(name = "Level")
     protected Integer level;
@@ -62,7 +62,7 @@ public class BookmarkMapping {
      *     
      */
     public void setSource(JAXBElement<String> value) {
-        this.source = ((JAXBElement<String> ) value);
+        this.source = value;
     }
 
     /**

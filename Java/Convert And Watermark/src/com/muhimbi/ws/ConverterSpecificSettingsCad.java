@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -50,21 +51,23 @@ public class ConverterSpecificSettingsCad
     extends ConverterSpecificSettings
 {
 
-    @XmlElementRef(name = "PaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "PaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> paperSize;
-    @XmlElementRef(name = "BackgroundColor", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "BackgroundColor", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> backgroundColor;
-    @XmlElementRef(name = "ForegroundColor", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "ForegroundColor", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> foregroundColor;
-    @XmlElementRef(name = "CadConversionElements", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "CadConversionElements", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfCadConversionElement> cadConversionElements;
-    @XmlElementRef(name = "PageMargins", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "PageMargins", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> pageMargins;
     @XmlElement(name = "EmptyLayoutDetectionMode")
+    @XmlSchemaType(name = "string")
     protected CadEmptyLayoutDetectionMode emptyLayoutDetectionMode;
     @XmlElement(name = "LayoutSortOrder")
+    @XmlSchemaType(name = "string")
     protected CadLayoutSortOrder layoutSortOrder;
-    @XmlElementRef(name = "ExternalReferences", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "ExternalReferences", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> externalReferences;
 
     /**
@@ -88,7 +91,7 @@ public class ConverterSpecificSettingsCad
      *     
      */
     public void setPaperSize(JAXBElement<String> value) {
-        this.paperSize = ((JAXBElement<String> ) value);
+        this.paperSize = value;
     }
 
     /**
@@ -112,7 +115,7 @@ public class ConverterSpecificSettingsCad
      *     
      */
     public void setBackgroundColor(JAXBElement<String> value) {
-        this.backgroundColor = ((JAXBElement<String> ) value);
+        this.backgroundColor = value;
     }
 
     /**
@@ -136,7 +139,7 @@ public class ConverterSpecificSettingsCad
      *     
      */
     public void setForegroundColor(JAXBElement<String> value) {
-        this.foregroundColor = ((JAXBElement<String> ) value);
+        this.foregroundColor = value;
     }
 
     /**
@@ -160,7 +163,7 @@ public class ConverterSpecificSettingsCad
      *     
      */
     public void setCadConversionElements(JAXBElement<ArrayOfCadConversionElement> value) {
-        this.cadConversionElements = ((JAXBElement<ArrayOfCadConversionElement> ) value);
+        this.cadConversionElements = value;
     }
 
     /**
@@ -184,7 +187,7 @@ public class ConverterSpecificSettingsCad
      *     
      */
     public void setPageMargins(JAXBElement<String> value) {
-        this.pageMargins = ((JAXBElement<String> ) value);
+        this.pageMargins = value;
     }
 
     /**
@@ -256,7 +259,7 @@ public class ConverterSpecificSettingsCad
      *     
      */
     public void setExternalReferences(JAXBElement<String> value) {
-        this.externalReferences = ((JAXBElement<String> ) value);
+        this.externalReferences = value;
     }
 
 }

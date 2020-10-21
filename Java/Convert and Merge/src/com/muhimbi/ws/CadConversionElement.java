@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -37,8 +38,9 @@ import javax.xml.bind.annotation.XmlType;
 public class CadConversionElement {
 
     @XmlElement(name = "Type")
+    @XmlSchemaType(name = "string")
     protected CadConversionElementType type;
-    @XmlElementRef(name = "Name", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "Name", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> name;
 
     /**
@@ -86,7 +88,7 @@ public class CadConversionElement {
      *     
      */
     public void setName(JAXBElement<String> value) {
-        this.name = ((JAXBElement<String> ) value);
+        this.name = value;
     }
 
 }

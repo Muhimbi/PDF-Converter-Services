@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -41,8 +42,9 @@ public class DiagnosticResultItem {
     @XmlElement(name = "Valid")
     protected Boolean valid;
     @XmlElement(name = "ExceptionType")
+    @XmlSchemaType(name = "string")
     protected WebServiceExceptionType exceptionType;
-    @XmlElementRef(name = "ConverterName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "ConverterName", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> converterName;
 
     /**
@@ -114,7 +116,7 @@ public class DiagnosticResultItem {
      *     
      */
     public void setConverterName(JAXBElement<String> value) {
-        this.converterName = ((JAXBElement<String> ) value);
+        this.converterName = value;
     }
 
 }

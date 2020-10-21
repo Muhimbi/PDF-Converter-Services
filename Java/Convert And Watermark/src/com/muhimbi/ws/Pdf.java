@@ -35,7 +35,7 @@ public class Pdf
     extends Element
 {
 
-    @XmlElementRef(name = "PdfData", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "PdfData", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<byte[]> pdfData;
 
     /**
@@ -59,7 +59,7 @@ public class Pdf
      *     
      */
     public void setPdfData(JAXBElement<byte[]> value) {
-        this.pdfData = ((JAXBElement<byte[]> ) value);
+        this.pdfData = value;
     }
 
 }

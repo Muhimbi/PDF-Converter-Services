@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "ApplyWatermarkResponse", namespace = "http://services.muhimbi.com/2009/10/06")
 public class ApplyWatermarkResponse {
 
-    @XmlElementRef(name = "ApplyWatermarkResult", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "ApplyWatermarkResult", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<byte[]> applyWatermarkResult;
 
     /**
@@ -59,7 +59,7 @@ public class ApplyWatermarkResponse {
      *     
      */
     public void setApplyWatermarkResult(JAXBElement<byte[]> value) {
-        this.applyWatermarkResult = ((JAXBElement<byte[]> ) value);
+        this.applyWatermarkResult = value;
     }
 
 }

@@ -563,17 +563,17 @@ namespace ConversionService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings", Namespace="http://types.muhimbi.com/2010/11/22")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Spreadsheets))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Presentations))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_CommandLineConverter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_MSG))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_InfoPath))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_HTML))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_WordProcessing))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Presentations))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Image))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_InfoPath))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Cad))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_HTML))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_MSG))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_CommandLineConverter))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_TIFF))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_PDF))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.EnumsProxy))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_PDF))]
     public partial class ConverterSpecificSettings : object
     {
     }
@@ -1039,7 +1039,13 @@ namespace ConversionService
         PDF_A2B = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        PDF_A2U = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         PDF_A3B = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PDF_A3U = 12,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         PDF_1_1 = 110,
@@ -1140,6 +1146,14 @@ namespace ConversionService
         
         private bool PrintOnlyField;
         
+        private int StartSectionField;
+        
+        private int EndSectionField;
+        
+        private string SectionRangeField;
+        
+        private ConversionService.PageType PageTypeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ConversionService.PageOrientation PageOrientation
         {
@@ -1217,6 +1231,58 @@ namespace ConversionService
                 this.PrintOnlyField = value;
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public int StartSection
+        {
+            get
+            {
+                return this.StartSectionField;
+            }
+            set
+            {
+                this.StartSectionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int EndSection
+        {
+            get
+            {
+                return this.EndSectionField;
+            }
+            set
+            {
+                this.EndSectionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public string SectionRange
+        {
+            get
+            {
+                return this.SectionRangeField;
+            }
+            set
+            {
+                this.SectionRangeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public ConversionService.PageType PageType
+        {
+            get
+            {
+                return this.PageTypeField;
+            }
+            set
+            {
+                this.PageTypeField = value;
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
@@ -1241,15 +1307,15 @@ namespace ConversionService
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Element", Namespace="http://types.muhimbi.com/2010/05/17")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Line))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Text))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.LinearBarcode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Ellipse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Image))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Rtf))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.QRCode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Pdf))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Rtf))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Image))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Rectangle))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Ellipse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Line))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.QRCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.LinearBarcode))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Container))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Watermark))]
     public partial class Element : object
@@ -1483,43 +1549,6 @@ namespace ConversionService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Line", Namespace="http://types.muhimbi.com/2010/05/17")]
-    public partial class Line : ConversionService.Element
-    {
-        
-        private string EndXField;
-        
-        private string EndYField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EndX
-        {
-            get
-            {
-                return this.EndXField;
-            }
-            set
-            {
-                this.EndXField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EndY
-        {
-            get
-            {
-                return this.EndYField;
-            }
-            set
-            {
-                this.EndYField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Text", Namespace="http://types.muhimbi.com/2010/05/17")]
     public partial class Text : ConversionService.Element
     {
@@ -1626,6 +1655,190 @@ namespace ConversionService
             set
             {
                 this.VAlignField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Pdf", Namespace="http://types.muhimbi.com/2010/05/17")]
+    public partial class Pdf : ConversionService.Element
+    {
+        
+        private byte[] PdfDataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] PdfData
+        {
+            get
+            {
+                return this.PdfDataField;
+            }
+            set
+            {
+                this.PdfDataField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Rtf", Namespace="http://types.muhimbi.com/2010/05/17")]
+    public partial class Rtf : ConversionService.Element
+    {
+        
+        private string RtfDataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RtfData
+        {
+            get
+            {
+                return this.RtfDataField;
+            }
+            set
+            {
+                this.RtfDataField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Image", Namespace="http://types.muhimbi.com/2010/05/17")]
+    public partial class Image : ConversionService.Element
+    {
+        
+        private byte[] ImageDataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] ImageData
+        {
+            get
+            {
+                return this.ImageDataField;
+            }
+            set
+            {
+                this.ImageDataField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Rectangle", Namespace="http://types.muhimbi.com/2010/05/17")]
+    public partial class Rectangle : ConversionService.Element
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ellipse", Namespace="http://types.muhimbi.com/2010/05/17")]
+    public partial class Ellipse : ConversionService.Element
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Line", Namespace="http://types.muhimbi.com/2010/05/17")]
+    public partial class Line : ConversionService.Element
+    {
+        
+        private string EndXField;
+        
+        private string EndYField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EndX
+        {
+            get
+            {
+                return this.EndXField;
+            }
+            set
+            {
+                this.EndXField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EndY
+        {
+            get
+            {
+                return this.EndYField;
+            }
+            set
+            {
+                this.EndYField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="QRCode", Namespace="http://types.muhimbi.com/2010/05/17")]
+    public partial class QRCode : ConversionService.Element
+    {
+        
+        private string TextField;
+        
+        private ConversionService.ErrorCorrectionLevel ErrorCorrectionLevelField;
+        
+        private ConversionService.BarcodeInputMode InputModeField;
+        
+        private ConversionService.QRCodeVersion VersionField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Text
+        {
+            get
+            {
+                return this.TextField;
+            }
+            set
+            {
+                this.TextField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public ConversionService.ErrorCorrectionLevel ErrorCorrectionLevel
+        {
+            get
+            {
+                return this.ErrorCorrectionLevelField;
+            }
+            set
+            {
+                this.ErrorCorrectionLevelField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public ConversionService.BarcodeInputMode InputMode
+        {
+            get
+            {
+                return this.InputModeField;
+            }
+            set
+            {
+                this.InputModeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public ConversionService.QRCodeVersion Version
+        {
+            get
+            {
+                return this.VersionField;
+            }
+            set
+            {
+                this.VersionField = value;
             }
         }
     }
@@ -1815,153 +2028,6 @@ namespace ConversionService
                 this.MarginField = value;
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Ellipse", Namespace="http://types.muhimbi.com/2010/05/17")]
-    public partial class Ellipse : ConversionService.Element
-    {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Image", Namespace="http://types.muhimbi.com/2010/05/17")]
-    public partial class Image : ConversionService.Element
-    {
-        
-        private byte[] ImageDataField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] ImageData
-        {
-            get
-            {
-                return this.ImageDataField;
-            }
-            set
-            {
-                this.ImageDataField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Rtf", Namespace="http://types.muhimbi.com/2010/05/17")]
-    public partial class Rtf : ConversionService.Element
-    {
-        
-        private string RtfDataField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RtfData
-        {
-            get
-            {
-                return this.RtfDataField;
-            }
-            set
-            {
-                this.RtfDataField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="QRCode", Namespace="http://types.muhimbi.com/2010/05/17")]
-    public partial class QRCode : ConversionService.Element
-    {
-        
-        private string TextField;
-        
-        private ConversionService.ErrorCorrectionLevel ErrorCorrectionLevelField;
-        
-        private ConversionService.BarcodeInputMode InputModeField;
-        
-        private ConversionService.QRCodeVersion VersionField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Text
-        {
-            get
-            {
-                return this.TextField;
-            }
-            set
-            {
-                this.TextField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public ConversionService.ErrorCorrectionLevel ErrorCorrectionLevel
-        {
-            get
-            {
-                return this.ErrorCorrectionLevelField;
-            }
-            set
-            {
-                this.ErrorCorrectionLevelField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public ConversionService.BarcodeInputMode InputMode
-        {
-            get
-            {
-                return this.InputModeField;
-            }
-            set
-            {
-                this.InputModeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public ConversionService.QRCodeVersion Version
-        {
-            get
-            {
-                return this.VersionField;
-            }
-            set
-            {
-                this.VersionField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Pdf", Namespace="http://types.muhimbi.com/2010/05/17")]
-    public partial class Pdf : ConversionService.Element
-    {
-        
-        private byte[] PdfDataField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] PdfData
-        {
-            get
-            {
-                return this.PdfDataField;
-            }
-            set
-            {
-                this.PdfDataField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Rectangle", Namespace="http://types.muhimbi.com/2010/05/17")]
-    public partial class Rectangle : ConversionService.Element
-    {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2350,6 +2416,26 @@ namespace ConversionService
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
     [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PageType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        ".Graphics")]
+    public enum PageType : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NotSet = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        First = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Even = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.FlagsAttribute()]
     [System.Runtime.Serialization.DataContractAttribute(Name="FontStyle", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
         ".Graphics")]
     public enum FontStyle : int
@@ -2435,65 +2521,6 @@ namespace ConversionService
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Top = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BarcodeType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        ".Graphics")]
-    public enum BarcodeType : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Codabar = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code11 = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code32 = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code39 = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code39Extended = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code93 = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code93Extended = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code128 = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code128A = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code128B = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Code128C = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GS1Code128 = 11,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BarcodeTextLocation", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        ".Graphics")]
-    public enum BarcodeTextLocation : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Bottom = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        None = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Top = 2,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
@@ -2661,6 +2688,68 @@ namespace ConversionService
         Version40 = 40,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BarcodeType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        ".Graphics")]
+    public enum BarcodeType : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Codabar = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code11 = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code32 = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code39 = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code39Extended = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code93 = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code93Extended = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128 = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128A = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128B = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Code128C = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GS1Code128 = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UPC_A = 12,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BarcodeTextLocation", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        ".Graphics")]
+    public enum BarcodeTextLocation : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Bottom = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Top = 2,
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Spreadsheets", Namespace="http://types.muhimbi.com/2014/02/06")]
@@ -2730,6 +2819,73 @@ namespace ConversionService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_WordProcessing", Namespace="http://types.muhimbi.com/2010/11/22")]
+    public partial class ConverterSpecificSettings_WordProcessing : ConversionService.ConverterSpecificSettings
+    {
+        
+        private ConversionService.RevisionsAndCommentsMarkupMode RevisionsAndCommentsMarkupModeField;
+        
+        private ConversionService.RevisionsAndCommentsDisplayMode RevisionsAndCommentsDisplayModeField;
+        
+        private bool ProcessDocumentTemplateField;
+        
+        private ConversionService.BookmarkOptions_WordProcessing BookmarkOptionsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ConversionService.RevisionsAndCommentsMarkupMode RevisionsAndCommentsMarkupMode
+        {
+            get
+            {
+                return this.RevisionsAndCommentsMarkupModeField;
+            }
+            set
+            {
+                this.RevisionsAndCommentsMarkupModeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public ConversionService.RevisionsAndCommentsDisplayMode RevisionsAndCommentsDisplayMode
+        {
+            get
+            {
+                return this.RevisionsAndCommentsDisplayModeField;
+            }
+            set
+            {
+                this.RevisionsAndCommentsDisplayModeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public bool ProcessDocumentTemplate
+        {
+            get
+            {
+                return this.ProcessDocumentTemplateField;
+            }
+            set
+            {
+                this.ProcessDocumentTemplateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public ConversionService.BookmarkOptions_WordProcessing BookmarkOptions
+        {
+            get
+            {
+                return this.BookmarkOptionsField;
+            }
+            set
+            {
+                this.BookmarkOptionsField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Presentations", Namespace="http://types.muhimbi.com/2010/11/22")]
     public partial class ConverterSpecificSettings_Presentations : ConversionService.ConverterSpecificSettings
     {
@@ -2767,157 +2923,703 @@ namespace ConversionService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_CommandLineConverter", Namespace="http://types.muhimbi.com/2010/11/22")]
-    public partial class ConverterSpecificSettings_CommandLineConverter : ConversionService.ConverterSpecificSettings
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Image", Namespace="http://types.muhimbi.com/2010/11/22")]
+    public partial class ConverterSpecificSettings_Image : ConversionService.ConverterSpecificSettings
     {
         
-        private string Parameter1Field;
+        private string PaperSizeField;
         
-        private string Parameter2Field;
+        private string PageMarginsField;
         
-        private string Parameter3Field;
+        private bool AutoRotatePageField;
         
-        private string Parameter4Field;
+        private ConversionService.ContentScale ScaleModeField;
         
-        private string Parameter5Field;
-        
-        private string Parameter6Field;
-        
-        private string Parameter7Field;
-        
-        private string Parameter8Field;
-        
-        private string Parameter9Field;
-        
-        private string Parameter10Field;
+        private string SourceFileResolutionField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter1
+        public string PaperSize
         {
             get
             {
-                return this.Parameter1Field;
+                return this.PaperSizeField;
             }
             set
             {
-                this.Parameter1Field = value;
+                this.PaperSizeField = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter2
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public string PageMargins
         {
             get
             {
-                return this.Parameter2Field;
+                return this.PageMarginsField;
             }
             set
             {
-                this.Parameter2Field = value;
+                this.PageMarginsField = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter3
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public bool AutoRotatePage
         {
             get
             {
-                return this.Parameter3Field;
+                return this.AutoRotatePageField;
             }
             set
             {
-                this.Parameter3Field = value;
+                this.AutoRotatePageField = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter4
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public ConversionService.ContentScale ScaleMode
         {
             get
             {
-                return this.Parameter4Field;
+                return this.ScaleModeField;
             }
             set
             {
-                this.Parameter4Field = value;
+                this.ScaleModeField = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter5
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public string SourceFileResolution
         {
             get
             {
-                return this.Parameter5Field;
+                return this.SourceFileResolutionField;
             }
             set
             {
-                this.Parameter5Field = value;
+                this.SourceFileResolutionField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_InfoPath", Namespace="http://types.muhimbi.com/2010/11/22")]
+    public partial class ConverterSpecificSettings_InfoPath : ConversionService.ConverterSpecificSettings
+    {
+        
+        private bool StripDotNETCodeField;
+        
+        private bool StripDataObjectsField;
+        
+        private bool ConvertAttachmentsField;
+        
+        private ConversionService.InfoPathView[] ConversionViewsField;
+        
+        private bool AutoTrustFormsField;
+        
+        private bool ProcessFullTrustFormsField;
+        
+        private bool UseNativePrintEngineField;
+        
+        private string DefaultPaperSizeField;
+        
+        private string ForcePaperSizeField;
+        
+        private ConversionService.PageOrientation DefaultPageOrientationField;
+        
+        private ConversionService.PageOrientation ForcePageOrientationField;
+        
+        private byte[] XSNDataField;
+        
+        private ConversionService.MergeMode AttachmentMergeModeField;
+        
+        private ConversionService.UnsupportedFileBehaviour UnsupportedAttachmentBehaviourField;
+        
+        private bool BreakMergeOnErrorField;
+        
+        private string IncludeAttachmentTypesField;
+        
+        private string ExcludeAttachmentTypesField;
+        
+        private ConversionService.BooleanEnum ProcessRuleSetsField;
+        
+        private string XSNUserNameField;
+        
+        private string XSNPasswordField;
+        
+        private string XSNDomainField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool StripDotNETCode
+        {
+            get
+            {
+                return this.StripDotNETCodeField;
+            }
+            set
+            {
+                this.StripDotNETCodeField = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter6
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public bool StripDataObjects
         {
             get
             {
-                return this.Parameter6Field;
+                return this.StripDataObjectsField;
             }
             set
             {
-                this.Parameter6Field = value;
+                this.StripDataObjectsField = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter7
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public bool ConvertAttachments
         {
             get
             {
-                return this.Parameter7Field;
+                return this.ConvertAttachmentsField;
             }
             set
             {
-                this.Parameter7Field = value;
+                this.ConvertAttachmentsField = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter8
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public ConversionService.InfoPathView[] ConversionViews
         {
             get
             {
-                return this.Parameter8Field;
+                return this.ConversionViewsField;
             }
             set
             {
-                this.Parameter8Field = value;
+                this.ConversionViewsField = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Parameter9
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public bool AutoTrustForms
         {
             get
             {
-                return this.Parameter9Field;
+                return this.AutoTrustFormsField;
             }
             set
             {
-                this.Parameter9Field = value;
+                this.AutoTrustFormsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public bool ProcessFullTrustForms
+        {
+            get
+            {
+                return this.ProcessFullTrustFormsField;
+            }
+            set
+            {
+                this.ProcessFullTrustFormsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public bool UseNativePrintEngine
+        {
+            get
+            {
+                return this.UseNativePrintEngineField;
+            }
+            set
+            {
+                this.UseNativePrintEngineField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string DefaultPaperSize
+        {
+            get
+            {
+                return this.DefaultPaperSizeField;
+            }
+            set
+            {
+                this.DefaultPaperSizeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public string ForcePaperSize
+        {
+            get
+            {
+                return this.ForcePaperSizeField;
+            }
+            set
+            {
+                this.ForcePaperSizeField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public string Parameter10
+        public ConversionService.PageOrientation DefaultPageOrientation
         {
             get
             {
-                return this.Parameter10Field;
+                return this.DefaultPageOrientationField;
             }
             set
             {
-                this.Parameter10Field = value;
+                this.DefaultPageOrientationField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public ConversionService.PageOrientation ForcePageOrientation
+        {
+            get
+            {
+                return this.ForcePageOrientationField;
+            }
+            set
+            {
+                this.ForcePageOrientationField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public byte[] XSNData
+        {
+            get
+            {
+                return this.XSNDataField;
+            }
+            set
+            {
+                this.XSNDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public ConversionService.MergeMode AttachmentMergeMode
+        {
+            get
+            {
+                return this.AttachmentMergeModeField;
+            }
+            set
+            {
+                this.AttachmentMergeModeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public ConversionService.UnsupportedFileBehaviour UnsupportedAttachmentBehaviour
+        {
+            get
+            {
+                return this.UnsupportedAttachmentBehaviourField;
+            }
+            set
+            {
+                this.UnsupportedAttachmentBehaviourField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public bool BreakMergeOnError
+        {
+            get
+            {
+                return this.BreakMergeOnErrorField;
+            }
+            set
+            {
+                this.BreakMergeOnErrorField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public string IncludeAttachmentTypes
+        {
+            get
+            {
+                return this.IncludeAttachmentTypesField;
+            }
+            set
+            {
+                this.IncludeAttachmentTypesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public string ExcludeAttachmentTypes
+        {
+            get
+            {
+                return this.ExcludeAttachmentTypesField;
+            }
+            set
+            {
+                this.ExcludeAttachmentTypesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        public ConversionService.BooleanEnum ProcessRuleSets
+        {
+            get
+            {
+                return this.ProcessRuleSetsField;
+            }
+            set
+            {
+                this.ProcessRuleSetsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public string XSNUserName
+        {
+            get
+            {
+                return this.XSNUserNameField;
+            }
+            set
+            {
+                this.XSNUserNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public string XSNPassword
+        {
+            get
+            {
+                return this.XSNPasswordField;
+            }
+            set
+            {
+                this.XSNPasswordField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+        public string XSNDomain
+        {
+            get
+            {
+                return this.XSNDomainField;
+            }
+            set
+            {
+                this.XSNDomainField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Cad", Namespace="http://types.muhimbi.com/2010/11/22")]
+    public partial class ConverterSpecificSettings_Cad : ConversionService.ConverterSpecificSettings
+    {
+        
+        private string PaperSizeField;
+        
+        private string BackgroundColorField;
+        
+        private string ForegroundColorField;
+        
+        private ConversionService.CadConversionElement[] CadConversionElementsField;
+        
+        private string PageMarginsField;
+        
+        private ConversionService.CadEmptyLayoutDetectionMode EmptyLayoutDetectionModeField;
+        
+        private ConversionService.CadLayoutSortOrder LayoutSortOrderField;
+        
+        private string ExternalReferencesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PaperSize
+        {
+            get
+            {
+                return this.PaperSizeField;
+            }
+            set
+            {
+                this.PaperSizeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public string BackgroundColor
+        {
+            get
+            {
+                return this.BackgroundColorField;
+            }
+            set
+            {
+                this.BackgroundColorField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string ForegroundColor
+        {
+            get
+            {
+                return this.ForegroundColorField;
+            }
+            set
+            {
+                this.ForegroundColorField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public ConversionService.CadConversionElement[] CadConversionElements
+        {
+            get
+            {
+                return this.CadConversionElementsField;
+            }
+            set
+            {
+                this.CadConversionElementsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public string PageMargins
+        {
+            get
+            {
+                return this.PageMarginsField;
+            }
+            set
+            {
+                this.PageMarginsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public ConversionService.CadEmptyLayoutDetectionMode EmptyLayoutDetectionMode
+        {
+            get
+            {
+                return this.EmptyLayoutDetectionModeField;
+            }
+            set
+            {
+                this.EmptyLayoutDetectionModeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public ConversionService.CadLayoutSortOrder LayoutSortOrder
+        {
+            get
+            {
+                return this.LayoutSortOrderField;
+            }
+            set
+            {
+                this.LayoutSortOrderField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string ExternalReferences
+        {
+            get
+            {
+                return this.ExternalReferencesField;
+            }
+            set
+            {
+                this.ExternalReferencesField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_HTML", Namespace="http://types.muhimbi.com/2010/11/22")]
+    public partial class ConverterSpecificSettings_HTML : ConversionService.ConverterSpecificSettings
+    {
+        
+        private string PaperSizeField;
+        
+        private ConversionService.HTMLScaleMode ScaleModeField;
+        
+        private string PageMarginsField;
+        
+        private int ConversionDelayField;
+        
+        private bool ClearBrowserCacheField;
+        
+        private bool SplitImagesField;
+        
+        private ConversionService.HTMLRenderingEngine HtmlRenderingEngineField;
+        
+        private string WebKitViewPortSizeField;
+        
+        private ConversionService.AuthenticationMode AuthenticationModeField;
+        
+        private ConversionService.MediaType MediaTypeField;
+        
+        private bool EnableWebKitOfflineModeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PaperSize
+        {
+            get
+            {
+                return this.PaperSizeField;
+            }
+            set
+            {
+                this.PaperSizeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ConversionService.HTMLScaleMode ScaleMode
+        {
+            get
+            {
+                return this.ScaleModeField;
+            }
+            set
+            {
+                this.ScaleModeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string PageMargins
+        {
+            get
+            {
+                return this.PageMarginsField;
+            }
+            set
+            {
+                this.PageMarginsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int ConversionDelay
+        {
+            get
+            {
+                return this.ConversionDelayField;
+            }
+            set
+            {
+                this.ConversionDelayField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public bool ClearBrowserCache
+        {
+            get
+            {
+                return this.ClearBrowserCacheField;
+            }
+            set
+            {
+                this.ClearBrowserCacheField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public bool SplitImages
+        {
+            get
+            {
+                return this.SplitImagesField;
+            }
+            set
+            {
+                this.SplitImagesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public ConversionService.HTMLRenderingEngine HtmlRenderingEngine
+        {
+            get
+            {
+                return this.HtmlRenderingEngineField;
+            }
+            set
+            {
+                this.HtmlRenderingEngineField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string WebKitViewPortSize
+        {
+            get
+            {
+                return this.WebKitViewPortSizeField;
+            }
+            set
+            {
+                this.WebKitViewPortSizeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public ConversionService.AuthenticationMode AuthenticationMode
+        {
+            get
+            {
+                return this.AuthenticationModeField;
+            }
+            set
+            {
+                this.AuthenticationModeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public ConversionService.MediaType MediaType
+        {
+            get
+            {
+                return this.MediaTypeField;
+            }
+            set
+            {
+                this.MediaTypeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public bool EnableWebKitOfflineMode
+        {
+            get
+            {
+                return this.EnableWebKitOfflineModeField;
+            }
+            set
+            {
+                this.EnableWebKitOfflineModeField = value;
             }
         }
     }
@@ -3306,710 +4008,157 @@ namespace ConversionService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_InfoPath", Namespace="http://types.muhimbi.com/2010/11/22")]
-    public partial class ConverterSpecificSettings_InfoPath : ConversionService.ConverterSpecificSettings
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_CommandLineConverter", Namespace="http://types.muhimbi.com/2010/11/22")]
+    public partial class ConverterSpecificSettings_CommandLineConverter : ConversionService.ConverterSpecificSettings
     {
         
-        private bool StripDotNETCodeField;
+        private string Parameter1Field;
         
-        private bool StripDataObjectsField;
+        private string Parameter2Field;
         
-        private bool ConvertAttachmentsField;
+        private string Parameter3Field;
         
-        private ConversionService.InfoPathView[] ConversionViewsField;
+        private string Parameter4Field;
         
-        private bool AutoTrustFormsField;
+        private string Parameter5Field;
         
-        private bool ProcessFullTrustFormsField;
+        private string Parameter6Field;
         
-        private bool UseNativePrintEngineField;
+        private string Parameter7Field;
         
-        private string DefaultPaperSizeField;
+        private string Parameter8Field;
         
-        private string ForcePaperSizeField;
+        private string Parameter9Field;
         
-        private ConversionService.PageOrientation DefaultPageOrientationField;
-        
-        private ConversionService.PageOrientation ForcePageOrientationField;
-        
-        private byte[] XSNDataField;
-        
-        private ConversionService.MergeMode AttachmentMergeModeField;
-        
-        private ConversionService.UnsupportedFileBehaviour UnsupportedAttachmentBehaviourField;
-        
-        private bool BreakMergeOnErrorField;
-        
-        private string IncludeAttachmentTypesField;
-        
-        private string ExcludeAttachmentTypesField;
+        private string Parameter10Field;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool StripDotNETCode
+        public string Parameter1
         {
             get
             {
-                return this.StripDotNETCodeField;
+                return this.Parameter1Field;
             }
             set
             {
-                this.StripDotNETCodeField = value;
+                this.Parameter1Field = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public bool StripDataObjects
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter2
         {
             get
             {
-                return this.StripDataObjectsField;
+                return this.Parameter2Field;
             }
             set
             {
-                this.StripDataObjectsField = value;
+                this.Parameter2Field = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public bool ConvertAttachments
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter3
         {
             get
             {
-                return this.ConvertAttachmentsField;
+                return this.Parameter3Field;
             }
             set
             {
-                this.ConvertAttachmentsField = value;
+                this.Parameter3Field = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public ConversionService.InfoPathView[] ConversionViews
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter4
         {
             get
             {
-                return this.ConversionViewsField;
+                return this.Parameter4Field;
             }
             set
             {
-                this.ConversionViewsField = value;
+                this.Parameter4Field = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public bool AutoTrustForms
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter5
         {
             get
             {
-                return this.AutoTrustFormsField;
+                return this.Parameter5Field;
             }
             set
             {
-                this.AutoTrustFormsField = value;
+                this.Parameter5Field = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public bool ProcessFullTrustForms
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter6
         {
             get
             {
-                return this.ProcessFullTrustFormsField;
+                return this.Parameter6Field;
             }
             set
             {
-                this.ProcessFullTrustFormsField = value;
+                this.Parameter6Field = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public bool UseNativePrintEngine
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter7
         {
             get
             {
-                return this.UseNativePrintEngineField;
+                return this.Parameter7Field;
             }
             set
             {
-                this.UseNativePrintEngineField = value;
+                this.Parameter7Field = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public string DefaultPaperSize
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter8
         {
             get
             {
-                return this.DefaultPaperSizeField;
+                return this.Parameter8Field;
             }
             set
             {
-                this.DefaultPaperSizeField = value;
+                this.Parameter8Field = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public string ForcePaperSize
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter9
         {
             get
             {
-                return this.ForcePaperSizeField;
+                return this.Parameter9Field;
             }
             set
             {
-                this.ForcePaperSizeField = value;
+                this.Parameter9Field = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public ConversionService.PageOrientation DefaultPageOrientation
+        public string Parameter10
         {
             get
             {
-                return this.DefaultPageOrientationField;
+                return this.Parameter10Field;
             }
             set
             {
-                this.DefaultPageOrientationField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
-        public ConversionService.PageOrientation ForcePageOrientation
-        {
-            get
-            {
-                return this.ForcePageOrientationField;
-            }
-            set
-            {
-                this.ForcePageOrientationField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
-        public byte[] XSNData
-        {
-            get
-            {
-                return this.XSNDataField;
-            }
-            set
-            {
-                this.XSNDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
-        public ConversionService.MergeMode AttachmentMergeMode
-        {
-            get
-            {
-                return this.AttachmentMergeModeField;
-            }
-            set
-            {
-                this.AttachmentMergeModeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
-        public ConversionService.UnsupportedFileBehaviour UnsupportedAttachmentBehaviour
-        {
-            get
-            {
-                return this.UnsupportedAttachmentBehaviourField;
-            }
-            set
-            {
-                this.UnsupportedAttachmentBehaviourField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
-        public bool BreakMergeOnError
-        {
-            get
-            {
-                return this.BreakMergeOnErrorField;
-            }
-            set
-            {
-                this.BreakMergeOnErrorField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
-        public string IncludeAttachmentTypes
-        {
-            get
-            {
-                return this.IncludeAttachmentTypesField;
-            }
-            set
-            {
-                this.IncludeAttachmentTypesField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
-        public string ExcludeAttachmentTypes
-        {
-            get
-            {
-                return this.ExcludeAttachmentTypesField;
-            }
-            set
-            {
-                this.ExcludeAttachmentTypesField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_HTML", Namespace="http://types.muhimbi.com/2010/11/22")]
-    public partial class ConverterSpecificSettings_HTML : ConversionService.ConverterSpecificSettings
-    {
-        
-        private string PaperSizeField;
-        
-        private ConversionService.HTMLScaleMode ScaleModeField;
-        
-        private string PageMarginsField;
-        
-        private int ConversionDelayField;
-        
-        private bool ClearBrowserCacheField;
-        
-        private bool SplitImagesField;
-        
-        private ConversionService.HTMLRenderingEngine HtmlRenderingEngineField;
-        
-        private string WebKitViewPortSizeField;
-        
-        private ConversionService.AuthenticationMode AuthenticationModeField;
-        
-        private ConversionService.MediaType MediaTypeField;
-        
-        private bool EnableWebKitOfflineModeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PaperSize
-        {
-            get
-            {
-                return this.PaperSizeField;
-            }
-            set
-            {
-                this.PaperSizeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ConversionService.HTMLScaleMode ScaleMode
-        {
-            get
-            {
-                return this.ScaleModeField;
-            }
-            set
-            {
-                this.ScaleModeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public string PageMargins
-        {
-            get
-            {
-                return this.PageMarginsField;
-            }
-            set
-            {
-                this.PageMarginsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public int ConversionDelay
-        {
-            get
-            {
-                return this.ConversionDelayField;
-            }
-            set
-            {
-                this.ConversionDelayField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public bool ClearBrowserCache
-        {
-            get
-            {
-                return this.ClearBrowserCacheField;
-            }
-            set
-            {
-                this.ClearBrowserCacheField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public bool SplitImages
-        {
-            get
-            {
-                return this.SplitImagesField;
-            }
-            set
-            {
-                this.SplitImagesField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public ConversionService.HTMLRenderingEngine HtmlRenderingEngine
-        {
-            get
-            {
-                return this.HtmlRenderingEngineField;
-            }
-            set
-            {
-                this.HtmlRenderingEngineField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public string WebKitViewPortSize
-        {
-            get
-            {
-                return this.WebKitViewPortSizeField;
-            }
-            set
-            {
-                this.WebKitViewPortSizeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public ConversionService.AuthenticationMode AuthenticationMode
-        {
-            get
-            {
-                return this.AuthenticationModeField;
-            }
-            set
-            {
-                this.AuthenticationModeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public ConversionService.MediaType MediaType
-        {
-            get
-            {
-                return this.MediaTypeField;
-            }
-            set
-            {
-                this.MediaTypeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
-        public bool EnableWebKitOfflineMode
-        {
-            get
-            {
-                return this.EnableWebKitOfflineModeField;
-            }
-            set
-            {
-                this.EnableWebKitOfflineModeField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_WordProcessing", Namespace="http://types.muhimbi.com/2010/11/22")]
-    public partial class ConverterSpecificSettings_WordProcessing : ConversionService.ConverterSpecificSettings
-    {
-        
-        private ConversionService.RevisionsAndCommentsMarkupMode RevisionsAndCommentsMarkupModeField;
-        
-        private ConversionService.RevisionsAndCommentsDisplayMode RevisionsAndCommentsDisplayModeField;
-        
-        private bool ProcessDocumentTemplateField;
-        
-        private ConversionService.BookmarkOptions_WordProcessing BookmarkOptionsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ConversionService.RevisionsAndCommentsMarkupMode RevisionsAndCommentsMarkupMode
-        {
-            get
-            {
-                return this.RevisionsAndCommentsMarkupModeField;
-            }
-            set
-            {
-                this.RevisionsAndCommentsMarkupModeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public ConversionService.RevisionsAndCommentsDisplayMode RevisionsAndCommentsDisplayMode
-        {
-            get
-            {
-                return this.RevisionsAndCommentsDisplayModeField;
-            }
-            set
-            {
-                this.RevisionsAndCommentsDisplayModeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public bool ProcessDocumentTemplate
-        {
-            get
-            {
-                return this.ProcessDocumentTemplateField;
-            }
-            set
-            {
-                this.ProcessDocumentTemplateField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public ConversionService.BookmarkOptions_WordProcessing BookmarkOptions
-        {
-            get
-            {
-                return this.BookmarkOptionsField;
-            }
-            set
-            {
-                this.BookmarkOptionsField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Image", Namespace="http://types.muhimbi.com/2010/11/22")]
-    public partial class ConverterSpecificSettings_Image : ConversionService.ConverterSpecificSettings
-    {
-        
-        private string PaperSizeField;
-        
-        private string PageMarginsField;
-        
-        private bool AutoRotatePageField;
-        
-        private ConversionService.ContentScale ScaleModeField;
-        
-        private string SourceFileResolutionField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PaperSize
-        {
-            get
-            {
-                return this.PaperSizeField;
-            }
-            set
-            {
-                this.PaperSizeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public string PageMargins
-        {
-            get
-            {
-                return this.PageMarginsField;
-            }
-            set
-            {
-                this.PageMarginsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public bool AutoRotatePage
-        {
-            get
-            {
-                return this.AutoRotatePageField;
-            }
-            set
-            {
-                this.AutoRotatePageField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public ConversionService.ContentScale ScaleMode
-        {
-            get
-            {
-                return this.ScaleModeField;
-            }
-            set
-            {
-                this.ScaleModeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public string SourceFileResolution
-        {
-            get
-            {
-                return this.SourceFileResolutionField;
-            }
-            set
-            {
-                this.SourceFileResolutionField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_Cad", Namespace="http://types.muhimbi.com/2010/11/22")]
-    public partial class ConverterSpecificSettings_Cad : ConversionService.ConverterSpecificSettings
-    {
-        
-        private string PaperSizeField;
-        
-        private string BackgroundColorField;
-        
-        private string ForegroundColorField;
-        
-        private ConversionService.CadConversionElement[] CadConversionElementsField;
-        
-        private string PageMarginsField;
-        
-        private ConversionService.CadEmptyLayoutDetectionMode EmptyLayoutDetectionModeField;
-        
-        private ConversionService.CadLayoutSortOrder LayoutSortOrderField;
-        
-        private string ExternalReferencesField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PaperSize
-        {
-            get
-            {
-                return this.PaperSizeField;
-            }
-            set
-            {
-                this.PaperSizeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public string BackgroundColor
-        {
-            get
-            {
-                return this.BackgroundColorField;
-            }
-            set
-            {
-                this.BackgroundColorField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public string ForegroundColor
-        {
-            get
-            {
-                return this.ForegroundColorField;
-            }
-            set
-            {
-                this.ForegroundColorField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public ConversionService.CadConversionElement[] CadConversionElements
-        {
-            get
-            {
-                return this.CadConversionElementsField;
-            }
-            set
-            {
-                this.CadConversionElementsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public string PageMargins
-        {
-            get
-            {
-                return this.PageMarginsField;
-            }
-            set
-            {
-                this.PageMarginsField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public ConversionService.CadEmptyLayoutDetectionMode EmptyLayoutDetectionMode
-        {
-            get
-            {
-                return this.EmptyLayoutDetectionModeField;
-            }
-            set
-            {
-                this.EmptyLayoutDetectionModeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public ConversionService.CadLayoutSortOrder LayoutSortOrder
-        {
-            get
-            {
-                return this.LayoutSortOrderField;
-            }
-            set
-            {
-                this.LayoutSortOrderField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public string ExternalReferences
-        {
-            get
-            {
-                return this.ExternalReferencesField;
-            }
-            set
-            {
-                this.ExternalReferencesField = value;
+                this.Parameter10Field = value;
             }
         }
     }
@@ -4092,6 +4241,43 @@ namespace ConversionService
             set
             {
                 this.SourceFileResolutionField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EnumsProxy", Namespace="http://types.muhimbi.com/2013/08/01")]
+    public partial class EnumsProxy : ConversionService.ConverterSpecificSettings
+    {
+        
+        private ConversionService.OCRLanguage OCRLanguageProxyField;
+        
+        private ConversionService.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxyField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ConversionService.OCRLanguage OCRLanguageProxy
+        {
+            get
+            {
+                return this.OCRLanguageProxyField;
+            }
+            set
+            {
+                this.OCRLanguageProxyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ConversionService.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxy
+        {
+            get
+            {
+                return this.PrimeOCR_AccuracyLevelProxyField;
+            }
+            set
+            {
+                this.PrimeOCR_AccuracyLevelProxyField = value;
             }
         }
     }
@@ -4221,300 +4407,6 @@ namespace ConversionService
                 this.ExcludeAttachmentTypesField = value;
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EnumsProxy", Namespace="http://types.muhimbi.com/2013/08/01")]
-    public partial class EnumsProxy : ConversionService.ConverterSpecificSettings
-    {
-        
-        private ConversionService.OCRLanguage OCRLanguageProxyField;
-        
-        private ConversionService.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxyField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ConversionService.OCRLanguage OCRLanguageProxy
-        {
-            get
-            {
-                return this.OCRLanguageProxyField;
-            }
-            set
-            {
-                this.OCRLanguageProxyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ConversionService.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxy
-        {
-            get
-            {
-                return this.PrimeOCR_AccuracyLevelProxyField;
-            }
-            set
-            {
-                this.PrimeOCR_AccuracyLevelProxyField = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PresentationsPrintOutputType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum PresentationsPrintOutputType : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Slides = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OneSlideHandouts = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TwoSlideHandouts = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ThreeSlideHandouts = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FourSlideHandouts = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SixSlideHandouts = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NineSlideHandouts = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NotesPages = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Outline = 6,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HTMLScaleMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum HTMLScaleMode : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FitWidth = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NoScale = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FitWidthScaleImagesOnly = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FitWidthScaleWideImagesOnly = 4,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MSGPlainTextLineBreaks", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MSGPlainTextLineBreaks : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RetainAll = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RemoveExtra = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Legacy = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MSGBestBodyMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MSGBestBodyMode : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Strict = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmailAddressDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MSGEmailAddressDisplayMode : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Name = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NameAndAddress = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Address = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NameAndSMTPAddress = 4,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmbeddedObjectDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MSGEmbeddedObjectDisplayMode : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InlineNoScale = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InlineFitWidth = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Disabled = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmbeddedObjectIconDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MSGEmbeddedObjectIconDisplayMode : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IconOnly = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Disabled = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HTMLRenderingEngine", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum HTMLRenderingEngine : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IE = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WebKit = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Chromium = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MergeMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MergeMode : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Merge = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AttachAsPDF = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AttachOriginal = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UnsupportedFileBehaviour", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum UnsupportedFileBehaviour : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Error = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Remove = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AttachOriginal = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ForceMessageHeaderEncoding", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum ForceMessageHeaderEncoding : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        None = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UTF8 = 2,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InfoPathView", Namespace="http://types.muhimbi.com/2010/11/22")]
-    public partial class InfoPathView : object
-    {
-        
-        private string NameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AuthenticationMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum AuthenticationMode : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WebAuthentication = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MSOAuthentication = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MediaType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum MediaType : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Screen = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Print = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4696,6 +4588,40 @@ namespace ConversionService
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PresentationsPrintOutputType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum PresentationsPrintOutputType : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Slides = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OneSlideHandouts = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TwoSlideHandouts = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ThreeSlideHandouts = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FourSlideHandouts = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SixSlideHandouts = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NineSlideHandouts = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NotesPages = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Outline = 6,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ContentScale", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
         "")]
     public enum ContentScale : int
@@ -4715,6 +4641,63 @@ namespace ConversionService
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         FitPage = 4,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InfoPathView", Namespace="http://types.muhimbi.com/2010/11/22")]
+    public partial class InfoPathView : object
+    {
+        
+        private string NameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MergeMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MergeMode : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Merge = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttachAsPDF = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttachOriginal = 3,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UnsupportedFileBehaviour", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum UnsupportedFileBehaviour : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Error = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Remove = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttachOriginal = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4839,19 +4822,169 @@ namespace ConversionService
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PDFConvertAttachmentMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+    [System.Runtime.Serialization.DataContractAttribute(Name="HTMLScaleMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
         "")]
-    public enum PDFConvertAttachmentMode : int
+    public enum HTMLScaleMode : int
     {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Default = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        RemoveAll = 1,
+        FitWidth = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        RemoveSupported = 2,
+        NoScale = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FitWidthScaleImagesOnly = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FitWidthScaleWideImagesOnly = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HTMLRenderingEngine", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum HTMLRenderingEngine : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IE = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WebKit = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Chromium = 3,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AuthenticationMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum AuthenticationMode : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WebAuthentication = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MSOAuthentication = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MediaType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MediaType : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Screen = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Print = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MSGPlainTextLineBreaks", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MSGPlainTextLineBreaks : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RetainAll = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RemoveExtra = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Legacy = 3,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MSGBestBodyMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MSGBestBodyMode : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Strict = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmailAddressDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MSGEmailAddressDisplayMode : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Name = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NameAndAddress = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Address = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NameAndSMTPAddress = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmbeddedObjectDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MSGEmbeddedObjectDisplayMode : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InlineNoScale = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InlineFitWidth = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Disabled = 3,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MSGEmbeddedObjectIconDisplayMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum MSGEmbeddedObjectIconDisplayMode : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IconOnly = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Disabled = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ForceMessageHeaderEncoding", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum ForceMessageHeaderEncoding : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UTF8 = 2,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
@@ -4956,6 +5089,22 @@ namespace ConversionService
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Level7 = 9999999,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PDFConvertAttachmentMode", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum PDFConvertAttachmentMode : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RemoveAll = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RemoveSupported = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

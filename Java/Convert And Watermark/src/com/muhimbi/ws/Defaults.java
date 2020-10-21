@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -72,41 +73,48 @@ import javax.xml.bind.annotation.XmlType;
 public class Defaults {
 
     @XmlElement(name = "HPosition")
+    @XmlSchemaType(name = "string")
     protected HPosition hPosition;
     @XmlElement(name = "VPosition")
+    @XmlSchemaType(name = "string")
     protected VPosition vPosition;
-    @XmlElementRef(name = "X", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "X", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> x;
-    @XmlElementRef(name = "Y", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Y", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> y;
-    @XmlElementRef(name = "Rotation", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Rotation", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> rotation;
-    @XmlElementRef(name = "Transparency", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Transparency", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> transparency;
-    @XmlElementRef(name = "LineColor", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "LineColor", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> lineColor;
-    @XmlElementRef(name = "LineWidth", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "LineWidth", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> lineWidth;
-    @XmlElementRef(name = "FillColor", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "FillColor", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> fillColor;
-    @XmlElementRef(name = "FontFamilyName", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "FontFamilyName", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> fontFamilyName;
-    @XmlElementRef(name = "FontSize", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "FontSize", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> fontSize;
     @XmlList
     @XmlElement(name = "FontStyle")
+    @XmlSchemaType(name = "anySimpleType")
     protected List<String> fontStyle;
     @XmlElement(name = "HAlign")
+    @XmlSchemaType(name = "string")
     protected HAlign hAlign;
     @XmlElement(name = "VAlign")
+    @XmlSchemaType(name = "string")
     protected VAlign vAlign;
     @XmlElement(name = "WordWrap")
+    @XmlSchemaType(name = "string")
     protected WordWrap wordWrap;
     @XmlElement(name = "ScaleMode")
+    @XmlSchemaType(name = "string")
     protected ScaleMode scaleMode;
-    @XmlElementRef(name = "ScaleX", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "ScaleX", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> scaleX;
-    @XmlElementRef(name = "ScaleY", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "ScaleY", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<String> scaleY;
 
     /**
@@ -178,7 +186,7 @@ public class Defaults {
      *     
      */
     public void setX(JAXBElement<String> value) {
-        this.x = ((JAXBElement<String> ) value);
+        this.x = value;
     }
 
     /**
@@ -202,7 +210,7 @@ public class Defaults {
      *     
      */
     public void setY(JAXBElement<String> value) {
-        this.y = ((JAXBElement<String> ) value);
+        this.y = value;
     }
 
     /**
@@ -226,7 +234,7 @@ public class Defaults {
      *     
      */
     public void setRotation(JAXBElement<String> value) {
-        this.rotation = ((JAXBElement<String> ) value);
+        this.rotation = value;
     }
 
     /**
@@ -250,7 +258,7 @@ public class Defaults {
      *     
      */
     public void setTransparency(JAXBElement<String> value) {
-        this.transparency = ((JAXBElement<String> ) value);
+        this.transparency = value;
     }
 
     /**
@@ -274,7 +282,7 @@ public class Defaults {
      *     
      */
     public void setLineColor(JAXBElement<String> value) {
-        this.lineColor = ((JAXBElement<String> ) value);
+        this.lineColor = value;
     }
 
     /**
@@ -298,7 +306,7 @@ public class Defaults {
      *     
      */
     public void setLineWidth(JAXBElement<String> value) {
-        this.lineWidth = ((JAXBElement<String> ) value);
+        this.lineWidth = value;
     }
 
     /**
@@ -322,7 +330,7 @@ public class Defaults {
      *     
      */
     public void setFillColor(JAXBElement<String> value) {
-        this.fillColor = ((JAXBElement<String> ) value);
+        this.fillColor = value;
     }
 
     /**
@@ -346,7 +354,7 @@ public class Defaults {
      *     
      */
     public void setFontFamilyName(JAXBElement<String> value) {
-        this.fontFamilyName = ((JAXBElement<String> ) value);
+        this.fontFamilyName = value;
     }
 
     /**
@@ -370,7 +378,7 @@ public class Defaults {
      *     
      */
     public void setFontSize(JAXBElement<String> value) {
-        this.fontSize = ((JAXBElement<String> ) value);
+        this.fontSize = value;
     }
 
     /**
@@ -519,7 +527,7 @@ public class Defaults {
      *     
      */
     public void setScaleX(JAXBElement<String> value) {
-        this.scaleX = ((JAXBElement<String> ) value);
+        this.scaleX = value;
     }
 
     /**
@@ -543,7 +551,7 @@ public class Defaults {
      *     
      */
     public void setScaleY(JAXBElement<String> value) {
-        this.scaleY = ((JAXBElement<String> ) value);
+        this.scaleY = value;
     }
 
 }

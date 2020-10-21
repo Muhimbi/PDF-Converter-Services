@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Diagnostics {
 
-    @XmlElementRef(name = "Items", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "Items", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfDiagnosticResultItem> items;
 
     /**
@@ -57,7 +57,7 @@ public class Diagnostics {
      *     
      */
     public void setItems(JAXBElement<ArrayOfDiagnosticResultItem> value) {
-        this.items = ((JAXBElement<ArrayOfDiagnosticResultItem> ) value);
+        this.items = value;
     }
 
 }

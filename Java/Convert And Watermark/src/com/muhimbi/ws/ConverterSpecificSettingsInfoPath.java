@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -36,6 +37,10 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="BreakMergeOnError" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="IncludeAttachmentTypes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="ExcludeAttachmentTypes" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="ProcessRuleSets" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data}BooleanEnum" minOccurs="0"/>
+ *         &lt;element name="XSNUserName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="XSNPassword" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="XSNDomain" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -62,7 +67,11 @@ import javax.xml.bind.annotation.XmlType;
     "unsupportedAttachmentBehaviour",
     "breakMergeOnError",
     "includeAttachmentTypes",
-    "excludeAttachmentTypes"
+    "excludeAttachmentTypes",
+    "processRuleSets",
+    "xsnUserName",
+    "xsnPassword",
+    "xsnDomain"
 })
 public class ConverterSpecificSettingsInfoPath
     extends ConverterSpecificSettings
@@ -74,7 +83,7 @@ public class ConverterSpecificSettingsInfoPath
     protected Boolean stripDataObjects;
     @XmlElement(name = "ConvertAttachments")
     protected Boolean convertAttachments;
-    @XmlElementRef(name = "ConversionViews", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "ConversionViews", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfInfoPathView> conversionViews;
     @XmlElement(name = "AutoTrustForms")
     protected Boolean autoTrustForms;
@@ -82,26 +91,39 @@ public class ConverterSpecificSettingsInfoPath
     protected Boolean processFullTrustForms;
     @XmlElement(name = "UseNativePrintEngine")
     protected Boolean useNativePrintEngine;
-    @XmlElementRef(name = "DefaultPaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "DefaultPaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> defaultPaperSize;
-    @XmlElementRef(name = "ForcePaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "ForcePaperSize", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> forcePaperSize;
     @XmlElement(name = "DefaultPageOrientation")
+    @XmlSchemaType(name = "string")
     protected PageOrientation defaultPageOrientation;
     @XmlElement(name = "ForcePageOrientation")
+    @XmlSchemaType(name = "string")
     protected PageOrientation forcePageOrientation;
-    @XmlElementRef(name = "XSNData", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "XSNData", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<byte[]> xsnData;
     @XmlElement(name = "AttachmentMergeMode")
+    @XmlSchemaType(name = "string")
     protected MergeMode attachmentMergeMode;
     @XmlElement(name = "UnsupportedAttachmentBehaviour")
+    @XmlSchemaType(name = "string")
     protected UnsupportedFileBehaviour unsupportedAttachmentBehaviour;
     @XmlElement(name = "BreakMergeOnError")
     protected Boolean breakMergeOnError;
-    @XmlElementRef(name = "IncludeAttachmentTypes", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "IncludeAttachmentTypes", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> includeAttachmentTypes;
-    @XmlElementRef(name = "ExcludeAttachmentTypes", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class)
+    @XmlElementRef(name = "ExcludeAttachmentTypes", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<String> excludeAttachmentTypes;
+    @XmlElement(name = "ProcessRuleSets")
+    @XmlSchemaType(name = "string")
+    protected BooleanEnum processRuleSets;
+    @XmlElementRef(name = "XSNUserName", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> xsnUserName;
+    @XmlElementRef(name = "XSNPassword", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> xsnPassword;
+    @XmlElementRef(name = "XSNDomain", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> xsnDomain;
 
     /**
      * Gets the value of the stripDotNETCode property.
@@ -196,7 +218,7 @@ public class ConverterSpecificSettingsInfoPath
      *     
      */
     public void setConversionViews(JAXBElement<ArrayOfInfoPathView> value) {
-        this.conversionViews = ((JAXBElement<ArrayOfInfoPathView> ) value);
+        this.conversionViews = value;
     }
 
     /**
@@ -292,7 +314,7 @@ public class ConverterSpecificSettingsInfoPath
      *     
      */
     public void setDefaultPaperSize(JAXBElement<String> value) {
-        this.defaultPaperSize = ((JAXBElement<String> ) value);
+        this.defaultPaperSize = value;
     }
 
     /**
@@ -316,7 +338,7 @@ public class ConverterSpecificSettingsInfoPath
      *     
      */
     public void setForcePaperSize(JAXBElement<String> value) {
-        this.forcePaperSize = ((JAXBElement<String> ) value);
+        this.forcePaperSize = value;
     }
 
     /**
@@ -388,7 +410,7 @@ public class ConverterSpecificSettingsInfoPath
      *     
      */
     public void setXSNData(JAXBElement<byte[]> value) {
-        this.xsnData = ((JAXBElement<byte[]> ) value);
+        this.xsnData = value;
     }
 
     /**
@@ -484,7 +506,7 @@ public class ConverterSpecificSettingsInfoPath
      *     
      */
     public void setIncludeAttachmentTypes(JAXBElement<String> value) {
-        this.includeAttachmentTypes = ((JAXBElement<String> ) value);
+        this.includeAttachmentTypes = value;
     }
 
     /**
@@ -508,7 +530,103 @@ public class ConverterSpecificSettingsInfoPath
      *     
      */
     public void setExcludeAttachmentTypes(JAXBElement<String> value) {
-        this.excludeAttachmentTypes = ((JAXBElement<String> ) value);
+        this.excludeAttachmentTypes = value;
+    }
+
+    /**
+     * Gets the value of the processRuleSets property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BooleanEnum }
+     *     
+     */
+    public BooleanEnum getProcessRuleSets() {
+        return processRuleSets;
+    }
+
+    /**
+     * Sets the value of the processRuleSets property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BooleanEnum }
+     *     
+     */
+    public void setProcessRuleSets(BooleanEnum value) {
+        this.processRuleSets = value;
+    }
+
+    /**
+     * Gets the value of the xsnUserName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getXSNUserName() {
+        return xsnUserName;
+    }
+
+    /**
+     * Sets the value of the xsnUserName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setXSNUserName(JAXBElement<String> value) {
+        this.xsnUserName = value;
+    }
+
+    /**
+     * Gets the value of the xsnPassword property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getXSNPassword() {
+        return xsnPassword;
+    }
+
+    /**
+     * Sets the value of the xsnPassword property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setXSNPassword(JAXBElement<String> value) {
+        this.xsnPassword = value;
+    }
+
+    /**
+     * Gets the value of the xsnDomain property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getXSNDomain() {
+        return xsnDomain;
+    }
+
+    /**
+     * Sets the value of the xsnDomain property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setXSNDomain(JAXBElement<String> value) {
+        this.xsnDomain = value;
     }
 
 }

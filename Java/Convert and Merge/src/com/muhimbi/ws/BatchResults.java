@@ -33,7 +33,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class BatchResults {
 
-    @XmlElementRef(name = "Results", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "Results", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfBatchResult> results;
 
     /**
@@ -57,7 +57,7 @@ public class BatchResults {
      *     
      */
     public void setResults(JAXBElement<ArrayOfBatchResult> value) {
-        this.results = ((JAXBElement<ArrayOfBatchResult> ) value);
+        this.results = value;
     }
 
 }

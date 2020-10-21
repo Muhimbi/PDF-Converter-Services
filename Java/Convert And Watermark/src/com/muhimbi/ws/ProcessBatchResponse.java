@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "ProcessBatchResponse", namespace = "http://services.muhimbi.com/2009/10/06")
 public class ProcessBatchResponse {
 
-    @XmlElementRef(name = "ProcessBatchResult", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "ProcessBatchResult", namespace = "http://services.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<BatchResults> processBatchResult;
 
     /**
@@ -59,7 +59,7 @@ public class ProcessBatchResponse {
      *     
      */
     public void setProcessBatchResult(JAXBElement<BatchResults> value) {
-        this.processBatchResult = ((JAXBElement<BatchResults> ) value);
+        this.processBatchResult = value;
     }
 
 }

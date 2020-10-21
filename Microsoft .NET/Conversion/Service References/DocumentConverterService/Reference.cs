@@ -1285,7 +1285,13 @@ namespace TestHarness.DocumentConverterService {
         PDF_A2B = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        PDF_A2U = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         PDF_A3B = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PDF_A3U = 12,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         PDF_1_1 = 110,
@@ -1389,6 +1395,18 @@ namespace TestHarness.DocumentConverterService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool PrintOnlyField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StartSectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int EndSectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SectionRangeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.PageType PageTypeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public TestHarness.DocumentConverterService.PageOrientation PageOrientation {
             get {
@@ -1463,6 +1481,58 @@ namespace TestHarness.DocumentConverterService {
                 if ((this.PrintOnlyField.Equals(value) != true)) {
                     this.PrintOnlyField = value;
                     this.RaisePropertyChanged("PrintOnly");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public int StartSection {
+            get {
+                return this.StartSectionField;
+            }
+            set {
+                if ((this.StartSectionField.Equals(value) != true)) {
+                    this.StartSectionField = value;
+                    this.RaisePropertyChanged("StartSection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int EndSection {
+            get {
+                return this.EndSectionField;
+            }
+            set {
+                if ((this.EndSectionField.Equals(value) != true)) {
+                    this.EndSectionField = value;
+                    this.RaisePropertyChanged("EndSection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public string SectionRange {
+            get {
+                return this.SectionRangeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SectionRangeField, value) != true)) {
+                    this.SectionRangeField = value;
+                    this.RaisePropertyChanged("SectionRange");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public TestHarness.DocumentConverterService.PageType PageType {
+            get {
+                return this.PageTypeField;
+            }
+            set {
+                if ((this.PageTypeField.Equals(value) != true)) {
+                    this.PageTypeField = value;
+                    this.RaisePropertyChanged("PageType");
                 }
             }
         }
@@ -2702,6 +2772,25 @@ namespace TestHarness.DocumentConverterService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PageType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        ".Graphics")]
+    public enum PageType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NotSet = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        First = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Even = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.FlagsAttribute()]
     [System.Runtime.Serialization.DataContractAttribute(Name="FontStyle", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
         ".Graphics")]
     public enum FontStyle : int {
@@ -2987,6 +3076,9 @@ namespace TestHarness.DocumentConverterService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         GS1Code128 = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UPC_A = 12,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -3258,6 +3350,18 @@ namespace TestHarness.DocumentConverterService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ExcludeAttachmentTypesField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TestHarness.DocumentConverterService.BooleanEnum ProcessRuleSetsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string XSNUserNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string XSNPasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string XSNDomainField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool StripDotNETCode {
             get {
@@ -3475,6 +3579,58 @@ namespace TestHarness.DocumentConverterService {
                 if ((object.ReferenceEquals(this.ExcludeAttachmentTypesField, value) != true)) {
                     this.ExcludeAttachmentTypesField = value;
                     this.RaisePropertyChanged("ExcludeAttachmentTypes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        public TestHarness.DocumentConverterService.BooleanEnum ProcessRuleSets {
+            get {
+                return this.ProcessRuleSetsField;
+            }
+            set {
+                if ((this.ProcessRuleSetsField.Equals(value) != true)) {
+                    this.ProcessRuleSetsField = value;
+                    this.RaisePropertyChanged("ProcessRuleSets");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public string XSNUserName {
+            get {
+                return this.XSNUserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XSNUserNameField, value) != true)) {
+                    this.XSNUserNameField = value;
+                    this.RaisePropertyChanged("XSNUserName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public string XSNPassword {
+            get {
+                return this.XSNPasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XSNPasswordField, value) != true)) {
+                    this.XSNPasswordField = value;
+                    this.RaisePropertyChanged("XSNPassword");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+        public string XSNDomain {
+            get {
+                return this.XSNDomainField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XSNDomainField, value) != true)) {
+                    this.XSNDomainField = value;
+                    this.RaisePropertyChanged("XSNDomain");
                 }
             }
         }

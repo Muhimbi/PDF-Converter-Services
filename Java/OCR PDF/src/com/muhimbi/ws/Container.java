@@ -41,9 +41,9 @@ public class Container
     extends Element
 {
 
-    @XmlElementRef(name = "Elements", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Elements", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfElement> elements;
-    @XmlElementRef(name = "Defaults", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class)
+    @XmlElementRef(name = "Defaults", namespace = "http://types.muhimbi.com/2010/05/17", type = JAXBElement.class, required = false)
     protected JAXBElement<Defaults> defaults;
 
     /**
@@ -67,7 +67,7 @@ public class Container
      *     
      */
     public void setElements(JAXBElement<ArrayOfElement> value) {
-        this.elements = ((JAXBElement<ArrayOfElement> ) value);
+        this.elements = value;
     }
 
     /**
@@ -91,7 +91,7 @@ public class Container
      *     
      */
     public void setDefaults(JAXBElement<Defaults> value) {
-        this.defaults = ((JAXBElement<Defaults> ) value);
+        this.defaults = value;
     }
 
 }

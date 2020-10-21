@@ -37,11 +37,11 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Configuration {
 
-    @XmlElementRef(name = "ConversionServerAddress", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "ConversionServerAddress", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<String> conversionServerAddress;
-    @XmlElementRef(name = "Converters", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "Converters", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfConverterConfiguration> converters;
-    @XmlElementRef(name = "OperationTypes", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class)
+    @XmlElementRef(name = "OperationTypes", namespace = "http://types.muhimbi.com/2009/10/06", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfOperationTypeConfiguration> operationTypes;
 
     /**
@@ -65,7 +65,7 @@ public class Configuration {
      *     
      */
     public void setConversionServerAddress(JAXBElement<String> value) {
-        this.conversionServerAddress = ((JAXBElement<String> ) value);
+        this.conversionServerAddress = value;
     }
 
     /**
@@ -89,7 +89,7 @@ public class Configuration {
      *     
      */
     public void setConverters(JAXBElement<ArrayOfConverterConfiguration> value) {
-        this.converters = ((JAXBElement<ArrayOfConverterConfiguration> ) value);
+        this.converters = value;
     }
 
     /**
@@ -113,7 +113,7 @@ public class Configuration {
      *     
      */
     public void setOperationTypes(JAXBElement<ArrayOfOperationTypeConfiguration> value) {
-        this.operationTypes = ((JAXBElement<ArrayOfOperationTypeConfiguration> ) value);
+        this.operationTypes = value;
     }
 
 }

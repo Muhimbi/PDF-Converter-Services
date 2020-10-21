@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlList;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -54,19 +55,26 @@ public class OCREngineSpecificSettingsPrimeOCR
     @XmlElement(name = "AccuracyLevel")
     protected Integer accuracyLevel;
     @XmlElement(name = "Deskew")
+    @XmlSchemaType(name = "string")
     protected PrimeOCRDeskew deskew;
     @XmlList
     @XmlElement(name = "ImageProcessingOptions")
+    @XmlSchemaType(name = "anySimpleType")
     protected List<String> imageProcessingOptions;
     @XmlElement(name = "LexicalChecking")
+    @XmlSchemaType(name = "string")
     protected PrimeOCRLexicalChecking lexicalChecking;
     @XmlElement(name = "PageQuality")
+    @XmlSchemaType(name = "string")
     protected PrimeOCRPageQuality pageQuality;
     @XmlElement(name = "PrintType")
+    @XmlSchemaType(name = "string")
     protected PrimeOCRPrintType printType;
     @XmlElement(name = "AutoZone")
+    @XmlSchemaType(name = "string")
     protected PrimeOCRAutoZone autoZone;
     @XmlElement(name = "ZoneContent")
+    @XmlSchemaType(name = "string")
     protected PrimeOCRZoneContent zoneContent;
 
     /**
