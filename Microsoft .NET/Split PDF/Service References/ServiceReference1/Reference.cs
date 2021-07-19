@@ -3114,6 +3114,9 @@ namespace Split_PDF.ServiceReference1 {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Split_PDF.ServiceReference1.BookmarkOptions_WordProcessing BookmarkOptionsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.BooleanEnum IncludeDocumentStructureTagsField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Split_PDF.ServiceReference1.RevisionsAndCommentsMarkupMode RevisionsAndCommentsMarkupMode {
             get {
@@ -3165,6 +3168,19 @@ namespace Split_PDF.ServiceReference1 {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public Split_PDF.ServiceReference1.BooleanEnum IncludeDocumentStructureTags {
+            get {
+                return this.IncludeDocumentStructureTagsField;
+            }
+            set {
+                if ((this.IncludeDocumentStructureTagsField.Equals(value) != true)) {
+                    this.IncludeDocumentStructureTagsField = value;
+                    this.RaisePropertyChanged("IncludeDocumentStructureTags");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3178,6 +3194,9 @@ namespace Split_PDF.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool FrameSlidesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Split_PDF.ServiceReference1.BooleanEnum IncludeDocumentStructureTagsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Split_PDF.ServiceReference1.PresentationsPrintOutputType PrintOutputType {
@@ -3201,6 +3220,19 @@ namespace Split_PDF.ServiceReference1 {
                 if ((this.FrameSlidesField.Equals(value) != true)) {
                     this.FrameSlidesField = value;
                     this.RaisePropertyChanged("FrameSlides");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public Split_PDF.ServiceReference1.BooleanEnum IncludeDocumentStructureTags {
+            get {
+                return this.IncludeDocumentStructureTagsField;
+            }
+            set {
+                if ((this.IncludeDocumentStructureTagsField.Equals(value) != true)) {
+                    this.IncludeDocumentStructureTagsField = value;
+                    this.RaisePropertyChanged("IncludeDocumentStructureTags");
                 }
             }
         }
@@ -4978,6 +5010,24 @@ namespace Split_PDF.ServiceReference1 {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Original = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SimpleMarkup = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BooleanEnum", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum BooleanEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Default = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        True = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        False = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5008,21 +5058,6 @@ namespace Split_PDF.ServiceReference1 {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "3.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BooleanEnum", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum BooleanEnum : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Default = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        True = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        False = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

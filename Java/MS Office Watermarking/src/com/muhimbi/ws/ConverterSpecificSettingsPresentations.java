@@ -20,6 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="PrintOutputType" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data}PresentationsPrintOutputType" minOccurs="0"/>
  *         &lt;element name="FrameSlides" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="IncludeDocumentStructureTags" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data}BooleanEnum" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -31,7 +32,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ConverterSpecificSettings_Presentations", namespace = "http://types.muhimbi.com/2010/11/22", propOrder = {
     "printOutputType",
-    "frameSlides"
+    "frameSlides",
+    "includeDocumentStructureTags"
 })
 public class ConverterSpecificSettingsPresentations
     extends ConverterSpecificSettings
@@ -42,6 +44,9 @@ public class ConverterSpecificSettingsPresentations
     protected PresentationsPrintOutputType printOutputType;
     @XmlElement(name = "FrameSlides")
     protected Boolean frameSlides;
+    @XmlElement(name = "IncludeDocumentStructureTags")
+    @XmlSchemaType(name = "string")
+    protected BooleanEnum includeDocumentStructureTags;
 
     /**
      * Gets the value of the printOutputType property.
@@ -89,6 +94,30 @@ public class ConverterSpecificSettingsPresentations
      */
     public void setFrameSlides(Boolean value) {
         this.frameSlides = value;
+    }
+
+    /**
+     * Gets the value of the includeDocumentStructureTags property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BooleanEnum }
+     *     
+     */
+    public BooleanEnum getIncludeDocumentStructureTags() {
+        return includeDocumentStructureTags;
+    }
+
+    /**
+     * Sets the value of the includeDocumentStructureTags property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BooleanEnum }
+     *     
+     */
+    public void setIncludeDocumentStructureTags(BooleanEnum value) {
+        this.includeDocumentStructureTags = value;
     }
 
 }

@@ -2831,6 +2831,8 @@ namespace ConversionService
         
         private ConversionService.BookmarkOptions_WordProcessing BookmarkOptionsField;
         
+        private ConversionService.BooleanEnum IncludeDocumentStructureTagsField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ConversionService.RevisionsAndCommentsMarkupMode RevisionsAndCommentsMarkupMode
         {
@@ -2882,6 +2884,19 @@ namespace ConversionService
                 this.BookmarkOptionsField = value;
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public ConversionService.BooleanEnum IncludeDocumentStructureTags
+        {
+            get
+            {
+                return this.IncludeDocumentStructureTagsField;
+            }
+            set
+            {
+                this.IncludeDocumentStructureTagsField = value;
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2893,6 +2908,8 @@ namespace ConversionService
         private ConversionService.PresentationsPrintOutputType PrintOutputTypeField;
         
         private bool FrameSlidesField;
+        
+        private ConversionService.BooleanEnum IncludeDocumentStructureTagsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ConversionService.PresentationsPrintOutputType PrintOutputType
@@ -2917,6 +2934,19 @@ namespace ConversionService
             set
             {
                 this.FrameSlidesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public ConversionService.BooleanEnum IncludeDocumentStructureTags
+        {
+            get
+            {
+                return this.IncludeDocumentStructureTagsField;
+            }
+            set
+            {
+                this.IncludeDocumentStructureTagsField = value;
             }
         }
     }
@@ -4524,14 +4554,9 @@ namespace ConversionService
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Original = 1,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BookmarkOptions", Namespace="http://types.muhimbi.com/2009/10/06")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkOptions_WordProcessing))]
-    public partial class BookmarkOptions : object
-    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SimpleMarkup = 4,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
@@ -4548,6 +4573,14 @@ namespace ConversionService
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         False = 2,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BookmarkOptions", Namespace="http://types.muhimbi.com/2009/10/06")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkOptions_WordProcessing))]
+    public partial class BookmarkOptions : object
+    {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

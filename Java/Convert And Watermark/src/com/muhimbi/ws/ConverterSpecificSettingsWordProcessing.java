@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="RevisionsAndCommentsDisplayMode" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data}RevisionsAndCommentsDisplayMode" minOccurs="0"/>
  *         &lt;element name="ProcessDocumentTemplate" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="BookmarkOptions" type="{http://types.muhimbi.com/2009/10/06}BookmarkOptions_WordProcessing" minOccurs="0"/>
+ *         &lt;element name="IncludeDocumentStructureTags" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data}BooleanEnum" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -37,7 +38,8 @@ import javax.xml.bind.annotation.XmlType;
     "revisionsAndCommentsMarkupMode",
     "revisionsAndCommentsDisplayMode",
     "processDocumentTemplate",
-    "bookmarkOptions"
+    "bookmarkOptions",
+    "includeDocumentStructureTags"
 })
 public class ConverterSpecificSettingsWordProcessing
     extends ConverterSpecificSettings
@@ -53,6 +55,9 @@ public class ConverterSpecificSettingsWordProcessing
     protected Boolean processDocumentTemplate;
     @XmlElementRef(name = "BookmarkOptions", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
     protected JAXBElement<BookmarkOptionsWordProcessing> bookmarkOptions;
+    @XmlElement(name = "IncludeDocumentStructureTags")
+    @XmlSchemaType(name = "string")
+    protected BooleanEnum includeDocumentStructureTags;
 
     /**
      * Gets the value of the revisionsAndCommentsMarkupMode property.
@@ -148,6 +153,30 @@ public class ConverterSpecificSettingsWordProcessing
      */
     public void setBookmarkOptions(JAXBElement<BookmarkOptionsWordProcessing> value) {
         this.bookmarkOptions = value;
+    }
+
+    /**
+     * Gets the value of the includeDocumentStructureTags property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BooleanEnum }
+     *     
+     */
+    public BooleanEnum getIncludeDocumentStructureTags() {
+        return includeDocumentStructureTags;
+    }
+
+    /**
+     * Sets the value of the includeDocumentStructureTags property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BooleanEnum }
+     *     
+     */
+    public void setIncludeDocumentStructureTags(BooleanEnum value) {
+        this.includeDocumentStructureTags = value;
     }
 
 }

@@ -14,6 +14,8 @@
 //                  9 Mar 2018 - JR - Refreshed proxies
 //                 11 Jan 2019 - BM - Refreshed proxies
 //                 18 Jul 2019 - BM - Refreshed proxies
+//                 11 Dec 2020 - BM - Refreshed proxies
+//                 01 Mar 2021 - BM - Refreshed proxies
 //
 //   This file was generated automatically using wsdl2php
 //   For details see https://goo.gl/B5skSn
@@ -348,6 +350,7 @@ class RevisionsAndCommentsDisplayMode
   const _Final = 'Final';
   const OriginalShowingMarkup = 'OriginalShowingMarkup';
   const Original = 'Original';
+  const SimpleMarkup = 'SimpleMarkup';
 
 
 }
@@ -394,6 +397,15 @@ class PresentationsPrintOutputType
 
 
 }
+class BooleanEnum
+{
+  const __default = 'DefaultCustom';
+  const DefaultCustom = 'Default';
+  const True = 'True';
+  const False = 'False';
+
+
+}
 class ContentScale
 {
   const __default = 'DefaultCustom';
@@ -421,15 +433,6 @@ class UnsupportedFileBehaviour
   const Error = 'Error';
   const Remove = 'Remove';
   const AttachOriginal = 'AttachOriginal';
-
-
-}
-class BooleanEnum
-{
-  const __default = 'DefaultCustom';
-  const DefaultCustom = 'Default';
-  const True = 'True';
-  const False = 'False';
 
 
 }
@@ -1053,16 +1056,25 @@ class ConverterSpecificSettings_WordProcessing
 
   /**
    * 
+   * @var BooleanEnum $IncludeDocumentStructureTags
+   * @access public
+   */
+  public $IncludeDocumentStructureTags = null;
+
+  /**
+   * 
    * @param RevisionsAndCommentsMarkupMode $RevisionsAndCommentsMarkupMode
    * @param RevisionsAndCommentsDisplayMode $RevisionsAndCommentsDisplayMode
    * @param boolean $ProcessDocumentTemplate
+   * @param BooleanEnum $IncludeDocumentStructureTags
    * @access public
    */
-  public function __construct($RevisionsAndCommentsMarkupMode, $RevisionsAndCommentsDisplayMode, $ProcessDocumentTemplate)
+  public function __construct($RevisionsAndCommentsMarkupMode, $RevisionsAndCommentsDisplayMode, $ProcessDocumentTemplate, $IncludeDocumentStructureTags)
   {
     $this->RevisionsAndCommentsMarkupMode = $RevisionsAndCommentsMarkupMode;
     $this->RevisionsAndCommentsDisplayMode = $RevisionsAndCommentsDisplayMode;
     $this->ProcessDocumentTemplate = $ProcessDocumentTemplate;
+    $this->IncludeDocumentStructureTags = $IncludeDocumentStructureTags;
   }
 
 }
@@ -1085,14 +1097,23 @@ class ConverterSpecificSettings_Presentations
 
   /**
    * 
-   * @param PresentationsPrintOutputType $PrintOutputType
-   * @param boolean $FrameSlides
+   * @var BooleanEnum $IncludeDocumentStructureTags
    * @access public
    */
-  public function __construct($PrintOutputType, $FrameSlides)
+  public $IncludeDocumentStructureTags = null;
+
+  /**
+   * 
+   * @param PresentationsPrintOutputType $PrintOutputType
+   * @param boolean $FrameSlides
+   * @param BooleanEnum $IncludeDocumentStructureTags
+   * @access public
+   */
+  public function __construct($PrintOutputType, $FrameSlides, $IncludeDocumentStructureTags)
   {
     $this->PrintOutputType = $PrintOutputType;
     $this->FrameSlides = $FrameSlides;
+    $this->IncludeDocumentStructureTags = $IncludeDocumentStructureTags;
   }
 
 }

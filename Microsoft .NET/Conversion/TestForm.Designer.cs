@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ToolTip toolTipOCR;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBoxOCRRegions = new System.Windows.Forms.TextBox();
             this.textBoxOCRBlackList = new System.Windows.Forms.TextBox();
             this.textBoxOCRWhiteList = new System.Windows.Forms.TextBox();
@@ -179,6 +179,11 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.linkLabel = new System.Windows.Forms.LinkLabel();
             this.linkLabelHowToUse = new System.Windows.Forms.LinkLabel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.textBoxWCFUsername = new System.Windows.Forms.TextBox();
+            this.textBoxWCFPassword = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
             toolTipOCR = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1525,37 +1530,37 @@
             // 
             // dataGridViewToCProperties
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewToCProperties.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewToCProperties.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewToCProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewToCProperties.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
             this.value});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewToCProperties.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewToCProperties.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewToCProperties.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewToCProperties.Location = new System.Drawing.Point(0, 13);
             this.dataGridViewToCProperties.Name = "dataGridViewToCProperties";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewToCProperties.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewToCProperties.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewToCProperties.Size = new System.Drawing.Size(243, 122);
             this.dataGridViewToCProperties.TabIndex = 8;
             // 
@@ -1661,6 +1666,11 @@
             // 
             // tabPageConfigure
             // 
+            this.tabPageConfigure.Controls.Add(this.label38);
+            this.tabPageConfigure.Controls.Add(this.label37);
+            this.tabPageConfigure.Controls.Add(this.textBoxWCFPassword);
+            this.tabPageConfigure.Controls.Add(this.textBoxWCFUsername);
+            this.tabPageConfigure.Controls.Add(this.label36);
             this.tabPageConfigure.Controls.Add(this.numericUpDownWCFMessageSize);
             this.tabPageConfigure.Controls.Add(this.label28);
             this.tabPageConfigure.Controls.Add(this.checkBoxVerboseLogging);
@@ -1680,7 +1690,7 @@
             // 
             // numericUpDownWCFMessageSize
             // 
-            this.numericUpDownWCFMessageSize.Location = new System.Drawing.Point(406, 123);
+            this.numericUpDownWCFMessageSize.Location = new System.Drawing.Point(406, 122);
             this.numericUpDownWCFMessageSize.Maximum = new decimal(new int[] {
             4096,
             0,
@@ -1703,7 +1713,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(7, 123);
+            this.label28.Location = new System.Drawing.Point(7, 125);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(186, 13);
             this.label28.TabIndex = 8;
@@ -1731,7 +1741,7 @@
             // 
             // parallelConversions
             // 
-            this.parallelConversions.Location = new System.Drawing.Point(406, 73);
+            this.parallelConversions.Location = new System.Drawing.Point(406, 72);
             this.parallelConversions.Maximum = new decimal(new int[] {
             256,
             0,
@@ -1850,6 +1860,48 @@
             this.linkLabelHowToUse.TabStop = true;
             this.linkLabelHowToUse.Text = "How to use this tool";
             this.linkLabelHowToUse.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelHowToUse_LinkClicked);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(7, 150);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(266, 13);
+            this.label36.TabIndex = 10;
+            this.label36.Text = "Credentials, if authentication is enabled on web service";
+            // 
+            // textBoxWCFUsername
+            // 
+            this.textBoxWCFUsername.Location = new System.Drawing.Point(406, 147);
+            this.textBoxWCFUsername.Name = "textBoxWCFUsername";
+            this.textBoxWCFUsername.Size = new System.Drawing.Size(100, 20);
+            this.textBoxWCFUsername.TabIndex = 11;
+            // 
+            // textBoxWCFPassword
+            // 
+            this.textBoxWCFPassword.Location = new System.Drawing.Point(406, 172);
+            this.textBoxWCFPassword.Name = "textBoxWCFPassword";
+            this.textBoxWCFPassword.PasswordChar = '*';
+            this.textBoxWCFPassword.Size = new System.Drawing.Size(100, 20);
+            this.textBoxWCFPassword.TabIndex = 12;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(342, 150);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(58, 13);
+            this.label37.TabIndex = 13;
+            this.label37.Text = "Username:";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(344, 175);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(56, 13);
+            this.label38.TabIndex = 13;
+            this.label38.Text = "Password:";
             // 
             // TestForm
             // 
@@ -2066,6 +2118,11 @@
         public System.Windows.Forms.Label label16;
         public System.Windows.Forms.NumericUpDown numericUpDownConversionDelay;
         public System.Windows.Forms.Button buttonRequestStatus;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox textBoxWCFPassword;
+        private System.Windows.Forms.TextBox textBoxWCFUsername;
+        private System.Windows.Forms.Label label36;
     }
 }
 

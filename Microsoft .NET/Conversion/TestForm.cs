@@ -446,7 +446,7 @@ namespace TestHarness
         /// <param name="address">The URL where the Web Service is located.</param>
         /// <param name="wcfMessageSize">The maximum size supported by the WCF message. (in MB)</param>
         /// <returns>An instance of the Web Service.</returns>
-        public static DocumentConverterServiceClient OpenService(string address, int wcfMessageSize)
+        public DocumentConverterServiceClient OpenService(string address, int wcfMessageSize)
         {
             DocumentConverterServiceClient client = null;
 
@@ -461,8 +461,18 @@ namespace TestHarness
                     // Enable all security protocols so the Diagnostis Tool can connect to the services with any https protocol
                     if (System.Environment.OSVersion.Version.Major >= 6)
                     {
-                        // New Windows versions support all protocols
-                        ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | Tls11 | Tls12;
+                        // New Windowses (might) support all protocols, try setting them one by one
+                        try { ServicePointManager.SecurityProtocol |= SecurityProtocolType.Ssl3; }
+                        catch (Exception ex) { Debug("Failed to enable SSL3. Exception: " + ex.ToString(), true); }
+
+                        try { ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls; }
+                        catch (Exception ex) { Debug("Failed to enable TLS1.0. Exception: " + ex.ToString(), true); }
+
+                        try { ServicePointManager.SecurityProtocol |= Tls11; }
+                        catch (Exception ex) { Debug("Failed to enable TLS1.1. Exception: " + ex.ToString(), true); }
+
+                        try { ServicePointManager.SecurityProtocol |= Tls12; }
+                        catch (Exception ex) { Debug("Failed to enable TLS1.2. Exception: " + ex.ToString(), true); }
                     }
                     else
                     {
@@ -490,6 +500,13 @@ namespace TestHarness
                 EndpointAddress epa = new EndpointAddress(new Uri(address), epi);
 
                 client = new DocumentConverterServiceClient(binding, epa);
+
+                if(string.IsNullOrEmpty(textBoxWCFUsername.Text) == false)
+                {
+                    binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Basic;
+                    client.ClientCredentials.UserName.UserName = textBoxWCFUsername.Text;
+                    client.ClientCredentials.UserName.Password = textBoxWCFPassword.Text;
+                }
 
                 client.Open();
 
@@ -1117,16 +1134,16 @@ namespace TestHarness
             oddPageText.HAlign = HAlign.Right;
             oddPageText.VAlign = VAlign.Bottom;
 
-            // A secont text watermark across the page
-            Text oddPageText2 = new Text();
-            oddPageText2.Width = "580";
-            oddPageText2.Height = "180";
-            oddPageText2.Rotation = "-45";
-            oddPageText2.Content = "CONFIDENTIAL";
-            oddPageText2.HPosition = HPosition.Center;
-            oddPageText2.VPosition = VPosition.Middle;
-            oddPageText2.Transparency = "0.05";
-            oddPageText2.FontSize = "70";
+            //* create pdf watermark element
+            Pdf oddPagePdf = new Pdf();
+            oddPagePdf.PdfData = File.ReadAllBytes(Application.StartupPath + "/SampleWatermarkFiles/Sample.pdf");
+            oddPagePdf.HPosition = HPosition.Center;
+            oddPagePdf.VPosition = VPosition.Middle;
+            oddPagePdf.Transparency = "1";              // ** The actual PDF file is already transparent
+            //* set background fill to transparent
+            oddPagePdf.FillColor = "#00000000";
+            //* get rid of lines
+            oddPagePdf.LineWidth = "-1";
 
             //* Create QRCode object
             QRCode oddPageQRCode = new QRCode();
@@ -1138,9 +1155,9 @@ namespace TestHarness
             //* Set input mode and content
             oddPageQRCode.InputMode = BarcodeInputMode.Binary;
             oddPageQRCode.Text = "http://www.muhimbi.com/";
-            
+
             //* create array of watermark elements
-            Element[] oddPageWatermarkElements = new Element[] { oddPageText, oddPageText2, oddPageQRCode };
+            Element[] oddPageWatermarkElements = new Element[] { oddPageText, oddPagePdf, oddPageQRCode };
 
             //* set elements of watermark
             oddPageWatermark.Elements = oddPageWatermarkElements;

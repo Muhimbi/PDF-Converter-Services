@@ -18,6 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="Final"/>
  *     &lt;enumeration value="OriginalShowingMarkup"/>
  *     &lt;enumeration value="Original"/>
+ *     &lt;enumeration value="SimpleMarkup"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -34,7 +35,9 @@ public enum RevisionsAndCommentsDisplayMode {
     @XmlEnumValue("OriginalShowingMarkup")
     ORIGINAL_SHOWING_MARKUP("OriginalShowingMarkup"),
     @XmlEnumValue("Original")
-    ORIGINAL("Original");
+    ORIGINAL("Original"),
+    @XmlEnumValue("SimpleMarkup")
+    SIMPLE_MARKUP("SimpleMarkup");
     private final String value;
 
     RevisionsAndCommentsDisplayMode(String v) {

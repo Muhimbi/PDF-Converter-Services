@@ -239,6 +239,7 @@
           </xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="SimpleMarkup" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="RevisionsAndCommentsDisplayMode" nillable="true" type="tns:RevisionsAndCommentsDisplayMode" />
@@ -457,6 +458,14 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="PresentationsPrintOutputType" nillable="true" type="tns:PresentationsPrintOutputType" />
+  <xs:simpleType name="BooleanEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="True" />
+      <xs:enumeration value="False" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BooleanEnum" nillable="true" type="tns:BooleanEnum" />
   <xs:simpleType name="ContentScale">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Default" />
@@ -484,14 +493,6 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="UnsupportedFileBehaviour" nillable="true" type="tns:UnsupportedFileBehaviour" />
-  <xs:simpleType name="BooleanEnum">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Default" />
-      <xs:enumeration value="True" />
-      <xs:enumeration value="False" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="BooleanEnum" nillable="true" type="tns:BooleanEnum" />
   <xs:simpleType name="CadConversionElementType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="AllLayouts" />
