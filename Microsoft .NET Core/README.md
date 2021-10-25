@@ -60,6 +60,7 @@ Sample								| Description
 [OCR PDF](OCR%20PDF/)									| Use Optical Character Recognition to convert a fax, scan or other image into a text PDF.
 [Split PDF](Split%20PDF/)								| Split a large PDF into smaller PDFs.
 [Watermarking](Watermarking/)							| Add watermarks to a PDF file.
+[Extract PDF Forms Data](Extract%20PDF%20Forms%20Data/)	| Extract AcroForms data from PDF document.
 
 <br/>
 

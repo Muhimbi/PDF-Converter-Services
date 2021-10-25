@@ -38,6 +38,8 @@
       <xs:enumeration value="PS" />
       <xs:enumeration value="PCL" />
       <xs:enumeration value="EPS" />
+      <xs:enumeration value="FDF" />
+      <xs:enumeration value="XFDF" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="OutputFormat" nillable="true" type="tns:OutputFormat" />

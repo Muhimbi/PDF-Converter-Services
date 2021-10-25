@@ -91,6 +91,12 @@ namespace TestHarness
             Array.Sort(profiles);
             comboBoxPDFProfile.Items.AddRange(profiles);
             comboBoxPDFProfile.Text = PDFProfile.Default.ToString();
+
+            // Populate Output Formats
+            comboBoxFormat.Items.Clear();
+            string[] formats = Enum.GetNames(typeof(OutputFormat));
+            comboBoxFormat.Items.AddRange(formats);
+            comboBoxFormat.Text = OutputFormat.PDF.ToString();
         }
 
 
@@ -105,7 +111,11 @@ namespace TestHarness
         {
             // ** Retrieve the form's data on the main thread
             TestFormSettings formSettings = new TestFormSettings(this);
-            
+
+            // Disable showing the output if format is xfdf or fdf
+            OutputFormat format = (OutputFormat)Enum.Parse(typeof(OutputFormat), formSettings.comboBoxFormat, true);
+            if (format == OutputFormat.XFDF || format == OutputFormat.FDF) checkBoxShowConverted.Checked = false;
+
             ThreadStart ts = new ThreadStart(delegate
                 {
                     DocumentConverterServiceClient client = null;

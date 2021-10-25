@@ -16,6 +16,7 @@
 //                 18 Jul 2019 - BM - Refreshed proxies
 //                 11 Dec 2020 - BM - Refreshed proxies
 //                 01 Mar 2021 - BM - Refreshed proxies
+//                 15 Jul 2021 - BM - Refreshed proxies
 //
 //   This file was generated automatically using wsdl2php
 //   For details see https://goo.gl/B5skSn
@@ -263,6 +264,8 @@ class OutputFormat
   const PS = 'PS';
   const PCL = 'PCL';
   const EPS = 'EPS';
+  const FDF = 'FDF';
+  const XFDF = 'XFDF';
 
 
 }

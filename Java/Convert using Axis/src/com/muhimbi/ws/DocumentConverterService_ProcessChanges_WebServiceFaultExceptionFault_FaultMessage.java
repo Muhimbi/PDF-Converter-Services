@@ -10,7 +10,7 @@ package com.muhimbi.ws;
 
 public class DocumentConverterService_ProcessChanges_WebServiceFaultExceptionFault_FaultMessage extends java.lang.Exception{
 
-    private static final long serialVersionUID = 1614358585244L;
+    private static final long serialVersionUID = 1626271655195L;
     
     private com.muhimbi.ws.DocumentConverterServiceStub.WebServiceFaultExceptionE faultMessage;
 

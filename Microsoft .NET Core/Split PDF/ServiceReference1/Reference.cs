@@ -986,6 +986,12 @@ namespace ConversionService
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         EPS = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FDF = 27,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        XFDF = 28,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]

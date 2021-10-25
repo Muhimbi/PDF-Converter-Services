@@ -40,6 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;enumeration value="PS"/>
  *     &lt;enumeration value="PCL"/>
  *     &lt;enumeration value="EPS"/>
+ *     &lt;enumeration value="FDF"/>
+ *     &lt;enumeration value="XFDF"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
@@ -75,7 +77,9 @@ public enum OutputFormat {
     BMP,
     PS,
     PCL,
-    EPS;
+    EPS,
+    FDF,
+    XFDF;
 
     public String value() {
         return name();
