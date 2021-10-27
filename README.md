@@ -11,6 +11,7 @@ Key features:
 - Merge multiple files and URLs into a single PDF file.
 - Apply watermarks including *rich text, images, PDFs, QR Codes, page numbers, lines, circles* etc.
 - Secure PDF files, apply encryption and PDF restrictions to prevent such operations as printing and content copying.
+- Extract PDF Form data as FDF, XFDF and XML.
 - Split a PDF into multiple files.
 - Use OCR to convert scans, faxes and other images to fully searchable PDF files.
 - Supports PDF/A output for long term archiving and compliance with guidelines set by regulatory bodies.
