@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Muhimbi PDF Converter Test Harness")]
 [assembly: AssemblyCompany("Muhimbi Ltd")]
 [assembly: AssemblyProduct("Muhimbi PDF Converter")]
-[assembly: AssemblyCopyright("Copyright 2021 Muhimbi Ltd")]
-[assembly: AssemblyTrademark("Trademark 2021 Muhimbi Ltd")]
+[assembly: AssemblyCopyright("Copyright 2022 Muhimbi Ltd")]
+[assembly: AssemblyTrademark("Trademark 2022 Muhimbi Ltd")]
 [assembly: AssemblyDescription("Example solution for interacting with the Web Services interface.")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

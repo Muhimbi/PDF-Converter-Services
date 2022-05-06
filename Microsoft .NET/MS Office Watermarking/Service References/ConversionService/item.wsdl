@@ -64,6 +64,15 @@
   <wsdl:message name="DocumentConverterService_ProcessBatch_WebServiceFaultExceptionFault_FaultMessage">
     <wsdl:part xmlns:q5="http://types.muhimbi.com/2009/10/06" name="detail" element="q5:WebServiceFaultException" />
   </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetDocumentProperties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentProperties" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetDocumentProperties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocumentConverterService_GetDocumentProperties_WebServiceFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://types.muhimbi.com/2009/10/06" name="detail" element="q6:WebServiceFaultException" />
+  </wsdl:message>
   <wsdl:message name="DocumentConverterService_GetConfiguration_InputMessage">
     <wsdl:part name="parameters" element="tns:GetConfiguration" />
   </wsdl:message>
@@ -71,7 +80,7 @@
     <wsdl:part name="parameters" element="tns:GetConfigurationResponse" />
   </wsdl:message>
   <wsdl:message name="DocumentConverterService_GetConfiguration_WebServiceFaultExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q6="http://types.muhimbi.com/2009/10/06" name="detail" element="q6:WebServiceFaultException" />
+    <wsdl:part xmlns:q7="http://types.muhimbi.com/2009/10/06" name="detail" element="q7:WebServiceFaultException" />
   </wsdl:message>
   <wsdl:message name="DocumentConverterService_GetDiagnostics_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDiagnostics" />
@@ -80,7 +89,7 @@
     <wsdl:part name="parameters" element="tns:GetDiagnosticsResponse" />
   </wsdl:message>
   <wsdl:message name="DocumentConverterService_GetDiagnostics_WebServiceFaultExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q7="http://types.muhimbi.com/2009/10/06" name="detail" element="q7:WebServiceFaultException" />
+    <wsdl:part xmlns:q8="http://types.muhimbi.com/2009/10/06" name="detail" element="q8:WebServiceFaultException" />
   </wsdl:message>
   <wsdl:message name="DocumentConverterService_GetStatus_InputMessage">
     <wsdl:part name="parameters" element="tns:GetStatus" />
@@ -89,7 +98,7 @@
     <wsdl:part name="parameters" element="tns:GetStatusResponse" />
   </wsdl:message>
   <wsdl:message name="DocumentConverterService_GetStatus_WebServiceFaultExceptionFault_FaultMessage">
-    <wsdl:part xmlns:q8="http://types.muhimbi.com/2009/10/06" name="detail" element="q8:WebServiceFaultException" />
+    <wsdl:part xmlns:q9="http://types.muhimbi.com/2009/10/06" name="detail" element="q9:WebServiceFaultException" />
   </wsdl:message>
   <wsdl:portType name="DocumentConverterService">
     <wsdl:operation name="Convert">
@@ -116,6 +125,11 @@
       <wsdl:input wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessBatch" message="tns:DocumentConverterService_ProcessBatch_InputMessage" />
       <wsdl:output wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessBatchResponse" message="tns:DocumentConverterService_ProcessBatch_OutputMessage" />
       <wsdl:fault wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessBatchWebServiceFaultExceptionFault" name="WebServiceFaultExceptionFault" message="tns:DocumentConverterService_ProcessBatch_WebServiceFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentProperties">
+      <wsdl:input wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDocumentProperties" message="tns:DocumentConverterService_GetDocumentProperties_InputMessage" />
+      <wsdl:output wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDocumentPropertiesResponse" message="tns:DocumentConverterService_GetDocumentProperties_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDocumentPropertiesWebServiceFaultExceptionFault" name="WebServiceFaultExceptionFault" message="tns:DocumentConverterService_GetDocumentProperties_WebServiceFaultExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetConfiguration">
       <wsdl:input wsaw:Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetConfiguration" message="tns:DocumentConverterService_GetConfiguration_InputMessage" />

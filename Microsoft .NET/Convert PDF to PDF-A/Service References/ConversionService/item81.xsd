@@ -9,6 +9,9 @@
         <xs:sequence>
           <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="OCRLanguageProxy" type="q2:OCRLanguage" />
           <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Enums.PrimeOCR" minOccurs="0" name="PrimeOCR_AccuracyLevelProxy" type="q3:PrimeOCR_AccuracyLevel" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="PropertyCategoriesProxy" type="q4:PropertyCategories" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="WordBuiltInPropertiesProxy" type="q5:WordBuiltInProperties" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="PdfBuiltInProperties" type="q6:PdfBuiltInProperties" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -17,14 +20,14 @@
   <xs:complexType name="OCRSettings">
     <xs:sequence>
       <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
-      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="Performance" type="q4:OCRPerformance" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="Performance" type="q7:OCRPerformance" />
       <xs:element minOccurs="0" name="WhiteList" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="BlackList" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Paginate" type="xs:boolean" />
       <xs:element minOccurs="0" name="Regions" nillable="true" type="tns:ArrayOfOCRRegion" />
-      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="OutputType" type="q5:OCROutputType" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="OutputType" type="q8:OCROutputType" />
       <xs:element minOccurs="0" name="OCREngine" nillable="true" type="xs:string" />
-      <xs:element xmlns:q6="http://types.muhimbi.com/2010/11/22" minOccurs="0" name="OCREngineSpecificSettings" nillable="true" type="q6:OCREngineSpecificSettings" />
+      <xs:element xmlns:q9="http://types.muhimbi.com/2010/11/22" minOccurs="0" name="OCREngineSpecificSettings" nillable="true" type="q9:OCREngineSpecificSettings" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="OCRSettings" nillable="true" type="tns:OCRSettings" />

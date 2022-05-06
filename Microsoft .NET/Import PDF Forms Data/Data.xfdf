@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+  <f href="Template.pdf"/>
+  <fields>
+    <field name="Company">
+      <value>Smith</value>
+    </field>
+    <field name="FirstName">
+      <value>John</value>
+    </field>
+    <field name="LastName">
+      <value>The Acme Corporation</value>
+    </field>
+  </fields>
+  <ids original="20AFAAB982BF984988218F1755B725FF" modified="5B59592F892AF943B7C2E8AFA842437F"/>
+</xfdf>

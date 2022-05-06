@@ -93,6 +93,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPropertySettingDialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPropertySettingDialogue.Designer.cs">
+      <DependentUpon>AddPropertySettingDialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocPropertySetting.cs" />
     <Compile Include="TestFormSettings.cs" />
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
@@ -102,6 +109,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddPropertySettingDialogue.resx">
+      <DependentUpon>AddPropertySettingDialogue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +188,9 @@
     </None>
     <None Include="Service References\DocumentConverterService\item9.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentConverterService\TestHarness.DocumentConverterService.GetDocumentPropertiesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\DocumentConverterService\TestHarness.DocumentConverterService.Status.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

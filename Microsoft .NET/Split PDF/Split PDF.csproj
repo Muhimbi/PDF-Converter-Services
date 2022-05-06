@@ -98,6 +98,9 @@
     <None Include="Service References\ServiceReference1\Split_PDF.ServiceReference1.Diagnostics.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\Split_PDF.ServiceReference1.GetDocumentPropertiesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\Split_PDF.ServiceReference1.Status1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

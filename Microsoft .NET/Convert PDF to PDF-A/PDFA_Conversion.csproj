@@ -94,6 +94,9 @@
     <None Include="Service References\ConversionService\PDFA_Conversion.ConversionService.Diagnostics.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ConversionService\PDFA_Conversion.ConversionService.GetDocumentPropertiesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ConversionService\PDFA_Conversion.ConversionService.Status1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

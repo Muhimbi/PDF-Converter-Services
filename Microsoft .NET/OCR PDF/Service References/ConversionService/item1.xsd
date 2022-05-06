@@ -404,6 +404,65 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="OCRLanguage" nillable="true" type="tns:OCRLanguage" />
+  <xs:simpleType name="PropertyCategories">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BuiltIn" />
+      <xs:enumeration value="OfficeBuiltInProperties" />
+      <xs:enumeration value="OfficeCustomProperties" />
+      <xs:enumeration value="PdfBuiltInProperties" />
+      <xs:enumeration value="PdfCustomProperties" />
+      <xs:enumeration value="PdfXmp" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PropertyCategories" nillable="true" type="tns:PropertyCategories" />
+  <xs:simpleType name="WordBuiltInProperties">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Title" />
+      <xs:enumeration value="Subject" />
+      <xs:enumeration value="Author" />
+      <xs:enumeration value="Keywords" />
+      <xs:enumeration value="Comments" />
+      <xs:enumeration value="Template" />
+      <xs:enumeration value="LastAuthor" />
+      <xs:enumeration value="Revision" />
+      <xs:enumeration value="AppName" />
+      <xs:enumeration value="TimeLastPrinted" />
+      <xs:enumeration value="TimeCreated" />
+      <xs:enumeration value="TimeLastSaved" />
+      <xs:enumeration value="VBATotalEdit" />
+      <xs:enumeration value="Pages" />
+      <xs:enumeration value="Words" />
+      <xs:enumeration value="Characters" />
+      <xs:enumeration value="Security" />
+      <xs:enumeration value="Category" />
+      <xs:enumeration value="Manager" />
+      <xs:enumeration value="Company" />
+      <xs:enumeration value="Bytes" />
+      <xs:enumeration value="Lines" />
+      <xs:enumeration value="Paras" />
+      <xs:enumeration value="Notes" />
+      <xs:enumeration value="CharsWSpaces" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WordBuiltInProperties" nillable="true" type="tns:WordBuiltInProperties" />
+  <xs:simpleType name="PdfBuiltInProperties">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Title" />
+      <xs:enumeration value="Author" />
+      <xs:enumeration value="Subject" />
+      <xs:enumeration value="Keywords" />
+      <xs:enumeration value="CreationDate" />
+      <xs:enumeration value="ModificationDate" />
+      <xs:enumeration value="Creator" />
+      <xs:enumeration value="Producer" />
+      <xs:enumeration value="PdfVersion" />
+      <xs:enumeration value="PageSize" />
+      <xs:enumeration value="TaggedPdf" />
+      <xs:enumeration value="Pages" />
+      <xs:enumeration value="FastWebView" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PdfBuiltInProperties" nillable="true" type="tns:PdfBuiltInProperties" />
   <xs:simpleType name="PresentationsPrintOutputType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Slides">

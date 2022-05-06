@@ -95,6 +95,9 @@
     <None Include="Service References\ConversionService\Watermarking.ConversionService.Diagnostics.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ConversionService\Watermarking.ConversionService.GetDocumentPropertiesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ConversionService\Watermarking.ConversionService.Status.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -2,33 +2,10 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs
-/Microsoft .NET/Conversion/.vs/Sample Code .NET/v15
-/Microsoft .NET/Conversion/bin
-/Microsoft .NET/Conversion/obj
-/Microsoft .NET/Convert PDF to PDF-A/bin
-/Microsoft .NET/Convert PDF to PDF-A/obj
-/Microsoft .NET/MS Office Watermarking/bin
-/Microsoft .NET/MS Office Watermarking/obj
-/Microsoft .NET/OCR PDF/bin
-/Microsoft .NET/OCR PDF/obj
-/Microsoft .NET/OCR PDF (PrimeOCR)/bin
-/Microsoft .NET/OCR PDF (PrimeOCR)/obj
-/Microsoft .NET/Split PDF/bin
-/Microsoft .NET/Split PDF/obj
-/Microsoft .NET/Watermarking/bin
-/Microsoft .NET/Watermarking/obj
-
-/Microsoft .NET Core/Convert PDF to PDF-A/bin
-/Microsoft .NET Core/Convert PDF to PDF-A/obj
-/Microsoft .NET Core/Extract PDF Forms Data/bin
-/Microsoft .NET Core/Extract PDF Forms Data/obj
-/Microsoft .NET Core/MS Office Watermarking/bin
-/Microsoft .NET Core/MS Office Watermarking/obj
-/Microsoft .NET Core/OCR PDF/bin
-/Microsoft .NET Core/OCR PDF/obj
-/Microsoft .NET Core/Split PDF/bin
-/Microsoft .NET Core/Split PDF/obj
-/Microsoft .NET Core/Watermarking/bin
-/Microsoft .NET Core/Watermarking/obj
+**/.vs/
+**/*.suo
+/Microsoft .NET/**/bin
+/Microsoft .NET/**/obj
+/Microsoft .NET Core/**/bin
+/Microsoft .NET Core/**/obj
 

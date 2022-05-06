@@ -39,6 +39,7 @@ import javax.xml.bind.annotation.XmlType;
     ConverterSpecificSettingsCommandLineConverter.class,
     ConverterSpecificSettingsPresentations.class,
     EnumsProxy.class,
+    ConverterSpecificSettingsPdfFormsDataImporter.class,
     ConverterSpecificSettingsPDF.class
 })
 public class ConverterSpecificSettings {

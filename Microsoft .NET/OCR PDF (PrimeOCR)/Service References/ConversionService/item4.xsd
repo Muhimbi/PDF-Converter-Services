@@ -135,6 +135,7 @@
           <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="AuthenticationMode" type="q18:AuthenticationMode" />
           <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="MediaType" type="q19:MediaType" />
           <xs:element minOccurs="0" name="EnableWebKitOfflineMode" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Zoom" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

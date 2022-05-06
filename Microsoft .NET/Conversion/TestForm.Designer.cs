@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ToolTip toolTipOCR;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBoxOCRRegions = new System.Windows.Forms.TextBox();
             this.textBoxOCRBlackList = new System.Windows.Forms.TextBox();
             this.textBoxOCRWhiteList = new System.Windows.Forms.TextBox();
@@ -77,6 +77,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageConversion = new System.Windows.Forms.TabPage();
+            this.buttonGetDocumentProperties = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPagePDFSecurity = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -114,10 +115,22 @@
             this.checkBoxEnableFastWebView = new System.Windows.Forms.CheckBox();
             this.checkBoxIncludeSampleWatermarks = new System.Windows.Forms.CheckBox();
             this.tabPageMiscellaneous = new System.Windows.Forms.TabPage();
+            this.label42 = new System.Windows.Forms.Label();
+            this.buttonBrowseTemplate = new System.Windows.Forms.Button();
+            this.textBoxTemplatePassword = new System.Windows.Forms.TextBox();
+            this.textBoxTemplateUsername = new System.Windows.Forms.TextBox();
+            this.textBoxTemplateFile = new System.Windows.Forms.TextBox();
             this.comboBoxPageOrientation = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.comboBoxRange = new System.Windows.Forms.ComboBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.tabPageDocumentInformation = new System.Windows.Forms.TabPage();
+            this.checkBoxGetDocPropertyiesIgnoreErros = new System.Windows.Forms.CheckBox();
+            this.buttonAddDocProperty = new System.Windows.Forms.Button();
+            this.dataGridViewDocumentPropertySettings = new System.Windows.Forms.DataGridView();
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.buttonMergeFolder = new System.Windows.Forms.Button();
             this.tabPageHTML = new System.Windows.Forms.TabPage();
@@ -164,6 +177,11 @@
             this.label30 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabPageConfigure = new System.Windows.Forms.TabPage();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.textBoxWCFPassword = new System.Windows.Forms.TextBox();
+            this.textBoxWCFUsername = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.numericUpDownWCFMessageSize = new System.Windows.Forms.NumericUpDown();
             this.label28 = new System.Windows.Forms.Label();
             this.checkBoxVerboseLogging = new System.Windows.Forms.CheckBox();
@@ -179,11 +197,7 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.linkLabel = new System.Windows.Forms.LinkLabel();
             this.linkLabelHowToUse = new System.Windows.Forms.LinkLabel();
-            this.label36 = new System.Windows.Forms.Label();
-            this.textBoxWCFUsername = new System.Windows.Forms.TextBox();
-            this.textBoxWCFPassword = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
+            this.openFileDialogTemplate = new System.Windows.Forms.OpenFileDialog();
             toolTipOCR = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -196,6 +210,8 @@
             this.tabPagePDFPostProcessing.SuspendLayout();
             this.groupBoxPostProcess.SuspendLayout();
             this.tabPageMiscellaneous.SuspendLayout();
+            this.tabPageDocumentInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDocumentPropertySettings)).BeginInit();
             this.tabPageHTML.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownConversionDelay)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -256,7 +272,7 @@
             // 
             this.buttonConvertFile.Location = new System.Drawing.Point(6, 189);
             this.buttonConvertFile.Name = "buttonConvertFile";
-            this.buttonConvertFile.Size = new System.Drawing.Size(180, 23);
+            this.buttonConvertFile.Size = new System.Drawing.Size(140, 23);
             this.buttonConvertFile.TabIndex = 15;
             this.buttonConvertFile.Text = "Convert / Process File";
             this.buttonConvertFile.UseVisualStyleBackColor = true;
@@ -417,7 +433,7 @@
             "Disabled",
             "Automatic",
             "Custom"});
-            this.comboBoxBookmarks.Location = new System.Drawing.Point(67, 12);
+            this.comboBoxBookmarks.Location = new System.Drawing.Point(67, 8);
             this.comboBoxBookmarks.Name = "comboBoxBookmarks";
             this.comboBoxBookmarks.Size = new System.Drawing.Size(102, 21);
             this.comboBoxBookmarks.TabIndex = 1;
@@ -426,7 +442,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 16);
+            this.label5.Location = new System.Drawing.Point(7, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 12;
@@ -574,9 +590,9 @@
             // 
             // buttonConvertFolder
             // 
-            this.buttonConvertFolder.Location = new System.Drawing.Point(188, 189);
+            this.buttonConvertFolder.Location = new System.Drawing.Point(148, 189);
             this.buttonConvertFolder.Name = "buttonConvertFolder";
-            this.buttonConvertFolder.Size = new System.Drawing.Size(181, 23);
+            this.buttonConvertFolder.Size = new System.Drawing.Size(140, 23);
             this.buttonConvertFolder.TabIndex = 16;
             this.buttonConvertFolder.Text = "Convert / Process Folder";
             this.buttonConvertFolder.UseVisualStyleBackColor = true;
@@ -613,7 +629,7 @@
             "None",
             "SignedOnly",
             "All"});
-            this.comboBoxMacroSecurityOptions.Location = new System.Drawing.Point(233, 12);
+            this.comboBoxMacroSecurityOptions.Location = new System.Drawing.Point(233, 8);
             this.comboBoxMacroSecurityOptions.Name = "comboBoxMacroSecurityOptions";
             this.comboBoxMacroSecurityOptions.Size = new System.Drawing.Size(102, 21);
             this.comboBoxMacroSecurityOptions.TabIndex = 2;
@@ -622,7 +638,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(189, 16);
+            this.label10.Location = new System.Drawing.Point(189, 12);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 22;
@@ -631,7 +647,7 @@
             // checkBoxRefreshContent
             // 
             this.checkBoxRefreshContent.AutoSize = true;
-            this.checkBoxRefreshContent.Location = new System.Drawing.Point(361, 39);
+            this.checkBoxRefreshContent.Location = new System.Drawing.Point(361, 35);
             this.checkBoxRefreshContent.Name = "checkBoxRefreshContent";
             this.checkBoxRefreshContent.Size = new System.Drawing.Size(151, 17);
             this.checkBoxRefreshContent.TabIndex = 6;
@@ -644,7 +660,7 @@
             this.comboBoxFidelity.Items.AddRange(new object[] {
             "High",
             "Full"});
-            this.comboBoxFidelity.Location = new System.Drawing.Point(233, 39);
+            this.comboBoxFidelity.Location = new System.Drawing.Point(233, 35);
             this.comboBoxFidelity.Name = "comboBoxFidelity";
             this.comboBoxFidelity.Size = new System.Drawing.Size(102, 21);
             this.comboBoxFidelity.TabIndex = 5;
@@ -653,7 +669,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(193, 43);
+            this.label11.Location = new System.Drawing.Point(193, 39);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(39, 13);
             this.label11.TabIndex = 24;
@@ -675,6 +691,7 @@
             // 
             // tabPageConversion
             // 
+            this.tabPageConversion.Controls.Add(this.buttonGetDocumentProperties);
             this.tabPageConversion.Controls.Add(this.tabControl2);
             this.tabPageConversion.Controls.Add(this.buttonBrowse);
             this.tabPageConversion.Controls.Add(this.buttonConvertFile);
@@ -694,6 +711,16 @@
             this.tabPageConversion.Text = "WS Convert";
             this.tabPageConversion.UseVisualStyleBackColor = true;
             // 
+            // buttonGetDocumentProperties
+            // 
+            this.buttonGetDocumentProperties.Location = new System.Drawing.Point(432, 189);
+            this.buttonGetDocumentProperties.Name = "buttonGetDocumentProperties";
+            this.buttonGetDocumentProperties.Size = new System.Drawing.Size(119, 23);
+            this.buttonGetDocumentProperties.TabIndex = 18;
+            this.buttonGetDocumentProperties.Text = "Document Info";
+            this.buttonGetDocumentProperties.UseVisualStyleBackColor = true;
+            this.buttonGetDocumentProperties.Click += new System.EventHandler(this.buttonGetDocumentProperties_Click);
+            // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPagePDFSecurity);
@@ -701,6 +728,7 @@
             this.tabControl2.Controls.Add(this.tabPagePDFViewerPreferences);
             this.tabControl2.Controls.Add(this.tabPagePDFPostProcessing);
             this.tabControl2.Controls.Add(this.tabPageMiscellaneous);
+            this.tabControl2.Controls.Add(this.tabPageDocumentInformation);
             this.tabControl2.Location = new System.Drawing.Point(6, 35);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -1103,6 +1131,11 @@
             // 
             // tabPageMiscellaneous
             // 
+            this.tabPageMiscellaneous.Controls.Add(this.label42);
+            this.tabPageMiscellaneous.Controls.Add(this.buttonBrowseTemplate);
+            this.tabPageMiscellaneous.Controls.Add(this.textBoxTemplatePassword);
+            this.tabPageMiscellaneous.Controls.Add(this.textBoxTemplateUsername);
+            this.tabPageMiscellaneous.Controls.Add(this.textBoxTemplateFile);
             this.tabPageMiscellaneous.Controls.Add(this.comboBoxPageOrientation);
             this.tabPageMiscellaneous.Controls.Add(this.label14);
             this.tabPageMiscellaneous.Controls.Add(this.label5);
@@ -1110,6 +1143,9 @@
             this.tabPageMiscellaneous.Controls.Add(this.checkBoxRefreshContent);
             this.tabPageMiscellaneous.Controls.Add(this.comboBoxRange);
             this.tabPageMiscellaneous.Controls.Add(this.label10);
+            this.tabPageMiscellaneous.Controls.Add(this.label41);
+            this.tabPageMiscellaneous.Controls.Add(this.label40);
+            this.tabPageMiscellaneous.Controls.Add(this.label39);
             this.tabPageMiscellaneous.Controls.Add(this.label12);
             this.tabPageMiscellaneous.Controls.Add(this.comboBoxMacroSecurityOptions);
             this.tabPageMiscellaneous.Controls.Add(this.label11);
@@ -1121,6 +1157,49 @@
             this.tabPageMiscellaneous.Text = "Miscellaneous";
             this.tabPageMiscellaneous.UseVisualStyleBackColor = true;
             // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(342, 74);
+            this.label42.MaximumSize = new System.Drawing.Size(190, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(185, 39);
+            this.label42.TabIndex = 35;
+            this.label42.Text = "For InfoPath / PDF Forms specify the template file (XSN, PDF) or the URL and opti" +
+    "onal credentials.";
+            // 
+            // buttonBrowseTemplate
+            // 
+            this.buttonBrowseTemplate.Location = new System.Drawing.Point(309, 71);
+            this.buttonBrowseTemplate.Name = "buttonBrowseTemplate";
+            this.buttonBrowseTemplate.Size = new System.Drawing.Size(26, 20);
+            this.buttonBrowseTemplate.TabIndex = 19;
+            this.buttonBrowseTemplate.Text = "...";
+            this.buttonBrowseTemplate.UseVisualStyleBackColor = true;
+            this.buttonBrowseTemplate.Click += new System.EventHandler(this.buttonBrowseTemplate_Click);
+            // 
+            // textBoxTemplatePassword
+            // 
+            this.textBoxTemplatePassword.Location = new System.Drawing.Point(235, 97);
+            this.textBoxTemplatePassword.Name = "textBoxTemplatePassword";
+            this.textBoxTemplatePassword.PasswordChar = '*';
+            this.textBoxTemplatePassword.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTemplatePassword.TabIndex = 34;
+            // 
+            // textBoxTemplateUsername
+            // 
+            this.textBoxTemplateUsername.Location = new System.Drawing.Point(67, 97);
+            this.textBoxTemplateUsername.Name = "textBoxTemplateUsername";
+            this.textBoxTemplateUsername.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTemplateUsername.TabIndex = 33;
+            // 
+            // textBoxTemplateFile
+            // 
+            this.textBoxTemplateFile.Location = new System.Drawing.Point(67, 71);
+            this.textBoxTemplateFile.Name = "textBoxTemplateFile";
+            this.textBoxTemplateFile.Size = new System.Drawing.Size(239, 20);
+            this.textBoxTemplateFile.TabIndex = 31;
+            // 
             // comboBoxPageOrientation
             // 
             this.comboBoxPageOrientation.FormattingEnabled = true;
@@ -1128,7 +1207,7 @@
             "Default",
             "Portrait",
             "Landscape"});
-            this.comboBoxPageOrientation.Location = new System.Drawing.Point(422, 12);
+            this.comboBoxPageOrientation.Location = new System.Drawing.Point(422, 8);
             this.comboBoxPageOrientation.Name = "comboBoxPageOrientation";
             this.comboBoxPageOrientation.Size = new System.Drawing.Size(102, 21);
             this.comboBoxPageOrientation.TabIndex = 3;
@@ -1137,7 +1216,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(358, 14);
+            this.label14.Location = new System.Drawing.Point(358, 10);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 30;
@@ -1150,20 +1229,91 @@
             "VisibleDocuments",
             "AllDocuments",
             "ActiveDocuments"});
-            this.comboBoxRange.Location = new System.Drawing.Point(67, 39);
+            this.comboBoxRange.Location = new System.Drawing.Point(67, 35);
             this.comboBoxRange.Name = "comboBoxRange";
             this.comboBoxRange.Size = new System.Drawing.Size(102, 21);
             this.comboBoxRange.TabIndex = 4;
             this.comboBoxRange.Text = "VisibleDocuments";
             // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(179, 100);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(53, 13);
+            this.label41.TabIndex = 26;
+            this.label41.Text = "Password";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(6, 100);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(55, 13);
+            this.label40.TabIndex = 26;
+            this.label40.Text = "Username";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(11, 74);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(51, 13);
+            this.label39.TabIndex = 26;
+            this.label39.Text = "Template";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(23, 43);
+            this.label12.Location = new System.Drawing.Point(23, 39);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 13);
             this.label12.TabIndex = 26;
             this.label12.Text = "Range";
+            // 
+            // tabPageDocumentInformation
+            // 
+            this.tabPageDocumentInformation.Controls.Add(this.checkBoxGetDocPropertyiesIgnoreErros);
+            this.tabPageDocumentInformation.Controls.Add(this.buttonAddDocProperty);
+            this.tabPageDocumentInformation.Controls.Add(this.dataGridViewDocumentPropertySettings);
+            this.tabPageDocumentInformation.Location = new System.Drawing.Point(4, 22);
+            this.tabPageDocumentInformation.Name = "tabPageDocumentInformation";
+            this.tabPageDocumentInformation.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDocumentInformation.Size = new System.Drawing.Size(537, 122);
+            this.tabPageDocumentInformation.TabIndex = 5;
+            this.tabPageDocumentInformation.Text = "Doc Info";
+            this.tabPageDocumentInformation.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxGetDocPropertyiesIgnoreErros
+            // 
+            this.checkBoxGetDocPropertyiesIgnoreErros.AutoSize = true;
+            this.checkBoxGetDocPropertyiesIgnoreErros.Checked = true;
+            this.checkBoxGetDocPropertyiesIgnoreErros.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.checkBoxGetDocPropertyiesIgnoreErros.Location = new System.Drawing.Point(0, 105);
+            this.checkBoxGetDocPropertyiesIgnoreErros.Name = "checkBoxGetDocPropertyiesIgnoreErros";
+            this.checkBoxGetDocPropertyiesIgnoreErros.Size = new System.Drawing.Size(86, 17);
+            this.checkBoxGetDocPropertyiesIgnoreErros.TabIndex = 2;
+            this.checkBoxGetDocPropertyiesIgnoreErros.Text = "Ignore Errors";
+            this.checkBoxGetDocPropertyiesIgnoreErros.ThreeState = true;
+            this.checkBoxGetDocPropertyiesIgnoreErros.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddDocProperty
+            // 
+            this.buttonAddDocProperty.Location = new System.Drawing.Point(514, 2);
+            this.buttonAddDocProperty.Name = "buttonAddDocProperty";
+            this.buttonAddDocProperty.Size = new System.Drawing.Size(23, 23);
+            this.buttonAddDocProperty.TabIndex = 1;
+            this.buttonAddDocProperty.Text = "+";
+            this.buttonAddDocProperty.UseVisualStyleBackColor = true;
+            this.buttonAddDocProperty.Click += new System.EventHandler(this.buttonAddDocProperty_Click);
+            // 
+            // dataGridViewDocumentPropertySettings
+            // 
+            this.dataGridViewDocumentPropertySettings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDocumentPropertySettings.Location = new System.Drawing.Point(0, 2);
+            this.dataGridViewDocumentPropertySettings.Name = "dataGridViewDocumentPropertySettings";
+            this.dataGridViewDocumentPropertySettings.Size = new System.Drawing.Size(512, 97);
+            this.dataGridViewDocumentPropertySettings.TabIndex = 0;
             // 
             // buttonBrowse
             // 
@@ -1177,9 +1327,9 @@
             // 
             // buttonMergeFolder
             // 
-            this.buttonMergeFolder.Location = new System.Drawing.Point(371, 189);
+            this.buttonMergeFolder.Location = new System.Drawing.Point(290, 189);
             this.buttonMergeFolder.Name = "buttonMergeFolder";
-            this.buttonMergeFolder.Size = new System.Drawing.Size(180, 23);
+            this.buttonMergeFolder.Size = new System.Drawing.Size(140, 23);
             this.buttonMergeFolder.TabIndex = 17;
             this.buttonMergeFolder.Text = "Merge Folder";
             this.buttonMergeFolder.UseVisualStyleBackColor = true;
@@ -1530,37 +1680,37 @@
             // 
             // dataGridViewToCProperties
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewToCProperties.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewToCProperties.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewToCProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewToCProperties.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
             this.value});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewToCProperties.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewToCProperties.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewToCProperties.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewToCProperties.Location = new System.Drawing.Point(0, 13);
             this.dataGridViewToCProperties.Name = "dataGridViewToCProperties";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewToCProperties.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewToCProperties.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewToCProperties.Size = new System.Drawing.Size(243, 122);
             this.dataGridViewToCProperties.TabIndex = 8;
             // 
@@ -1687,6 +1837,48 @@
             this.tabPageConfigure.TabIndex = 1;
             this.tabPageConfigure.Text = "WS Configure";
             this.tabPageConfigure.UseVisualStyleBackColor = true;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(344, 175);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(56, 13);
+            this.label38.TabIndex = 13;
+            this.label38.Text = "Password:";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(342, 150);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(58, 13);
+            this.label37.TabIndex = 13;
+            this.label37.Text = "Username:";
+            // 
+            // textBoxWCFPassword
+            // 
+            this.textBoxWCFPassword.Location = new System.Drawing.Point(406, 172);
+            this.textBoxWCFPassword.Name = "textBoxWCFPassword";
+            this.textBoxWCFPassword.PasswordChar = '*';
+            this.textBoxWCFPassword.Size = new System.Drawing.Size(100, 20);
+            this.textBoxWCFPassword.TabIndex = 12;
+            // 
+            // textBoxWCFUsername
+            // 
+            this.textBoxWCFUsername.Location = new System.Drawing.Point(406, 147);
+            this.textBoxWCFUsername.Name = "textBoxWCFUsername";
+            this.textBoxWCFUsername.Size = new System.Drawing.Size(100, 20);
+            this.textBoxWCFUsername.TabIndex = 11;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(7, 150);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(266, 13);
+            this.label36.TabIndex = 10;
+            this.label36.Text = "Credentials, if authentication is enabled on web service";
             // 
             // numericUpDownWCFMessageSize
             // 
@@ -1861,47 +2053,10 @@
             this.linkLabelHowToUse.Text = "How to use this tool";
             this.linkLabelHowToUse.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelHowToUse_LinkClicked);
             // 
-            // label36
+            // openFileDialogTemplate
             // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(7, 150);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(266, 13);
-            this.label36.TabIndex = 10;
-            this.label36.Text = "Credentials, if authentication is enabled on web service";
-            // 
-            // textBoxWCFUsername
-            // 
-            this.textBoxWCFUsername.Location = new System.Drawing.Point(406, 147);
-            this.textBoxWCFUsername.Name = "textBoxWCFUsername";
-            this.textBoxWCFUsername.Size = new System.Drawing.Size(100, 20);
-            this.textBoxWCFUsername.TabIndex = 11;
-            // 
-            // textBoxWCFPassword
-            // 
-            this.textBoxWCFPassword.Location = new System.Drawing.Point(406, 172);
-            this.textBoxWCFPassword.Name = "textBoxWCFPassword";
-            this.textBoxWCFPassword.PasswordChar = '*';
-            this.textBoxWCFPassword.Size = new System.Drawing.Size(100, 20);
-            this.textBoxWCFPassword.TabIndex = 12;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(342, 150);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(58, 13);
-            this.label37.TabIndex = 13;
-            this.label37.Text = "Username:";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(344, 175);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(56, 13);
-            this.label38.TabIndex = 13;
-            this.label38.Text = "Password:";
+            this.openFileDialogTemplate.FileName = "openFileDialogTemplate";
+            this.openFileDialogTemplate.Filter = "InfoPath templates files|*.xsn|PDF Template|*.pdf";
             // 
             // TestForm
             // 
@@ -1939,6 +2094,9 @@
             this.groupBoxPostProcess.PerformLayout();
             this.tabPageMiscellaneous.ResumeLayout(false);
             this.tabPageMiscellaneous.PerformLayout();
+            this.tabPageDocumentInformation.ResumeLayout(false);
+            this.tabPageDocumentInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDocumentPropertySettings)).EndInit();
             this.tabPageHTML.ResumeLayout(false);
             this.tabPageHTML.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownConversionDelay)).EndInit();
@@ -2123,6 +2281,20 @@
         private System.Windows.Forms.TextBox textBoxWCFPassword;
         private System.Windows.Forms.TextBox textBoxWCFUsername;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button buttonGetDocumentProperties;
+        public System.Windows.Forms.TextBox textBoxTemplateFile;
+        public System.Windows.Forms.TextBox textBoxTemplatePassword;
+        public System.Windows.Forms.TextBox textBoxTemplateUsername;
+        public System.Windows.Forms.Button buttonBrowseTemplate;
+        public System.Windows.Forms.Label label39;
+        public System.Windows.Forms.OpenFileDialog openFileDialogTemplate;
+        public System.Windows.Forms.Label label41;
+        public System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TabPage tabPageDocumentInformation;
+        private System.Windows.Forms.Button buttonAddDocProperty;
+        private System.Windows.Forms.DataGridView dataGridViewDocumentPropertySettings;
+        public System.Windows.Forms.CheckBox checkBoxGetDocPropertyiesIgnoreErros;
     }
 }
 

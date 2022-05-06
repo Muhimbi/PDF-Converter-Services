@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://types.muhimbi.com/2010/05/17" elementFormDefault="qualified" targetNamespace="http://types.muhimbi.com/2010/05/17" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:41734/Muhimbi.DocumentConverter.WebService/?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" />
+  <xs:complexType name="ArrayOfWatermark">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Watermark" nillable="true" type="tns:Watermark" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWatermark" nillable="true" type="tns:ArrayOfWatermark" />
+  <xs:complexType name="Watermark">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Container">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="PageOrientation" type="q1:PageOrientation" />
+          <xs:element minOccurs="0" name="StartPage" type="xs:int" />
+          <xs:element minOccurs="0" name="EndPage" type="xs:int" />
+          <xs:element minOccurs="0" name="PageInterval" type="xs:int" />
+          <xs:element minOccurs="0" name="PageRange" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrintOnly" type="xs:boolean" />
+          <xs:element minOccurs="0" name="StartSection" type="xs:int" />
+          <xs:element minOccurs="0" name="EndSection" type="xs:int" />
+          <xs:element minOccurs="0" name="SectionRange" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="PageType" type="q2:PageType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Watermark" nillable="true" type="tns:Watermark" />
+  <xs:complexType name="Container">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Element">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Elements" nillable="true" type="tns:ArrayOfElement" />
+          <xs:element minOccurs="0" name="Defaults" nillable="true" type="tns:Defaults" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Container" nillable="true" type="tns:Container" />
+  <xs:complexType name="Element">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="HPosition" type="q3:HPosition" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="VPosition" type="q4:VPosition" />
+      <xs:element minOccurs="0" name="X" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Y" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Width" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZOrder" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="ScaleMode" type="q5:ScaleMode" />
+      <xs:element minOccurs="0" name="ScaleX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScaleY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Transparency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineWidth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FillColor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Element" nillable="true" type="tns:Element" />
+  <xs:complexType name="ArrayOfElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Element" nillable="true" type="tns:Element" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfElement" nillable="true" type="tns:ArrayOfElement" />
+  <xs:complexType name="Defaults">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="HPosition" type="q6:HPosition" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="VPosition" type="q7:VPosition" />
+      <xs:element minOccurs="0" name="X" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Y" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rotation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Transparency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineWidth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FillColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontFamilyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FontSize" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="FontStyle" type="q8:FontStyle" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="HAlign" type="q9:HAlign" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="VAlign" type="q10:VAlign" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="WordWrap" type="q11:WordWrap" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="ScaleMode" type="q12:ScaleMode" />
+      <xs:element minOccurs="0" name="ScaleX" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScaleY" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Defaults" nillable="true" type="tns:Defaults" />
+  <xs:complexType name="Text">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Element">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FontFamilyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FontSize" nillable="true" type="xs:string" />
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="FontStyle" type="q13:FontStyle" />
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="WordWrap" type="q14:WordWrap" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="HAlign" type="q15:HAlign" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="VAlign" type="q16:VAlign" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Text" nillable="true" type="tns:Text" />
+  <xs:complexType name="Pdf">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Element">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PdfData" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Pdf" nillable="true" type="tns:Pdf" />
+  <xs:complexType name="Rtf">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Element">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RtfData" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Rtf" nillable="true" type="tns:Rtf" />
+  <xs:complexType name="Image">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Element">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ImageData" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Image" nillable="true" type="tns:Image" />
+  <xs:complexType name="Rectangle">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Element">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Rectangle" nillable="true" type="tns:Rectangle" />
+  <xs:complexType name="Ellipse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Element">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Ellipse" nillable="true" type="tns:Ellipse" />
+  <xs:complexType name="Line">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Element">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndX" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndY" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Line" nillable="true" type="tns:Line" />
+  <xs:complexType name="QRCode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Element">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="ErrorCorrectionLevel" type="q17:ErrorCorrectionLevel" />
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="InputMode" type="q18:BarcodeInputMode" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="Version" type="q19:QRCodeVersion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QRCode" nillable="true" type="tns:QRCode" />
+  <xs:complexType name="LinearBarcode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Element">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="BarcodeType" type="q20:BarcodeType" />
+          <xs:element minOccurs="0" name="OmitStartStopSymbols" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DisableCheckDigit" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ShowCheckDigit" type="xs:boolean" />
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="TextLocation" type="q21:BarcodeTextLocation" />
+          <xs:element minOccurs="0" name="BarcodeToTextGapHeight" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FontFamilyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FontSize" nillable="true" type="xs:string" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="FontStyle" type="q22:FontStyle" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data.Graphics" minOccurs="0" name="TextAlignment" type="q23:HAlign" />
+          <xs:element minOccurs="0" name="Margin" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LinearBarcode" nillable="true" type="tns:LinearBarcode" />
+</xs:schema>

@@ -95,6 +95,11 @@ namespace TestHarness
         public string textBoxToCBookmarkLabel;
         public List<KeyValuePair<string,string>> dataGridViewToCProperties;
         public string textBoxToCTemplate;
+        public string textBoxTemplateFile;
+        public string textBoxTemplateDomain;
+        public string textBoxTemplateUsername;
+        public string textBoxTemplatePassword;
+        public CheckState checkBoxGetDocPropertyiesIgnoreErros;
 
         /// <summary>
         /// Constructor that retrieves all the values from the form.
@@ -176,6 +181,19 @@ namespace TestHarness
                 }
             }
             textBoxToCTemplate = testForm.textBoxToCTemplate.Text;
+
+            textBoxTemplateFile = testForm.textBoxTemplateFile.Text == null ? null : testForm.textBoxTemplateFile.Text.Trim();
+            textBoxTemplateUsername = testForm.textBoxTemplateUsername.Text == null ? null : testForm.textBoxTemplateUsername.Text.Trim();
+            if (string.IsNullOrEmpty(textBoxTemplateUsername) == false && textBoxTemplateUsername.Contains("\\"))
+            {
+                string[] parts = textBoxTemplateUsername.Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
+                if (parts.Length > 0) 
+                    textBoxTemplateDomain = parts[0] == null ? null : parts[0].Trim();
+                if (parts.Length > 1) 
+                    textBoxTemplateUsername = parts[1] == null ? null : parts[1].Trim();
+            }
+            textBoxTemplatePassword = testForm.textBoxTemplatePassword.Text == null ? null : testForm.textBoxTemplatePassword.Text.Trim();
+            checkBoxGetDocPropertyiesIgnoreErros = testForm.checkBoxGetDocPropertyiesIgnoreErros.CheckState;
         }
     }
 }

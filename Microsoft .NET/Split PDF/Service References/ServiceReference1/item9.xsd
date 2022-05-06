@@ -19,4 +19,20 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ConverterSpecificSettings_PDF" nillable="true" type="tns:ConverterSpecificSettings_PDF" />
+  <xs:complexType name="ConverterSpecificSettings_PdfFormsDataImporter">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://types.muhimbi.com/2010/11/22" base="q5:ConverterSpecificSettings">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PdfTemplateData" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="PdfTemplateURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PdfTemplateUserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PdfTemplateDomain" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PdfTemplatePassword" nillable="true" type="xs:string" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="Flatten" type="q6:BooleanEnum" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ReadOnly" type="q7:BooleanEnum" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConverterSpecificSettings_PdfFormsDataImporter" nillable="true" type="tns:ConverterSpecificSettings_PdfFormsDataImporter" />
 </xs:schema>

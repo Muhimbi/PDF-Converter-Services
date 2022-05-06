@@ -64,6 +64,18 @@
         <soap:fault use="literal" name="WebServiceFaultExceptionFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="GetDocumentProperties">
+      <soap:operation soapAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDocumentProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WebServiceFaultExceptionFault">
+        <soap:fault use="literal" name="WebServiceFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="GetConfiguration">
       <soap:operation soapAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetConfiguration" style="document" />
       <wsdl:input>

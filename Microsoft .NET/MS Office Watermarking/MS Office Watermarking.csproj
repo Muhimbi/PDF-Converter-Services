@@ -103,6 +103,9 @@
     <None Include="Service References\ConversionService\MS_Office_Watermarking.ConversionService.Diagnostics.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ConversionService\MS_Office_Watermarking.ConversionService.GetDocumentPropertiesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ConversionService\MS_Office_Watermarking.ConversionService.Status.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

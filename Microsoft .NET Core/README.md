@@ -61,6 +61,7 @@ Sample								| Description
 [Split PDF](Split%20PDF/)								| Split a large PDF into smaller PDFs.
 [Watermarking](Watermarking/)							| Add watermarks to a PDF file.
 [Extract PDF Forms Data](Extract%20PDF%20Forms%20Data/)	| Extract AcroForms data from PDF document.
+[Import PDF Forms Data](Import%20PDF%20Forms%20Data/)	| Import PDF Forms Data into PDF document.
 
 <br/>
 

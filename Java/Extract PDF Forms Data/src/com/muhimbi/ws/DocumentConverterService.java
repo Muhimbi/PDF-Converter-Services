@@ -134,6 +134,23 @@ public interface DocumentConverterService {
 
     /**
      * 
+     * @param getDocumentPropertiesRequest
+     * @return
+     *     returns com.muhimbi.ws.GetDocumentPropertiesResult
+     * @throws DocumentConverterServiceGetDocumentPropertiesWebServiceFaultExceptionFaultFaultMessage
+     */
+    @WebMethod(operationName = "GetDocumentProperties", action = "http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDocumentProperties")
+    @WebResult(name = "GetDocumentPropertiesResult", targetNamespace = "http://services.muhimbi.com/2009/10/06")
+    @RequestWrapper(localName = "GetDocumentProperties", targetNamespace = "http://services.muhimbi.com/2009/10/06", className = "com.muhimbi.ws.GetDocumentProperties")
+    @ResponseWrapper(localName = "GetDocumentPropertiesResponse", targetNamespace = "http://services.muhimbi.com/2009/10/06", className = "com.muhimbi.ws.GetDocumentPropertiesResponse")
+    public GetDocumentPropertiesResult getDocumentProperties(
+        @WebParam(name = "getDocumentPropertiesRequest", targetNamespace = "http://services.muhimbi.com/2009/10/06")
+        GetDocumentPropertiesRequest getDocumentPropertiesRequest)
+        throws DocumentConverterServiceGetDocumentPropertiesWebServiceFaultExceptionFaultFaultMessage
+    ;
+
+    /**
+     * 
      * @return
      *     returns com.muhimbi.ws.Configuration
      * @throws DocumentConverterServiceGetConfigurationWebServiceFaultExceptionFaultFaultMessage

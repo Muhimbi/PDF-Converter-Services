@@ -574,6 +574,7 @@ namespace ConversionService
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_TIFF))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.EnumsProxy))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_PDF))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_PdfFormsDataImporter))]
     public partial class ConverterSpecificSettings : object
     {
     }
@@ -3516,6 +3517,8 @@ namespace ConversionService
         
         private bool EnableWebKitOfflineModeField;
         
+        private string ZoomField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string PaperSize
         {
@@ -3656,6 +3659,19 @@ namespace ConversionService
             set
             {
                 this.EnableWebKitOfflineModeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public string Zoom
+        {
+            get
+            {
+                return this.ZoomField;
+            }
+            set
+            {
+                this.ZoomField = value;
             }
         }
     }
@@ -4291,6 +4307,12 @@ namespace ConversionService
         
         private ConversionService.PrimeOCR_AccuracyLevel PrimeOCR_AccuracyLevelProxyField;
         
+        private ConversionService.PropertyCategories PropertyCategoriesProxyField;
+        
+        private ConversionService.WordBuiltInProperties WordBuiltInPropertiesProxyField;
+        
+        private ConversionService.PdfBuiltInProperties PdfBuiltInPropertiesField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ConversionService.OCRLanguage OCRLanguageProxy
         {
@@ -4314,6 +4336,45 @@ namespace ConversionService
             set
             {
                 this.PrimeOCR_AccuracyLevelProxyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ConversionService.PropertyCategories PropertyCategoriesProxy
+        {
+            get
+            {
+                return this.PropertyCategoriesProxyField;
+            }
+            set
+            {
+                this.PropertyCategoriesProxyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ConversionService.WordBuiltInProperties WordBuiltInPropertiesProxy
+        {
+            get
+            {
+                return this.WordBuiltInPropertiesProxyField;
+            }
+            set
+            {
+                this.WordBuiltInPropertiesProxyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public ConversionService.PdfBuiltInProperties PdfBuiltInProperties
+        {
+            get
+            {
+                return this.PdfBuiltInPropertiesField;
+            }
+            set
+            {
+                this.PdfBuiltInPropertiesField = value;
             }
         }
     }
@@ -4441,6 +4502,118 @@ namespace ConversionService
             set
             {
                 this.ExcludeAttachmentTypesField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ConverterSpecificSettings_PdfFormsDataImporter", Namespace="http://types.muhimbi.com/2014/04/16")]
+    public partial class ConverterSpecificSettings_PdfFormsDataImporter : ConversionService.ConverterSpecificSettings
+    {
+        
+        private byte[] PdfTemplateDataField;
+        
+        private string PdfTemplateURLField;
+        
+        private string PdfTemplateUserNameField;
+        
+        private string PdfTemplateDomainField;
+        
+        private string PdfTemplatePasswordField;
+        
+        private ConversionService.BooleanEnum FlattenField;
+        
+        private ConversionService.BooleanEnum ReadOnlyField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] PdfTemplateData
+        {
+            get
+            {
+                return this.PdfTemplateDataField;
+            }
+            set
+            {
+                this.PdfTemplateDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PdfTemplateURL
+        {
+            get
+            {
+                return this.PdfTemplateURLField;
+            }
+            set
+            {
+                this.PdfTemplateURLField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PdfTemplateUserName
+        {
+            get
+            {
+                return this.PdfTemplateUserNameField;
+            }
+            set
+            {
+                this.PdfTemplateUserNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string PdfTemplateDomain
+        {
+            get
+            {
+                return this.PdfTemplateDomainField;
+            }
+            set
+            {
+                this.PdfTemplateDomainField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public string PdfTemplatePassword
+        {
+            get
+            {
+                return this.PdfTemplatePasswordField;
+            }
+            set
+            {
+                this.PdfTemplatePasswordField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public ConversionService.BooleanEnum Flatten
+        {
+            get
+            {
+                return this.FlattenField;
+            }
+            set
+            {
+                this.FlattenField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public ConversionService.BooleanEnum ReadOnly
+        {
+            get
+            {
+                return this.ReadOnlyField;
+            }
+            set
+            {
+                this.ReadOnlyField = value;
             }
         }
     }
@@ -5128,6 +5301,159 @@ namespace ConversionService
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Level7 = 9999999,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PropertyCategories", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum PropertyCategories : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BuiltIn = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OfficeBuiltInProperties = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OfficeCustomProperties = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PdfBuiltInProperties = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PdfCustomProperties = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PdfXmp = 5,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WordBuiltInProperties", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum WordBuiltInProperties : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Title = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Subject = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Author = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Keywords = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Comments = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Template = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LastAuthor = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Revision = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AppName = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeLastPrinted = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeCreated = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeLastSaved = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        VBATotalEdit = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Pages = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Words = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Characters = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Security = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Category = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Manager = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Company = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Bytes = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Lines = 21,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Paras = 22,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Notes = 23,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CharsWSpaces = 24,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PdfBuiltInProperties", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum PdfBuiltInProperties : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Title = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Author = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Subject = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Keywords = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CreationDate = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ModificationDate = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Creator = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Producer = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PdfVersion = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PageSize = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TaggedPdf = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Pages = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FastWebView = 12,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
@@ -6792,6 +7118,546 @@ namespace ConversionService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetDocumentPropertiesRequest", Namespace="http://types.muhimbi.com/2009/10/06")]
+    public partial class GetDocumentPropertiesRequest : object
+    {
+        
+        private byte[] SourceFileField;
+        
+        private ConversionService.OpenOptions OpenOptionsField;
+        
+        private ConversionService.DocumentPropertySetting[] PropertySettingsField;
+        
+        private ConversionService.BooleanEnum IgnoreErrorsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] SourceFile
+        {
+            get
+            {
+                return this.SourceFileField;
+            }
+            set
+            {
+                this.SourceFileField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public ConversionService.OpenOptions OpenOptions
+        {
+            get
+            {
+                return this.OpenOptionsField;
+            }
+            set
+            {
+                this.OpenOptionsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public ConversionService.DocumentPropertySetting[] PropertySettings
+        {
+            get
+            {
+                return this.PropertySettingsField;
+            }
+            set
+            {
+                this.PropertySettingsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public ConversionService.BooleanEnum IgnoreErrors
+        {
+            get
+            {
+                return this.IgnoreErrorsField;
+            }
+            set
+            {
+                this.IgnoreErrorsField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DocumentPropertySetting", Namespace="http://types.muhimbi.com/2009/10/06")]
+    public partial class DocumentPropertySetting : object
+    {
+        
+        private string CategoryField;
+        
+        private string[] NamesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Category
+        {
+            get
+            {
+                return this.CategoryField;
+            }
+            set
+            {
+                this.CategoryField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] Names
+        {
+            get
+            {
+                return this.NamesField;
+            }
+            set
+            {
+                this.NamesField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetDocumentPropertiesResult", Namespace="http://types.muhimbi.com/2009/10/06")]
+    public partial class GetDocumentPropertiesResult : object
+    {
+        
+        private ConversionService.DocumentProperty[] PropertiesField;
+        
+        private string[] IgnoredErrorsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ConversionService.DocumentProperty[] Properties
+        {
+            get
+            {
+                return this.PropertiesField;
+            }
+            set
+            {
+                this.PropertiesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public string[] IgnoredErrors
+        {
+            get
+            {
+                return this.IgnoredErrorsField;
+            }
+            set
+            {
+                this.IgnoredErrorsField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DocumentProperty", Namespace="http://types.muhimbi.com/2009/10/06")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentSingleProperty))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentArrayProperty))]
+    public partial class DocumentProperty : object
+    {
+        
+        private string CategoryField;
+        
+        private string NameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Category
+        {
+            get
+            {
+                return this.CategoryField;
+            }
+            set
+            {
+                this.CategoryField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DocumentSingleProperty", Namespace="http://types.muhimbi.com/2009/10/06")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OpenOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConversionSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkOptions_WordProcessing))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.WebServiceFaultException))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ProcessingOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.SourceFile[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.SourceFile))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.FileMergeSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MergeSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.FileSplitOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BatchResults))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BatchResult[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BatchResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.GetDocumentPropertiesRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentPropertySetting[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentPropertySetting))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.GetDocumentPropertiesResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentProperty[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentProperty))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentArrayProperty))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Configuration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterConfiguration[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterConfiguration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DiagnosticRequestItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DiagnosticRequestItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Diagnostics))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DiagnosticResultItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DiagnosticResultItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MacroSecurityOption))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OutputFormat))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConversionRange))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConversionQuality))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFProfile))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.SecurityOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConversionFidelities))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkGenerationOption))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.RevisionsAndCommentsMarkupMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.RevisionsAndCommentsDisplayMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRLanguage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PropertyCategories))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.WordBuiltInProperties))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PdfBuiltInProperties))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PresentationsPrintOutputType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BooleanEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ContentScale))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MergeMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.UnsupportedFileBehaviour))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.CadConversionElementType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.CadEmptyLayoutDetectionMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.CadLayoutSortOrder))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.HTMLScaleMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.HTMLRenderingEngine))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.AuthenticationMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MediaType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MSGPlainTextLineBreaks))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MSGBestBodyMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MSGEmailAddressDisplayMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MSGEmbeddedObjectDisplayMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MSGEmbeddedObjectIconDisplayMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ForceMessageHeaderEncoding))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFConvertAttachmentMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFPageLayout))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFNavigationPane))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFPageScalingMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.NamedDestinationProcessingMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRPerformance))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCROutputType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.TOCLocation))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentStartPage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.WebServiceExceptionType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.FileSplitType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OperationType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OperationStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.SystemSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.TaskMonitorSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Spreadsheets))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.SubscriptionSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Watermark[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Watermark))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Container))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Element))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Element[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Defaults))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Text))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Pdf))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Rtf))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Image))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Rectangle))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Ellipse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Line))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.QRCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.LinearBarcode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.HPosition))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.VPosition))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ScaleMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.FontStyle))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.HAlign))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.VAlign))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.WordWrap))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ErrorCorrectionLevel))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BarcodeInputMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.QRCodeVersion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BarcodeType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BarcodeTextLocation))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PageOrientation))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PageType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_WordProcessing))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Presentations))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Image))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_InfoPath))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.InfoPathView[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.InfoPathView))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Cad))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.CadConversionElement[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.CadConversionElement))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_HTML))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_MSG))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_CommandLineConverter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_TIFF))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkMapping[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkMapping))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCREngineSpecificSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCREngineSpecificSettings_PrimeOCR))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.EnumsProxy))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRRegion[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRRegion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.RegionText[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.RegionText))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_AccuracyLevel))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_Deskew))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_ImageProcessingOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_LexicalChecking))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_PageQuality))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_PrintType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_AutoZone))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_ZoneContent))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_PDF))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_PdfFormsDataImporter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OutputFormatSpecificSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OutputFormatSpecificSettings_PDF))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFViewerPreferences))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.TOCSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.NameValuePair[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.NameValuePair))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OperationTypeConfiguration[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OperationTypeConfiguration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.StatusRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.StatusRequestItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.StatusRequestItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Status))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.StatusResultItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.StatusResultItem))]
+    public partial class DocumentSingleProperty : ConversionService.DocumentProperty
+    {
+        
+        private object ValueField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public object Value
+        {
+            get
+            {
+                return this.ValueField;
+            }
+            set
+            {
+                this.ValueField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DocumentArrayProperty", Namespace="http://types.muhimbi.com/2009/10/06")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OpenOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConversionSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkOptions_WordProcessing))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.WebServiceFaultException))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ProcessingOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.SourceFile[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.SourceFile))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.FileMergeSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MergeSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.FileSplitOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BatchResults))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BatchResult[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BatchResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.GetDocumentPropertiesRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentPropertySetting[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentPropertySetting))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.GetDocumentPropertiesResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentProperty[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentProperty))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentSingleProperty))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Configuration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterConfiguration[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterConfiguration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DiagnosticRequestItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DiagnosticRequestItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Diagnostics))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DiagnosticResultItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DiagnosticResultItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MacroSecurityOption))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OutputFormat))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConversionRange))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConversionQuality))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFProfile))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.SecurityOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConversionFidelities))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkGenerationOption))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.RevisionsAndCommentsMarkupMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.RevisionsAndCommentsDisplayMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRLanguage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PropertyCategories))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.WordBuiltInProperties))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PdfBuiltInProperties))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PresentationsPrintOutputType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BooleanEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ContentScale))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MergeMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.UnsupportedFileBehaviour))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.CadConversionElementType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.CadEmptyLayoutDetectionMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.CadLayoutSortOrder))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.HTMLScaleMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.HTMLRenderingEngine))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.AuthenticationMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MediaType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MSGPlainTextLineBreaks))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MSGBestBodyMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MSGEmailAddressDisplayMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MSGEmbeddedObjectDisplayMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.MSGEmbeddedObjectIconDisplayMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ForceMessageHeaderEncoding))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFConvertAttachmentMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFPageLayout))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFNavigationPane))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFPageScalingMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.NamedDestinationProcessingMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRPerformance))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCROutputType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.TOCLocation))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.DocumentStartPage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.WebServiceExceptionType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.FileSplitType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OperationType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OperationStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.SystemSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.TaskMonitorSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Spreadsheets))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.SubscriptionSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Watermark[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Watermark))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Container))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Element))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Element[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Defaults))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Text))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Pdf))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Rtf))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Image))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Rectangle))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Ellipse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Line))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.QRCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.LinearBarcode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.HPosition))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.VPosition))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ScaleMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.FontStyle))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.HAlign))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.VAlign))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.WordWrap))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ErrorCorrectionLevel))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BarcodeInputMode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.QRCodeVersion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BarcodeType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BarcodeTextLocation))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PageOrientation))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PageType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_WordProcessing))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Presentations))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Image))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_InfoPath))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.InfoPathView[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.InfoPathView))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_Cad))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.CadConversionElement[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.CadConversionElement))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_HTML))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_MSG))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_CommandLineConverter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_TIFF))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkMapping[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.BookmarkMapping))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCREngineSpecificSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCREngineSpecificSettings_PrimeOCR))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.EnumsProxy))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRRegion[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRRegion))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OCRResult))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.RegionText[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.RegionText))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_AccuracyLevel))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_Deskew))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_ImageProcessingOptions))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_LexicalChecking))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_PageQuality))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_PrintType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_AutoZone))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PrimeOCR_ZoneContent))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_PDF))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.ConverterSpecificSettings_PdfFormsDataImporter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OutputFormatSpecificSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OutputFormatSpecificSettings_PDF))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.PDFViewerPreferences))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.TOCSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.NameValuePair[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.NameValuePair))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OperationTypeConfiguration[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.OperationTypeConfiguration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.StatusRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.StatusRequestItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.StatusRequestItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.Status))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.StatusResultItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ConversionService.StatusResultItem))]
+    public partial class DocumentArrayProperty : ConversionService.DocumentProperty
+    {
+        
+        private object[] ValueField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public object[] Value
+        {
+            get
+            {
+                return this.ValueField;
+            }
+            set
+            {
+                this.ValueField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Configuration", Namespace="http://types.muhimbi.com/2009/10/06")]
     public partial class Configuration : object
     {
@@ -6926,113 +7792,6 @@ namespace ConversionService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OperationTypeConfiguration", Namespace="http://types.muhimbi.com/2018/01/11")]
-    public partial class OperationTypeConfiguration : object
-    {
-        
-        private ConversionService.OperationType OperationTypeField;
-        
-        private string DescriptionField;
-        
-        private bool EnabledField;
-        
-        private int MaximumInstancesField;
-        
-        private int MaximumRunDurationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ConversionService.OperationType OperationType
-        {
-            get
-            {
-                return this.OperationTypeField;
-            }
-            set
-            {
-                this.OperationTypeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public string Description
-        {
-            get
-            {
-                return this.DescriptionField;
-            }
-            set
-            {
-                this.DescriptionField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public bool Enabled
-        {
-            get
-            {
-                return this.EnabledField;
-            }
-            set
-            {
-                this.EnabledField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public int MaximumInstances
-        {
-            get
-            {
-                return this.MaximumInstancesField;
-            }
-            set
-            {
-                this.MaximumInstancesField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int MaximumRunDuration
-        {
-            get
-            {
-                return this.MaximumRunDurationField;
-            }
-            set
-            {
-                this.MaximumRunDurationField = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OperationType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum OperationType : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Convert = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Merge = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OCR = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Watermark = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Secure = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Split = 5,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DiagnosticRequestItem", Namespace="http://types.muhimbi.com/2009/10/06")]
     public partial class DiagnosticRequestItem : object
     {
@@ -7123,6 +7882,144 @@ namespace ConversionService
             set
             {
                 this.ConverterNameField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OperationType", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum OperationType : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Convert = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Merge = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OCR = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Watermark = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Secure = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Split = 5,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OperationStatus", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
+        "")]
+    public enum OperationStatus : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Allowed = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Denied_ExceededMaxConcurrentCalls = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Denied_ExceededConverterMaxConcurrentCalls = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Denied_ExceededOperationMaxConcurrentCalls = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Denied_UnsupportedOperationType = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Denied_UnsupportedFileType = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Denied_UnsupportedConverter = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Denied_OperationDisabled = 7,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OperationTypeConfiguration", Namespace="http://types.muhimbi.com/2018/01/11")]
+    public partial class OperationTypeConfiguration : object
+    {
+        
+        private ConversionService.OperationType OperationTypeField;
+        
+        private string DescriptionField;
+        
+        private bool EnabledField;
+        
+        private int MaximumInstancesField;
+        
+        private int MaximumRunDurationField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ConversionService.OperationType OperationType
+        {
+            get
+            {
+                return this.OperationTypeField;
+            }
+            set
+            {
+                this.OperationTypeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public string Description
+        {
+            get
+            {
+                return this.DescriptionField;
+            }
+            set
+            {
+                this.DescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public bool Enabled
+        {
+            get
+            {
+                return this.EnabledField;
+            }
+            set
+            {
+                this.EnabledField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int MaximumInstances
+        {
+            get
+            {
+                return this.MaximumInstancesField;
+            }
+            set
+            {
+                this.MaximumInstancesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int MaximumRunDuration
+        {
+            get
+            {
+                return this.MaximumRunDurationField;
+            }
+            set
+            {
+                this.MaximumRunDurationField = value;
             }
         }
     }
@@ -7321,37 +8218,6 @@ namespace ConversionService
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OperationStatus", Namespace="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" +
-        "")]
-    public enum OperationStatus : int
-    {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Allowed = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Denied_ExceededMaxConcurrentCalls = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Denied_ExceededConverterMaxConcurrentCalls = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Denied_ExceededOperationMaxConcurrentCalls = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Denied_UnsupportedOperationType = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Denied_UnsupportedFileType = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Denied_UnsupportedConverter = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Denied_OperationDisabled = 7,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("dotnet-svcutil", "1.0.4")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://services.muhimbi.com/2009/10/06", ConfigurationName="ConversionService.DocumentConverterService")]
     public interface DocumentConverterService
     {
@@ -7384,6 +8250,13 @@ namespace ConversionService
         [System.ServiceModel.FaultContractAttribute(typeof(ConversionService.WebServiceFaultException), Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/ProcessBatchWebSe" +
             "rviceFaultExceptionFault", Name="WebServiceFaultException", Namespace="http://types.muhimbi.com/2009/10/06")]
         System.Threading.Tasks.Task<ConversionService.BatchResults> ProcessBatchAsync(ConversionService.ProcessingOptions options);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDocumentProper" +
+            "ties", ReplyAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDocumentProper" +
+            "tiesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ConversionService.WebServiceFaultException), Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetDocumentProper" +
+            "tiesWebServiceFaultExceptionFault", Name="WebServiceFaultException", Namespace="http://types.muhimbi.com/2009/10/06")]
+        System.Threading.Tasks.Task<ConversionService.GetDocumentPropertiesResult> GetDocumentPropertiesAsync(ConversionService.GetDocumentPropertiesRequest getDocumentPropertiesRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetConfiguration", ReplyAction="http://services.muhimbi.com/2009/10/06/DocumentConverterService/GetConfigurationR" +
             "esponse")]
@@ -7477,6 +8350,11 @@ namespace ConversionService
         public System.Threading.Tasks.Task<ConversionService.BatchResults> ProcessBatchAsync(ConversionService.ProcessingOptions options)
         {
             return base.Channel.ProcessBatchAsync(options);
+        }
+        
+        public System.Threading.Tasks.Task<ConversionService.GetDocumentPropertiesResult> GetDocumentPropertiesAsync(ConversionService.GetDocumentPropertiesRequest getDocumentPropertiesRequest)
+        {
+            return base.Channel.GetDocumentPropertiesAsync(getDocumentPropertiesRequest);
         }
         
         public System.Threading.Tasks.Task<ConversionService.Configuration> GetConfigurationAsync()

@@ -80,6 +80,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetDocumentProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://types.muhimbi.com/2009/10/06" minOccurs="0" name="getDocumentPropertiesRequest" nillable="true" type="q11:GetDocumentPropertiesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentPropertiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://types.muhimbi.com/2009/10/06" minOccurs="0" name="GetDocumentPropertiesResult" nillable="true" type="q12:GetDocumentPropertiesResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetConfiguration">
     <xs:complexType>
       <xs:sequence />
@@ -88,35 +102,35 @@
   <xs:element name="GetConfigurationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://types.muhimbi.com/2009/10/06" minOccurs="0" name="GetConfigurationResult" nillable="true" type="q11:Configuration" />
+        <xs:element xmlns:q13="http://types.muhimbi.com/2009/10/06" minOccurs="0" name="GetConfigurationResult" nillable="true" type="q13:Configuration" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDiagnostics">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://types.muhimbi.com/2009/10/06" minOccurs="0" name="convertersToDiagnose" nillable="true" type="q12:ArrayOfDiagnosticRequestItem" />
+        <xs:element xmlns:q14="http://types.muhimbi.com/2009/10/06" minOccurs="0" name="convertersToDiagnose" nillable="true" type="q14:ArrayOfDiagnosticRequestItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDiagnosticsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://types.muhimbi.com/2009/10/06" minOccurs="0" name="GetDiagnosticsResult" nillable="true" type="q13:Diagnostics" />
+        <xs:element xmlns:q15="http://types.muhimbi.com/2009/10/06" minOccurs="0" name="GetDiagnosticsResult" nillable="true" type="q15:Diagnostics" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetStatus">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://types.muhimbi.com/2018/01/11" minOccurs="0" name="statusRequest" nillable="true" type="q14:StatusRequest" />
+        <xs:element xmlns:q16="http://types.muhimbi.com/2018/01/11" minOccurs="0" name="statusRequest" nillable="true" type="q16:StatusRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetStatusResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://types.muhimbi.com/2018/01/11" minOccurs="0" name="GetStatusResult" nillable="true" type="q15:Status" />
+        <xs:element xmlns:q17="http://types.muhimbi.com/2018/01/11" minOccurs="0" name="GetStatusResult" nillable="true" type="q17:Status" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

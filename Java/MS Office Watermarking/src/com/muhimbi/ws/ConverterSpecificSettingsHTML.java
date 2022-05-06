@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="AuthenticationMode" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data}AuthenticationMode" minOccurs="0"/>
  *         &lt;element name="MediaType" type="{http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data}MediaType" minOccurs="0"/>
  *         &lt;element name="EnableWebKitOfflineMode" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="Zoom" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
  *   &lt;/complexContent>
@@ -51,7 +52,8 @@ import javax.xml.bind.annotation.XmlType;
     "webKitViewPortSize",
     "authenticationMode",
     "mediaType",
-    "enableWebKitOfflineMode"
+    "enableWebKitOfflineMode",
+    "zoom"
 })
 public class ConverterSpecificSettingsHTML
     extends ConverterSpecificSettings
@@ -83,6 +85,8 @@ public class ConverterSpecificSettingsHTML
     protected MediaType mediaType;
     @XmlElement(name = "EnableWebKitOfflineMode")
     protected Boolean enableWebKitOfflineMode;
+    @XmlElementRef(name = "Zoom", namespace = "http://types.muhimbi.com/2010/11/22", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> zoom;
 
     /**
      * Gets the value of the paperSize property.
@@ -346,6 +350,30 @@ public class ConverterSpecificSettingsHTML
      */
     public void setEnableWebKitOfflineMode(Boolean value) {
         this.enableWebKitOfflineMode = value;
+    }
+
+    /**
+     * Gets the value of the zoom property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getZoom() {
+        return zoom;
+    }
+
+    /**
+     * Sets the value of the zoom property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setZoom(JAXBElement<String> value) {
+        this.zoom = value;
     }
 
 }

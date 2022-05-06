@@ -96,6 +96,9 @@
     <None Include="Service References\ConversionService\OCR_PDF.ConversionService.Diagnostics.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ConversionService\OCR_PDF.ConversionService.GetDocumentPropertiesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ConversionService\OCR_PDF.ConversionService.Status1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

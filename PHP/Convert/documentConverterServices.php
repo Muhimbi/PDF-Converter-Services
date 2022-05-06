@@ -17,6 +17,7 @@
 //                 11 Dec 2020 - BM - Refreshed proxies
 //                 01 Mar 2021 - BM - Refreshed proxies
 //                 15 Jul 2021 - BM - Refreshed proxies
+//                 05 Jan 2022 - BM - Refreshed proxies
 //
 //   This file was generated automatically using wsdl2php
 //   For details see https://goo.gl/B5skSn
@@ -96,6 +97,12 @@ class DocumentConverterService extends \SoapClient
     'FileSplitOptions' => 'FileSplitOptions',
     'BatchResults' => 'BatchResults',
     'BatchResult' => 'BatchResult',
+    'GetDocumentPropertiesRequest' => 'GetDocumentPropertiesRequest',
+    'DocumentPropertySetting' => 'DocumentPropertySetting',
+    'GetDocumentPropertiesResult' => 'GetDocumentPropertiesResult',
+    'DocumentProperty' => 'DocumentProperty',
+    'DocumentSingleProperty' => 'DocumentSingleProperty',
+    'DocumentArrayProperty' => 'DocumentArrayProperty',
     'Configuration' => 'Configuration',
     'ConverterConfiguration' => 'ConverterConfiguration',
     'DiagnosticRequestItem' => 'DiagnosticRequestItem',
@@ -111,13 +118,16 @@ class DocumentConverterService extends \SoapClient
     'ProcessChangesResponse' => 'ProcessChangesResponse',
     'ProcessBatch' => 'ProcessBatch',
     'ProcessBatchResponse' => 'ProcessBatchResponse',
+    'GetDocumentProperties' => 'GetDocumentProperties',
+    'GetDocumentPropertiesResponse' => 'GetDocumentPropertiesResponse',
     'GetConfiguration' => 'GetConfiguration',
     'GetConfigurationResponse' => 'GetConfigurationResponse',
     'GetDiagnostics' => 'GetDiagnostics',
     'GetDiagnosticsResponse' => 'GetDiagnosticsResponse',
     'GetStatus' => 'GetStatus',
     'GetStatusResponse' => 'GetStatusResponse',
-    'ConverterSpecificSettings_PDF' => 'ConverterSpecificSettings_PDF');
+    'ConverterSpecificSettings_PDF' => 'ConverterSpecificSettings_PDF',
+    'ConverterSpecificSettings_PdfFormsDataImporter' => 'ConverterSpecificSettings_PdfFormsDataImporter');
 
   /**
    * 
@@ -189,6 +199,17 @@ class DocumentConverterService extends \SoapClient
   public function ProcessBatch(ProcessBatch $parameters)
   {
     return $this->__soapCall('ProcessBatch', array($parameters));
+  }
+
+  /**
+   * 
+   * @param GetDocumentProperties $parameters
+   * @access public
+   * @return GetDocumentPropertiesResponse
+   */
+  public function GetDocumentProperties(GetDocumentProperties $parameters)
+  {
+    return $this->__soapCall('GetDocumentProperties', array($parameters));
   }
 
   /**
@@ -382,6 +403,68 @@ class OCRLanguage
   const Russian = 'Russian';
   const Spanish = 'Spanish';
   const Swedish = 'Swedish';
+
+
+}
+class PropertyCategories
+{
+  const __default = 'BuiltIn';
+  const BuiltIn = 'BuiltIn';
+  const OfficeBuiltInProperties = 'OfficeBuiltInProperties';
+  const OfficeCustomProperties = 'OfficeCustomProperties';
+  const PdfBuiltInProperties = 'PdfBuiltInProperties';
+  const PdfCustomProperties = 'PdfCustomProperties';
+  const PdfXmp = 'PdfXmp';
+
+
+}
+class WordBuiltInProperties
+{
+  const __default = 'Title';
+  const Title = 'Title';
+  const Subject = 'Subject';
+  const Author = 'Author';
+  const Keywords = 'Keywords';
+  const Comments = 'Comments';
+  const Template = 'Template';
+  const LastAuthor = 'LastAuthor';
+  const Revision = 'Revision';
+  const AppName = 'AppName';
+  const TimeLastPrinted = 'TimeLastPrinted';
+  const TimeCreated = 'TimeCreated';
+  const TimeLastSaved = 'TimeLastSaved';
+  const VBATotalEdit = 'VBATotalEdit';
+  const Pages = 'Pages';
+  const Words = 'Words';
+  const Characters = 'Characters';
+  const Security = 'Security';
+  const Category = 'Category';
+  const Manager = 'Manager';
+  const Company = 'Company';
+  const Bytes = 'Bytes';
+  const Lines = 'Lines';
+  const Paras = 'Paras';
+  const Notes = 'Notes';
+  const CharsWSpaces = 'CharsWSpaces';
+
+
+}
+class PdfBuiltInProperties
+{
+  const __default = 'Title';
+  const Title = 'Title';
+  const Author = 'Author';
+  const Subject = 'Subject';
+  const Keywords = 'Keywords';
+  const CreationDate = 'CreationDate';
+  const ModificationDate = 'ModificationDate';
+  const Creator = 'Creator';
+  const Producer = 'Producer';
+  const PdfVersion = 'PdfVersion';
+  const PageSize = 'PageSize';
+  const TaggedPdf = 'TaggedPdf';
+  const Pages = 'Pages';
+  const FastWebView = 'FastWebView';
 
 
 }
@@ -1553,6 +1636,13 @@ class ConverterSpecificSettings_HTML
    * @access public
    */
   public $EnableWebKitOfflineMode = null;
+
+  /**
+   * 
+   * @var string $Zoom
+   * @access public
+   */
+  public $Zoom = null;
 
   /**
    * 
@@ -3278,14 +3368,41 @@ class EnumsProxy
 
   /**
    * 
-   * @param OCRLanguage $OCRLanguageProxy
-   * @param PrimeOCR_AccuracyLevel $PrimeOCR_AccuracyLevelProxy
+   * @var PropertyCategories $PropertyCategoriesProxy
    * @access public
    */
-  public function __construct($OCRLanguageProxy, $PrimeOCR_AccuracyLevelProxy)
+  public $PropertyCategoriesProxy = null;
+
+  /**
+   * 
+   * @var WordBuiltInProperties $WordBuiltInPropertiesProxy
+   * @access public
+   */
+  public $WordBuiltInPropertiesProxy = null;
+
+  /**
+   * 
+   * @var PdfBuiltInProperties $PdfBuiltInProperties
+   * @access public
+   */
+  public $PdfBuiltInProperties = null;
+
+  /**
+   * 
+   * @param OCRLanguage $OCRLanguageProxy
+   * @param PrimeOCR_AccuracyLevel $PrimeOCR_AccuracyLevelProxy
+   * @param PropertyCategories $PropertyCategoriesProxy
+   * @param WordBuiltInProperties $WordBuiltInPropertiesProxy
+   * @param PdfBuiltInProperties $PdfBuiltInProperties
+   * @access public
+   */
+  public function __construct($OCRLanguageProxy, $PrimeOCR_AccuracyLevelProxy, $PropertyCategoriesProxy, $WordBuiltInPropertiesProxy, $PdfBuiltInProperties)
   {
     $this->OCRLanguageProxy = $OCRLanguageProxy;
     $this->PrimeOCR_AccuracyLevelProxy = $PrimeOCR_AccuracyLevelProxy;
+    $this->PropertyCategoriesProxy = $PropertyCategoriesProxy;
+    $this->WordBuiltInPropertiesProxy = $WordBuiltInPropertiesProxy;
+    $this->PdfBuiltInProperties = $PdfBuiltInProperties;
   }
 
 }
@@ -4360,6 +4477,169 @@ class BatchResult
   }
 
 }
+class GetDocumentPropertiesRequest
+{
+
+  /**
+   * 
+   * @var base64Binary $SourceFile
+   * @access public
+   */
+  public $SourceFile = null;
+
+  /**
+   * 
+   * @var OpenOptions $OpenOptions
+   * @access public
+   */
+  public $OpenOptions = null;
+
+  /**
+   * 
+   * @var DocumentPropertySetting[] $PropertySettings
+   * @access public
+   */
+  public $PropertySettings = null;
+
+  /**
+   * 
+   * @var BooleanEnum $IgnoreErrors
+   * @access public
+   */
+  public $IgnoreErrors = null;
+
+  /**
+   * 
+   * @param BooleanEnum $IgnoreErrors
+   * @access public
+   */
+  public function __construct($IgnoreErrors)
+  {
+    $this->IgnoreErrors = $IgnoreErrors;
+  }
+
+}
+class DocumentPropertySetting
+{
+
+  /**
+   * 
+   * @var string $Category
+   * @access public
+   */
+  public $Category = null;
+
+  /**
+   * 
+   * @var string[] $Names
+   * @access public
+   */
+  public $Names = null;
+
+  /**
+   * 
+   * @access public
+   */
+  public function __construct()
+  {
+  
+  }
+
+}
+class GetDocumentPropertiesResult
+{
+
+  /**
+   * 
+   * @var DocumentProperty[] $Properties
+   * @access public
+   */
+  public $Properties = null;
+
+  /**
+   * 
+   * @var string[] $IgnoredErrors
+   * @access public
+   */
+  public $IgnoredErrors = null;
+
+  /**
+   * 
+   * @access public
+   */
+  public function __construct()
+  {
+  
+  }
+
+}
+class DocumentProperty
+{
+
+  /**
+   * 
+   * @var string $Category
+   * @access public
+   */
+  public $Category = null;
+
+  /**
+   * 
+   * @var string $Name
+   * @access public
+   */
+  public $Name = null;
+
+  /**
+   * 
+   * @access public
+   */
+  public function __construct()
+  {
+  
+  }
+
+}
+class DocumentSingleProperty
+{
+
+  /**
+   * 
+   * @var anyType $Value
+   * @access public
+   */
+  public $Value = null;
+
+  /**
+   * 
+   * @access public
+   */
+  public function __construct()
+  {
+  
+  }
+
+}
+class DocumentArrayProperty
+{
+
+  /**
+   * 
+   * @var anyType[] $Value
+   * @access public
+   */
+  public $Value = null;
+
+  /**
+   * 
+   * @access public
+   */
+  public function __construct()
+  {
+  
+  }
+
+}
 class Configuration
 {
 
@@ -4802,6 +5082,48 @@ class ProcessBatchResponse
   }
 
 }
+class GetDocumentProperties
+{
+
+  /**
+   * 
+   * @var GetDocumentPropertiesRequest $getDocumentPropertiesRequest
+   * @access public
+   */
+  public $getDocumentPropertiesRequest = null;
+
+  /**
+   * 
+   * @param GetDocumentPropertiesRequest $getDocumentPropertiesRequest
+   * @access public
+   */
+  public function __construct($getDocumentPropertiesRequest)
+  {
+    $this->getDocumentPropertiesRequest = $getDocumentPropertiesRequest;
+  }
+
+}
+class GetDocumentPropertiesResponse
+{
+
+  /**
+   * 
+   * @var GetDocumentPropertiesResult $GetDocumentPropertiesResult
+   * @access public
+   */
+  public $GetDocumentPropertiesResult = null;
+
+  /**
+   * 
+   * @param GetDocumentPropertiesResult $GetDocumentPropertiesResult
+   * @access public
+   */
+  public function __construct($GetDocumentPropertiesResult)
+  {
+    $this->GetDocumentPropertiesResult = $GetDocumentPropertiesResult;
+  }
+
+}
 class GetConfiguration
 {
 
@@ -4997,6 +5319,71 @@ class ConverterSpecificSettings_PDF
     $this->AttachmentMergeMode = $AttachmentMergeMode;
     $this->UnsupportedAttachmentBehaviour = $UnsupportedAttachmentBehaviour;
     $this->BreakMergeOnError = $BreakMergeOnError;
+  }
+
+}
+class ConverterSpecificSettings_PdfFormsDataImporter
+{
+
+  /**
+   * 
+   * @var base64Binary $PdfTemplateData
+   * @access public
+   */
+  public $PdfTemplateData = null;
+
+  /**
+   * 
+   * @var string $PdfTemplateURL
+   * @access public
+   */
+  public $PdfTemplateURL = null;
+
+  /**
+   * 
+   * @var string $PdfTemplateUserName
+   * @access public
+   */
+  public $PdfTemplateUserName = null;
+
+  /**
+   * 
+   * @var string $PdfTemplateDomain
+   * @access public
+   */
+  public $PdfTemplateDomain = null;
+
+  /**
+   * 
+   * @var string $PdfTemplatePassword
+   * @access public
+   */
+  public $PdfTemplatePassword = null;
+
+  /**
+   * 
+   * @var BooleanEnum $Flatten
+   * @access public
+   */
+  public $Flatten = null;
+
+  /**
+   * 
+   * @var BooleanEnum $ReadOnly
+   * @access public
+   */
+  public $ReadOnly = null;
+
+  /**
+   * 
+   * @param BooleanEnum $Flatten
+   * @param BooleanEnum $ReadOnly
+   * @access public
+   */
+  public function __construct($Flatten, $ReadOnly)
+  {
+    $this->Flatten = $Flatten;
+    $this->ReadOnly = $ReadOnly;
   }
 
 }

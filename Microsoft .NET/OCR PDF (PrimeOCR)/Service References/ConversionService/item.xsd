@@ -148,11 +148,73 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BatchResult" nillable="true" type="tns:BatchResult" />
+  <xs:complexType name="GetDocumentPropertiesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SourceFile" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="OpenOptions" nillable="true" type="tns:OpenOptions" />
+      <xs:element minOccurs="0" name="PropertySettings" nillable="true" type="tns:ArrayOfDocumentPropertySetting" />
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="IgnoreErrors" type="q34:BooleanEnum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDocumentPropertiesRequest" nillable="true" type="tns:GetDocumentPropertiesRequest" />
+  <xs:complexType name="ArrayOfDocumentPropertySetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentPropertySetting" nillable="true" type="tns:DocumentPropertySetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentPropertySetting" nillable="true" type="tns:ArrayOfDocumentPropertySetting" />
+  <xs:complexType name="DocumentPropertySetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Names" nillable="true" type="q35:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentPropertySetting" nillable="true" type="tns:DocumentPropertySetting" />
+  <xs:complexType name="GetDocumentPropertiesResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Properties" nillable="true" type="tns:ArrayOfDocumentProperty" />
+      <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IgnoredErrors" nillable="true" type="q36:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetDocumentPropertiesResult" nillable="true" type="tns:GetDocumentPropertiesResult" />
+  <xs:complexType name="ArrayOfDocumentProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentProperty" nillable="true" type="tns:DocumentProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentProperty" nillable="true" type="tns:ArrayOfDocumentProperty" />
+  <xs:complexType name="DocumentProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentProperty" nillable="true" type="tns:DocumentProperty" />
+  <xs:complexType name="DocumentSingleProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DocumentProperty">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentSingleProperty" nillable="true" type="tns:DocumentSingleProperty" />
+  <xs:complexType name="DocumentArrayProperty">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DocumentProperty">
+        <xs:sequence>
+          <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Value" nillable="true" type="q37:ArrayOfanyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentArrayProperty" nillable="true" type="tns:DocumentArrayProperty" />
   <xs:complexType name="Configuration">
     <xs:sequence>
       <xs:element minOccurs="0" name="ConversionServerAddress" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Converters" nillable="true" type="tns:ArrayOfConverterConfiguration" />
-      <xs:element xmlns:q34="http://types.muhimbi.com/2018/01/11" minOccurs="0" name="OperationTypes" nillable="true" type="q34:ArrayOfOperationTypeConfiguration" />
+      <xs:element xmlns:q38="http://types.muhimbi.com/2018/01/11" minOccurs="0" name="OperationTypes" nillable="true" type="q38:ArrayOfOperationTypeConfiguration" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Configuration" nillable="true" type="tns:Configuration" />
@@ -165,10 +227,10 @@
   <xs:complexType name="ConverterConfiguration">
     <xs:sequence>
       <xs:element minOccurs="0" name="ConverterName" nillable="true" type="xs:string" />
-      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="SupportedFidelity" type="q35:ConversionFidelities" />
-      <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SupportedFileExtensions" nillable="true" type="q36:ArrayOfstring" />
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="SupportedFidelity" type="q39:ConversionFidelities" />
+      <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SupportedFileExtensions" nillable="true" type="q40:ArrayOfstring" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SupportedOutputFormats" nillable="true" type="q37:ArrayOfstring" />
+      <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SupportedOutputFormats" nillable="true" type="q41:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ConverterConfiguration" nillable="true" type="tns:ConverterConfiguration" />
@@ -199,7 +261,7 @@
   <xs:complexType name="DiagnosticResultItem">
     <xs:sequence>
       <xs:element minOccurs="0" name="Valid" type="xs:boolean" />
-      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ExceptionType" type="q38:WebServiceExceptionType" />
+      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Muhimbi.DocumentConverter.WebService.Data" minOccurs="0" name="ExceptionType" type="q42:WebServiceExceptionType" />
       <xs:element minOccurs="0" name="ConverterName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

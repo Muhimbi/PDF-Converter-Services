@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Net;
 using System.Security.Authentication;
@@ -39,7 +40,7 @@ namespace TestHarness
     /// </summary>
     /// <remarks>
     /// For more examples and the full object model see 
-    /// http://support.muhimbi.com/entries/21272078-Where-can-I-find-details-about-the-PDF-Converter-s-object-model-
+    /// https://support.muhimbi.com/hc/en-us/articles/228089927-Where-can-I-find-details-about-the-PDF-Converter-s-object-model-
     /// </remarks>
     public partial class TestForm : Form
     {
@@ -52,6 +53,9 @@ namespace TestHarness
         private const SecurityProtocolType Tls11 = (SecurityProtocolType)_Tls11;
         private const SslProtocols _Tls12 = (SslProtocols)0x00000C00;
         private const SecurityProtocolType Tls12 = (SecurityProtocolType)_Tls12;
+
+        List<DocPropertySetting> docPropertySettings;
+        BindingList<DocPropertySetting> docPropertySettingsBindingList;
 
         /// <summary>
         /// Initialise the form.
@@ -97,6 +101,12 @@ namespace TestHarness
             string[] formats = Enum.GetNames(typeof(OutputFormat));
             comboBoxFormat.Items.AddRange(formats);
             comboBoxFormat.Text = OutputFormat.PDF.ToString();
+
+            // Initialize data grid for document property settings
+            docPropertySettings = new List<DocPropertySetting>();
+            docPropertySettingsBindingList = new BindingList<DocPropertySetting>(docPropertySettings);
+            dataGridViewDocumentPropertySettings.DataSource = new BindingSource(docPropertySettingsBindingList, null);
+            dataGridViewDocumentPropertySettings.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
 
@@ -233,6 +243,10 @@ namespace TestHarness
                             // ** Include sample watermarks if enabled.
                             if (formSettings.checkBoxIncludeSampleWatermarks)
                                 conversionSettings.Watermarks = CreateWatermarks();
+
+                            // Use specified template information if XML is converted into PDF (InfoPath) or
+                            // FDF, XFDF, XML is converted into PDF (PDF Forms Data Import)
+                            conversionSettings.ConverterSpecificSettings = GetConverterSpecificSetting(sourceFileName, formSettings);
 
                             // ** Add converter specific settings if needed. Disabled in this sample
                             /*
@@ -449,6 +463,115 @@ namespace TestHarness
             }
         }
 
+        private void GetDocumentProperties(string sourceFileName)
+        {
+            // ** Retrieve the form's data on the main thread
+            TestFormSettings formSettings = new TestFormSettings(this);
+
+            ThreadStart ts = new ThreadStart(delegate
+            {
+                DocumentConverterServiceClient client = null;
+                byte[] sourceFile = null;
+
+                try
+                {
+                    Interlocked.Increment(ref _threadCount);
+
+                    // ** Open the web service
+                    client = OpenService(formSettings.textBoxServiceURL, formSettings.wcfMessageSize);
+                    Debug("Client opened");
+
+                    //** Set the various open options as specified in the form.
+                    OpenOptions openOptions = new OpenOptions();
+                    openOptions.Password = formSettings.textBoxPassword;
+
+                    openOptions.OriginalFileName = Path.GetFileName(sourceFileName);
+                    openOptions.FileExtension = Path.GetExtension(sourceFileName);
+                    // ** Open the source file and read the contents into a byte array
+                    Debug("Opening file: " + sourceFileName, false);
+                    sourceFile = File.ReadAllBytes(sourceFileName);
+                    Debug("File length: " + sourceFile.Length);
+
+                    // Resolve property settings
+                    List<DocumentPropertySetting> propertySettings = new List<DocumentPropertySetting>();
+                    foreach(DocPropertySetting item in docPropertySettings)
+                    {
+                        propertySettings.Add(new DocumentPropertySetting
+                        {
+                            Category = item.Category,
+                            Names = item.Names == null ? null : item.Names.Split(new[] { ", ", "," }, StringSplitOptions.RemoveEmptyEntries)
+                        });
+                    }
+
+                    BooleanEnum ignoreErrors = BooleanEnum.Default;
+                    if (formSettings.checkBoxGetDocPropertyiesIgnoreErros == CheckState.Checked) ignoreErrors = BooleanEnum.True;
+                    else if (formSettings.checkBoxGetDocPropertyiesIgnoreErros == CheckState.Unchecked) ignoreErrors = BooleanEnum.False;
+
+                    // Create request
+                    GetDocumentPropertiesRequest request = new GetDocumentPropertiesRequest
+                    {
+                        OpenOptions = openOptions,
+                        SourceFile = sourceFile,
+                        IgnoreErrors = ignoreErrors,
+                        PropertySettings = propertySettings.ToArray(),
+                    };
+
+                    // ** Carry out the actual conversion
+                    GetDocumentPropertiesResult result;
+                    result = client.GetDocumentProperties(request);
+
+                    // Display result in the debug window
+                    Debug(string.Format("Resolved properties ({0}):", result.Properties == null ? 0 : result.Properties.Length));
+                    foreach (var property in result.Properties)
+                    {
+                        try
+                        {
+                            if (property is DocumentSingleProperty)
+                            {
+                                Debug(string.Format("\t{0} - {1}: {2}", property.Category, property.Name, ((DocumentSingleProperty)property).Value));
+                            }
+                            else if (property is DocumentArrayProperty)
+                            {
+                                StringBuilder value = new StringBuilder(string.Format("\t{0} - {1}:", property.Category, property.Name));
+                                int i = 0;
+                                foreach(object item in ((DocumentArrayProperty)property).Value)
+                                {
+                                    value.Append(string.Format("\r\n{0} : {1}", i, item));
+                                    i++;
+                                }
+                                Debug(value.ToString());
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug(ex.Message);
+                        }
+                    }
+
+                    Debug(string.Format("Ignored errors ({0}):", result.IgnoredErrors == null ? 0 : result.IgnoredErrors.Length));
+                    foreach (var error in result.IgnoredErrors)
+                    {
+                        Debug("\t" + error);
+                    }
+                }
+                catch (FaultException<WebServiceFaultException> ex)
+                {
+                    Debug("FaultException occurred: ExceptionType: " + ex.Detail.ExceptionType.ToString() + "\r\n" + ex.ToString(), true);
+                }
+                catch (Exception ex)
+                {
+                    Debug(ex.ToString(), true);
+                }
+                finally
+                {
+                    CloseService(client);
+                    Interlocked.Decrement(ref _threadCount);
+                }
+            });
+
+            Thread t = new Thread(ts);
+            t.Start();
+        }
 
         /// <summary>
         /// Open the service using the specified address and configure the bindings.
@@ -637,6 +760,212 @@ namespace TestHarness
             return null;
         }
 
+        /// <summary>
+        /// In case we are converting InfoPath documents or importing Forms Data into PDF
+        /// we must specify a template file (.xsn for InfoPath or .pdf for forms data import)
+        /// </summary>
+        /// <param name="sourceFileName">The name of the source file</param>
+        /// <param name="formSettings"></param>
+        /// <returns>Converter specific settings for eother InfoPath or PDF Forms Data import. Null otherwise.</returns>
+        private ConverterSpecificSettings GetConverterSpecificSetting(string sourceFileName, TestFormSettings formSettings)
+        {
+            // Don't create if none of these are specified
+            if (string.IsNullOrEmpty(formSettings.textBoxTemplateFile)
+                && string.IsNullOrEmpty(formSettings.textBoxTemplateDomain)
+                && string.IsNullOrEmpty(formSettings.textBoxTemplateUsername)
+                && string.IsNullOrEmpty(formSettings.textBoxTemplatePassword))
+                return null;
+
+            OutputFormat outputFormat = (OutputFormat)Enum.Parse(typeof(OutputFormat), formSettings.comboBoxFormat, true);
+
+            if (IsInfoPathDocument(sourceFileName))
+            {
+                // We are converting an InfoPath document
+
+                // Fill converter specific settings
+                ConverterSpecificSettings_InfoPath css = new ConverterSpecificSettings_InfoPath();
+                // Set required web service defaults (based on config)
+                css.AttachmentMergeMode = MergeMode.Default;
+                css.ConvertAttachments = true;
+                css.ProcessFullTrustForms = true;
+                css.StripDataObjects = true;
+                css.StripDotNETCode = true;
+                css.UseNativePrintEngine = true;
+                // Set template file related parameters
+                if (File.Exists(formSettings.textBoxTemplateFile))
+                {
+                    css.XSNData = string.IsNullOrEmpty(formSettings.textBoxTemplateFile) ? null : File.ReadAllBytes(formSettings.textBoxTemplateFile);
+                }
+                css.XSNDomain = string.IsNullOrEmpty(formSettings.textBoxTemplateDomain) ? null : formSettings.textBoxTemplateDomain;
+                css.XSNUserName = string.IsNullOrEmpty(formSettings.textBoxTemplateUsername) ? null : formSettings.textBoxTemplateUsername;
+                css.XSNPassword = string.IsNullOrEmpty(formSettings.textBoxTemplatePassword) ? null : formSettings.textBoxTemplatePassword;
+
+                return css;
+            }
+            else if (IsPdfFormsDataImport(sourceFileName, outputFormat))
+            {
+                // We are importing Forms Data into a PDF template
+
+                if (formSettings.textBoxTemplateFile != null)
+                {
+                    // We have either template file or URL specified
+                    // Create specific settings
+                    ConverterSpecificSettings_PdfFormsDataImporter css = new ConverterSpecificSettings_PdfFormsDataImporter();
+                    if (File.Exists(formSettings.textBoxTemplateFile))
+                    {
+                        css.PdfTemplateData = string.IsNullOrEmpty(formSettings.textBoxTemplateFile) ? null : File.ReadAllBytes(formSettings.textBoxTemplateFile);
+                    }
+                    else
+                    {
+                        css.PdfTemplateURL = string.IsNullOrEmpty(formSettings.textBoxTemplateFile) ? null : formSettings.textBoxTemplateFile;
+                    }
+                    css.PdfTemplateDomain = string.IsNullOrEmpty(formSettings.textBoxTemplateDomain) ? null : formSettings.textBoxTemplateDomain;
+                    css.PdfTemplateUserName = string.IsNullOrEmpty(formSettings.textBoxTemplateUsername) ? null : formSettings.textBoxTemplateUsername;
+                    css.PdfTemplatePassword = string.IsNullOrEmpty(formSettings.textBoxTemplatePassword) ? null : formSettings.textBoxTemplatePassword;
+
+                    return css;
+                }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Check if the input file is an InfoPath document or not
+        /// </summary>
+        /// <param name="sourceFileName">The full path of the source file</param>
+        /// <returns>True if the source file is an InfoPath document</returns>
+        private bool IsInfoPathDocument(string sourceFileName)
+        {
+            // Get the extension
+            string sourceFileExtension = Path.GetExtension(sourceFileName);
+            if (".infopathxml".Equals(sourceFileExtension, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+            else if (".xml".Equals(sourceFileExtension, StringComparison.OrdinalIgnoreCase))
+            {
+                // If the file is an XML file then look for the InfoPath specific token inside
+                return CheckMSOfficeXmlFileType(sourceFileName, "progid=\"InfoPath.Document\"");
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Checks if the conversion is potentially a PDF Forms Data Import.
+        /// This is not 100% correct as XML files are tricky. Majority of the 
+        /// false cases are ruled out.
+        /// </summary>
+        /// <param name="sourceFileName">The full path of the source file</param>
+        /// <param name="outputFormat">The output format</param>
+        /// <returns>True if the conversion if potentially a PDF Forms Data Import</returns>
+        private bool IsPdfFormsDataImport(string sourceFileName, OutputFormat outputFormat)
+        {
+            // Only converting into a PDF can be PDF Forms Data Import
+            if(outputFormat == OutputFormat.PDF)
+            {
+                string sourceExtension = Path.GetExtension(sourceFileName);
+
+                if (".XFDF".Equals(sourceExtension, StringComparison.OrdinalIgnoreCase)
+                      || ".FDF".Equals(sourceExtension, StringComparison.OrdinalIgnoreCase))
+                {
+                    // The source file is XFDF or FDF so this is a PDF Forms Data Import
+                    return true;
+                }
+                else if (".XML".Equals(sourceExtension, StringComparison.OrdinalIgnoreCase))
+                {
+                    // The source file is an XML document. We have to make sure that it is not an Office XML
+                    return IsMSOfficeXmlDocument(sourceFileName) == false;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Checks if a file is an MS Office XML document or not.
+        /// </summary>
+        /// <param name="sourceFileName">The full path of the source file</param>
+        /// <returns>True if the source file is an MS Office XML document</returns>
+        private bool IsMSOfficeXmlDocument(string sourceFileName)
+        {
+            string sourceExtension = Path.GetExtension(sourceFileName);
+
+            // Only XML files can be MS Office XML documents
+            if (".XML".Equals(sourceExtension, StringComparison.OrdinalIgnoreCase))
+            {
+                List<string> msOfficeXmlTokens = new List<string>
+                {
+                    "progid=\"Word.Document\"",
+                    "progid=\"Excel.Sheet\"",
+                    "progid=\"PowerPoint.Show\"",
+                    "progid=\"InfoPath.Document\""
+                };
+
+                foreach (string xmlToken in msOfficeXmlTokens)
+                {
+                    if (CheckMSOfficeXmlFileType(sourceFileName, xmlToken)) return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// This method check is the first 1000 characters of the supplied file
+        /// contains the xmlToken or not.
+        /// </summary>
+        /// <param name="sourceFileName">The fill path of the file</param>
+        /// <param name="xmlToken">The XML token we are looking for</param>
+        /// <returns>True if the token is found in the first 1000 characters of the file</returns>
+        private bool CheckMSOfficeXmlFileType(string sourceFileName, string xmlToken)
+        {
+            try
+            {
+                // Read first 1000 bytes of the source file and
+                // look for the specified token
+                using (Stream fs = File.OpenRead(sourceFileName))
+                using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
+                {
+                    char[] buffer = new char[1000];
+                    int n = sr.ReadBlock(buffer, 0, 1000);
+
+                    char[] charsRead = new char[n];
+                    Array.Copy(buffer, charsRead, n);
+
+                    string head = new string(charsRead);
+
+                    if (head.IndexOf(xmlToken) > 0) return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug(ex.ToString());
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Event handler for getting document information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonGetDocumentProperties_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (String.IsNullOrEmpty(textBoxFileName.Text) == true)
+                    Debug("Please specify a valid file name in the Source field.");
+                else
+                    GetDocumentProperties(textBoxFileName.Text.Trim('\"'));
+            }
+            catch (Exception ex)
+            {
+                Debug(ex.ToString(), true);
+            }
+        }
 
         /// <summary>
         /// Event handler for converting a single file.
@@ -994,6 +1323,19 @@ namespace TestHarness
         }
 
         /// <summary>
+        /// Event handler for tgemplate file browse button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonBrowseTemplate_Click(object sender, EventArgs e)
+        {
+            openFileDialogTemplate.FileName = string.Empty;
+            DialogResult result = openFileDialogTemplate.ShowDialog();
+            if (result == DialogResult.OK)
+                textBoxTemplateFile.Text = openFileDialogTemplate.FileName;
+        }
+
+        /// <summary>
         /// Set the focus when then form is opened.
         /// </summary>
         private void TestForm_Shown(object sender, EventArgs e)
@@ -1231,7 +1573,7 @@ namespace TestHarness
         /// </summary>
         private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(@"http://support.muhimbi.com/entries/21275143-Validating-converters-and-troubleshooting-errors");
+            System.Diagnostics.Process.Start(@"https://support.muhimbi.com/hc/en-us/articles/228088347-Validating-converters-and-troubleshooting-errors");
         }
 
 
@@ -1240,7 +1582,7 @@ namespace TestHarness
         /// </summary>
         private void linkLabelHowToUse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(@"http://support.muhimbi.com/entries/23246143-Using-the-Diagnostics-tool-to-troubleshoot-conversions");
+            System.Diagnostics.Process.Start(@"https://support.muhimbi.com/hc/en-us/articles/228088767-Using-the-Diagnostics-tool-to-troubleshoot-conversions");
         }
 
 
@@ -1381,6 +1723,22 @@ namespace TestHarness
             return bytes;
         }
 
-        
+        /// <summary>
+        /// Opens a dialogue which helps user to add a document property entry
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonAddDocProperty_Click(object sender, EventArgs e)
+        {
+            // Show popup dialogue
+            AddPropertySettingDialogue dialogue = new AddPropertySettingDialogue();
+            if (dialogue.ShowDialog() == DialogResult.OK)
+            {
+                // Add new entry to the document property settings list
+                docPropertySettings.Add(new DocPropertySetting { Category = dialogue.Category, Names = dialogue.Names });
+                // Refresh data
+                docPropertySettingsBindingList.ResetBindings();
+            }
+        }
     }
 }

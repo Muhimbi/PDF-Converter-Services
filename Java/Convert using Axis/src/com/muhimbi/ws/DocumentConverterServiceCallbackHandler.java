@@ -61,6 +61,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for getDocumentProperties method
+            * override this method for handling normal response from getDocumentProperties operation
+            */
+           public void receiveResultgetDocumentProperties(
+                    com.muhimbi.ws.DocumentConverterServiceStub.GetDocumentPropertiesResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getDocumentProperties operation
+           */
+            public void receiveErrorgetDocumentProperties(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for applySecurity method
             * override this method for handling normal response from applySecurity operation
             */
