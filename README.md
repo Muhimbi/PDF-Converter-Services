@@ -1,4 +1,7 @@
 # Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services)
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
+
 ## About
 The [*Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services)*](https://www.nutrient.io/sdk/document-converter-services) is an on-premise web service that makes it easy to add *document conversion, merging, watermarking, securing and optical character recognition (OCR)* to most programming languages, operating systems and development platforms.
 

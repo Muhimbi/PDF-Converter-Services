@@ -1,4 +1,7 @@
 # Convert to PDF using Apache Axis2
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
+
 The Java sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to convert a file to PDF. Unlike our other samples, which use Java's wsimport facility for connecting to the Muhimbi web service, this example uses the [Apache Axis2](http://axis.apache.org/axis2/java/core/) framework.  Additional sample code to convert, merge, watermark, secure and OCR files [can be found here](../).
 
 For background details about using Java and Axis2, see [this Blog post](http://blog.muhimbi.com/2013/01/using-muhimbi-pdf-converter-services.html).

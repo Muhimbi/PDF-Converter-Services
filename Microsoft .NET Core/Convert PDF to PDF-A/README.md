@@ -1,4 +1,7 @@
 # Convert a PDF to PDF/A using C# .NET Core
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
+
 The C# .NET Core sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to convert a PDF file to a PDF/A2b compliant file. 
 
 For background details about converting a file to PDF/A using C# (Full .NET Framework, but very similar to .NET Core), see [this Blog post](http://blog.muhimbi.com/2011/09/converting-pdf-document-to-pdfa1b-using.html).
