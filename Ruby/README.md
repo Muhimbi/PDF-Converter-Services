@@ -1,4 +1,7 @@
 # Ruby Sample Code
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
+
 Details about using the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* from Ruby (on Rails) can be found here. Further information, including the object model, can be found [in the Developer Guide](http://www.muhimbi.com/support/documentation/PDF-Converter-Services/User---Developer-Guide.aspx) and in the [Muhimbi Knowledge Base](https://support.muhimbi.com/hc/en-us/sections/206267927-PDF-Converter-Web-Service-Interface).
 
 A detailed blog post, including details about how to setup Ruby, including all prerequisites, can be found on our [Blog](http://blog.muhimbi.com/2013/03/use-ruby-on-rails-to-convert-merge-and.html).

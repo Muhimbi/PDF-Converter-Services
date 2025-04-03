@@ -1,4 +1,7 @@
 # Extract PDF Forms Data (FDF, XFDF, XML) using C# .NET Core
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
+
 The C# .NET Core sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to extract AcroForm data from PDF files into FDF, XFDF or XML format.
 
 For background details about extracting PDF Forms Data, see [this Blog post](https://blog.muhimbi.com/2021/10/extract-pdf-forms-data-fdf-xfdf-xml.html).

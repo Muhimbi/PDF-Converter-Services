@@ -1,4 +1,6 @@
 # Carry out OCR using C# and the prime OCR engine
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
 
 :exclamation: **This sample code will only work if you are licensed for the 3rd party Prime OCR product. For an example that uses Muhimbi's built in OCR engine, see [this post](../OCR%20PDF).**  :exclamation:
 

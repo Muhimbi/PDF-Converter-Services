@@ -1,4 +1,7 @@
 # Split a PDF into smaller files using C#
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
+
 The C# sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to split up a single PDF file into multiple smaller PDF files (In this example containing 5 pages each).
 
 For background details about Splitting PDF Files using C#, see [this Blog post](http://blog.muhimbi.com/2011/10/splitting-pdf-files-using-pdf-converter.html).

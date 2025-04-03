@@ -1,4 +1,7 @@
 # Convert to PDF, and Watermark, using PHP
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
+
 The PHP sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to convert (if needed) a file and apply PDF watermarks (a.k.a stamps). Additional sample code to convert, merge, watermark, secure and OCR files [can be found here](../).
 
 For a backgrounder about how this works, how to generate your own PHP web service proxies, and other information related to invoking the PDF Converter from PHP, see [this blog post](http://blog.muhimbi.com/2013/02/converting-files-to-pdf-and-other.html).

@@ -1,4 +1,7 @@
 # Import PDF Forms Data (FDF, XFDF, XML) unsing Java
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
+
 The Java sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to import PDF Forms Data (FDF, XFDF or XML) into a PDF document.
 
 For background details about importing PDF Forms Data, see [this Blog post](https://blog.muhimbi.com/).

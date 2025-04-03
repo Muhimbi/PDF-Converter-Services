@@ -1,4 +1,7 @@
 # Apply rich watermarks to an MS Office document using C#
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
+
 The C# sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to apply a watermark (a.k.a Stamping) to an MS Office document (.docx, .xlsx or .pptx files).
 
 Specifically, a 'Confidential' watermark across the first page of the document, and page numbering on the remaining pages, using a differently aligned page number on odd and even pages. 

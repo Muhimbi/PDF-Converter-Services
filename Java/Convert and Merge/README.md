@@ -1,4 +1,7 @@
 # Convert and Merge Documents
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
+
 The Java sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to convert (if needed) and merge multiple files and HTML into a single PDF. Additional sample code to convert, merge, watermark, secure and OCR files [can be found here](../).
 
 For background details about merging files using Java, see [this Blog post](http://blog.muhimbi.com/2011/12/converting-and-merging-multiple-files.html).

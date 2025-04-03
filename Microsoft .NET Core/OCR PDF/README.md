@@ -1,4 +1,7 @@
 # Carry out OCR using C# .NET Core and Muhimbi's built in OCR engine
+:exclamation:
+This repository is a barebones sample implementation of Nutrient Document Converter Services (formerly Muhimbi PDF Converter Services), built purely with demo purposes in mind. This example has not been designed to run unmodified in production.
+
 The C# .NET Core sample provided in this section uses the *[Muhimbi PDF Converter Services](http://www.muhimbi.com/Products/PDF-Converter-Services/summary.aspx)* to carry out Optical Character Recognition (OCR) on an image based source file (scan, fax, or other image).
 
 The generated PDF contains all recognised text, which can be selected, copied or searched. 
